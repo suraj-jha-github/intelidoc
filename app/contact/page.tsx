@@ -79,7 +79,7 @@ export default function ContactUs() {
         </div>
 
         {/* Navigation */}
-        <Navigation navItems={navItems} colorClass="text-[#222]" />
+        <Navigation navItems={navItems} colorClass="text-[#222]" logoColorClass="text-white" />
 
         {/* Main content */}
         <main className="pt-[80px] md:pt-[119px] px-4 md:px-8 lg:px-20 relative z-10">

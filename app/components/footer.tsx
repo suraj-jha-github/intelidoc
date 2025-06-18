@@ -15,16 +15,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ links }) => {
   return (
     <section className="w-full mt-16">
-      <div className="px-4 md:px-[87px]">
-        <h2 className="font-playfair font-semibold text-[#162694] text-2xl md:text-3xl tracking-[0] leading-normal">
-          Security & Legal
-        </h2>
-
-        <p className="font-gantari font-normal text-[#626262] text-lg md:text-xl tracking-[0] leading-normal mt-4 max-w-[1004px]">
-          Our technology is HIPAA-compliant, uses industry best practices,
-          and doesn&#39;t store patient recordings.
-        </p>
-      </div>
+      
 
       <Separator className="my-8" />
 

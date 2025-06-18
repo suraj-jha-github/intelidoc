@@ -248,8 +248,52 @@ export default function Home () {
             by magic.
           </div>
 
-          {/* Video placeholder - hidden on mobile, responsive on larger screens */}
-          <div className="hidden md:block absolute w-[300px] md:w-[400px] lg:w-[565px] h-[200px] md:h-[250px] lg:h-[359px] top-20 md:top-32 lg:top-40 right-4 md:right-8 lg:right-[53px] bg-[#d9d9d9] rounded-[20px]" />
+          {/* Specialities-style Demo Card on right */}
+          <div className="hidden lg:block absolute top-20 lg:top-32 right-4 lg:right-[53px] w-[574px] max-w-[574px]">
+            <Card className="w-full bg-white rounded-[20px] p-6 relative min-h-[356px] shadow-lg">
+              <CardContent className="p-0">
+                <div className="text-center mb-4">
+                  <h3 className="[font-family:'Geist',Helvetica] font-bold text-[#132180] text-lg md:text-[19px] leading-[24.3px]">
+                    InteliDoc AI
+                  </h3>
+                </div>
+                <Separator className="mb-6" />
+                <div className="bg-gradient-to-br from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
+                  <div className="bg-white rounded-[10px] p-4 mb-4">
+                    <div className="flex justify-between items-center mb-4">
+                      <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">Subjective</span>
+                      <span className="[font-family:'Inter',Helvetica] font-normal text-black text-xs">Personalized</span>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+                      <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
+                      <div className="w-4/5 h-[7px] bg-[#d9d9d9] rounded"></div>
+                      <div className="w-3/4 h-[7px] bg-[#d9d9d9] rounded"></div>
+                      <div className="w-1/2 h-[7px] bg-[#d9d9d9] rounded"></div>
+                      <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+                    </div>
+                    <div className="flex justify-end mt-4">
+                      <Button className="bg-[#162694] rounded-[5px] px-3 py-1 flex items-center gap-2">
+                        <img
+                          className="w-3.5 h-[19px]"
+                          alt="Copy"
+                          src="/speciality/noun-copy-7891669-1.svg"
+                        />
+                        <span className="[font-family:'Geist',Helvetica] font-normal text-white text-[13px] leading-[16.6px]">
+                          Copy
+                        </span>
+                      </Button>
+                    </div>
+                  </div>
+                  <div className="text-left">
+                    <span className="[font-family:'Inter',Helvetica] font-normal text-black text-sm">
+                      Patient
+                    </span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
           <div className="absolute w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[494px] top-48 sm:top-56 md:top-64 lg:top-[354px] left-4 sm:left-8 md:left-16 lg:left-[85px] font-light text-white text-base sm:text-lg md:text-xl lg:text-[25px] font-gantari leading-relaxed">
             The most reliable and beloved tool for creating accurate, compliant
@@ -268,7 +312,7 @@ export default function Home () {
         {/* Testimonials Section */}
         <section className="mt-8 sm:mt-12 lg:mt-14 pt-8 sm:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-8 lg:px-0">
           <div className="relative w-full max-w-7xl mx-auto">
-            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight lg:ml-[92px] text-center lg:text-left">
+            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight lg:ml-[22px] text-center lg:text-left">
               Trusted and loved by<br className="hidden sm:block" />
               therapists, doctors, and nurses.
             </h2>
@@ -316,101 +360,7 @@ export default function Home () {
         </section>
 
         {/* Features Section */}
-        <section className="relative w-full py-12 sm:py-16 mt-4 sm:mt-8 bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)]">
-          <div className="relative z-10 px-4 sm:px-8 lg:px-0 max-w-7xl mx-auto">
-            <h2 className="font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-tight text-center lg:text-left lg:ml-[89px] mb-8 sm:mb-12 lg:mb-16">
-              Created by healthcare professionals, <br className="hidden sm:block" />
-              for healthcare professionals.
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-[37px] lg:ml-[92px] max-w-6xl">
-              {featureCards.map((feature, index) => (
-                <Card
-                  key={index}
-                  className="w-full max-w-[248px] h-auto min-h-[200px] bg-[#fff9f9] rounded-[10px] relative mx-auto lg:mx-0"
-                >
-                  <CardContent className="p-6 relative h-full flex flex-col items-center">
-                    <h3 className="font-playfair font-bold text-black text-lg sm:text-xl mb-4">
-                      {feature.title}
-                    </h3>
-
-                    {/* Feature Icons */}
-                    {feature.title === "Accurate" && (
-                      <div className="w-12 h-16 mb-4">
-                        <div className="relative w-12 h-[49px]">
-                          <div className="relative w-[50px] h-[51px]">
-                            <Image
-                              className="absolute w-10 h-[41px] top-2.5 left-0"
-                              alt="Group"
-                              src={feature.icon || ""}
-                              width={50}
-                              height={50}
-                            />
-                            <Image
-                              className="absolute w-[31px] h-[31px] top-0 left-[19px]"
-                              alt="Group"
-                              src={feature.secondIcon || ""}
-                              width={50}
-                              height={50}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {feature.title === "Capturing" && (
-                      <div className="w-[72px] h-[89px] mb-4">
-                        <Image
-                          className="w-full h-full"
-                          alt="Recording"
-                          src={feature.icon || ""}
-                          width={50}
-                          height={50}
-                        />
-                      </div>
-                    )}
-
-                    {feature.title === "Clinical Notes" && (
-                      <div className="w-full mb-4">
-                        <div className="border border-black rounded-[10px] p-3 mb-3">
-                          <div className="font-gantari font-semibold text-sm text-black">
-                            Personalized
-                          </div>
-                        </div>
-                        <Button className="w-full bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-normal text-xs rounded-[5px]">
-                          Copy
-                        </Button>
-                      </div>
-                    )}
-
-                    {feature.title === "Personalized" && (
-                      <div className="w-[47px] h-[59px] mb-4 relative">
-                        <Image
-                          className="absolute w-[33px] h-[15px] top-[25px] left-[7px]"
-                          alt="Vector"
-                          src={feature.icon1 || ""}
-                          width={50}
-                          height={50}
-                        />
-                        <Image
-                          className="absolute w-[15px] h-4 top-[7px] left-4"
-                          alt="Vector"
-                          src={feature.icon2 || ""}
-                          width={50}
-                          height={50}
-                        />
-                      </div>
-                    )}
-
-                    <p className="font-gantari font-medium text-[#7b7979] text-xs sm:text-[13px] text-center leading-relaxed">
-                      {feature.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         {/* How It Works Section */}
         <section className="mt-16 sm:mt-24 lg:mt-32 pt-8 sm:pt-12 lg:pt-16 px-4 sm:px-8 lg:px-0">
@@ -562,36 +512,31 @@ export default function Home () {
               <div className="space-y-8 sm:space-y-12 lg:space-y-16">
                 <div>
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
-                    01. Capture
+                    01. Open Extension
                   </h3>
                   <Separator className="my-4 w-full lg:w-[519px]" />
                   <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
-                    Click "Capture Conversation" at the start of your visit.
-                    Twofold listens—whether it's virtual or in-person—for up to
-                    1.5 hours.
+                  Launch the InteliDoc Telescribe extension in your browser before starting your virtual consultation.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
-                    02. Review & Edit
+                    02. Auto Recording
                   </h3>
                   <Separator className="my-4 w-full lg:w-[519px]" />
                   <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
-                    When you're done, click "End Conversation" to instantly review
-                    your personalized note. Twofold adapts to your style with
-                    every visit.
+                  The extension automatically captures the conversation in real-time, requiring no manual action..
                   </p>
                 </div>
 
                 <div>
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
-                    03. Send
+                    03. End Meeting
                   </h3>
                   <Separator className="my-4 w-full lg:w-[519px]" />
                   <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
-                    Easily send auto-generated patient instructions and copy
-                    finalized notes into any EHR.
+                  Once the consultation ends, simply close the session — the recording stops and the transcript is securely processed.
                   </p>
                 </div>
               </div>
@@ -622,19 +567,15 @@ export default function Home () {
             </h2>
 
             <h3 className="font-playfair font-semibold text-[#162694] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mt-2 sm:mt-4 text-center lg:text-left">
-              No worries.
+              No Problem.
             </h3>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mt-8 sm:mt-12 lg:mt-16">
               <Card className="relative w-full max-w-[521px] bg-white rounded-[20px] border border-solid border-[#a9a9a9] overflow-visible mx-auto lg:mx-0 p-0">
-              <div className="w-full h-6 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
-                <span className="text-white text-xs font-medium">FEATURE</span>
+              <div className="w-full h-13 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
+                <span className="text-white font-medium font-large font-playfair text-[32px]">Dictate a summary</span>
               </div>
-                <div className="w-full h-16 sm:h-[65px] rounded-[15px_15px_0px_0px] bg-gradient-radial from-[rgba(83,93,173,1)] to-[rgba(21,37,145,1)] flex items-center justify-center">
-                  <h3 className="font-playfair font-medium text-white text-xl sm:text-2xl lg:text-[32px]">
-                    Dictate a summary
-                  </h3>
-                </div>
+              
                 <CardContent className="pt-6 sm:pt-8 lg:pt-10 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col items-center">
                   <div className="flex justify-center mb-4 sm:mb-6">
                     <Image
@@ -645,7 +586,7 @@ export default function Home () {
                       height={150}
                     />
                   </div>
-                  <p className="font-gantari font-light text-[#5e5d5d] text-base sm:text-lg lg:text-xl text-center">
+                  <p className="font-gantari font-light text-[#5e5d5d] text-base sm:text-lg lg:text-xl text-left align-left">
                     Simply provide a quick recap of the session in natural language and we'll create the full note, in your writing style
                   </p>
                   {/* Grid background at the bottom */}
@@ -654,26 +595,22 @@ export default function Home () {
               </Card>
 
               <Card className="w-full max-w-[521px] bg-white rounded-[20px] border border-solid border-[#a9a9a9] overflow-visible mx-auto lg:mx-0 p-0">
-              <div className="w-full h-6 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
-                <span className="text-white text-xs font-medium">FEATURE</span>
+              <div className="w-full h-13 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
+                <span className="text-white font-medium font-large font-playfair text-[32px]">Upload your Recordings</span>
               </div>
-                <div className="w-full h-16 sm:h-[65px] rounded-[15px_15px_0px_0px] bg-gradient-radial from-[rgba(83,93,173,1)] to-[rgba(21,37,145,1)] flex items-center justify-center">
-                  <h3 className="font-playfair font-medium text-white text-xl sm:text-2xl lg:text-[32px]">
-                    Upload your notes
-                  </h3>
-                </div>
+               
                 <CardContent className="pt-6 sm:pt-8 lg:pt-10 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col items-center">
                
                   <div className="flex justify-center mb-4 sm:mb-6">
                     <Image
                       className="w-24 h-28 sm:w-[130px] sm:h-[150px]"
                       alt="Noun note"
-                      src="/home-images/noun-note-7815854-1.svg"
+                      src="/home-images/upload-image.png"
                       width={130}
                       height={150}
                     />
                   </div>
-                  <p className="font-gantari font-light text-[#5e5d5d] text-base sm:text-lg lg:text-xl text-center">
+                  <p className="font-gantari font-light text-[#5e5d5d] text-base sm:text-lg lg:text-xl text-left">
                     Upload your handwritten or typed session notes as they are, and we'll create a high-quality and comprehensive note
                   </p>
                 </CardContent>
@@ -698,9 +635,9 @@ export default function Home () {
         {/* Privacy & Security Section */}
         <section className="mt-12 sm:mt-16 pt-12 sm:pt-16 px-4 sm:px-8 lg:px-0">
           <div className="max-w-7xl mx-auto">
-            <Separator className="w-full max-w-[1104px] mx-auto" />
+            {/* <Separator className="w-full max-w-[1104px] mx-auto" /> */}
 
-            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-6 sm:mt-8 text-center lg:text-left lg:ml-[91px]">
+            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-6 sm:mt-8 text-center lg:text-left lg:ml-[91px]">
               Privacy & Security.
             </h2>
 
@@ -712,7 +649,7 @@ export default function Home () {
               {securityFeatures.map((feature, index) => (
                 <Card
                   key={index}
-                  className="w-full max-w-[455px] h-auto lg:h-80 relative border-[0.2px] border-solid border-[#a9a3a3] shadow-[4px_4px_10px_2px_#0000001a] mx-auto lg:mx-0"
+                  className="w-full max-w-[455px] h-auto lg:h-80 relative border-[0.2px] border-solid border-[#a9a3a3] shadow-[4px_4px_10px_2px_#0000001a] mx-auto lg:mx-0 rounded-none"
                 >
                   <div className="absolute w-16 sm:w-[73px] h-[5px] top-0 left-6 sm:left-8 bg-[#162694]" />
                   <CardContent className="pt-8 sm:pt-10 px-6 sm:px-8 pb-6 sm:pb-8">

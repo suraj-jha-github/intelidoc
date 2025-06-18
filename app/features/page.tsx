@@ -99,7 +99,7 @@ export default function Features(){
     <div className="bg-feature-background min-h-screen">
       <div className="bg-feature-background overflow-hidden w-full max-w-feature mx-auto relative">
         {/* Navigation */}
-        <Navigation navItems={navItems} colorClass="text-[#222]" />
+        <Navigation navItems={navItems} colorClass="text-[#222]" logoColorClass="text-[#162694]" />
 
         {/* Hero Section */}
         <HeroSection />

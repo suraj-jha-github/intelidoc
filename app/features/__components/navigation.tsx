@@ -8,13 +8,14 @@ import { usePathname } from 'next/navigation';
 interface NavigationProps {
   navItems: { label: string; href: string }[];
   colorClass?: string;
+  logoColorClass?: string;
 }
 
 const LoadingSpinner = () => (
   <div className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-[#162694] border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" />
 );
 
-export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass = "text-white" }) => {
+export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass = "text-white", logoColorClass = "text-white" }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [loadingItem, setLoadingItem] = useState<string | null>(null);
   const pathname = usePathname();
@@ -27,11 +28,11 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass = "
   };
 
   return (
-    <header className="fixed w-full h-14 md:h-[57px] top-0 left-0 right-0 mx-auto z-50 backdrop-blur-[21px] backdrop-brightness-[100%] bg-gradient-to-b from-white/60 to-transparent">
+    <header className="fixed w-full h-14 md:h-[57px] top-0 left-0 right-0 mx-auto z-50 backdrop-blur-[21px] backdrop-brightness-[100%] bg-gradient-to-b from-white/60 to-transparent border-b border-white">
       <nav className="flex items-center justify-between px-4 md:px-8 lg:px-16 h-full max-w-7xl mx-auto">
         <div className="flex items-center gap-4 md:gap-12">
           <Link href="/" className="flex items-center">
-            <div className="font-['Geist',Helvetica] font-bold text-[#162694] text-lg sm:text-xl">
+            <div className={`font-['Geist',Helvetica] font-bold text-lg sm:text-xl ${logoColorClass}`}>
               IntelliDoc AI
             </div>
           </Link>
@@ -56,7 +57,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass = "
         </div>
 
         {/* Desktop CTA Button */}
-        <Button className="hidden md:block bg-white text-[#162694] font-semibold text-[15px] h-7 rounded-[5px] hover:bg-gray-50">
+        <Button className="hidden md:block bg-white text-[#162694] font-semibold text-[15px] h-8 px-4 py-1.5 rounded-[5px] hover:bg-gray-50 flex items-center justify-center">
           Try for free
         </Button>
 

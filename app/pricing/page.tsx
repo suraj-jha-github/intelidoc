@@ -102,7 +102,7 @@ export default function Pricing() {
   return (
     <div className="bg-[#f3f3f3] flex flex-row justify-center w-full">
       <div className="bg-[#f3f3f3] overflow-hidden w-full relative">
-        <Navigation navItems={navItems} />
+        <Navigation navItems={navItems} logoColorClass="text-white" />
 
         {/* Hero Section */}
         <section className="relative w-full min-h-[500px] sm:min-h-[577px] bg-[#162694] bg-gradient-to-r from-[#162694] to-[#4a3a9a] pt-16 sm:pt-[60px]">

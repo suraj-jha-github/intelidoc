@@ -58,7 +58,7 @@ export const SecuritySection: React.FC<SecuritySectionProps> = ({ features }) =>
               {features.map((feature, index) => (
                 <Card
                   key={index}
-                  className="w-full max-w-[290px] mx-auto lg:mx-0 bg-white rounded-[20px] border-[0.2px] border-[#a9a3a3] shadow-[4px_4px_10px_2px_#0000001a] relative"
+                  className="w-full max-w-[290px] mx-auto lg:mx-0 bg-white rounded-none border-[0.2px] border-[#a9a3a3] shadow-[4px_4px_10px_2px_#0000001a] relative"
                 >
                   <div className="w-[62px] h-[7px] absolute -top-1 left-[27px] bg-[#e03099]" />
                   <CardContent className="p-4 lg:p-6">
