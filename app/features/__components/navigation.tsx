@@ -33,7 +33,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass = "
         <div className="flex items-center gap-4 md:gap-12">
           <Link href="/" className="flex items-center">
             <div className={`font-['Geist',Helvetica] font-bold text-lg sm:text-xl ${logoColorClass}`}>
-              IntelliDoc AI
+              InteliDoc AI
             </div>
           </Link>
           

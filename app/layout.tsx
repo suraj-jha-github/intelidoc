@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Intellidoc AI",
-  description: "Intellidoc AI - The best clinical documentation tool.",
+  title: "Intelidoc AI",
+  description: "Intelidoc AI - The best clinical documentation tool.",
   icons: {
     icon: "/favicon.ico",
   },
