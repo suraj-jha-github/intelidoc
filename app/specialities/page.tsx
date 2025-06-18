@@ -16,6 +16,8 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Separator } from "@/components/ui/separator";
+import { Navigation } from "../features/__components/navigation";
+
 export default function Specialties() {
   const specialties = [
     {
@@ -110,6 +112,16 @@ export default function Specialties() {
     legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
   };
 
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Features", href: "/features" },
+    { label: "Specialties", href: "/specialities" },
+    { label: "Blog", href: "/blogs" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "For Groups", href: "/groups" },
+    { label: "Contact Us", href: "/contact" },
+  ];
+
   return (
     <div className="bg-[#f3f3f3] flex flex-row justify-center w-full">
       <div className="bg-[#f3f3f3] overflow-hidden w-full  relative">
@@ -118,68 +130,7 @@ export default function Specialties() {
           <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
           {/* Navigation Bar */}
-          <div className="absolute w-full h-auto md:h-[57px] top-1.5 left-0 backdrop-blur-[21px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(21px)_brightness(100%)] [background:linear-gradient(180deg,rgba(255,255,255,0.6)_0%,rgba(255,255,255,0)_100%)] p-4 md:p-0">
-            <div className="flex flex-col md:flex-row items-center justify-between max-w-full mx-auto px-4 md:px-20">
-              <div className="flex items-center justify-between w-full md:w-auto mb-4 md:mb-0">
-                <div className="font-bold text-white text-lg md:text-xl text-center leading-[25.6px] whitespace-nowrap [font-family:'Geist',Helvetica]">
-                  InteliDoc AI
-                </div>
-                <Button className="md:hidden bg-white rounded-[5px] px-3 py-1">
-                  <span className="font-semibold text-[#162694] text-sm text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                    Try for free
-                  </span>
-                </Button>
-              </div>
-
-              <NavigationMenu className="hidden md:block max-w-full mx-auto">
-                <NavigationMenuList className="flex items-center gap-6">
-                  <NavigationMenuItem>
-                    <NavigationMenuLink className="font-medium text-white text-[15px] text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                      Features
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink className="font-medium text-white text-[15px] text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                      How it Works
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink className="font-medium text-white text-[15px] text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                      Specialty
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink className="font-medium text-white text-[15px] text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                      Pricing
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink className="font-medium text-white text-[15px] text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                      Blogs
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink className="font-medium text-white text-[15px] text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                      For Groups
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                  <NavigationMenuItem>
-                    <NavigationMenuLink className="font-medium text-white text-[15px] text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                      Contact Us
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-
-              <Button className="hidden md:block bg-white rounded-[5px] px-3 h-7">
-                <span className="font-semibold text-[#162694] text-[15px] text-center leading-[19.2px] whitespace-nowrap [font-family:'Gantari',Helvetica]">
-                  Try for free
-                </span>
-              </Button>
-            </div>
-
-            <div className="hidden md:block absolute w-[84px] h-[5px] top-[63px] left-[548px] bg-[#f72aa4]" />
-          </div>
+          <Navigation navItems={navItems} />
 
           {/* Hero Content */}
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-4 md:px-[90px] pt-24 md:pt-32 pb-8">

@@ -16,6 +16,7 @@ import { useKeenSlider } from "keen-slider/react";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Footer } from "./components/footer";
+import { Navigation } from "./features/__components/navigation";
 
 // Define testimonial data for reuse
 const testimonials = [
@@ -191,6 +192,16 @@ const footerLinks = {
   legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
 };
 
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Features", href: "/features" },
+  { label: "Specialties", href: "/specialities" },
+  { label: "Blog", href: "/blogs" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "For Groups", href: "/groups" },
+  { label: "Contact Us", href: "/contact" },
+];
+
 export default function Home () {
   const [sliderRef] = useKeenSlider({
     loop: true,
@@ -252,88 +263,7 @@ export default function Home () {
         </section>
 
         {/* Fixed Navigation */}
-        <nav className="fixed w-full top-0 bg-gradient-to-b from-[rgba(255,255,255,0.6)] to-[rgba(255,255,255,0)] backdrop-blur-[21px] z-50">
-          <div className="flex items-center h-14 sm:h-16 lg:h-[57px] px-4 sm:px-8 lg:px-16">
-            <Link href="/">
-              <div className="font-['Geist',Helvetica] font-bold text-white text-lg sm:text-xl">
-                InteliDoc AI
-              </div>
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex space-x-6 ml-32">
-              <Link href="/testimonials">
-                <Button
-                  variant="link"
-                  className="text-white font-medium text-[15px] p-0"
-                >
-                  Testimonials
-                </Button>
-              </Link>
-              <Link href="/features">
-                <Button
-                  variant="link"
-                  className="text-white font-medium text-[15px] p-0"
-                >
-                  Features
-                </Button>
-              </Link>
-              <Link href="/how-it-works">
-                <Button
-                  variant="link"
-                  className="text-white font-medium text-[15px] p-0"
-                >
-                  How it Works
-                </Button>
-              </Link>
-              <Link href="/security">
-                <Button
-                  variant="link"
-                  className="text-white font-medium text-[15px] p-0"
-                >
-                  Security
-                </Button>
-              </Link>
-              <Link href="/pricing">
-                <Button
-                  variant="link"
-                  className="text-white font-medium text-[15px] p-0"
-                >
-                  Pricing
-                </Button>
-              </Link>
-              <Link href="/specialities">
-                <Button
-                  variant="link"
-                  className="text-white font-medium text-[15px] p-0"
-                >
-                  Specialty
-                </Button>
-              </Link>
-              <Link href="/groups">
-                <Button
-                  variant="link"
-                  className="text-white font-medium text-[15px] p-0"
-                >
-                  For Groups
-                </Button>
-              </Link>
-            </div>
-
-            <div className="ml-auto flex items-center space-x-2 sm:space-x-4">
-              <Link href="/login">
-                <Button variant="link" className="text-white font-medium text-sm sm:text-base p-0 hidden sm:block">
-                  Log In
-                </Button>
-              </Link>
-              <Link href="/signup">
-                <Button className="bg-white text-[#162694] font-semibold text-xs sm:text-[15px] h-7 sm:h-8 px-3 sm:px-4 rounded-[5px]">
-                  Try for free
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </nav>
+        <Navigation navItems={navItems} />
 
         {/* Testimonials Section */}
         <section className="mt-8 sm:mt-12 lg:mt-14 pt-8 sm:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-8 lg:px-0">

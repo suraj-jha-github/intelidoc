@@ -3,16 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
 import { Footer } from "../components/footer";
+import { Navigation } from "../features/__components/navigation";
 
 // Navigation menu items data
 const navItems = [
-  { label: "Testimonials", href: "#" },
-  { label: "Features", href: "#" },
-  { label: "How it Works", href: "#" },
-  { label: "Security", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Specialty", href: "#" },
-  { label: "For Groups", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "Features", href: "/features" },
+  { label: "Specialties", href: "/specialities" },
+  { label: "Blog", href: "/blogs" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "For Groups", href: "/groups" },
+  { label: "Contact Us", href: "/contact" },
 ];
 
 // Blog post data
@@ -63,49 +64,7 @@ export default function Blogs() {
         {/* Header Section with Gradient Background */}
         <header className="relative w-full min-h-[500px] lg:min-h-[577px] [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]">
           {/* Navigation Bar */}
-          <nav className="relative w-full backdrop-blur-[21px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(21px)_brightness(100%)] [background:linear-gradient(180deg,rgba(255,255,255,0.6)_0%,rgba(255,255,255,0)_100%)]">
-            <div className="flex items-center justify-between px-4 sm:px-6 lg:px-20 py-4">
-              {/* Logo */}
-              <div className="[font-family:'Geist',Helvetica] font-bold text-white text-lg sm:text-xl">
-                  <Link
-                   
-                    href="/"
-                    className="[font-family:'Geist',Helvetica] font-medium text-white text-[15px] hover:text-gray-200 transition-colors"
-                  >
-                    InteliDoc AI
-                  </Link>
-               
-              </div>
-
-              {/* Desktop Navigation */}
-              <div className="hidden lg:flex space-x-6">
-                {navItems.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.href}
-                    className="[font-family:'Geist',Helvetica] font-medium text-white text-[15px] hover:text-gray-200 transition-colors"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-
-              {/* Auth Buttons */}
-              <div className="flex items-center space-x-2 sm:space-x-4">
-                <span className="hidden sm:inline [font-family:'Geist',Helvetica] font-medium text-white text-sm sm:text-base">
-                  Log In
-                </span>
-                <Button
-                  variant="default"
-                  className="h-7 sm:h-8 px-3 sm:px-4 bg-white rounded-[5px] hover:bg-gray-100 transition-colors"
-                >
-                  <span className="[font-family:'Geist',Helvetica] font-semibold text-[#162694] text-sm sm:text-[15px]">
-                    Try for free
-                  </span>
-                </Button>
-              </div>
-            </div>
-          </nav>
+          <Navigation navItems={navItems} />
 
           {/* Header Content - Mobile First Layout */}
           <div className="px-4 sm:px-6 lg:px-20 pt-8 lg:pt-16">

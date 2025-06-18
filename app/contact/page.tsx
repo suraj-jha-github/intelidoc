@@ -9,6 +9,8 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Navigation } from "../features/__components/navigation";
+import { Footer } from "../components/footer";
 
 import { Menu, X } from "lucide-react";
 export default function ContactUs() {
@@ -16,14 +18,13 @@ export default function ContactUs() {
 
   // Navigation menu items data
   const navItems = [
+    { label: "Home", href: "/" },
     { label: "Features", href: "/features" },
-    { label: "How it Works", href: "#" },
-    { label: "Specialties", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Pricing", href: "#" },
-    { label: "For Groups", href: "#" },
-    { label: "Contact Us", href: "/contact", active: true },
-    { label: "Log In", href: "#" },
+    { label: "Specialties", href: "/specialities" },
+    { label: "Blog", href: "/blogs" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "For Groups", href: "/groups" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   // Footer links data
@@ -34,6 +35,19 @@ export default function ContactUs() {
     { label: "Contact Sales", href: "#" },
     { label: "Security", href: "#" },
   ];
+
+  const footerLinks = {
+    resources: ["Help Center", "Blog"],
+    specialties: [
+      "Family Medicine",
+      "Internal Medicine",
+      "Pschiatry",
+      "Mental Health",
+      "Padiatrics",
+      "Other Specialties",
+    ],
+    legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
+  };
 
   return (
     <div className="bg-[#f3f3f3] min-h-screen w-full">
@@ -65,74 +79,7 @@ export default function ContactUs() {
         </div>
 
         {/* Navigation */}
-        <header className="absolute w-full h-auto md:h-[57px] top-0 left-0 backdrop-blur-[21px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(21px)_brightness(100%)] [background:linear-gradient(180deg,rgba(255,255,255,0.6)_0%,rgba(255,255,255,0)_100%)] z-50">
-          <div className="flex items-center justify-between px-4 md:px-20 py-4">
-            <div className="[font-family:'Geist',Helvetica] font-bold text-[#162694] text-lg md:text-xl">
-              InteliDoc AI
-            </div>
-
-            {/* Desktop Navigation */}
-            <NavigationMenu className="hidden lg:block">
-              <NavigationMenuList className="flex space-x-3 xl:space-x-5">
-                {navItems.map((item, index) => (
-                  <NavigationMenuItem key={index}>
-                    <NavigationMenuLink
-                      href={item.href}
-                      className={`[font-family:'Geist',Helvetica] font-medium text-sm xl:text-[15px] text-center leading-[19.2px] whitespace-nowrap ${
-                        item.active
-                          ? "text-[#5f5f5f] relative after:content-[''] after:absolute after:w-full after:h-[5px] after:bg-[#f72aa4] after:bottom-[-10px] after:left-0"
-                          : "text-[#5f5f5f]"
-                      }`}
-                    >
-                      {item.label}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-
-            {/* Mobile menu button */}
-            <button
-              className="lg:hidden p-2"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? (
-                <X className="h-6 w-6 text-[#162694]" />
-              ) : (
-                <Menu className="h-6 w-6 text-[#162694]" />
-              )}
-            </button>
-
-            <Button className="hidden md:block bg-white text-[#162694] font-semibold text-sm md:text-[15px] h-7 rounded-[5px] px-3 md:px-4">
-              Try for free
-            </Button>
-          </div>
-
-          {/* Mobile Navigation Menu */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md border-t border-gray-200">
-              <div className="px-4 py-4 space-y-3">
-                {navItems.map((item, index) => (
-                  <a
-                    key={index}
-                    href={item.href}
-                    className={`block [font-family:'Geist',Helvetica] font-medium text-[15px] py-2 ${
-                      item.active
-                        ? "text-[#162694] font-semibold"
-                        : "text-[#5f5f5f]"
-                    }`}
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
-                <Button className="w-full mt-4 bg-[#162694] text-white font-semibold text-[15px] h-10 rounded-[5px]">
-                  Try for free
-                </Button>
-              </div>
-            </div>
-          )}
-        </header>
+        <Navigation navItems={navItems} colorClass="text-[#222]" />
 
         {/* Main content */}
         <main className="pt-[80px] md:pt-[119px] px-4 md:px-8 lg:px-20 relative z-10">
@@ -319,53 +266,7 @@ export default function ContactUs() {
           </section>
         </main>
 
-        {/* Footer */}
-        <footer className="mt-12 md:mt-20 w-full bg-[#efefef] py-8 md:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-32">
-            <div className="text-center md:text-left">
-              <h3 className="[font-family:'Geist',Helvetica] font-bold text-[#162694] text-2xl md:text-[32px] tracking-[0] leading-tight">
-                InteliDoc
-              </h3>
-              <p className="[font-family:'Geist',Helvetica] font-normal text-[#969696] text-sm tracking-[0] leading-[17.9px] mt-4 md:mt-8 max-w-[266px] mx-auto md:mx-0">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&#39;s standard dummy
-              </p>
-            </div>
-
-            <div className="text-center md:text-left">
-              <h3 className="[font-family:'Geist',Helvetica] font-normal text-black text-lg md:text-xl tracking-[0] leading-[25.6px]">
-                Security
-              </h3>
-              <p className="[font-family:'Geist',Helvetica] font-normal text-[#969696] text-sm tracking-[0] leading-[17.9px] mt-4 md:mt-8 max-w-[266px] mx-auto md:mx-0">
-                Our technology is HIPAA-compliant, uses industry best practices,
-                and doesn&#39;t store patient recordings.
-              </p>
-              <a
-                href="#"
-                className="[font-family:'Geist',Helvetica] font-normal text-[#969696] text-[13px] tracking-[0] leading-[16.6px] underline mt-4 inline-block hover:text-[#162694] transition-colors"
-              >
-                Learn more
-              </a>
-            </div>
-
-            <div className="text-center md:text-left md:col-span-2 lg:col-span-1">
-              <h3 className="[font-family:'Geist',Helvetica] font-normal text-black text-lg md:text-xl tracking-[0] leading-[25.6px]">
-                Helpful Links
-              </h3>
-              <div className="mt-4 md:mt-8 grid grid-cols-2 gap-y-3 md:gap-y-4 max-w-[300px] mx-auto md:mx-0">
-                {helpfulLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="[font-family:'Geist',Helvetica] font-normal text-[#969696] text-[13px] tracking-[0] leading-[16.6px] underline hover:text-[#162694] transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer links={footerLinks} />
       </div>
     </div>
   );

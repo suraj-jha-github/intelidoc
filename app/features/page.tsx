@@ -72,14 +72,13 @@ export default function Features(){
 
   // Navigation items
   const navItems = [
-    "Features",
-    "How it Works",
-    "Specialties",
-    "Blog",
-    "Pricing",
-    "For Groups",
-    "Contact Us",
-    "Log In",
+    { label: "Home", href: "/" },
+    { label: "Features", href: "/features" },
+    { label: "Specialties", href: "/specialities" },
+    { label: "Blog", href: "/blogs" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "For Groups", href: "/groups" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   // Footer links
@@ -100,7 +99,7 @@ export default function Features(){
     <div className="bg-feature-background min-h-screen">
       <div className="bg-feature-background overflow-hidden w-full max-w-feature mx-auto relative">
         {/* Navigation */}
-        <Navigation navItems={navItems} />
+        <Navigation navItems={navItems} colorClass="text-[#222]" />
 
         {/* Hero Section */}
         <HeroSection />

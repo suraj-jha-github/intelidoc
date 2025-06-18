@@ -3,23 +3,25 @@ import React, { useState } from "react";
 import { Button } from "../../../components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface NavigationProps {
-  navItems: string[];
+  navItems: { label: string; href: string }[];
+  colorClass?: string;
 }
 
 const LoadingSpinner = () => (
   <div className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-[#162694] border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" />
 );
 
-export const Navigation: React.FC<NavigationProps> = ({ navItems }) => {
+export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass = "text-white" }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [loadingItem, setLoadingItem] = useState<string | null>(null);
+  const pathname = usePathname();
 
-  const handleClick = (item: string) => {
-    if (item.toLowerCase() === 'features') {
-      setLoadingItem(item);
-      // Reset loading state after 2 seconds if navigation hasn't completed
+  const handleClick = (item: { label: string; href: string }) => {
+    if (item.label.toLowerCase() === 'features') {
+      setLoadingItem(item.label);
       setTimeout(() => setLoadingItem(null), 2000);
     }
   };
@@ -37,15 +39,17 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems }) => {
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex items-center gap-6">
             {navItems.map((item, index) => (
-              <li key={index}>
+              <li key={index} onClick={() => handleClick(item)} className="relative">
                 <Link
-                  href={item.toLowerCase() === 'features' ? '/features' : '#'}
-                  className="font-medium text-slate-500 text-[15px] p-0 h-auto flex items-center gap-2 hover:text-[#162694] transition-colors"
-                  onClick={() => handleClick(item)}
+                  href={item.href || "#"}
+                  className={`font-medium ${colorClass} text-[15px] p-0 h-auto flex items-center gap-2 hover:text-[#a9a7a7] transition-colors`}
                 >
-                  {item}
-                  {loadingItem === item && <LoadingSpinner />}
+                  {item.label}
+                  {loadingItem === item.label && <LoadingSpinner />}
                 </Link>
+                {pathname === item.href && (
+                  <span className="absolute left-0 right-0 -bottom-2 h-1 bg-[#f72aa4] rounded" />
+                )}
               </li>
             ))}
           </ul>
@@ -74,19 +78,22 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems }) => {
                 <Button
                   key={index}
                   variant="ghost"
-                  className="justify-start font-medium text-slate-500"
+                  className={`justify-start font-medium ${colorClass}`}
                   onClick={() => {
                     setIsMenuOpen(false);
                     handleClick(item);
                   }}
                 >
                   <Link
-                    href={item.toLowerCase() === 'features' ? '/ehr' : '#'}
-                    className="flex items-center gap-2"
+                    href={item.href}
+                    className={`flex items-center gap-2 ${colorClass} hover:text-[#a9a7a7]`}
                   >
-                    {item}
-                    {loadingItem === item && <LoadingSpinner />}
+                    {item.label}
+                    {loadingItem === item.label && <LoadingSpinner />}
                   </Link>
+                  {pathname === item.href && (
+                    <span className="block w-full h-1 mt-1 bg-[#f72aa4] rounded" />
+                  )}
                 </Button>
               ))}
               <Button className="mt-4 bg-[#162694] text-white font-semibold">
