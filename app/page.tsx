@@ -268,6 +268,7 @@ export default function Home() {
                   </div>
 
                   {/* Subjective box on the right */}
+<<<<<<< HEAD
 
                   <div className="bg-gradient-to-br from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
                     <div className="bg-white rounded-[10px] p-4 mb-4">
@@ -303,6 +304,42 @@ export default function Home() {
                       </Button>
                     </div>
                   </div>
+=======
+                  <div className="bg-gradient-to-br min-w-[460px] from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
+                                      <div className="bg-white rounded-[10px] p-4 mb-4">
+                                        <div className="flex justify-between items-center mb-4">
+                                          <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">
+                                            Subjective
+                                          </span>
+                                          <span className="[font-family:'Inter',Helvetica] font-normal text-black text-xs">
+                                            Personalized
+                                          </span>
+                                        </div>
+                                        
+                                        <div className="space-y-2">
+                                          <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+                                          <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
+                                          <div className="w-4/5 h-[7px] bg-[#d9d9d9] rounded"></div>
+                                          <div className="w-3/4 h-[7px] bg-[#d9d9d9] rounded"></div>
+                                          <div className="w-1/2 h-[7px] bg-[#d9d9d9] rounded"></div>
+                                          <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+                                        </div>
+                                      </div>
+                  
+                                      <div className="flex justify-end">
+                                        <Button className="bg-[#162694] rounded-[5px] px-3 py-1 flex items-center gap-2">
+                                          <img
+                                            className="w-3.5 h-[19px]"
+                                            alt="Copy"
+                                            src="/speciality/noun-copy-7891669-1.svg"
+                                          />
+                                          <span className="[font-family:'Geist',Helvetica] font-normal text-white text-[13px] leading-[16.6px]">
+                                            Copy
+                                          </span>
+                                        </Button>
+                                      </div>
+                                    </div>
+>>>>>>> 8061719ec39cf71daa99296e4a2181e607fe63cf
                 </div>
               </CardContent>
             </Card>
