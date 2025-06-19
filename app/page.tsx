@@ -67,7 +67,7 @@ const featureCards = [
   },
   {
     title: "Personalized",
-    description: "Twofold learns your style of writing and improves over time.",
+    description: "Intelidoc learns your style of writing and improves over time.",
     icon1: "/home-images/vector-3.svg",
     icon2: "/home-images/vector-4.svg",
   },
@@ -78,7 +78,7 @@ const securityFeatures = [
   {
     title: "HIPAA and HITECH Compliance",
     description:
-      "Twofold is dedicated to maintaining full compliance with HIPAA and HITECH regulations. Our policies and procedures are designed to meet and exceed these standards, ensuring the protection of all data.",
+      "Intelidoc is dedicated to maintaining full compliance with HIPAA and HITECH regulations. Our policies and procedures are designed to meet and exceed these standards, ensuring the protection of all data.",
   },
   {
     title: "Recordings Are Never Stored",
@@ -88,7 +88,7 @@ const securityFeatures = [
   {
     title: "Rigorous Data Protection",
     description:
-      "At Twofold, we prioritize the security and confidentiality of patient and clinician data through stringent adherence to HIPAA and HITECH protocols. All data within our ecosystem is encrypted both at rest and in transit, ensuring the highest standards of protection.",
+      "At Intelidoc, we prioritize the security and confidentiality of patient and clinician data through stringent adherence to HIPAA and HITECH protocols. All data within our ecosystem is encrypted both at rest and in transit, ensuring the highest standards of protection.",
   },
   {
     title: "Comprehensive Security Measures",
@@ -103,7 +103,7 @@ const securityFeatures = [
   {
     title: "Reliable Cloud Hosting",
     description:
-      "Twofold leverages Microsoft Azure's secure, compliant data centers and holds a formal HIPAA Business Associate Agreement with Microsoft. This ensures data integrity and constant availability.",
+      "Intelidoc leverages Microsoft Azure's secure, compliant data centers and holds a formal HIPAA Business Associate Agreement with Microsoft. This ensures data integrity and constant availability.",
   },
 ];
 

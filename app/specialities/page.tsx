@@ -474,7 +474,7 @@ export default function Specialties() {
 
         {/* Call to Action Section */}
         <section className="w-full mt-16 flex flex-col items-center justify-center py-12 md:py-16 px-4">
-          <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-[#162694] text-3xl md:text-4xl lg:text-5xl text-center tracking-[0] leading-tight mb-12">
+          <h2 className="font-playfair font-semibold text-[#162694] text-3xl md:text-4xl lg:text-5xl text-center tracking-[0] leading-tight mb-12">
             Set yourself free for
             <br /> better things.
           </h2>
@@ -492,18 +492,6 @@ export default function Specialties() {
 
         {/* Security & Legal Section */}
         <section className="w-full mt-16">
-          <div className="px-4 md:px-[87px]">
-            <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-[#162694] text-2xl md:text-3xl tracking-[0] leading-normal">
-              Security & Legal
-            </h2>
-
-            <p className="[font-family:'Gantari',Helvetica] font-normal text-[#626262] text-lg md:text-xl tracking-[0] leading-normal mt-4 max-w-[1004px]">
-              Our technology is HIPAA-compliant, uses industry best practices,
-              and doesn&#39;t store patient recordings.
-            </p>
-          </div>
-
-          <Separator className="my-8" />
 
           {/* Footer */}
           <footer className="w-full bg-white py-12">
