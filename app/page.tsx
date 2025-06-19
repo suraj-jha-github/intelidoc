@@ -202,7 +202,7 @@ const navItems = [
   { label: "Contact Us", href: "/contact" },
 ];
 
-export default function Home () {
+export default function Home() {
   const [sliderRef] = useKeenSlider({
     loop: true,
     slides: {
@@ -258,7 +258,7 @@ export default function Home () {
                   </h3>
                 </div>
                 <Separator className="mb-6" />
-                
+
                 <div className="flex justify-between items-start gap-4">
                   {/* Patient text on the left */}
                   <div className="text-left">
@@ -266,20 +266,41 @@ export default function Home () {
                       Patient
                     </span>
                   </div>
-                  
+
                   {/* Subjective box on the right */}
-                  <div className="bg-gradient-to-br from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4">
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">Subjective</span>
-                      <span className="[font-family:'Inter',Helvetica] font-normal text-black text-xs">Personalized</span>
+
+                  <div className="bg-gradient-to-br from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
+                    <div className="bg-white rounded-[10px] p-4 mb-4">
+                      <div className="flex  items-center mb-4">
+                        <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">
+                          Subjective
+                        </span>
+                        <span className="[font-family:'Inter',Helvetica] font-normal text-black text-xs">
+                          Personalized
+                        </span>
+                      </div>
+
+                      <div className="space-y-2">
+                        <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+                        <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
+                        <div className="w-4/5 h-[7px] bg-[#d9d9d9] rounded"></div>
+                        <div className="w-3/4 h-[7px] bg-[#d9d9d9] rounded"></div>
+                        <div className="w-1/2 h-[7px] bg-[#d9d9d9] rounded"></div>
+                        <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+                      </div>
                     </div>
-                    <div className="space-y-2">
-                      <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
-                      <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
-                      <div className="w-4/5 h-[7px] bg-[#d9d9d9] rounded"></div>
-                      <div className="w-3/4 h-[7px] bg-[#d9d9d9] rounded"></div>
-                      <div className="w-1/2 h-[7px] bg-[#d9d9d9] rounded"></div>
-                      <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+
+                    <div className="flex justify-end">
+                      <Button className="bg-[#162694] rounded-[5px] px-3 py-1 flex items-center gap-2">
+                        <img
+                          className="w-3.5 h-[19px]"
+                          alt="Copy"
+                          src="/speciality/noun-copy-7891669-1.svg"
+                        />
+                        <span className="[font-family:'Geist',Helvetica] font-normal text-white text-[13px] leading-[16.6px]">
+                          Copy
+                        </span>
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -311,18 +332,18 @@ export default function Home () {
 
             {/* Background Design */}
             <div className="hidden lg:block absolute right-[-250px] top-1/2 -translate-y-1/2 w-[710px] h-[553px] pointer-events-none z-0">
-                <div className="absolute w-[50px] h-[50px] top-[113px] left-[203px] bg-[#f7d8e5] rounded-[25px]" />
-                <Image
-                  className="absolute w-[373px] h-[423px] top-0 left-[165px]"
-                  alt="Vector"
-                  src="/home-images/vector-1.svg"  width={50} height={50}
-                />
-                <Image
-                  className="absolute w-[341px] h-[330px] top-5 left-[198px]"
-                  alt="Vector"
-                  src="/home-images/vector-2.svg"  width={50} height={50}
-                />
-                      </div>
+              <div className="absolute w-[50px] h-[50px] top-[113px] left-[203px] bg-[#f7d8e5] rounded-[25px]" />
+              <Image
+                className="absolute w-[373px] h-[423px] top-0 left-[165px]"
+                alt="Vector"
+                src="/home-images/vector-1.svg" width={50} height={50}
+              />
+              <Image
+                className="absolute w-[341px] h-[330px] top-5 left-[198px]"
+                alt="Vector"
+                src="/home-images/vector-2.svg" width={50} height={50}
+              />
+            </div>
 
             {/* Carousel */}
             <div className="relative z-10">
@@ -332,18 +353,18 @@ export default function Home () {
                     <Card className="w-[340px] h-[330px] border border-solid border-[#a9a9a9] rounded-[10px] bg-white">
                       <CardContent className="pt-6 px-6 pb-6">
                         <div className="font-gantari text-black text-lg sm:text-xl lg:text-2xl">
-                        <span className="font-semibold">
-                          {testimonial.specialty}
-                          <br />
-                        </span>
-                        <span>
-                          {testimonial.name}
-                          <br />
-                        </span>
+                          <span className="font-semibold">
+                            {testimonial.specialty}
+                            <br />
+                          </span>
+                          <span>
+                            {testimonial.name}
+                            <br />
+                          </span>
                           <span className="text-base sm:text-lg lg:text-xl">{testimonial.content}</span>
-                      </div>
-                    </CardContent>
-                  </Card>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
                 ))}
               </div>
@@ -352,45 +373,45 @@ export default function Home () {
         </section>
 
         {/* Features Section */}
-        
+
 
         {/* How It Works Section */}
         <section className="px-3 sm:px-7 lg:px-0">
           <div className="flex flex-col lg:flex-row max-w-9xl ">
-            
+
             {/* Process Visualization - Simplified for mobile */}
             <div className="w-full lg:w-[523px] mb-8 lg:mb-0 lg:ml-[89px] relative">
               {/* Grid background */}
-              
+
 
               {/* Dotted connector lines for desktop only */}
               <svg
-  className="hidden lg:block absolute z-30 pointer-events-none"
-  width="600"
-  height="700"
-  style={{ left: 0, top: 0 }}
->
-  <polyline
-    points="80,185, 80,255, 150,255"
-    fill="none"
-    stroke="#222"
-    strokeWidth="2"
-    strokeDasharray="4,6"
-  />
-  
-  <polyline
-    points="365,320, 440,320, 440,410"
-    fill="none"
-    stroke="#222"
-    strokeWidth="2"
-    strokeDasharray="4,6"
-  />
- 
-  <circle cx="80" cy="185" r="4" fill="#222" />
-  <circle cx="150" cy="255" r="4" fill="#222" />
-  <circle cx="365" cy="320" r="4" fill="#222" />
-  <circle cx="440" cy="410" r="4" fill="#222" />
-</svg>
+                className="hidden lg:block absolute z-30 pointer-events-none"
+                width="600"
+                height="700"
+                style={{ left: 0, top: 0 }}
+              >
+                <polyline
+                  points="80,185, 80,255, 150,255"
+                  fill="none"
+                  stroke="#222"
+                  strokeWidth="2"
+                  strokeDasharray="4,6"
+                />
+
+                <polyline
+                  points="365,320, 440,320, 440,410"
+                  fill="none"
+                  stroke="#222"
+                  strokeWidth="2"
+                  strokeDasharray="4,6"
+                />
+
+                <circle cx="80" cy="185" r="4" fill="#222" />
+                <circle cx="150" cy="255" r="4" fill="#222" />
+                <circle cx="365" cy="320" r="4" fill="#222" />
+                <circle cx="440" cy="410" r="4" fill="#222" />
+              </svg>
               <div className="bg-[#e6e8f6] rounded-[10px] p-4 sm:p-6 lg:p-8 h-auto lg:h-[619px] relative z-20">
                 {/* Mobile/Tablet simplified steps */}
                 <div className="block lg:hidden space-y-6">
@@ -444,7 +465,7 @@ export default function Home () {
                       borderRadius: '0 0 20px 20px',
                     }}
                   />
-                  
+
                 </div>
 
                 {/* Desktop complex visualization */}
@@ -455,25 +476,25 @@ export default function Home () {
                       <span className="font-light">Start </span>
                     </div>
                     <div className="flex justify-center">
-                <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
-                  {/* Browser header */}
-                  <div className="w-full h-5 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-t-lg flex items-center px-3 gap-1.5">
-                    <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                  </div>
-                  
-                  {/* Microphone icon */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2">
-                    <div className="w-8 h-8 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-full flex items-center justify-center">
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
-                        <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
-                      </svg>
+                      <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
+                        {/* Browser header */}
+                        <div className="w-full h-5 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-t-lg flex items-center px-3 gap-1.5">
+                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                        </div>
+
+                        {/* Microphone icon */}
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2">
+                          <div className="w-8 h-8 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
+                              <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                  </div>
                   </div>
 
                   <div className="absolute w-[221px] h-[145px] top-[217px] left-[146px] bg-[#fdf8ed] rounded-[10px] p-4">
@@ -497,23 +518,23 @@ export default function Home () {
                       <span className="font-semibold">03. </span>
                       <span className="font-light">Clinical note</span>
                     </div>
-                   <div className="flex justify-center">
-                <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
-                  {/* Browser header */}
-                  <div className="w-full h-5 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-t-lg flex items-center px-3 gap-1.5">
-                    <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                  </div>
-                  
-                  {/* End Meeting button */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2">
-                    <button className="px-3 py-1 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] text-white text-[13px] rounded-md hover:opacity-90 transition-opacity whitespace-nowrap">
-                      End Meeting
-                    </button>
-                  </div>
-                </div>
-                  </div>
+                    <div className="flex justify-center">
+                      <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
+                        {/* Browser header */}
+                        <div className="w-full h-5 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-t-lg flex items-center px-3 gap-1.5">
+                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                        </div>
+
+                        {/* End Meeting button */}
+                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2">
+                          <button className="px-3 py-1 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] text-white text-[13px] rounded-md hover:opacity-90 transition-opacity whitespace-nowrap">
+                            End Meeting
+                          </button>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -521,21 +542,21 @@ export default function Home () {
 
             {/* Steps Description */}
             <div className="w-full lg:w-[523px] lg:ml-10 flex flex-col justify-between h-full">
-              
+
               {/* Title at the top */}
               <h2 className="text-left font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[47px] mb-8 lg:mb-12">
                 Super simple.
               </h2>
-              
+
               {/* Content in the middle */}
               <div className="flex-1 space-y-4 lg:space-y-6">
                 <div>
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px] mb-3">
                     01. Start Visit
                   </h3>
-                  
+
                   <p className="font-gantari mb-3 font-light text-[#5e5d5d] text-lg sm:text-xl">
-                  Begin your consultation by clicking the "Capture conversation" button to start recording the session.
+                    Begin your consultation by clicking the "Capture conversation" button to start recording the session.
                   </p>
                   <Separator className="my-4 w-full mt-8 lg:w-[519px]" />
                 </div>
@@ -544,9 +565,9 @@ export default function Home () {
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
                     02. Capturing
                   </h3>
-                 
+
                   <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
-                  The system automatically captures and records the conversation in real-time with high accuracy.
+                    The system automatically captures and records the conversation in real-time with high accuracy.
                   </p>
                   <Separator className="my-4 w-full mt-8 lg:w-[519px]" />
                 </div>
@@ -555,14 +576,14 @@ export default function Home () {
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
                     03. Clinical note
                   </h3>
-                 
+
                   <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
-                  Get your personalized clinical note ready to copy and paste directly into your EHR system.
+                    Get your personalized clinical note ready to copy and paste directly into your EHR system.
                   </p>
-                   {/* <Separator className="my-4 w-full lg:w-[519px]" /> */}
+                  {/* <Separator className="my-4 w-full lg:w-[519px]" /> */}
                 </div>
               </div>
-              
+
               {/* Button at the bottom */}
               <div className="mt-[40px] lg:mt-[40px]">
                 <Button className="w-full sm:w-auto sm:min-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold">
@@ -571,10 +592,10 @@ export default function Home () {
                 </Button>
               </div>
             </div>
-            
+
           </div>
-         
-        
+
+
         </section>
 
         {/* Alternative Options Section */}
@@ -597,10 +618,10 @@ export default function Home () {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mt-8 sm:mt-12 lg:mt-16">
               <Card className="relative w-full max-w-[521px] bg-white rounded-[20px] border border-solid border-[#a9a9a9] overflow-visible mx-auto lg:mx-0 p-0">
-              <div className="w-full h-13 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
-                <span className="text-white font-medium font-large font-playfair text-[32px]">Dictate a summary</span>
-              </div>
-              
+                <div className="w-full h-13 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
+                  <span className="text-white font-medium font-large font-playfair text-[32px]">Dictate a summary</span>
+                </div>
+
                 <CardContent className="pt-2 sm:pt-4 lg:pt-2 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col items-center">
                   <div className="flex justify-center mb-2 sm:mb-3">
                     <Image
@@ -615,17 +636,17 @@ export default function Home () {
                     Simply provide a quick recap of the session in natural language and we'll create the full note, in your writing style
                   </p>
                   {/* Grid background at the bottom */}
-                 
+
                 </CardContent>
               </Card>
 
               <Card className="w-full max-w-[521px] bg-white rounded-[20px] border border-solid border-[#a9a9a9] overflow-visible mx-auto lg:mx-0 p-0">
-              <div className="w-full h-13 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
-                <span className="text-white font-medium font-large font-playfair text-[32px]">Upload your Recordings</span>
-              </div>
-               
+                <div className="w-full h-13 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
+                  <span className="text-white font-medium font-large font-playfair text-[32px]">Upload your Recordings</span>
+                </div>
+
                 <CardContent className="pt-2 sm:pt-4 lg:pt-2 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col items-center">
-               
+
                   <div className="flex justify-center mb-2 sm:mb-3">
                     <Image
                       className="w-24 h-28 sm:w-[130px] sm:h-[150px]"
@@ -733,7 +754,7 @@ export default function Home () {
                         <Image
                           className="w-6 h-7 sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
                           alt="Noun question"
-                          src="/home-images/noun-question-7004840-5.svg"  width={50} height={50}  
+                          src="/home-images/noun-question-7004840-5.svg" width={50} height={50}
                         />
                         <span className="font-['Gantari',Helvetica] font-semibold text-white text-sm sm:text-base">
                           {item.question}
