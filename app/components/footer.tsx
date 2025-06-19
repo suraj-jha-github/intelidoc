@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
     <section className="w-full mt-16">
       
 
-      <Separator className="my-8" />
+      {/* <Separator className="my-8" /> */}
 
       <footer className="w-full bg-white py-12">
         <div className="max-w-[1280px] mx-auto px-4 md:px-[78px]">
@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
             </div>
 
             <div className="text-center md:text-left">
-              <h3 className="font-geist font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-6">
+              <h3 className="font-geist font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-12">
                 Resources
               </h3>
               <ul className="space-y-4">
@@ -50,7 +50,7 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
             </div>
 
             <div className="text-center md:text-left">
-              <h3 className="font-geist font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-6">
+              <h3 className="font-geist font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-12">
                 Specialties
               </h3>
               <ul className="space-y-4">
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
             </div>
 
             <div className="text-center md:text-left">
-              <h3 className="font-geist font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-6">
+              <h3 className="font-geist font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-12">
                 Legal
               </h3>
               <ul className="space-y-4">
