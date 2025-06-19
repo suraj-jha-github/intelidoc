@@ -189,7 +189,7 @@ export default function Specialties() {
                           Personalized
                         </span>
                       </div>
-                      
+
                       <div className="space-y-2">
                         <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
                         <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
@@ -227,22 +227,95 @@ export default function Specialties() {
 
         {/* Specialties Section */}
         <section className="mt-16 md:mt-[100px] px-4 md:px-[90px]">
-          <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-[#132180] text-3xl md:text-4xl lg:text-[50px] tracking-[0] leading-tight md:leading-[64px] mb-8 text-center md:text-left">
-            Our Specialties
-          </h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {specialties.map((specialty, index) => (
+            <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-[#132180] text-3xl md:text-4xl lg:text-[50px] tracking-[0] leading-tight md:leading-[64px] mb-8 text-center md:text-left">
+              Our Specifities
+            </h2>
+
+            {/* First Row */}
+            <div className="bg-cover bg-center rounded-lg flex items-center justify-center col-span-1 h-[201px] min-h-[150px] relative overflow-hidden">
               <div
-                key={index}
-                className={`bg-cover bg-center rounded-lg flex items-center justify-center ${specialty.className} min-h-[150px]`}
-                style={{ backgroundImage: `url(${specialty.image})` }}
-              >
-                <h3 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4">
-                  {specialty.name}
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${specialties[0].image})`,
+                  filter: 'blur(1px)'
+                }}
+              />
+              <h3 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4 relative z-10">
+                {specialties[0].name}
+              </h3>
+            </div>
+
+            <div className="bg-cover bg-center rounded-lg flex items-center justify-center col-span-1 h-[201px] min-h-[150px] relative overflow-hidden">
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${specialties[1].image})`,
+                  filter: 'blur(1px)'
+                }}
+              />
+              <h3 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4 relative z-10">
+                {specialties[1].name}
+              </h3>
+            </div>
+
+            <div className="bg-cover bg-center rounded-lg flex items-center justify-center col-span-1 h-[333px] min-h-[150px] relative overflow-hidden">
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${specialties[2].image})`,
+                  filter: 'blur(1px)'
+                }}
+              />
+              <h3 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4 relative z-10">
+                {specialties[2].name}
+              </h3>
+            </div>
+
+            {/* Second Row */}
+            <div className="bg-cover bg-center rounded-lg flex items-center justify-center col-span-1 h-[333px] min-h-[150px] relative overflow-hidden">
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                  backgroundImage: `url(${specialties[3].image})`,
+                  filter: 'blur(1px)'
+                }}
+              />
+              <h3 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4 relative z-10">
+                {specialties[3].name}
+              </h3>
+            </div>
+
+            {/* Third column divided into two parts */}
+            <div className="col-span-1 flex flex-col gap-4">
+              {/* Mental Health - Top */}
+              <div className="bg-cover bg-center rounded-lg flex items-center justify-center h-[147px] min-h-[150px] relative overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${specialties[4].image})`,
+                    filter: 'blur(1px)'
+                  }}
+                />
+                <h3 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4 relative z-10">
+                  {specialties[4].name}
                 </h3>
               </div>
-            ))}
+
+              {/* Other Specialties - Bottom */}
+              <div className="bg-cover bg-center rounded-lg flex items-center justify-center h-[152px] min-h-[150px] relative overflow-hidden">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: `url(${specialties[5].image})`,
+                    filter: 'blur(1px)'
+                  }}
+                />
+                <h3 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4 relative z-10">
+                  {specialties[5].name}
+                </h3>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -250,58 +323,60 @@ export default function Specialties() {
         <section className="relative w-full mt-16 min-h-[600px] md:min-h-[754px]">
           <div className="w-full min-h-[400px] md:min-h-[505px] [background:radial-gradient(50%_50%_at_4%_0%,rgba(1,18,39,1)_5%,rgba(14,25,99,1)_45%,rgba(15,38,127,1)_78%,rgba(1,18,39,1)_99%)] px-4 md:px-[90px] py-12 md:py-16">
             <div className="text-center mb-8">
-              <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-white text-3xl md:text-4xl lg:text-5xl tracking-[0] leading-normal mb-4">
+
+              <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-white text-3xl md:text-4xl lg:text-5xl tracking-[0] leading-normal mb-2">
                 Your trusted AI scribe
               </h2>
 
-              <p className="[font-family:'Gantari',Helvetica] font-normal text-white text-lg md:text-xl lg:text-2xl tracking-[0] leading-normal">
+              <p className="[font-family:'Gantari',Helvetica] font-normal text-white text-lg md:text-xl lg:text-2xl tracking-[0] leading-normal mb-[20px]">
                 Clinical precision without the documentation stress
               </p>
+
+              <div className="relative">
+                {/* Decorative Elements - Background */}
+                <div className="hidden lg:block absolute inset-0">
+                  <div className="absolute w-[50px] h-[50px] bg-[#f7d8e5] rounded-[25px] top-0 right-0" />
+                  <div className="absolute w-[26px] h-[26px] bg-[#fdecf3] rounded-[13px] top-8 right-16" />
+
+                  <img
+                    className="absolute top-0 right-0 w-full max-w-[373px] h-auto"
+                    alt="Vector"
+                    src="/speciality/vector-1.svg"
+                  />
+
+                  <img
+                    className="absolute top-0 right-0 w-full max-w-[341px] h-auto"
+                    alt="Vector"
+                    src="/speciality/vector-2.svg"
+                  />
+                </div>
+
+                {/* Feature Cards - Foreground */}
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                  {features.map((feature, index) => (
+                    <Card
+                      key={index}
+                      className="w-full bg-[#fff9f9] rounded-[10px] p-5 min-h-[200px]"
+                    >
+                      <CardContent className="p-0">
+                        <img
+                          className="w-16 h-16 mb-6"
+                          alt={feature.title}
+                          src={feature.icon}
+                        />
+                        <h3 className="[font-family:'Playfair',Helvetica] font-normal text-black text-xl md:text-2xl tracking-[0] leading-normal mb-4">
+                          {feature.title}
+                        </h3>
+                        <p className="[font-family:'Gantari',Helvetica] font-medium text-[#7b7979] text-base md:text-lg tracking-[0] leading-normal">
+                          {feature.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center gap-8">
-              {/* Feature Cards */}
-              <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 max-w-4xl">
-                {features.map((feature, index) => (
-                  <Card
-                    key={index}
-                    className="w-full bg-[#fff9f9] rounded-[10px] p-6"
-                  >
-                    <CardContent className="p-0">
-                      <img
-                        className="w-11 h-[52px] mb-4"
-                        alt={feature.title}
-                        src={feature.icon}
-                      />
-                      <h3 className="[font-family:'Playfair',Helvetica] font-normal text-black text-lg md:text-xl tracking-[0] leading-normal mb-2">
-                        {feature.title}
-                      </h3>
-                      <p className="[font-family:'Gantari',Helvetica] font-medium text-[#7b7979] text-sm md:text-[13px] tracking-[0] leading-normal">
-                        {feature.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              {/* Decorative Elements */}
-              <div className="hidden lg:block flex-1 relative">
-                <div className="absolute w-[50px] h-[50px] bg-[#f7d8e5] rounded-[25px] top-0 right-0" />
-                <div className="absolute w-[26px] h-[26px] bg-[#fdecf3] rounded-[13px] top-8 right-16" />
-                
-                <img
-                  className="w-full max-w-[373px] h-auto"
-                  alt="Vector"
-                  src="/speciality/vector-1.svg"
-                />
-                
-                <img
-                  className="absolute top-8 left-8 w-full max-w-[341px] h-auto"
-                  alt="Vector"
-                  src="/speciality/vector-2.svg"
-                />
-              </div>
-            </div>
           </div>
 
           {/* Stats Section */}
@@ -310,7 +385,7 @@ export default function Specialties() {
               {stats.map((stat, index) => (
                 <React.Fragment key={index}>
                   <div className="flex items-center gap-6 text-center md:text-left">
-                    <div className="w-[70px] h-[70px] rounded-[35px] flex items-center justify-center flex-shrink-0">
+                    <div className="w-[70px] h-[70px] rounded-[35px] flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-[#13217f] via-[#0c1235] to-[#4b527c]">
                       <img
                         className="w-10 h-10 object-cover"
                         alt={stat.description}
@@ -327,10 +402,7 @@ export default function Specialties() {
                     </div>
                   </div>
                   {index < stats.length - 1 && (
-                    <Separator
-                      orientation="vertical"
-                      className="hidden md:block h-[163px]"
-                    />
+                    <div className="w-[2px] h-[163px] bg-gray-400 mx-4"></div>
                   )}
                 </React.Fragment>
               ))}
@@ -352,9 +424,9 @@ export default function Specialties() {
 
           <Button
             variant="outline"
-            className="w-full max-w-[180px] h-[51px] bg-white border-[0.5px] border-solid border-[#162694] rounded-[5px]"
+            className="w-full max-w-[180px] h-[51px] bg-white border-[0.5px] border-solid border-[#162694] rounded-[5px] hover:bg-gradient-to-r hover:from-[#13217f] hover:via-[#0c1235] hover:to-[#4b527c] transition-all duration-300"
           >
-            <span className="[-webkit-text-stroke:1px_#ffffff] [font-family:'Geist',Helvetica] font-semibold text-[#162694] text-lg md:text-xl text-center tracking-[0] leading-[25.6px]">
+            <span className="[font-family:'Geist',Helvetica] font-semibold text-[#162694] text-lg md:text-xl text-center tracking-[0] leading-[25.6px] hover:text-white transition-colors duration-300">
               Learn More
             </span>
           </Button>

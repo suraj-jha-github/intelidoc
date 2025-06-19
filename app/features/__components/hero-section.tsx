@@ -10,23 +10,23 @@ export const HeroSection: React.FC = () => {
 
       <div className="relative z-10 flex flex-col items-center max-w-6xl mx-auto">
         <div className="relative text-center">
-          <div className="w-full max-w-[678px] h-auto bg-gradient-to-r from-[rgba(223,221,250,1)] to-[rgba(252,214,230,1)] p-2 md:p-4 rounded-lg md:rounded-none">
-            <h2 className=" font-playfair bg-gradient-to-r from-[rgba(22,38,148,1)] to-[rgba(153,166,255,1)] bg-clip-text text-transparent font-semibold text-3xl md:text-5xl lg:text-[83px] leading-[1.1] md:leading-[1.1] pb-4">
+          <div >
+            <h2 className="font-playfair font-semibold text-[#162694] text-3xl md:text-5xl lg:text-[83px] leading-tight md:leading-[92.1px] mt-2 md:mt-4 text-center">
               Seamless Interoperability
             </h2>
           </div>
         </div>
 
-        <div className="w-16 md:w-[84px] h-1 md:h-[5px] bg-[#f72aa4] mx-auto mt-2 md:mt-4" />
+        {/* <div className="w-16 md:w-[84px] h-1 md:h-[5px] bg-[#f72aa4] mx-auto mt-2 md:mt-4" /> */}
+        <div className="w-full max-w-[800px] h-auto bg-gradient-to-r from-[rgba(223,221,250,1)] to-[rgba(252,214,230,1)] p-2 md:p-4 rounded-lg md:rounded-none mt-[20px]">
+          <h3 className=" font-playfair bg-gradient-to-r from-[rgba(22,38,148,1)] to-[rgba(153,166,255,1)] bg-clip-text text-transparent font-semibold text-3xl md:text-5xl lg:text-[83px] leading-[1.1] md:leading-[1.1] pb-4">
+            with Clinical Systems
+          </h3>
+        </div>
 
-        <h3 className="font-playfair font-semibold text-[#162694] text-3xl md:text-5xl lg:text-[83px] leading-tight md:leading-[92.1px] mt-2 md:mt-4 text-center">
-          with Clinical Systems
-        </h3>
 
-        <p className="font-gantari text-[#676767] text-lg md:text-xl lg:text-2xl text-center max-w-[797px] mt-6 md:mt-12 px-4">
-          InteliDoc and your EHR can work together like your favorite care
-          team. Simple setup, instant results, and options for organizations
-          of any size.
+        <p className="font-gantari text-[#676767] text-lg md:text-xl lg:text-xl text-center max-w-[900px] mt-6 md:mt-12 px-4">
+          InteliDoc integrates seamlessly with your EHR to unify scheduling, e-prescribing, lab results, billing, and analytics—automating workflows, reducing errors, and boosting practice efficiency from day one.
         </p>
       </div>
     </section>

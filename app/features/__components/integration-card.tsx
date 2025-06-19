@@ -24,7 +24,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
   const renderIcon = () => {
     if (option.type === "Chrome extension") {
       return (
-        <div className="w-12 h-16 md:w-16 md:h-20 relative">
+        <div className="w-13 h-16 md:w-16 md:h-20 relative max-w-full">
           <div className="relative w-[35px] h-[45px] md:w-[45px] md:h-[58px] top-[3px] left-2.5">
             <img
               className="absolute w-[20px] h-2 md:w-[25px] md:h-2.5 top-[25px] md:top-[35px] left-4 md:left-5 filter-blue"
@@ -45,16 +45,15 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
         </div>
       );
     }
-    
+
     return (
       <img
-        className={`w-12 h-16 md:w-16 md:h-20 ${
-          option.type === "Direct integration" 
-            ? "md:w-[88px] md:h-[110px]" 
-            : option.type === "Custom" 
-            ? "md:w-[70px] md:h-[85px]" 
+        className={`w-12 h-16 md:w-16 md:h-20 ${option.type === "Direct integration"
+          ? "md:w-[88px] md:h-[110px]"
+          : option.type === "Custom"
+            ? "md:w-[70px] md:h-[85px]"
             : ""
-        } filter-blue`}
+          } filter-blue`}
         alt={option.type}
         src={option.icon}
       />
@@ -79,7 +78,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
               className="w-full h-[34px] rounded-[5px] border-2 border-blue-800 text-blue-800 text-lg md:text-xl font-medium transition-colors bg-[#fff]"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              style={isHovered ? { background: option.gradient,color:'#fff' } : {}}
+              style={isHovered ? { background: option.gradient, color: '#fff' } : {}}
             >
               {option.action}
             </Button>

@@ -268,11 +268,12 @@ export default function Home() {
                   </div>
 
                   {/* Subjective box on the right */}
-<<<<<<< HEAD
 
-                  <div className="bg-gradient-to-br from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
+
+
+                  <div className="bg-gradient-to-br min-w-[460px] from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
                     <div className="bg-white rounded-[10px] p-4 mb-4">
-                      <div className="flex  items-center mb-4">
+                      <div className="flex justify-between items-center mb-4">
                         <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">
                           Subjective
                         </span>
@@ -304,42 +305,7 @@ export default function Home() {
                       </Button>
                     </div>
                   </div>
-=======
-                  <div className="bg-gradient-to-br min-w-[460px] from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
-                                      <div className="bg-white rounded-[10px] p-4 mb-4">
-                                        <div className="flex justify-between items-center mb-4">
-                                          <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">
-                                            Subjective
-                                          </span>
-                                          <span className="[font-family:'Inter',Helvetica] font-normal text-black text-xs">
-                                            Personalized
-                                          </span>
-                                        </div>
-                                        
-                                        <div className="space-y-2">
-                                          <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
-                                          <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
-                                          <div className="w-4/5 h-[7px] bg-[#d9d9d9] rounded"></div>
-                                          <div className="w-3/4 h-[7px] bg-[#d9d9d9] rounded"></div>
-                                          <div className="w-1/2 h-[7px] bg-[#d9d9d9] rounded"></div>
-                                          <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
-                                        </div>
-                                      </div>
-                  
-                                      <div className="flex justify-end">
-                                        <Button className="bg-[#162694] rounded-[5px] px-3 py-1 flex items-center gap-2">
-                                          <img
-                                            className="w-3.5 h-[19px]"
-                                            alt="Copy"
-                                            src="/speciality/noun-copy-7891669-1.svg"
-                                          />
-                                          <span className="[font-family:'Geist',Helvetica] font-normal text-white text-[13px] leading-[16.6px]">
-                                            Copy
-                                          </span>
-                                        </Button>
-                                      </div>
-                                    </div>
->>>>>>> 8061719ec39cf71daa99296e4a2181e607fe63cf
+
                 </div>
               </CardContent>
             </Card>
@@ -361,7 +327,7 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section className="mt-8 sm:mt-12 lg:mt-14 pt-8 sm:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-8 lg:px-0">
-          <div className="relative w-full max-w-7xl mx-auto">
+          <div className="relative w-full max-w-7xl mx-[47px]">
             <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight lg:ml-[30px] pl-[2px] text-center lg:text-left">
               Trusted and loved by<br className="hidden sm:block" />
               therapists, doctors, and nurses.
@@ -636,7 +602,7 @@ export default function Home() {
         </section>
 
         {/* Alternative Options Section */}
-        <section className="relative mt-12 sm:mt-16 pt-12 sm:pt-16 pb-3.5 sm:pb-3.5">
+        <section className="relative mt-12 sm:mt-16 pt-12 sm:pt-16 pb-3.5 sm:pb-3.5 ">
           {/* Background Effects */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute w-[300px] sm:w-[400px] lg:w-[494px] h-[300px] sm:w-[400px] lg:h-[567px] top-[50px] sm:top-[70px] lg:top-[93px] -left-[100px] sm:-left-[50px] lg:left-0 rounded-full blur-[30px] sm:blur-[40px] lg:blur-[50px] bg-gradient-to-br from-[rgba(22,38,148,0.4)] to-[rgba(255,155,188,0.4)]" />
@@ -644,7 +610,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-br from-[rgba(255,255,255,0.6)] to-[rgba(255,255,255,0.2)] backdrop-blur-[21px]" />
           </div>
 
-          <div className="relative z-10 px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto">
+          <div className="relative z-10 px-4 sm:px-8 lg:px-16 max-w-7xl mx-[45px]">
             <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-tight text-center lg:text-left">
               Don't want to capture the conversation?
             </h2>

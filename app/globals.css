@@ -118,17 +118,20 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   .font-playfair {
     font-family: 'Playfair Display', serif;
   }
+
   .font-gantari {
     font-family: 'Gantari', Helvetica, sans-serif;
   }
 }
 
 .filter-blue {
-  filter: brightness(0) saturate(100%) invert(36%) sepia(99%) saturate(747%) hue-rotate(186deg) brightness(97%) contrast(101%);
+  filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(30%) contrast(120%);
 }

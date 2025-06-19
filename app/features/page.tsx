@@ -6,8 +6,8 @@ import { SecuritySection } from "./__components/security-section";
 import { CTASection } from "./__components/cta-section";
 import { Footer } from "../components/footer";
 
-export default function Features(){
-  
+export default function Features() {
+
   const integrationOptions = [
     {
       type: "Chrome extension",
@@ -29,7 +29,7 @@ export default function Features(){
       icon: "/features/noun-settings-791024-1.svg",
       color: "#7c48ff",
       gradient:
-      "linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)",
+        "linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)",
       action: "Contact Sales",
       isPrimary: false,
     },
@@ -40,7 +40,7 @@ export default function Features(){
       icon: "/features/noun-customization-7874627-1.svg",
       color: "#7c48ff",
       gradient:
-      "linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)",
+        "linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)",
       action: "Contact Sales",
       isPrimary: false,
     },

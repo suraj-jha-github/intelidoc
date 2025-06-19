@@ -13,8 +13,8 @@ interface SecuritySectionProps {
 
 export const SecuritySection: React.FC<SecuritySectionProps> = ({ features }) => {
   return (
-    <section className="mt-16 md:mt-32 relative px-4">
-      <div className="w-full max-w-7xl mx-auto bg-[radial-gradient(50%_50%_at_4%_0%,rgba(1,18,39,1)_5%,rgba(14,25,99,1)_45%,rgba(15,38,127,1)_78%,rgba(1,18,39,1)_99%)] rounded-lg md:rounded-none relative overflow-hidden">
+    <section className="mt-16 md:mt-32  w-full">
+      <div className="w-full  mx-auto bg-[radial-gradient(50%_50%_at_4%_0%,#011227_5%,#c26573_18%,#472c5d_90%,#6d3a65_60%)] rounded-lg md:rounded-none relative overflow-hidden">
         {/* Background decorative elements - hidden on mobile for performance */}
         <div className="hidden md:block">
           <img
