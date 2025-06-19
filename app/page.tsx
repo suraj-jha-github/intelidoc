@@ -421,7 +421,7 @@ export default function Home() {
                   <div className="bg-[#fdf8ed] rounded-[10px] p-4">
                     <div className="font-gantari text-black text-lg sm:text-xl mb-4">
                       <span className="font-semibold">01. </span>
-                      <span className="font-light">Start Visit</span>
+                      <span className="font-light">Open Extension</span>
                     </div>
                     <Button className="w-full bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-sm rounded-[5px]">
                       Capture conversation
@@ -476,7 +476,7 @@ export default function Home() {
                   <div className="absolute w-[221px] h-[170px] top-4 left-[37px] bg-[#fdf8ed] rounded-[10px] p-4 overflow-hidden">
                     <div className="font-gantari text-black text-[22px] mb-4">
                       <span className="font-semibold">01. </span>
-                      <span className="font-light">Start </span>
+                      <span className="font-light">Open Extension</span>
                     </div>
                     <div className="flex justify-center">
                       <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
@@ -503,7 +503,7 @@ export default function Home() {
                   <div className="absolute w-[221px] h-[145px] top-[217px] left-[146px] bg-[#fdf8ed] rounded-[10px] p-4">
                     <div className="font-gantari text-black text-[22px] mb-4">
                       <span className="font-semibold">02. </span>
-                      <span className="font-light">Capturing</span>
+                      <span className="font-light">Auto Recording</span>
                     </div>
                     <div className="flex justify-center">
                       <Image
@@ -519,7 +519,7 @@ export default function Home() {
                   <div className="absolute w-[221px] h-[177px] top-[406px] left-[262px] bg-[#fdf8ed] rounded-[10px] p-4">
                     <div className="font-gantari text-black text-[22px] mb-4">
                       <span className="font-semibold">03. </span>
-                      <span className="font-light">Clinical note</span>
+                      <span className="font-light">End Meeting</span>
                     </div>
                     <div className="flex justify-center">
                       <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
@@ -555,7 +555,7 @@ export default function Home() {
               <div className="flex-1 space-y-4 lg:space-y-6">
                 <div>
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px] mb-3">
-                    01. Start Visit
+                    01. Open Extension
                   </h3>
 
                   <p className="font-gantari mb-3 font-light text-[#5e5d5d] text-lg sm:text-xl">
@@ -566,7 +566,7 @@ export default function Home() {
 
                 <div>
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
-                    02. Capturing
+                    02. Auto Recording
                   </h3>
 
                   <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
@@ -577,7 +577,7 @@ export default function Home() {
 
                 <div>
                   <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
-                    03. Clinical note
+                    03. End Meeting
                   </h3>
 
                   <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
