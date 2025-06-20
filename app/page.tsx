@@ -11,7 +11,7 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 import { Separator } from "../components/ui/separator";
 import { Tabs, TabsList, TabsTrigger } from "../components/ui/tabs";
-import "keen-slider/keen-slider.min.css"
+import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from 'next/image';
 import Link from 'next/link';
@@ -234,7 +234,7 @@ export default function Home() {
     <div className="bg-[#f3f3f3] flex flex-col w-full min-h-screen">
       <div className="bg-[#f3f3f3] overflow-hidden w-full max-w-none relative">
         {/* Hero Section */}
-        <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[612px]">
+        <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[612px] mt-14 md:mt-[57px]">
           <Image
             className="absolute w-full h-full top-0 left-0 object-cover"
             alt="Hero background"
@@ -242,18 +242,18 @@ export default function Home() {
           />
           <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.1)] to-[rgba(0,0,0,1)]" />
 
-          <div className="absolute top-8 sm:top-16 md:top-24 lg:top-[159px] left-4 sm:left-8 md:left-16 lg:left-[85px] right-4 sm:right-8 md:right-16 lg:right-auto font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-[52px] leading-tight lg:leading-[57.7px]">
+          <div className="absolute top-8 sm:top-16 md:top-24 lg:top-[159px] left-[68px] sm:left-[100px] md:left-[148px] lg:left-[185px] right-[68px] sm:right-[100px] md:right-[148px] lg:right-auto font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-[56px] leading-tight lg:leading-[57.7px]">
             Auto-generated <br />
             clinical notes, as if <br />
             by magic.
           </div>
 
           {/* Specialities-style Demo Card on right */}
-          <div className="hidden lg:block absolute top-20 lg:top-32 right-4 lg:right-[53px] w-[574px] max-w-[574px]">
+          <div className="hidden lg:block absolute top-20 lg:top-32 right-[68px] lg:right-[185px] w-[574px] max-w-[574px]">
             <Card className="w-full bg-white rounded-[20px] p-6 relative min-h-[356px] shadow-lg">
               <CardContent className="p-0">
                 <div className="text-center mb-4">
-                  <h3 className="[font-family:'Geist',Helvetica] font-bold text-[#132180] text-lg md:text-[19px] leading-[24.3px]">
+                  <h3 className="font-gantari font-medium text-[#132180] text-lg md:text-[19px] leading-[24.3px]">
                     InteliDoc AI
                   </h3>
                 </div>
@@ -311,14 +311,15 @@ export default function Home() {
             </Card>
           </div>
 
-          <div className="absolute w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[494px] top-48 sm:top-56 md:top-64 lg:top-[354px] left-4 sm:left-8 md:left-16 lg:left-[85px] font-light text-white text-base sm:text-lg md:text-xl lg:text-[25px] font-gantari leading-relaxed">
+          <div className="absolute w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[494px] top-48 sm:top-56 md:top-64 lg:top-[354px] left-[68px] sm:left-[100px] md:left-[148px] lg:left-[185px] font-light text-white text-base sm:text-lg md:text-xl lg:text-[25px] font-gantari leading-relaxed">
             The most reliable and beloved tool for creating accurate, compliant
             medical notes.
           </div>
 
-          <Button className="absolute w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] top-72 sm:top-80 md:top-96 lg:top-[454px] left-4 sm:left-8 md:left-16 lg:left-[85px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-sm sm:text-base">
+          {/* Button at the bottom */}
+          <Button className="absolute w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] top-72 sm:top-80 md:top-96 lg:top-[454px] left-[68px] sm:left-[100px] md:left-[148px] lg:left-[185px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
             <span>Try InteliDoc AI-</span>
-            <span className="text-[#a9a7a7] text-xs sm:text-sm ml-1">it's free</span>
+            <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
           </Button>
         </section>
 
@@ -326,9 +327,9 @@ export default function Home() {
         <Navigation navItems={navItems} />
 
         {/* Testimonials Section */}
-        <section className="mt-8 sm:mt-12 lg:mt-14 pt-8 sm:pt-10 pb-12 sm:pb-16 lg:pb-20 px-4 sm:px-8 lg:px-0">
-          <div className="relative w-full max-w-7xl mx-[47px]">
-            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight lg:ml-[30px] pl-[2px] text-center lg:text-left">
+        <section className="mt-[32px] pt-2 sm:pt-12 lg:pt-10 pb-6 sm:pb-6 lg:pb-6">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
+            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[45px] leading-tight text-center lg:text-left mb-6 sm:mb-12 lg:mb-16">
               Trusted and loved by<br className="hidden sm:block" />
               therapists, doctors, and nurses.
             </h2>
@@ -356,7 +357,7 @@ export default function Home() {
                     <Card className="w-[340px] h-[330px] border border-solid border-[#a9a9a9] rounded-[10px] bg-white">
                       <CardContent className="pt-6 px-6 pb-6">
                         <div className="font-gantari text-black text-lg sm:text-xl lg:text-2xl">
-                          <span className="font-semibold">
+                          <span className="font-medium">
                             {testimonial.specialty}
                             <br />
                           </span>
@@ -379,8 +380,8 @@ export default function Home() {
 
 
         {/* How It Works Section */}
-        <section className="px-3 sm:px-7 lg:px-0">
-          <div className="flex flex-col lg:flex-row max-w-9xl ">
+        <section className="mt-[32px] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px]">
+          <div className="flex flex-col lg:flex-row max-w-9xl mx-auto">
 
             {/* Process Visualization - Simplified for mobile */}
             <div className="w-full lg:w-[523px] mb-8 lg:mb-0 lg:ml-[89px] relative">
@@ -420,7 +421,7 @@ export default function Home() {
                 <div className="block lg:hidden space-y-6">
                   <div className="bg-[#fdf8ed] rounded-[10px] p-4">
                     <div className="font-gantari text-black text-lg sm:text-xl mb-4">
-                      <span className="font-semibold">01. </span>
+                      <span className="font-medium">01. </span>
                       <span className="font-light">Open Extension</span>
                     </div>
                     <Button className="w-full bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-sm rounded-[5px]">
@@ -430,7 +431,7 @@ export default function Home() {
 
                   <div className="bg-[#fdf8ed] rounded-[10px] p-4">
                     <div className="font-gantari text-black text-lg sm:text-xl mb-4">
-                      <span className="font-semibold">02. </span>
+                      <span className="font-medium">02. </span>
                       <span className="font-light">Capturing</span>
                     </div>
                     <div className="flex justify-center">
@@ -446,7 +447,7 @@ export default function Home() {
 
                   <div className="bg-[#fdf8ed] rounded-[10px] p-4">
                     <div className="font-gantari text-black text-lg sm:text-xl mb-4">
-                      <span className="font-semibold">03. </span>
+                      <span className="font-medium">03. </span>
                       <span className="font-light">Clinical note</span>
                     </div>
                     <div className="w-full h-[94px] rounded-[10px] border-[0.5px] border-solid border-black p-3 flex items-center justify-between bg-white">
@@ -475,8 +476,8 @@ export default function Home() {
                 <div className="hidden lg:block">
                   <div className="absolute w-[221px] h-[170px] top-4 left-[37px] bg-[#fdf8ed] rounded-[10px] p-4 overflow-hidden">
                     <div className="font-gantari text-black text-[22px] mb-4">
-                      <span className="font-semibold">01. </span>
-                      <span className="font-light">Open Extension</span>
+                      <span className="font-medium text-[20px]">01. </span>
+                      <span className="font-light text-[20px]">Open Extension</span>
                     </div>
                     <div className="flex justify-center">
                       <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
@@ -502,8 +503,8 @@ export default function Home() {
 
                   <div className="absolute w-[221px] h-[145px] top-[217px] left-[146px] bg-[#fdf8ed] rounded-[10px] p-4">
                     <div className="font-gantari text-black text-[22px] mb-4">
-                      <span className="font-semibold">02. </span>
-                      <span className="font-light">Auto Recording</span>
+                      <span className="font-medium text-[20px]">02. </span>
+                      <span className="font-light text-[20px]">Auto Recording</span>
                     </div>
                     <div className="flex justify-center">
                       <Image
@@ -518,8 +519,8 @@ export default function Home() {
 
                   <div className="absolute w-[221px] h-[177px] top-[406px] left-[262px] bg-[#fdf8ed] rounded-[10px] p-4">
                     <div className="font-gantari text-black text-[22px] mb-4">
-                      <span className="font-semibold">03. </span>
-                      <span className="font-light">End Meeting</span>
+                      <span className="font-medium text-[20px]">03. </span>
+                      <span className="font-light text-[20px]">End Meeting</span>
                     </div>
                     <div className="flex justify-center">
                       <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
@@ -588,10 +589,10 @@ export default function Home() {
               </div>
 
               {/* Button at the bottom */}
-              <div className="mt-[40px] lg:mt-[40px]">
-                <Button className="w-full sm:w-auto sm:min-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold">
+              <div className="mt-[50px] lg:mt-[50px]">
+                <Button className="w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
                   <span>Try InteliDoc AI-</span>
-                  <span className="text-[#a9a7a7] text-sm ml-1">it's free</span>
+                  <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
                 </Button>
               </div>
             </div>
@@ -602,7 +603,7 @@ export default function Home() {
         </section>
 
         {/* Alternative Options Section */}
-        <section className="relative mt-12 sm:mt-16 pt-12 sm:pt-16 pb-3.5 sm:pb-3.5 ">
+        <section className="relative mt-[32px] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24">
           {/* Background Effects */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute w-[300px] sm:w-[400px] lg:w-[494px] h-[300px] sm:w-[400px] lg:h-[567px] top-[50px] sm:top-[70px] lg:top-[93px] -left-[100px] sm:-left-[50px] lg:left-0 rounded-full blur-[30px] sm:blur-[40px] lg:blur-[50px] bg-gradient-to-br from-[rgba(22,38,148,0.4)] to-[rgba(255,155,188,0.4)]" />
@@ -610,19 +611,19 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-br from-[rgba(255,255,255,0.6)] to-[rgba(255,255,255,0.2)] backdrop-blur-[21px]" />
           </div>
 
-          <div className="relative z-10 px-4 sm:px-8 lg:px-16 max-w-7xl mx-[45px]">
-            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-tight text-center lg:text-left">
+          <div className="relative z-10 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
+            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-tight text-center lg:text-left mb-4 sm:mb-6 lg:mb-8">
               Don't want to capture the conversation?
             </h2>
 
-            <h3 className="font-playfair font-semibold text-[#162694] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mt-2 sm:mt-4 text-center lg:text-left">
+            <h3 className="font-playfair font-semibold text-[#162694] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mt-2 sm:mt-4 text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
               No Problem.
             </h3>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 mt-8 sm:mt-12 lg:mt-16">
               <Card className="relative w-full max-w-[521px] bg-white rounded-[20px] border border-solid border-[#a9a9a9] overflow-visible mx-auto lg:mx-0 p-0">
                 <div className="w-full h-13 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
-                  <span className="text-white font-medium font-large font-playfair text-[32px]">Dictate a summary</span>
+                  <span className="text-white font-medium font-large font-playfair text-lg sm:text-xl md:text-2xl lg:text-[32px]">Dictate a summary</span>
                 </div>
 
                 <CardContent className="pt-2 sm:pt-4 lg:pt-2 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col items-center">
@@ -635,7 +636,7 @@ export default function Home() {
                       height={150}
                     />
                   </div>
-                  <p className="font-gantari font-light text-[#5e5d5d] text-base sm:text-lg lg:text-xl text-left align-left">
+                  <p className="font-gantari font-light text-[#5e5d5d] text-sm sm:text-base lg:text-xl text-left align-left">
                     Simply provide a quick recap of the session in natural language and we'll create the full note, in your writing style
                   </p>
                   {/* Grid background at the bottom */}
@@ -645,7 +646,7 @@ export default function Home() {
 
               <Card className="w-full max-w-[521px] bg-white rounded-[20px] border border-solid border-[#a9a9a9] overflow-visible mx-auto lg:mx-0 p-0">
                 <div className="w-full h-13 bg-[#162694] rounded-t-[20px] flex items-center justify-center">
-                  <span className="text-white font-medium font-large font-playfair text-[32px]">Upload your Recordings</span>
+                  <span className="text-white font-medium font-large font-playfair text-lg sm:text-xl md:text-2xl lg:text-[32px]">Upload your Recordings</span>
                 </div>
 
                 <CardContent className="pt-2 sm:pt-4 lg:pt-2 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col items-center">
@@ -659,7 +660,7 @@ export default function Home() {
                       height={150}
                     />
                   </div>
-                  <p className="font-gantari font-light text-[#5e5d5d] text-base sm:text-lg lg:text-xl text-left">
+                  <p className="font-gantari font-light text-[#5e5d5d] text-sm sm:text-base lg:text-xl text-left">
                     Upload your handwritten or typed session notes as they are, and we'll create a high-quality and comprehensive note
                   </p>
                 </CardContent>
@@ -691,20 +692,20 @@ export default function Home() {
         </section>
 
         {/* Privacy & Security Section */}
-        <section className="mt-1 sm:mt-4 pt-1 sm:pt-4 px-4 sm:px-8 lg:px-0">
-          <div className="max-w-7xl mx-[22px]">
+        <section className="mt-[32px] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24">
+          <div className="max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             {/* <Separator className="w-full max-w-[1104px] mx-auto" /> */}
 
-            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-0 sm:mt-4 text-center lg:text-left lg:ml-[91px]">
+            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-0 sm:mt-4 text-center lg:text-left mb-6 sm:mb-8 lg:mb-12">
               Privacy & Security.
             </h2>
 
-            <p className="font-gantari text-black text-lg sm:text-2xl md:text-3xl lg:text-[35px] mt-6 sm:mt-8 text-center lg:text-left lg:ml-[91px]">
+            <p className="font-gantari text-black text-lg sm:text-2xl md:text-3xl lg:text-[35px] mt-6 sm:mt-8 text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
               We don't train our models on your data. We don't store any audio.
             </p>
 
-            <div className="lg:ml-[160px] mt-8 sm:mt-12 lg:mt-16">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-8 max-w-5xl">
+            <div className="mt-8 sm:mt-12 lg:mt-16">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-8 max-w-5xl mx-auto">
                 {securityFeatures.map((feature, index) => (
                   <Card
                     key={index}
@@ -712,7 +713,7 @@ export default function Home() {
                   >
                     <div className="absolute w-16 sm:w-[73px] h-[5px] top-0 left-6 sm:left-8 bg-[#162694]" />
                     <CardContent className="pt-4 sm:pt-10 px-6 sm:px-8 pb-2 sm:pb-8">
-                      <h3 className="font-['Geist',Helvetica] font-medium text-black text-lg sm:text-xl leading-tight sm:leading-[31px]">
+                      <h3 className="font-gantari font-medium text-black text-lg sm:text-xl leading-tight sm:leading-[31px]">
                         {feature.title}
                       </h3>
                       <p className="font-gantari font-normal text-[#626262] text-base sm:text-lg leading-relaxed sm:leading-[27.9px] mt-4 sm:mt-6">
@@ -724,54 +725,56 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-center lg:text-left lg:ml-[160px]">
-              <Button className="mt-8 sm:mt-12 lg:mt-16 w-full sm:w-auto sm:min-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold">
+            <div className="text-center lg:text-left">
+              <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg lg:ml-8">
                 <span>Try InteliDoc AI-</span>
-                <span className="text-[#a9a7a7] text-sm ml-1">it's free</span>
+                <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
               </Button>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="mt-1 sm:mt-1 pt-12 sm:pt-16 px-4 sm:px-8 ">
-          <Card className="w-full max-w-[1208px] h-auto lg:h-[648px] mx-auto rounded-[20px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)]">
-            <CardContent className="p-6 sm:p-8 lg:p-12">
-              <h2 className="font-playfair font-semibold text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
-                Frequently Asked Questions
-              </h2>
+        <section className="mt-[32px] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24">
+          <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
+            <Card className="w-full max-w-[1208px] h-auto lg:h-[648px] mx-auto rounded-[20px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)]">
+              <CardContent className="p-6 sm:p-8 lg:p-12">
+                <h2 className="font-playfair font-semibold text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
+                  Frequently Asked Questions
+                </h2>
 
-              <Accordion
-                type="single"
-                collapsible
-                className="w-full max-w-[977px] mx-auto"
-              >
-                {faqItems.map((item, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="border-b border-white"
-                  >
-                    <AccordionTrigger className="py-4 sm:py-6 text-white hover:no-underline">
-                      <div className="flex items-center text-left">
-                        <Image
-                          className="w-6 h-7 sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
-                          alt="Noun question"
-                          src="/home-images/noun-question-7004840-5.svg" width={50} height={50}
-                        />
-                        <span className="font-['Gantari',Helvetica] font-semibold text-white text-sm sm:text-base">
-                          {item.question}
-                        </span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="text-white text-sm sm:text-base">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </CardContent>
-          </Card>
+                <Accordion
+                  type="single"
+                  collapsible
+                  className="w-full max-w-[977px] mx-auto"
+                >
+                  {faqItems.map((item, index) => (
+                    <AccordionItem
+                      key={index}
+                      value={`item-${index}`}
+                      className="border-b border-white"
+                    >
+                      <AccordionTrigger className="py-4 sm:py-6 text-white hover:no-underline">
+                        <div className="flex items-center text-left">
+                          <Image
+                            className="w-6 h-7 sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
+                            alt="Noun question"
+                            src="/home-images/noun-question-7004840-5.svg" width={50} height={50}
+                          />
+                          <span className="font-gantari font-semibold text-white text-sm sm:text-base">
+                            {item.question}
+                          </span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="text-white text-sm sm:text-base">
+                        {item.answer}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </CardContent>
+            </Card>
+          </div>
         </section>
 
         {/* Footer Section */}

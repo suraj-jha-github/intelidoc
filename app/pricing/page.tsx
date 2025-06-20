@@ -112,20 +112,11 @@ export default function Pricing() {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-8">
               {/* Hero Text */}
               <div className="lg:w-1/2 pt-8 sm:pt-16">
-                <h1 className="font-['Playfair_Display',Helvetica] font-semibold text-white text-3xl sm:text-4xl lg:text-[52px] leading-tight lg:leading-[57.7px]">
-                  Your Free time
-                  <br />
-                  is priceless
+                <h1 className="font-playfair font-semibold text-white text-3xl sm:text-4xl lg:text-[52px] leading-tight lg:leading-[57.7px]">
+                  Simple, transparent pricing
                 </h1>
-                <p className="mt-6 sm:mt-8 font-['Gantari',Helvetica] text-white text-base sm:text-lg max-w-[470px]">
-                  Fast reads for doctors who are pressed for time
-                  <br />
-                  Our strategies are designed with actual clinicians in mind.
-                  Reasonably priced, easy to set up, and help available when
-                  needed. <br />
-                  <br />
-                  50% off is offered to trainees, residents, and students. Find
-                  out more
+                <p className="mt-6 sm:mt-8 font-gantari text-white text-base sm:text-lg max-w-[470px]">
+                  Start free, upgrade when you're ready. No hidden fees, no surprises.
                 </p>
               </div>
 
@@ -254,8 +245,8 @@ export default function Pricing() {
         {/* Features Comparison Section */}
         <section className="relative w-full px-4 sm:px-6 py-12 sm:py-16">
           <div className="max-w-[1127px] mx-auto">
-            <h2 className="font-['Playfair_Display',Helvetica] font-semibold text-[#162694] text-2xl sm:text-3xl lg:text-[34px] text-center lg:text-left">
-              InteliDoc AI most-loved features
+            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl lg:text-[34px] text-center lg:text-left">
+              Choose the plan that works for you
             </h2>
 
             {/* Mobile-friendly feature list */}
@@ -412,7 +403,7 @@ export default function Pricing() {
         <section className="relative w-full py-12 sm:py-16">
           <div className="max-w-[1208px] mx-auto px-4 sm:px-6">
             <div className="rounded-[20px] bg-[radial-gradient(50%_50%_at_4%_0%,rgba(1,18,39,1)_5%,rgba(14,25,99,1)_45%,rgba(15,38,127,1)_78%,rgba(1,18,39,1)_99%)] p-8 sm:p-12 lg:p-16">
-              <h2 className="font-['Playfair_Display',Helvetica] font-semibold text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
+              <h2 className="font-playfair font-medium text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
                 Frequently Asked Questions
               </h2>
 
@@ -476,19 +467,19 @@ export default function Pricing() {
 
         {/* CTA Section */}
         <section className="relative w-full py-12 sm:py-16 text-center px-4 sm:px-6">
-          <h2 className="font-['Geist',Helvetica] font-medium text-[#162694] text-3xl sm:text-4xl lg:text-5xl leading-tight lg:leading-[53.8px]">
+          <h2 className="font-gantari font-normal text-[#162694] text-3xl sm:text-4xl lg:text-5xl leading-tight lg:leading-[53.8px]">
             Try InteliDoc AI for 7 days for free.
           </h2>
-          <p className="font-['Geist',Helvetica] font-normal text-black text-lg sm:text-xl mt-4 sm:mt-6 max-w-[760px] mx-auto">
+          <p className="font-gantari font-normal text-black text-lg sm:text-xl mt-4 sm:mt-6 max-w-[760px] mx-auto">
             We know once you try InteliDoc AI, you won&apos;t want to work{" "}
             <br className="hidden sm:block" />
             without it. So give it a go — no credit card needed.
           </p>
 
-          <Button className="mt-8 sm:mt-12 w-full sm:w-[218px] h-[50px] sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity">
-            <span className="font-['Geist',Helvetica] font-semibold text-white text-sm sm:text-base">
+          <Button className="mt-8 sm:mt-12 w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity">
+            <span className="font-gantari font-semibold text-white text-base sm:text-lg">
               Try InteliDoc AI-
-              <span className="text-[#a9a7a7] text-xs sm:text-sm">it&apos;s free</span>
+              <span className="text-[#a9a7a7] text-sm sm:text-base">it&apos;s free</span>
             </span>
           </Button>
         </section>
@@ -506,13 +497,13 @@ export default function Pricing() {
                 alt="InteliDoc Logo"
                 className="w-[180px] sm:w-[217px] h-[55px] sm:h-[67px] object-cover mx-auto sm:mx-0"
               />
-              <h3 className="font-['Geist',Helvetica] font-bold text-black text-2xl sm:text-3xl mt-4">
+              <h3 className="font-gantari font-medium text-black text-2xl sm:text-3xl mt-4">
                 InteliDoc
               </h3>
             </div>
 
             <div className="text-center">
-              <h4 className="font-['Geist',Helvetica] font-semibold text-black text-lg sm:text-xl mb-4">
+              <h4 className="font-gantari font-medium text-black text-lg sm:text-xl mb-4">
                 Resources
               </h4>
               <ul className="space-y-3 sm:space-y-4">
@@ -526,7 +517,7 @@ export default function Pricing() {
             </div>
 
             <div className="text-center">
-              <h4 className="font-['Geist',Helvetica] font-semibold text-black text-lg sm:text-xl mb-4">
+              <h4 className="font-gantari font-medium text-black text-lg sm:text-xl mb-4">
                 Specialties
               </h4>
               <ul className="space-y-3 sm:space-y-4">

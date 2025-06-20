@@ -86,18 +86,18 @@ export default function ContactUs() {
           {/* Hero section */}
           <section className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 mt-8 md:mt-20">
             <div className="w-full lg:max-w-[490px] order-2 lg:order-1">
-              <h1 className="[font-family:'Geist',Helvetica] font-semibold text-[#162694] text-3xl md:text-4xl lg:text-5xl tracking-[0] leading-tight">
+              <h1 className="font-playfair font-semibold text-[#162694] text-3xl md:text-4xl lg:text-5xl tracking-[0] leading-tight">
                 Free your practice.
               </h1>
 
-              <p className="[font-family:'Geist',Helvetica] font-normal text-black text-base md:text-lg lg:text-xl tracking-[0] leading-relaxed mt-6 md:mt-8">
+              <p className="font-gantari font-normal text-black text-base md:text-lg lg:text-xl tracking-[0] leading-relaxed mt-6 md:mt-8">
                 Join over 20,000 clinicians across 650+ health organizations
                 experiencing the joy of seamless, HIPAA-compliant clinical notes
                 with Freed, saving 2 hours a day to focus on patient care and
                 well-being.
               </p>
 
-              <h2 className="[font-family:'Geist',Helvetica] font-normal text-[#162694] text-2xl md:text-3xl lg:text-4xl tracking-[0] leading-tight mt-8 md:mt-12">
+              <h2 className="font-playfair font-normal text-[#162694] text-2xl md:text-3xl lg:text-4xl tracking-[0] leading-tight mt-8 md:mt-12">
                 Talk to InteliDoc sales team
               </h2>
 
@@ -126,7 +126,7 @@ export default function ContactUs() {
                         />
                       </div>
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Email *
@@ -137,7 +137,7 @@ export default function ContactUs() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Phone Number
@@ -147,7 +147,7 @@ export default function ContactUs() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Organization
@@ -157,7 +157,7 @@ export default function ContactUs() {
                         className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent"
                       />
                     </div>
-                    
+
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
                         Message
@@ -168,8 +168,8 @@ export default function ContactUs() {
                         placeholder="Tell us about your needs..."
                       /> */}
                     </div>
-                    
-                    <Button 
+
+                    <Button
                       type="submit"
                       className="w-full mt-[50px] bg-[#162694] text-white font-semibold text-base h-12 rounded-[5px] hover:bg-[#1a2a9e] transition-colors"
                     >
@@ -236,14 +236,14 @@ export default function ContactUs() {
           {/* CTA section */}
           <section className="mt-16 md:mt-24 lg:mt-32 relative">
             <div className="w-full h-auto md:h-[391px] rounded-[20px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(83,93,173,1)_0%,rgba(21,37,145,1)_100%)] flex flex-col items-center justify-center py-12 md:py-16 px-4">
-              <h2 className="[font-family:'Geist',Helvetica] font-medium text-white text-2xl md:text-3xl lg:text-[44px] text-center tracking-[0] leading-tight">
+              <h2 className="font-playfair font-medium text-white text-2xl md:text-3xl lg:text-[44px] text-center tracking-[0] leading-tight">
                 Free yourself <br />
                 for better things.
               </h2>
 
-              <Button className="mt-8 md:mt-12 bg-white text-[#162694] font-semibold text-sm md:text-base h-12 md:h-[57px] w-full max-w-[280px] md:w-[218px] rounded-[5px] hover:bg-gray-50 transition-colors">
+              <Button className="mt-8 md:mt-12 bg-white text-[#162694] font-semibold text-base md:text-lg h-12 md:h-[57px] w-full max-w-[200px] sm:max-w-[218px] rounded-[5px] hover:bg-gray-50 transition-colors">
                 Try InteliDoc AI -{" "}
-                <span className="text-[#8c8c8c] text-xs md:text-sm leading-[17.9px]">
+                <span className="text-[#8c8c8c] text-sm md:text-base leading-[17.9px]">
                   it&apos;s free
                 </span>
               </Button>

@@ -105,7 +105,7 @@ export default function Features() {
         <HeroSection />
 
         {/* Integration Options */}
-        <section className="flex flex-col md:flex-row justify-center items-stretch gap-4 md:gap-6 mt-8 md:mt-16 px-feature">
+        <section className="flex flex-col md:flex-row justify-center items-stretch gap-4 md:gap-6 mt-[32px] pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px]">
           {integrationOptions.map((option, index) => (
             <IntegrationCard key={index} option={option} />
           ))}

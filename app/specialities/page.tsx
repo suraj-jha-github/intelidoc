@@ -135,32 +135,25 @@ export default function Specialties() {
           {/* Hero Content */}
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-4 md:px-[90px] pt-24 md:pt-32 pb-8">
             <div className="flex-1 mb-8 lg:mb-0">
-              <h1 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-white text-3xl md:text-4xl lg:text-[52px] tracking-[0] leading-tight md:leading-[57.7px] mb-6">
-                Smarter Notes for <br />
-                Every Type of Care
+              <h1 className="font-playfair font-semibold text-white text-3xl md:text-4xl lg:text-[52px] tracking-[0] leading-tight md:leading-[57.7px] mb-6">
+                Your trusted AI scribe
               </h1>
 
-              <p className="[font-family:'Gantari',Helvetica] font-normal text-white text-lg md:text-xl lg:text-2xl leading-normal mb-8 max-w-[459px]">
-                InteliDoc AI scribe listens, transcribes and writes notes for you.
+              <p className="font-gantari font-normal text-white text-lg md:text-xl lg:text-2xl leading-normal mb-8 max-w-[459px]">
+                Clinical precision without the documentation stress
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="w-full sm:w-[218px] h-[57px] bg-white rounded-[5px] border-none p-0 relative">
-                  <div className="absolute w-[202px] h-[45px] top-[7px] left-[7px] bg-[#ffffff99] blur-[22.45px]" />
-                  <div className="relative z-10 [font-family:'Geist',Helvetica] font-semibold text-[#162694] text-base text-center leading-[20.5px]">
-                    Try InteliDoc AI-
-                    <span className="text-[#8c8c8c] text-sm leading-[17.9px]">
-                      {" "}
-                      it&apos;s free
-                    </span>
-                  </div>
+                <Button className="w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
+                  <span>Try InteliDoc AI-</span>
+                  <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="w-full sm:w-[191px] h-[57px] rounded-[5px] border border-solid border-[#fffcfc] bg-transparent"
+                  className="w-full sm:w-[191px] h-12 sm:h-[57px] rounded-[5px] border border-solid border-white bg-transparent hover:bg-white hover:text-[#162694] transition-all duration-300"
                 >
-                  <span className="text-lg md:text-2xl leading-[30.7px] [font-family:'Gantari',Helvetica] font-medium text-white text-center whitespace-nowrap">
+                  <span className="text-base sm:text-lg leading-[30.7px] font-gantari font-medium text-white hover:text-[#162694] text-center whitespace-nowrap transition-colors duration-300">
                     Contact Sales
                   </span>
                 </Button>
@@ -172,7 +165,7 @@ export default function Specialties() {
               <Card className="w-full bg-white rounded-[20px] p-6 relative min-h-[300px] md:min-h-[356px]">
                 <CardContent className="p-0">
                   <div className="text-center mb-4">
-                    <h3 className="[font-family:'Geist',Helvetica] font-bold text-[#132180] text-lg md:text-[19px] leading-[24.3px]">
+                    <h3 className="font-gantari font-medium text-[#132180] text-lg md:text-[19px] leading-[24.3px]">
                       InteliDoc AI
                     </h3>
                   </div>
@@ -228,7 +221,7 @@ export default function Specialties() {
         {/* Specialties Section */}
         <section className="mt-16 md:mt-[100px] px-4 md:px-[90px]">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-[#132180] text-3xl md:text-4xl lg:text-[50px] tracking-[0] leading-tight md:leading-[64px] mb-8 text-center md:text-left">
+            <h2 className="font-playfair font-semibold text-[#132180] text-3xl md:text-4xl lg:text-[50px] tracking-[0] leading-tight md:leading-[64px] mb-8 text-center md:text-left">
               Our Specifities
             </h2>
 
@@ -324,11 +317,11 @@ export default function Specialties() {
           <div className="w-full min-h-[400px] md:min-h-[505px] [background:radial-gradient(50%_50%_at_4%_0%,rgba(1,18,39,1)_5%,rgba(14,25,99,1)_45%,rgba(15,38,127,1)_78%,rgba(1,18,39,1)_99%)] px-4 md:px-[90px] py-12 md:py-16">
             <div className="text-center mb-8">
 
-              <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-white text-3xl md:text-4xl lg:text-5xl tracking-[0] leading-normal mb-2">
+              <h2 className="font-playfair font-semibold text-white text-3xl md:text-4xl lg:text-5xl tracking-[0] leading-normal mb-2">
                 Your trusted AI scribe
               </h2>
 
-              <p className="[font-family:'Gantari',Helvetica] font-normal text-white text-lg md:text-xl lg:text-2xl tracking-[0] leading-normal mb-[20px]">
+              <p className="font-gantari font-normal text-white text-lg md:text-xl lg:text-2xl tracking-[0] leading-normal mb-[20px]">
                 Clinical precision without the documentation stress
               </p>
 
@@ -364,10 +357,10 @@ export default function Specialties() {
                           alt={feature.title}
                           src={feature.icon}
                         />
-                        <h3 className="[font-family:'Playfair',Helvetica] font-normal text-black text-xl md:text-2xl tracking-[0] leading-normal mb-4">
+                        <h3 className="font-playfair font-normal text-black text-xl md:text-2xl tracking-[0] leading-normal mb-4">
                           {feature.title}
                         </h3>
-                        <p className="[font-family:'Gantari',Helvetica] font-medium text-[#7b7979] text-base md:text-lg tracking-[0] leading-normal">
+                        <p className="font-gantari font-medium text-[#7b7979] text-base md:text-lg tracking-[0] leading-normal">
                           {feature.description}
                         </p>
                       </CardContent>
@@ -393,10 +386,10 @@ export default function Specialties() {
                       />
                     </div>
                     <div>
-                      <h3 className="[font-family:'Gantari',Helvetica] font-medium text-black text-2xl md:text-3xl lg:text-4xl tracking-[0] leading-tight">
+                      <h3 className="font-gantari font-medium text-black text-2xl md:text-3xl lg:text-4xl tracking-[0] leading-tight">
                         {stat.value}
                       </h3>
-                      <p className="[font-family:'Gantari',Helvetica] font-normal text-black text-lg md:text-xl tracking-[0] leading-tight">
+                      <p className="font-gantari font-normal text-black text-lg md:text-xl tracking-[0] leading-tight">
                         {stat.description}
                       </p>
                     </div>
@@ -412,11 +405,11 @@ export default function Specialties() {
 
         {/* Security Section */}
         <section className="w-full min-h-[400px] md:min-h-[481px] bg-[#ebeeff] flex flex-col items-center justify-center px-4 py-12 md:py-16">
-          <h2 className="[font-family:'Playfair_Display',Helvetica] font-semibold text-[#162694] text-2xl md:text-3xl lg:text-[40px] text-center tracking-[0] leading-tight mb-8">
+          <h2 className="font-playfair font-semibold text-[#162694] text-2xl md:text-3xl lg:text-[40px] text-center tracking-[0] leading-tight mb-8">
             Your data is secure with InteliDoc AI
           </h2>
 
-          <p className="[font-family:'Gantari',Helvetica] font-normal text-black text-lg md:text-2xl lg:text-3xl text-center tracking-[0] leading-relaxed mb-12 max-w-4xl">
+          <p className="font-gantari font-normal text-black text-lg md:text-2xl lg:text-3xl text-center tracking-[0] leading-relaxed mb-12 max-w-4xl">
             We protect your information with top-tier security. InteliDoc AI is
             fully HIPAA-compliant and certified for SOC 2 and HITECH, ensuring your
             data stays safe and private — always.
@@ -426,7 +419,7 @@ export default function Specialties() {
             variant="outline"
             className="w-full max-w-[180px] h-[51px] bg-white border-[0.5px] border-solid border-[#162694] rounded-[5px] hover:bg-gradient-to-r hover:from-[#13217f] hover:via-[#0c1235] hover:to-[#4b527c] transition-all duration-300"
           >
-            <span className="[font-family:'Geist',Helvetica] font-semibold text-[#162694] text-lg md:text-xl text-center tracking-[0] leading-[25.6px] hover:text-white transition-colors duration-300">
+            <span className="font-gantari font-semibold text-[#162694] text-lg md:text-xl text-center tracking-[0] leading-[25.6px] hover:text-white transition-colors duration-300">
               Learn More
             </span>
           </Button>
@@ -436,7 +429,7 @@ export default function Specialties() {
         <section className="w-full mt-16 px-4 md:px-10 py-12 md:py-16 rounded-[20px] [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%)]">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="lg:w-1/3">
-              <h2 className="[font-family:'Gantari',Helvetica] font-normal text-white text-2xl md:text-3xl tracking-[0] leading-relaxed">
+              <h2 className="font-gantari font-normal text-white text-2xl md:text-3xl tracking-[0] leading-relaxed">
                 Frequently asked questions by FM clinicians
               </h2>
             </div>
@@ -449,7 +442,7 @@ export default function Specialties() {
                     value={`item-${index}`}
                     className="mb-4"
                   >
-                    <AccordionTrigger className="bg-white rounded-[10px] p-4 text-left [font-family:'Gantari',Helvetica] font-medium text-black text-sm">
+                    <AccordionTrigger className="bg-white rounded-[10px] p-4 text-left font-gantari font-medium text-black text-sm">
                       <div className="flex items-center">
                         <img
                           className="w-[30px] h-[37px] mr-4 flex-shrink-0"
@@ -479,14 +472,9 @@ export default function Specialties() {
             <br /> better things.
           </h2>
 
-          <Button className="w-full max-w-[218px] h-[57px] [background:linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] rounded-[5px] border-none">
-            <span className="[font-family:'Geist',Helvetica] font-semibold text-white text-base text-center leading-[20.5px]">
-              Try InteliDoc AI-
-              <span className="text-[#a9a7a7] text-sm leading-[17.9px]">
-                {" "}
-                it&apos;s free
-              </span>
-            </span>
+          <Button className="w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
+            <span>Try InteliDoc AI-</span>
+            <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
           </Button>
         </section>
 
@@ -498,7 +486,7 @@ export default function Specialties() {
             <div className="max-w-[1280px] mx-auto px-4 md:px-[78px]">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div className="text-center md:text-left">
-                  <h3 className="[font-family:'Geist',Helvetica] font-bold text-black text-2xl md:text-3xl tracking-[0] leading-[38.4px] mb-8">
+                  <h3 className="font-gantari font-medium text-black text-2xl md:text-3xl tracking-[0] leading-[38.4px] mb-8">
                     InteliDoc
                   </h3>
                   <img
@@ -509,7 +497,7 @@ export default function Specialties() {
                 </div>
 
                 <div className="text-center md:text-left">
-                  <h3 className="[font-family:'Geist',Helvetica] font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-6">
+                  <h3 className="font-gantari font-medium text-black text-xl tracking-[0] leading-[25.6px] mb-6">
                     Resources
                   </h3>
                   <ul className="space-y-4">
@@ -525,7 +513,7 @@ export default function Specialties() {
                 </div>
 
                 <div className="text-center md:text-left">
-                  <h3 className="[font-family:'Geist',Helvetica] font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-6">
+                  <h3 className="font-gantari font-medium text-black text-xl tracking-[0] leading-[25.6px] mb-6">
                     Specialties
                   </h3>
                   <ul className="space-y-4">
@@ -541,7 +529,7 @@ export default function Specialties() {
                 </div>
 
                 <div className="text-center md:text-left">
-                  <h3 className="[font-family:'Geist',Helvetica] font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-6">
+                  <h3 className="font-gantari font-medium text-black text-xl tracking-[0] leading-[25.6px] mb-6">
                     Legal
                   </h3>
                   <ul className="space-y-4">
