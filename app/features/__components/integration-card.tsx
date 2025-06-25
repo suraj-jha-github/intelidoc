@@ -27,17 +27,20 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
         <div className="w-13 h-16 md:w-16 md:h-20 relative max-w-full">
           <div className="relative w-[35px] h-[45px] md:w-[45px] md:h-[58px] top-[3px] left-2.5">
             <img
-              className="absolute w-[20px] h-2 md:w-[25px] md:h-2.5 top-[25px] md:top-[35px] left-4 md:left-5 filter-blue"
+              className="absolute w-[20px] h-2 md:w-[25px] md:h-2.5 top-[25px] md:top-[35px] left-4 md:left-5"
+              style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
               alt="Group"
               src="/features/group.png"
             />
             <img
-              className="absolute w-2 h-2 md:w-2.5 md:h-2.5 top-0 left-[25px] md:left-[35px] filter-blue"
+              className="absolute w-2 h-2 md:w-2.5 md:h-2.5 top-0 left-[25px] md:left-[35px]"
+              style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
               alt="Group"
               src="/features/group-1.png"
             />
             <img
-              className="absolute w-[35px] h-[45px] md:w-[45px] md:h-[58px] top-0 left-0 filter-blue"
+              className="absolute w-[35px] h-[45px] md:w-[45px] md:h-[58px] top-0 left-0"
+              style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
               alt="Vector"
               src="/features/vector.svg"
             />
@@ -49,11 +52,12 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
     return (
       <img
         className={`w-12 h-16 md:w-16 md:h-20 ${option.type === "Direct integration"
-          ? "md:w-[88px] md:h-[110px]"
+          ? "md:w-[70px] md:h-[85px]"
           : option.type === "Custom"
             ? "md:w-[70px] md:h-[85px]"
             : ""
-          } filter-blue`}
+          }`}
+        style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
         alt={option.type}
         src={option.icon}
       />
@@ -75,7 +79,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
         <div className="mt-auto p-4 md:p-7 pt-0">
           {option.isPrimary ? (
             <Button
-              className="w-full h-[34px] rounded-[5px] border-2 border-blue-800 text-blue-800 text-lg md:text-xl font-medium transition-colors bg-[#fff]"
+              className="w-full h-[40px] rounded-[5px] border-2 border-blue-800 text-blue-800 text-lg md:text-xl font-normal transition-colors bg-[#fff]"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               style={isHovered ? { background: option.gradient, color: '#fff' } : {}}
@@ -85,7 +89,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
           ) : (
             <Button
               variant="outline"
-              className="w-full border-2 border-blue-800 h-[34px] text-[#162694] font-medium text-base md:text-lg  hover:bg-gray-100 transition-colors"
+              className="w-full border-2 border-blue-800 h-[40px] text-[#162694] font-normal text-base md:text-lg  hover:bg-gray-100 transition-colors"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
               style={isHovered ? { background: option.gradient, color: '#fff' } : {}}

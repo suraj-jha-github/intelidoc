@@ -136,6 +136,14 @@
   filter: brightness(0) saturate(100%) invert(15%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(30%) contrast(120%);
 }
 
+.filter-blue-162694 {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%);
+}
+
+.filter-blue-162694-alt {
+  filter: brightness(0) saturate(100%) invert(6%) sepia(100%) saturate(3000%) hue-rotate(240deg) brightness(30%) contrast(150%);
+}
+
 /* Custom animations for glowing button effect */
 @keyframes spin-slow {
   from {
