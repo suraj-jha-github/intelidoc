@@ -261,63 +261,20 @@ export default function Home() {
               </Button>
             </div>
 
-            {/* Specialities-style Demo Card on right */}
-            <div className="hidden lg:block absolute top-20 lg:top-32 right-0 w-[574px] max-w-[574px]">
-              <Card className="w-full radial-gradient-card rounded-[20px] p-6 relative min-h-[356px] shadow-lg">
-                <CardContent className="p-0">
-                  <div className="text-center mb-4">
-                    <h3 className="font-gantari font-medium text-white text-lg md:text-[19px] leading-[24.3px]">
-                      InteliDoc AI
-                    </h3>
-                  </div>
-                  <Separator className="mb-6 bg-white/20" />
-
-                  <div className="flex justify-between items-start gap-4">
-                    {/* Patient text on the left */}
-                    <div className="text-left">
-                      <span className="[font-family:'Inter',Helvetica] font-normal text-white text-sm">
-                        Patient
-                      </span>
-                    </div>
-
-                    {/* Subjective box on the right */}
-                    <div className="bg-white/10 backdrop-blur-sm min-w-[460px] rounded-[10px] p-4 mb-4 border border-white/20">
-                      <div className="bg-white rounded-[10px] p-4 mb-4">
-                        <div className="flex justify-between items-center mb-4">
-                          <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">
-                            Subjective
-                          </span>
-                          <span className="[font-family:'Inter',Helvetica] font-normal text-black text-xs">
-                            Personalized
-                          </span>
-                        </div>
-
-                        <div className="space-y-2">
-                          <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
-                          <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
-                          <div className="w-4/5 h-[7px] bg-[#d9d9d9] rounded"></div>
-                          <div className="w-3/4 h-[7px] bg-[#d9d9d9] rounded"></div>
-                          <div className="w-1/2 h-[7px] bg-[#d9d9d9] rounded"></div>
-                          <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
-                        </div>
-                      </div>
-
-                      <div className="flex justify-end">
-                        <Button className="bg-[#162694] rounded-[5px] px-3 py-1 flex items-center gap-2">
-                          <img
-                            className="w-3.5 h-[19px]"
-                            alt="Copy"
-                            src="/speciality/noun-copy-7891669-1.svg"
-                          />
-                          <span className="[font-family:'Geist',Helvetica] font-normal text-white text-[13px] leading-[16.6px]">
-                            Copy
-                          </span>
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+            {/* Hero Video on right */}
+            <div className="hidden lg:block absolute top-24 lg:top-32 right-22 w-[500px] max-w-[500px]">
+              <video
+                className="w-full h-auto rounded-[20px] shadow-lg"
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls={false}
+              >
+                <source src="/home-images/hero-video.mp4" type="video/mp4" />
+                <source src="/home-images/hero-video.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </section>
