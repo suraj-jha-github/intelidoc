@@ -193,7 +193,6 @@ const footerLinks = {
 };
 
 const navItems = [
-  { label: "Home", href: "/" },
   { label: "Features", href: "/features" },
   { label: "Specialties", href: "/specialities" },
   { label: "Blog", href: "/blogs" },
@@ -242,85 +241,85 @@ export default function Home() {
           />
           <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.1)] to-[rgba(0,0,0,1)]" />
 
-          <div className="absolute top-8 sm:top-16 md:top-24 lg:top-[159px] left-[68px] sm:left-[100px] md:left-[148px] lg:left-[185px] right-[68px] sm:right-[100px] md:right-[148px] lg:right-auto font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-[56px] leading-tight lg:leading-[57.7px]">
-            Auto-generated <br />
-            clinical notes, as if <br />
-            by magic.
-          </div>
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto h-full">
+            <div className="absolute top-8 sm:top-16 md:top-24 lg:top-[159px] font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-[56px] leading-tight lg:leading-[57.7px]">
+              Auto-generated <br />
+              clinical notes, as if <br />
+              by magic.
+            </div>
 
-          {/* Specialities-style Demo Card on right */}
-          <div className="hidden lg:block absolute top-20 lg:top-32 right-[68px] lg:right-[185px] w-[574px] max-w-[574px]">
-            <Card className="w-full bg-white rounded-[20px] p-6 relative min-h-[356px] shadow-lg">
-              <CardContent className="p-0">
-                <div className="text-center mb-4">
-                  <h3 className="font-gantari font-medium text-[#132180] text-lg md:text-[19px] leading-[24.3px]">
-                    InteliDoc AI
-                  </h3>
-                </div>
-                <Separator className="mb-6" />
+            <div className="absolute w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[494px] top-48 sm:top-56 md:top-64 lg:top-[354px] font-light text-white text-base sm:text-lg md:text-xl lg:text-[25px] font-gantari leading-relaxed">
+              The most reliable and beloved tool for creating accurate, compliant
+              medical notes.
+            </div>
 
-                <div className="flex justify-between items-start gap-4">
-                  {/* Patient text on the left */}
-                  <div className="text-left">
-                    <span className="[font-family:'Inter',Helvetica] font-normal text-black text-sm">
-                      Patient
-                    </span>
+            {/* Button at the bottom */}
+            <div className="absolute top-72 sm:top-80 md:top-96 lg:top-[454px] p-[2px] rounded-[7px] bg-gradient-to-r from-white via-white to-transparent shadow-[0_0_15px_rgba(255,255,255,0.4)] animate-slow-pulse">
+              <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4 border border-white/20">
+                <span>Try InteliDoc AI-</span>
+                <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+              </Button>
+            </div>
+
+            {/* Specialities-style Demo Card on right */}
+            <div className="hidden lg:block absolute top-20 lg:top-32 right-0 w-[574px] max-w-[574px]">
+              <Card className="w-full bg-white rounded-[20px] p-6 relative min-h-[356px] shadow-lg">
+                <CardContent className="p-0">
+                  <div className="text-center mb-4">
+                    <h3 className="font-gantari font-medium text-[#132180] text-lg md:text-[19px] leading-[24.3px]">
+                      InteliDoc AI
+                    </h3>
                   </div>
+                  <Separator className="mb-6" />
 
-                  {/* Subjective box on the right */}
-
-
-
-                  <div className="bg-gradient-to-br min-w-[460px] from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
-                    <div className="bg-white rounded-[10px] p-4 mb-4">
-                      <div className="flex justify-between items-center mb-4">
-                        <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">
-                          Subjective
-                        </span>
-                        <span className="[font-family:'Inter',Helvetica] font-normal text-black text-xs">
-                          Personalized
-                        </span>
-                      </div>
-
-                      <div className="space-y-2">
-                        <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
-                        <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
-                        <div className="w-4/5 h-[7px] bg-[#d9d9d9] rounded"></div>
-                        <div className="w-3/4 h-[7px] bg-[#d9d9d9] rounded"></div>
-                        <div className="w-1/2 h-[7px] bg-[#d9d9d9] rounded"></div>
-                        <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
-                      </div>
+                  <div className="flex justify-between items-start gap-4">
+                    {/* Patient text on the left */}
+                    <div className="text-left">
+                      <span className="[font-family:'Inter',Helvetica] font-normal text-black text-sm">
+                        Patient
+                      </span>
                     </div>
 
-                    <div className="flex justify-end">
-                      <Button className="bg-[#162694] rounded-[5px] px-3 py-1 flex items-center gap-2">
-                        <img
-                          className="w-3.5 h-[19px]"
-                          alt="Copy"
-                          src="/speciality/noun-copy-7891669-1.svg"
-                        />
-                        <span className="[font-family:'Geist',Helvetica] font-normal text-white text-[13px] leading-[16.6px]">
-                          Copy
-                        </span>
-                      </Button>
+                    {/* Subjective box on the right */}
+                    <div className="bg-gradient-to-br min-w-[460px] from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
+                      <div className="bg-white rounded-[10px] p-4 mb-4">
+                        <div className="flex justify-between items-center mb-4">
+                          <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">
+                            Subjective
+                          </span>
+                          <span className="[font-family:'Inter',Helvetica] font-normal text-black text-xs">
+                            Personalized
+                          </span>
+                        </div>
+
+                        <div className="space-y-2">
+                          <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+                          <div className="w-5/6 h-[7px] bg-[#d9d9d9] rounded"></div>
+                          <div className="w-4/5 h-[7px] bg-[#d9d9d9] rounded"></div>
+                          <div className="w-3/4 h-[7px] bg-[#d9d9d9] rounded"></div>
+                          <div className="w-1/2 h-[7px] bg-[#d9d9d9] rounded"></div>
+                          <div className="w-full h-[7px] bg-[#d9d9d9] rounded"></div>
+                        </div>
+                      </div>
+
+                      <div className="flex justify-end">
+                        <Button className="bg-[#162694] rounded-[5px] px-3 py-1 flex items-center gap-2">
+                          <img
+                            className="w-3.5 h-[19px]"
+                            alt="Copy"
+                            src="/speciality/noun-copy-7891669-1.svg"
+                          />
+                          <span className="[font-family:'Geist',Helvetica] font-normal text-white text-[13px] leading-[16.6px]">
+                            Copy
+                          </span>
+                        </Button>
+                      </div>
                     </div>
                   </div>
-
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
           </div>
-
-          <div className="absolute w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[494px] top-48 sm:top-56 md:top-64 lg:top-[354px] left-[68px] sm:left-[100px] md:left-[148px] lg:left-[185px] font-light text-white text-base sm:text-lg md:text-xl lg:text-[25px] font-gantari leading-relaxed">
-            The most reliable and beloved tool for creating accurate, compliant
-            medical notes.
-          </div>
-
-          {/* Button at the bottom */}
-          <Button className="absolute w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] top-72 sm:top-80 md:top-96 lg:top-[454px] left-[68px] sm:left-[100px] md:left-[148px] lg:left-[185px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
-            <span>Try InteliDoc AI-</span>
-            <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
-          </Button>
         </section>
 
         {/* Fixed Navigation */}
@@ -380,222 +379,226 @@ export default function Home() {
 
 
         {/* How It Works Section */}
-        <section className="mt-[32px] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-4 pl-4 sm:pl-8 md:pl-16 lg:pl-[105px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px]">
-          <div className="flex flex-col lg:flex-row max-w-9xl mx-auto">
+        <section className="mt-[32px] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-4">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
+            <div className="flex flex-col lg:flex-row">
 
-            {/* Process Visualization - Simplified for mobile */}
-            <div className="w-full lg:w-[523px] mb-8 lg:mb-0 lg:ml-[89px] relative">
-              {/* Grid background */}
+              {/* Process Visualization - Simplified for mobile */}
+              <div className="w-full lg:w-[523px] mb-8 lg:mb-0 lg:ml-[89px] relative">
+                {/* Grid background */}
 
 
-              {/* Dotted connector lines for desktop only */}
-              <svg
-                className="hidden lg:block absolute z-30 pointer-events-none"
-                width="600"
-                height="700"
-                style={{ left: 0, top: 0 }}
-              >
-                <polyline
-                  points="80,185, 80,255, 150,255"
-                  fill="none"
-                  stroke="#222"
-                  strokeWidth="2"
-                  strokeDasharray="4,6"
-                />
-
-                <polyline
-                  points="365,320, 440,320, 440,410"
-                  fill="none"
-                  stroke="#222"
-                  strokeWidth="2"
-                  strokeDasharray="4,6"
-                />
-
-                <circle cx="80" cy="185" r="4" fill="#222" />
-                <circle cx="150" cy="255" r="4" fill="#222" />
-                <circle cx="365" cy="320" r="4" fill="#222" />
-                <circle cx="440" cy="410" r="4" fill="#222" />
-              </svg>
-              <div className="bg-[#e6e8f6] rounded-[10px] p-4 sm:p-6 lg:p-8 h-auto lg:h-[619px] relative z-20">
-                {/* Mobile/Tablet simplified steps */}
-                <div className="block lg:hidden space-y-6">
-                  <div className="bg-[#fdf8ed] rounded-[10px] p-4">
-                    <div className="font-gantari text-black text-lg sm:text-xl mb-4">
-                      <span className="font-medium">01. </span>
-                      <span className="font-light">Open Extension</span>
-                    </div>
-                    <Button className="w-full bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-sm rounded-[5px]">
-                      Capture conversation
-                    </Button>
-                  </div>
-
-                  <div className="bg-[#fdf8ed] rounded-[10px] p-4">
-                    <div className="font-gantari text-black text-lg sm:text-xl mb-4">
-                      <span className="font-medium">02. </span>
-                      <span className="font-light">Capturing</span>
-                    </div>
-                    <div className="flex justify-center">
-                      <Image
-                        className="w-16 h-20"
-                        alt="Recording"
-                        src="/home-images/noun-record-7859239-1.svg"
-                        width={64}
-                        height={80}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="bg-[#fdf8ed] rounded-[10px] p-4">
-                    <div className="font-gantari text-black text-lg sm:text-xl mb-4">
-                      <span className="font-medium">03. </span>
-                      <span className="font-light">Clinical note</span>
-                    </div>
-                    <div className="w-full h-[94px] rounded-[10px] border-[0.5px] border-solid border-black p-3 flex items-center justify-between bg-white">
-                      <div className="font-gantari font-semibold text-sm text-black">
-                        Personalized
-                      </div>
-                      <Button className="bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-normal text-[11px] rounded-[5px] px-3 py-1">
-                        Copy
-                      </Button>
-                    </div>
-                  </div>
-                  <div
-                    className="absolute left-1/2 bottom-0 translate-x-[-50%] w-[3/5] h-[2/5] pointer-events-none"
-                    style={{
-                      width: '60%',
-                      height: '40%',
-                      backgroundImage: 'repeating-linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1px, transparent 1px, transparent 10px), repeating-linear-gradient(90deg, #e0e0e0 0, #e0e0e0 1px, transparent 1px, transparent 10px)',
-                      backgroundSize: '10px 10px',
-                      borderRadius: '0 0 20px 20px',
-                    }}
+                {/* Dotted connector lines for desktop only */}
+                <svg
+                  className="hidden lg:block absolute z-30 pointer-events-none"
+                  width="600"
+                  height="700"
+                  style={{ left: 0, top: 0 }}
+                >
+                  <polyline
+                    points="80,185, 80,255, 150,255"
+                    fill="none"
+                    stroke="#222"
+                    strokeWidth="2"
+                    strokeDasharray="4,6"
                   />
 
-                </div>
+                  <polyline
+                    points="365,320, 440,320, 440,410"
+                    fill="none"
+                    stroke="#222"
+                    strokeWidth="2"
+                    strokeDasharray="4,6"
+                  />
 
-                {/* Desktop complex visualization */}
-                <div className="hidden lg:block">
-                  <div className="absolute w-[221px] h-[170px] top-4 left-[37px] bg-[#fdf8ed] rounded-[10px] p-4 overflow-hidden">
-                    <div className="font-gantari text-black text-[22px] mb-4">
-                      <span className="font-medium text-[20px]">01. </span>
-                      <span className="font-light text-[20px]">Open Extension</span>
+                  <circle cx="80" cy="185" r="4" fill="#222" />
+                  <circle cx="150" cy="255" r="4" fill="#222" />
+                  <circle cx="365" cy="320" r="4" fill="#222" />
+                  <circle cx="440" cy="410" r="4" fill="#222" />
+                </svg>
+                <div className="bg-[#e6e8f6] rounded-[10px] p-4 sm:p-6 lg:p-8 h-auto lg:h-[619px] relative z-20">
+                  {/* Mobile/Tablet simplified steps */}
+                  <div className="block lg:hidden space-y-6">
+                    <div className="bg-[#fdf8ed] rounded-[10px] p-4">
+                      <div className="font-gantari text-black text-lg sm:text-xl mb-4">
+                        <span className="font-medium">01. </span>
+                        <span className="font-light">Open Extension</span>
+                      </div>
+                      <Button className="w-full bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-sm rounded-[5px]">
+                        Capture conversation
+                      </Button>
                     </div>
-                    <div className="flex justify-center">
-                      <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
-                        {/* Browser header */}
-                        <div className="w-full h-5 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-t-lg flex items-center px-3 gap-1.5">
-                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                        </div>
 
-                        {/* Microphone icon */}
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2">
-                          <div className="w-8 h-8 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-full flex items-center justify-center">
-                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
-                              <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
-                            </svg>
+                    <div className="bg-[#fdf8ed] rounded-[10px] p-4">
+                      <div className="font-gantari text-black text-lg sm:text-xl mb-4">
+                        <span className="font-medium">02. </span>
+                        <span className="font-light">Capturing</span>
+                      </div>
+                      <div className="flex justify-center">
+                        <Image
+                          className="w-16 h-20"
+                          alt="Recording"
+                          src="/home-images/noun-record-7859239-1.svg"
+                          width={64}
+                          height={80}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="bg-[#fdf8ed] rounded-[10px] p-4">
+                      <div className="font-gantari text-black text-lg sm:text-xl mb-4">
+                        <span className="font-medium">03. </span>
+                        <span className="font-light">Clinical note</span>
+                      </div>
+                      <div className="w-full h-[94px] rounded-[10px] border-[0.5px] border-solid border-black p-3 flex items-center justify-between bg-white">
+                        <div className="font-gantari font-semibold text-sm text-black">
+                          Personalized
+                        </div>
+                        <Button className="bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-normal text-[11px] rounded-[5px] px-3 py-1">
+                          Copy
+                        </Button>
+                      </div>
+                    </div>
+                    <div
+                      className="absolute left-1/2 bottom-0 translate-x-[-50%] w-[3/5] h-[2/5] pointer-events-none"
+                      style={{
+                        width: '60%',
+                        height: '40%',
+                        backgroundImage: 'repeating-linear-gradient(0deg, #e0e0e0 0, #e0e0e0 1px, transparent 1px, transparent 10px), repeating-linear-gradient(90deg, #e0e0e0 0, #e0e0e0 1px, transparent 1px, transparent 10px)',
+                        backgroundSize: '10px 10px',
+                        borderRadius: '0 0 20px 20px',
+                      }}
+                    />
+
+                  </div>
+
+                  {/* Desktop complex visualization */}
+                  <div className="hidden lg:block">
+                    <div className="absolute w-[221px] h-[170px] top-4 left-[37px] bg-[#fdf8ed] rounded-[10px] p-4 overflow-hidden">
+                      <div className="font-gantari text-black text-[22px] mb-4">
+                        <span className="font-medium text-[20px]">01. </span>
+                        <span className="font-light text-[20px]">Open Extension</span>
+                      </div>
+                      <div className="flex justify-center">
+                        <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
+                          {/* Browser header */}
+                          <div className="w-full h-5 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-t-lg flex items-center px-3 gap-1.5">
+                            <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                            <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                            <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                          </div>
+
+                          {/* Microphone icon */}
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2">
+                            <div className="w-8 h-8 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-full flex items-center justify-center">
+                              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
+                                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="absolute w-[221px] h-[145px] top-[217px] left-[146px] bg-[#fdf8ed] rounded-[10px] p-4">
+                      <div className="font-gantari text-black text-[22px] mb-4">
+                        <span className="font-medium text-[20px]">02. </span>
+                        <span className="font-light text-[20px]">Auto Recording</span>
+                      </div>
+                      <div className="flex justify-center">
+                        <Image
+                          className="w-[72px] h-[88px]"
+                          alt="Recording"
+                          src="/home-images/noun-record-7859239-1.svg"
+                          width={72}
+                          height={88}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="absolute w-[221px] h-[177px] top-[406px] left-[262px] bg-[#fdf8ed] rounded-[10px] p-4">
+                      <div className="font-gantari text-black text-[22px] mb-4">
+                        <span className="font-medium text-[20px]">03. </span>
+                        <span className="font-light text-[20px]">End Meeting</span>
+                      </div>
+                      <div className="flex justify-center">
+                        <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
+                          {/* Browser header */}
+                          <div className="w-full h-5 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-t-lg flex items-center px-3 gap-1.5">
+                            <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                            <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                            <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
+                          </div>
+
+                          {/* End Meeting button */}
+                          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2">
+                            <button className="px-3 py-1 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] text-white text-[13px] rounded-md hover:opacity-90 transition-opacity whitespace-nowrap">
+                              End Meeting
+                            </button>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
 
-                  <div className="absolute w-[221px] h-[145px] top-[217px] left-[146px] bg-[#fdf8ed] rounded-[10px] p-4">
-                    <div className="font-gantari text-black text-[22px] mb-4">
-                      <span className="font-medium text-[20px]">02. </span>
-                      <span className="font-light text-[20px]">Auto Recording</span>
-                    </div>
-                    <div className="flex justify-center">
-                      <Image
-                        className="w-[72px] h-[88px]"
-                        alt="Recording"
-                        src="/home-images/noun-record-7859239-1.svg"
-                        width={72}
-                        height={88}
-                      />
-                    </div>
+              {/* Steps Description */}
+              <div className="w-full lg:w-[550px] lg:ml-11 flex flex-col justify-between h-full">
+
+                {/* Title at the top */}
+                <h2 className="text-left font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[47px] mb-8 lg:mb-12">
+                  Super simple.
+                </h2>
+
+                {/* Content in the middle */}
+                <div className="flex-1 space-y-4 lg:space-y-6">
+                  <div>
+                    <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px] mb-3">
+                      01. Open Extension
+                    </h3>
+
+                    <p className="font-gantari mb-3 font-light text-[#5e5d5d] text-lg sm:text-xl">
+                      Begin your consultation by clicking the "Capture conversation" button to start recording the session.
+                    </p>
+                    <Separator className="my-4 w-full mt-8 lg:w-[519px]" />
                   </div>
 
-                  <div className="absolute w-[221px] h-[177px] top-[406px] left-[262px] bg-[#fdf8ed] rounded-[10px] p-4">
-                    <div className="font-gantari text-black text-[22px] mb-4">
-                      <span className="font-medium text-[20px]">03. </span>
-                      <span className="font-light text-[20px]">End Meeting</span>
-                    </div>
-                    <div className="flex justify-center">
-                      <div className="w-36 md:w-40 h-22 md:h-22 bg-[#e5ebff] rounded-lg relative overflow-hidden">
-                        {/* Browser header */}
-                        <div className="w-full h-5 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] rounded-t-lg flex items-center px-3 gap-1.5">
-                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                          <div className="w-1.5 h-1.5 bg-[#d9d9d9] rounded-full"></div>
-                        </div>
+                  <div>
+                    <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
+                      02. Auto Recording
+                    </h3>
 
-                        {/* End Meeting button */}
-                        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-2">
-                          <button className="px-3 py-1 bg-gradient-to-r from-[#2e345a] via-[#0c112e] to-[#13215a] text-white text-[13px] rounded-md hover:opacity-90 transition-opacity whitespace-nowrap">
-                            End Meeting
-                          </button>
-                        </div>
-                      </div>
-                    </div>
+                    <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
+                      The system automatically captures and records the conversation in real-time with high accuracy.
+                    </p>
+                    <Separator className="my-4 w-full mt-8 lg:w-[519px]" />
+                  </div>
+
+                  <div>
+                    <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
+                      03. End Meeting
+                    </h3>
+
+                    <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
+                      Get your personalized clinical note ready to copy and paste directly into your EHR system.
+                    </p>
+                    {/* <Separator className="my-4 w-full lg:w-[519px]" /> */}
                   </div>
                 </div>
+
+                {/* Button at the bottom */}
+                <div className="mt-[50px] lg:mt-[50px]">
+                  <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                    <span>Try InteliDoc AI-</span>
+                    <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                  </Button>
+                </div>
               </div>
+
             </div>
 
-            {/* Steps Description */}
-            <div className="w-full lg:w-[550px] lg:ml-11 flex flex-col justify-between h-full">
-
-              {/* Title at the top */}
-              <h2 className="text-left font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[47px] mb-8 lg:mb-12">
-                Super simple.
-              </h2>
-
-              {/* Content in the middle */}
-              <div className="flex-1 space-y-4 lg:space-y-6">
-                <div>
-                  <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px] mb-3">
-                    01. Open Extension
-                  </h3>
-
-                  <p className="font-gantari mb-3 font-light text-[#5e5d5d] text-lg sm:text-xl">
-                    Begin your consultation by clicking the "Capture conversation" button to start recording the session.
-                  </p>
-                  <Separator className="my-4 w-full mt-8 lg:w-[519px]" />
-                </div>
-
-                <div>
-                  <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
-                    02. Auto Recording
-                  </h3>
-
-                  <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
-                    The system automatically captures and records the conversation in real-time with high accuracy.
-                  </p>
-                  <Separator className="my-4 w-full mt-8 lg:w-[519px]" />
-                </div>
-
-                <div>
-                  <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl lg:text-[25px]">
-                    03. End Meeting
-                  </h3>
-
-                  <p className="font-gantari font-light text-[#5e5d5d] text-lg sm:text-xl">
-                    Get your personalized clinical note ready to copy and paste directly into your EHR system.
-                  </p>
-                  {/* <Separator className="my-4 w-full lg:w-[519px]" /> */}
-                </div>
-              </div>
-
-              {/* Button at the bottom */}
-              <div className="mt-[50px] lg:mt-[50px]">
-                <Button className="w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
-                  <span>Try InteliDoc AI-</span>
-                  <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
-                </Button>
-              </div>
-            </div>
 
           </div>
 
@@ -726,7 +729,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
+              <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
                 <span>Try InteliDoc AI-</span>
                 <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
               </Button>

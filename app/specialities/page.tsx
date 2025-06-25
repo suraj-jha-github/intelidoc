@@ -144,7 +144,7 @@ export default function Specialties() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button className="w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
+                <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
                   <span>Try InteliDoc AI-</span>
                   <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
                 </Button>
@@ -472,7 +472,7 @@ export default function Specialties() {
             <br /> better things.
           </h2>
 
-          <Button className="w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
+          <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
             <span>Try InteliDoc AI-</span>
             <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
           </Button>

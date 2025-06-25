@@ -84,7 +84,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
 
   return (
     <header className={`fixed w-full h-14 md:h-[57px] top-0 left-0 right-0 mx-auto z-50 ${navBackground} transition-all duration-300 ease-in-out shadow-lg`}>
-      <nav className="flex items-center justify-between px-4 md:px-8 lg:px-16 h-full max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] h-full max-w-7xl mx-auto">
         <div className="flex items-center gap-4 md:gap-12">
           <Link href="/" className="flex items-center">
             <div className={`font-gantari font-bold text-lg sm:text-xl ${navLogoColor} transition-colors duration-300`}>

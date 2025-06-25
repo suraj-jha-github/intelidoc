@@ -476,7 +476,7 @@ export default function Pricing() {
             without it. So give it a go — no credit card needed.
           </p>
 
-          <Button className="mt-8 sm:mt-12 w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity">
+          <Button className="mt-8 sm:mt-12 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity px-4">
             <span className="font-gantari font-semibold text-white text-base sm:text-lg">
               Try InteliDoc AI-
               <span className="text-[#a9a7a7] text-sm sm:text-base">it&apos;s free</span>

@@ -241,7 +241,7 @@ export default function ContactUs() {
                 for better things.
               </h2>
 
-              <Button className="mt-8 md:mt-12 bg-white text-[#162694] font-semibold text-base md:text-lg h-12 md:h-[57px] w-full max-w-[200px] sm:max-w-[218px] rounded-[5px] hover:bg-gray-50 transition-colors">
+              <Button className="mt-8 md:mt-12 bg-white text-[#162694] font-semibold text-base md:text-lg h-12 md:h-[57px] w-full max-w-[220px] sm:max-w-[238px] rounded-[5px] hover:bg-gray-50 transition-colors px-4">
                 Try InteliDoc AI -{" "}
                 <span className="text-[#8c8c8c] text-sm md:text-base leading-[17.9px]">
                   it&apos;s free
