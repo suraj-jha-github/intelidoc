@@ -157,25 +157,25 @@ const integrationOptions = [
 const faqItems = [
   {
     question: "What is InteliDoc-AI?",
-    answer: "",
+    answer: "InteliDoc-AI is an AI-powered documentation solution designed to automate clinical workflows, reduce manual data entry, and streamline patient record management in healthcare settings.",
   },
   {
     question: "How does InteliDoc-AI work?",
-    answer: "",
+    answer: "It integrates with EHR systems to intelligently capture, process, and organize clinical information using natural language processing and automation tools.",
   },
   {
     question: "What are the benefits of using InteliDoc-AI?",
-    answer: "",
+    answer: "It saves time, improves documentation accuracy, reduces administrative burden, and enhances provider efficiency—all while supporting better patient outcomes.",
   },
   {
     question:
       "Is InteliDoc-AI secure and compliant with healthcare regulations?",
-    answer: "",
+    answer: "Yes, InteliDoc-AI is HIPAA-compliant and follows industry best practices to ensure patient data is secure and handled with strict confidentiality.",
   },
   {
     question:
       "Can InteliDoc-AI be customized to suit specific healthcare practices?",
-    answer: "",
+    answer: "Absolutely. InteliDoc-AI is built with flexibility in mind and can be tailored to fit the unique workflows, specialties, and preferences of individual healthcare practices.",
   },
 ];
 
@@ -380,7 +380,7 @@ export default function Home() {
 
 
         {/* How It Works Section */}
-        <section className="mt-[32px] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px]">
+        <section className="mt-[32px] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-4 pl-4 sm:pl-8 md:pl-16 lg:pl-[105px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px]">
           <div className="flex flex-col lg:flex-row max-w-9xl mx-auto">
 
             {/* Process Visualization - Simplified for mobile */}
@@ -545,7 +545,7 @@ export default function Home() {
             </div>
 
             {/* Steps Description */}
-            <div className="w-full lg:w-[523px] lg:ml-10 flex flex-col justify-between h-full">
+            <div className="w-full lg:w-[550px] lg:ml-11 flex flex-col justify-between h-full">
 
               {/* Title at the top */}
               <h2 className="text-left font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[47px] mb-8 lg:mb-12">
@@ -603,7 +603,7 @@ export default function Home() {
         </section>
 
         {/* Alternative Options Section */}
-        <section className="relative mt-[32px] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24">
+        <section className="relative mt-[32px] pt-12 sm:pt-12 lg:pt-12 pb-6 sm:pb-6 lg:pb-6">
           {/* Background Effects */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute w-[300px] sm:w-[400px] lg:w-[494px] h-[300px] sm:w-[400px] lg:h-[567px] top-[50px] sm:top-[70px] lg:top-[93px] -left-[100px] sm:-left-[50px] lg:left-0 rounded-full blur-[30px] sm:blur-[40px] lg:blur-[50px] bg-gradient-to-br from-[rgba(22,38,148,0.4)] to-[rgba(255,155,188,0.4)]" />
@@ -692,11 +692,11 @@ export default function Home() {
         </section>
 
         {/* Privacy & Security Section */}
-        <section className="mt-[32px] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24">
+        <section className="mt-[32px] pt-8 sm:pt-20 lg:pt-8 pb-6 sm:pb-20 lg:pb-6">
           <div className="max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             {/* <Separator className="w-full max-w-[1104px] mx-auto" /> */}
 
-            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-0 sm:mt-4 text-center lg:text-left mb-6 sm:mb-8 lg:mb-12">
+            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-0 sm:mt-4 text-center lg:text-left mb-4 sm:mb-8 lg:mb-4">
               Privacy & Security.
             </h2>
 
@@ -725,8 +725,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-center lg:text-left">
-              <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg lg:ml-8">
+            <div className="text-center">
+              <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[200px] sm:max-w-[218px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg">
                 <span>Try InteliDoc AI-</span>
                 <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
               </Button>
@@ -735,9 +735,9 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="mt-[32px] pt-16 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-24">
+        <section className="mt-[32px] pt-6 sm:pt-20 lg:pt-6 pb-6 sm:pb-20 lg:pb-6">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
-            <Card className="w-full max-w-[1208px] h-auto lg:h-[648px] mx-auto rounded-[20px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)]">
+            <Card className="w-full max-w-[1208px] h-auto lg:h-[750px] mx-auto rounded-[20px] bg-[linear-gradient(to_right,#011227_0%,#0e1963_25%,#0f267f_50%,#0e1963_75%,#011227_100%)]">
               <CardContent className="p-6 sm:p-8 lg:p-12">
                 <h2 className="font-playfair font-semibold text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
                   Frequently Asked Questions
@@ -752,9 +752,9 @@ export default function Home() {
                     <AccordionItem
                       key={index}
                       value={`item-${index}`}
-                      className="border-b border-white"
+                      className="border-b border-white hover:border-transparent transition-all duration-200"
                     >
-                      <AccordionTrigger className="py-4 sm:py-6 text-white hover:no-underline">
+                      <AccordionTrigger className="py-4 sm:py-6 text-white hover:no-underline hover:bg-white/10 hover:py-3 sm:hover:py-5 rounded-lg transition-all duration-200 hover:pl-4 mt-2">
                         <div className="flex items-center text-left">
                           <Image
                             className="w-6 h-7 sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
