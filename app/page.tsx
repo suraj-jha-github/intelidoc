@@ -262,7 +262,7 @@ export default function Home() {
             </div>
 
             {/* Hero Video on right */}
-            <div className="hidden lg:block absolute top-24 lg:top-32 right-22 w-[500px] max-w-[500px]">
+            <div className="hidden lg:block absolute top-32 lg:top-40 right-22 w-[500px] max-w-[500px]">
               <video
                 className="w-full h-auto rounded-[20px] shadow-lg"
                 autoPlay
