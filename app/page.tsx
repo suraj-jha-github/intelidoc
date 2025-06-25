@@ -254,8 +254,8 @@ export default function Home() {
             </div>
 
             {/* Button at the bottom */}
-            <div className="absolute top-72 sm:top-80 md:top-96 lg:top-[454px] p-[2px] rounded-[7px] bg-gradient-to-r from-white via-white to-transparent shadow-[0_0_15px_rgba(255,255,255,0.4)] animate-slow-pulse">
-              <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4 border border-white/20">
+            <div className="absolute top-72 sm:top-80 md:top-96 lg:top-[454px] p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-transparent shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+              <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
                 <span>Try InteliDoc AI-</span>
                 <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
               </Button>
@@ -263,25 +263,25 @@ export default function Home() {
 
             {/* Specialities-style Demo Card on right */}
             <div className="hidden lg:block absolute top-20 lg:top-32 right-0 w-[574px] max-w-[574px]">
-              <Card className="w-full bg-white rounded-[20px] p-6 relative min-h-[356px] shadow-lg">
+              <Card className="w-full radial-gradient-card rounded-[20px] p-6 relative min-h-[356px] shadow-lg">
                 <CardContent className="p-0">
                   <div className="text-center mb-4">
-                    <h3 className="font-gantari font-medium text-[#132180] text-lg md:text-[19px] leading-[24.3px]">
+                    <h3 className="font-gantari font-medium text-white text-lg md:text-[19px] leading-[24.3px]">
                       InteliDoc AI
                     </h3>
                   </div>
-                  <Separator className="mb-6" />
+                  <Separator className="mb-6 bg-white/20" />
 
                   <div className="flex justify-between items-start gap-4">
                     {/* Patient text on the left */}
                     <div className="text-left">
-                      <span className="[font-family:'Inter',Helvetica] font-normal text-black text-sm">
+                      <span className="[font-family:'Inter',Helvetica] font-normal text-white text-sm">
                         Patient
                       </span>
                     </div>
 
                     {/* Subjective box on the right */}
-                    <div className="bg-gradient-to-br min-w-[460px] from-[#c4c2dd] to-[#ebd7e5] rounded-[10px] p-4 mb-4">
+                    <div className="bg-white/10 backdrop-blur-sm min-w-[460px] rounded-[10px] p-4 mb-4 border border-white/20">
                       <div className="bg-white rounded-[10px] p-4 mb-4">
                         <div className="flex justify-between items-center mb-4">
                           <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs">
@@ -384,7 +384,7 @@ export default function Home() {
             <div className="flex flex-col lg:flex-row">
 
               {/* Process Visualization - Simplified for mobile */}
-              <div className="w-full lg:w-[523px] mb-8 lg:mb-0 lg:ml-[89px] relative">
+              <div className="w-full lg:w-[523px] mb-8 lg:mb-0 lg:ml-[20px] relative">
                 {/* Grid background */}
 
 
@@ -670,7 +670,7 @@ export default function Home() {
               </Card>
             </div>
 
-            <Card className="w-full max-w-[1115px] h-auto lg:h-[325px] mt-16 sm:mt-20 lg:mt-24 rounded-[20px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] relative">
+            <Card className="w-full max-w-[1115px] h-auto lg:h-[325px] mt-16 sm:mt-20 lg:mt-24 rounded-[20px] radial-gradient-card relative">
               <CardContent className="p-6 sm:p-8 lg:p-12">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start">
                   <div className="flex-1">
@@ -699,11 +699,11 @@ export default function Home() {
           <div className="max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             {/* <Separator className="w-full max-w-[1104px] mx-auto" /> */}
 
-            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-0 sm:mt-4 text-center lg:text-left mb-4 sm:mb-8 lg:mb-4">
+            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-0 sm:mt-4 text-center lg:text-left mb-2 sm:mb-8 lg:mb-2">
               Privacy & Security.
             </h2>
 
-            <p className="font-gantari text-black text-lg sm:text-2xl md:text-3xl lg:text-[35px] mt-6 sm:mt-8 text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
+            <p className="font-gantari text-black text-lg sm:text-2xl md:text-3xl lg:text-[30px] mt-4 sm:mt-4 text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
               We don't train our models on your data. We don't store any audio.
             </p>
 
@@ -757,7 +757,7 @@ export default function Home() {
                       value={`item-${index}`}
                       className="border-b border-white hover:border-transparent transition-all duration-200"
                     >
-                      <AccordionTrigger className="py-4 sm:py-6 text-white hover:no-underline hover:bg-white/10 hover:py-3 sm:hover:py-5 rounded-lg transition-all duration-200 hover:pl-4 mt-2">
+                      <AccordionTrigger className="py-4 sm:py-6 text-white hover:no-underline hover:bg-white/10 hover:py-3 sm:hover:py-5 rounded-lg transition-all duration-200 hover:pl-4 mt-2 [&>svg]:ml-4 pr-4">
                         <div className="flex items-center text-left">
                           <Image
                             className="w-6 h-7 sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"

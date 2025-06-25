@@ -245,3 +245,8 @@
   animation: spin-slow 3s linear infinite;
   z-index: -1;
 }
+
+/* Radial gradient for demo card */
+.radial-gradient-card {
+  background: radial-gradient(ellipse at center, #535dad 0%, #152591 100%);
+}
