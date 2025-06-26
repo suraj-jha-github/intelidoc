@@ -254,7 +254,7 @@ export default function Home() {
             </div>
 
             {/* Button at the bottom */}
-            <div className="absolute top-72 sm:top-80 md:top-96 lg:top-[454px] p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-transparent shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+            <div className="absolute top-72 sm:top-80 md:top-96 lg:top-[454px] p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-white shadow-[0_0_8px_rgba(255,255,255,0.3)]">
               <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
                 <span>Try InteliDoc AI-</span>
                 <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
@@ -586,7 +586,7 @@ export default function Home() {
                   <span className="text-white font-medium font-large font-playfair text-lg sm:text-xl md:text-2xl lg:text-[32px]">Dictate a summary</span>
                 </div>
 
-                <CardContent className="pt-2 sm:pt-4 lg:pt-2 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col items-center">
+                <CardContent className="pt-2 sm:pt-4 lg:pt-2 px-4 sm:px-6 pb-6 sm:pb-8 flex flex-col items-center">
                   <div className="flex justify-center mb-2 sm:mb-3">
                     <Image
                       className="w-24 h-28 sm:w-[130px] sm:h-[150px]"
@@ -596,7 +596,7 @@ export default function Home() {
                       height={150}
                     />
                   </div>
-                  <p className="font-gantari font-light text-[#5e5d5d] text-sm sm:text-base lg:text-xl text-left align-left">
+                  <p className="font-gantari font-light text-[#5e5d5d] text-sm sm:text-base lg:text-xl text-left align-left mb-4 sm:mb-6">
                     Simply provide a quick recap of the session in natural language and we'll create the full note, in your writing style
                   </p>
                   {/* Grid background at the bottom */}
@@ -609,7 +609,7 @@ export default function Home() {
                   <span className="text-white font-medium font-large font-playfair text-lg sm:text-xl md:text-2xl lg:text-[32px]">Upload your Recordings</span>
                 </div>
 
-                <CardContent className="pt-2 sm:pt-4 lg:pt-2 px-4 sm:px-6 pb-4 sm:pb-6 flex flex-col items-center">
+                <CardContent className="pt-2 sm:pt-4 lg:pt-2 px-4 sm:px-6 pb-6 sm:pb-8 flex flex-col items-center">
 
                   <div className="flex justify-center mb-2 sm:mb-3">
                     <Image
@@ -620,7 +620,7 @@ export default function Home() {
                       height={150}
                     />
                   </div>
-                  <p className="font-gantari font-light text-[#5e5d5d] text-sm sm:text-base lg:text-xl text-left">
+                  <p className="font-gantari font-light text-[#5e5d5d] text-sm sm:text-base lg:text-xl text-left mb-4 sm:mb-6">
                     Upload your handwritten or typed session notes as they are, and we'll create a high-quality and comprehensive note
                   </p>
                 </CardContent>
@@ -656,11 +656,11 @@ export default function Home() {
           <div className="max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             {/* <Separator className="w-full max-w-[1104px] mx-auto" /> */}
 
-            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-0 sm:mt-4 text-center lg:text-left mb-2 sm:mb-8 lg:mb-2">
+            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[50px] mt-0 sm:mt-4 text-center lg:text-left mb-2 sm:mb-8 lg:mb-2">
               Privacy & Security.
             </h2>
 
-            <p className="font-gantari text-black text-lg sm:text-2xl md:text-3xl lg:text-[30px] mt-4 sm:mt-4 text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
+            <p className="font-gantari text-black text-lg sm:text-2xl md:text-3xl lg:text-[26px] mt-4 sm:mt-4 text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
               We don't train our models on your data. We don't store any audio.
             </p>
 

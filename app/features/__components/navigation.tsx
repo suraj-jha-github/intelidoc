@@ -98,7 +98,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
               <li key={index} onClick={() => handleClick(item)} className="relative">
                 <Link
                   href={item.href || "#"}
-                  className={`font-medium ${navTextColor} text-[15px] px-3 py-2 rounded-md flex items-center gap-2 hover:bg-white/10 hover:shadow-md transition-all duration-300`}
+                  className={`font-medium ${navTextColor} text-[15px] px-3 py-2 rounded-md flex items-center gap-2 hover:bg-[#4551a9] hover:shadow-md transition-all duration-300`}
                 >
                   {item.label}
                   {loadingItem === item.label && <LoadingSpinner />}
@@ -131,7 +131,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                 <Button
                   key={index}
                   variant="ghost"
-                  className={`justify-start font-medium ${mobileTextColor} hover:bg-white/10 hover:shadow-md transition-all duration-300 rounded-md`}
+                  className={`justify-start font-medium ${mobileTextColor} hover:bg-blue-100 hover:shadow-md transition-all duration-300 rounded-md`}
                   onClick={() => {
                     setIsMenuOpen(false);
                     handleClick(item);

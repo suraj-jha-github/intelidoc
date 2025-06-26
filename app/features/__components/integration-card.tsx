@@ -28,19 +28,22 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
           <div className="relative w-[35px] h-[45px] md:w-[45px] md:h-[58px] top-[3px] left-2.5">
             <img
               className="absolute w-[20px] h-2 md:w-[25px] md:h-2.5 top-[25px] md:top-[35px] left-4 md:left-5"
-              style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
+              // style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
+              style={{ fill: '#162694' }}
               alt="Group"
               src="/features/group.png"
             />
             <img
               className="absolute w-2 h-2 md:w-2.5 md:h-2.5 top-0 left-[25px] md:left-[35px]"
-              style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
+              // style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
+              style={{ fill: '#162694' }}
               alt="Group"
               src="/features/group-1.png"
             />
             <img
               className="absolute w-[35px] h-[45px] md:w-[45px] md:h-[58px] top-0 left-0"
-              style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
+              // style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
+              style={{ fill: '#162694' }}
               alt="Vector"
               src="/features/vector.svg"
             />
@@ -52,9 +55,9 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
     return (
       <img
         className={`w-12 h-16 md:w-16 md:h-20 ${option.type === "Direct integration"
-          ? "md:w-[70px] md:h-[85px]"
+          ? "md:w-[70px] md:h-[80px]"
           : option.type === "Custom"
-            ? "md:w-[70px] md:h-[85px]"
+            ? "md:w-[70px] md:h-[80px]"
             : ""
           }`}
         style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
