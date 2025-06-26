@@ -30,7 +30,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
       let isInDarkSection = false;
 
       if (pathname === '/') {
-        // Homepage: dark in hero section, light in other sections
+        // Homepage: check scroll position for proper adaptation
         isInDarkSection = scrollY < windowHeight * 0.8;
       } else if (pathname === '/features') {
         // Features page: dark background
@@ -46,6 +46,9 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
         isInDarkSection = scrollY < windowHeight * 0.7;
       } else if (pathname === '/blogs') {
         // Blogs page: light background
+        isInDarkSection = false;
+      } else if (pathname === '/tryfree') {
+        // Try free page: light background
         isInDarkSection = false;
       }
 
@@ -69,21 +72,21 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   const navTextColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const navLogoColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const navBackground = isDarkBackground
-    ? "backdrop-blur-[8px] backdrop-brightness-[100%] bg-gradient-to-b from-gray-900/25 to-gray-900/10 border-b border-gray-700/15"
-    : "backdrop-blur-[8px] backdrop-brightness-[100%] bg-gradient-to-b from-white/25 to-white/10 border-b border-gray-200/15";
+    ? "backdrop-blur-[6px] backdrop-brightness-[100%] bg-gradient-to-b from-gray-900/15 to-gray-900/5 border-b border-gray-700/10"
+    : "backdrop-blur-[6px] backdrop-brightness-[100%] bg-gradient-to-b from-white/15 to-white/5 border-b border-gray-200/10";
   const ctaButtonClass = isDarkBackground
     ? "bg-white text-[#162694] hover:bg-gray-50 shadow-lg"
     : "bg-[#162694] text-white hover:bg-[#132180] shadow-lg";
   const mobileMenuClass = isDarkBackground
-    ? "bg-gray-900/40 backdrop-blur-md border-t border-gray-700/15"
-    : "bg-white/40 backdrop-blur-md border-t border-gray-200/15";
+    ? "bg-gray-900/30 backdrop-blur-md border-t border-gray-700/10"
+    : "bg-white/30 backdrop-blur-md border-t border-gray-200/10";
   const mobileTextColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const mobileCtaClass = isDarkBackground
     ? "bg-white text-[#162694]"
     : "bg-[#162694] text-white";
 
   return (
-    <header className={`fixed w-full h-14 md:h-[57px] top-0 left-0 right-0 mx-auto z-50 ${navBackground} transition-all duration-300 ease-in-out shadow-lg`}>
+    <header className={`fixed w-full h-14 md:h-[57px] top-0 left-0 right-0 mx-auto z-50 ${navBackground} transition-all duration-300 ease-in-out shadow-lg border-b border-white/30`}>
       <nav className="flex items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] h-full max-w-7xl mx-auto">
         <div className="flex items-center gap-4 md:gap-12">
           <Link href="/" className="flex items-center">
@@ -125,7 +128,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={`absolute top-full left-0 right-0 ${mobileMenuClass} lg:hidden transition-all duration-300`}>
+          <div className={`absolute top-full left-0 right-0 ${mobileMenuClass} lg:hidden transition-all duration-300 border-b border-white/30`}>
             <div className="flex flex-col p-4 space-y-2">
               {navItems.map((item, index) => (
                 <Button

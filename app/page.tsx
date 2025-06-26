@@ -232,6 +232,9 @@ export default function Home() {
   return (
     <div className="bg-[#f3f3f3] flex flex-col w-full min-h-screen">
       <div className="bg-[#f3f3f3] overflow-hidden w-full max-w-none relative">
+        {/* Fixed Navigation */}
+        <Navigation navItems={navItems} />
+
         {/* Hero Section */}
         <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[612px] mt-14 md:mt-[57px]">
           <Image
@@ -278,9 +281,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Fixed Navigation */}
-        <Navigation navItems={navItems} />
 
         {/* Testimonials Section */}
         <section className="mt-[32px] pt-2 sm:pt-12 lg:pt-10 pb-6 sm:pb-6 lg:pb-6">
