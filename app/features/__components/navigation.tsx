@@ -69,14 +69,14 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   const navTextColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const navLogoColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const navBackground = isDarkBackground
-    ? "backdrop-blur-[21px] backdrop-brightness-[100%] bg-gradient-to-b from-gray-900/90 to-gray-900/70 border-b border-gray-700/30"
-    : "backdrop-blur-[21px] backdrop-brightness-[100%] bg-gradient-to-b from-white/90 to-white/70 border-b border-gray-200/30";
+    ? "backdrop-blur-[8px] backdrop-brightness-[100%] bg-gradient-to-b from-gray-900/25 to-gray-900/10 border-b border-gray-700/15"
+    : "backdrop-blur-[8px] backdrop-brightness-[100%] bg-gradient-to-b from-white/25 to-white/10 border-b border-gray-200/15";
   const ctaButtonClass = isDarkBackground
     ? "bg-white text-[#162694] hover:bg-gray-50 shadow-lg"
     : "bg-[#162694] text-white hover:bg-[#132180] shadow-lg";
   const mobileMenuClass = isDarkBackground
-    ? "bg-gray-900/95 backdrop-blur-md border-t border-gray-700/30"
-    : "bg-white/95 backdrop-blur-md border-t border-gray-200/30";
+    ? "bg-gray-900/40 backdrop-blur-md border-t border-gray-700/15"
+    : "bg-white/40 backdrop-blur-md border-t border-gray-200/15";
   const mobileTextColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const mobileCtaClass = isDarkBackground
     ? "bg-white text-[#162694]"
@@ -98,7 +98,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
               <li key={index} onClick={() => handleClick(item)} className="relative">
                 <Link
                   href={item.href || "#"}
-                  className={`font-medium ${navTextColor} text-[15px] px-3 py-2 rounded-md flex items-center gap-2 hover:bg-[#4551a9] hover:shadow-md transition-all duration-300`}
+                  className={`font-medium ${navTextColor} text-[15px] px-3 py-2 rounded-md flex items-center gap-2 hover:text-white hover:bg-[#4551a9] hover:shadow-md transition-all duration-300`}
                 >
                   {item.label}
                   {loadingItem === item.label && <LoadingSpinner />}
@@ -109,7 +109,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
         </div>
 
         {/* Desktop CTA Button */}
-        <Button className={`hidden md:block font-semibold text-[15px] h-8 px-4 py-1.5 rounded-[5px] flex items-center justify-center ${ctaButtonClass} transition-all duration-300`}>
+        <Button className={`hidden md:block font-semibold text-[15px] h-8 px-4 py-1.5 rounded-[5px] flex items-center justify-center ${ctaButtonClass} transition-all duration-300 leading-none`}>
           Try for free
         </Button>
 
@@ -131,7 +131,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                 <Button
                   key={index}
                   variant="ghost"
-                  className={`justify-start font-medium ${mobileTextColor} hover:bg-blue-100 hover:shadow-md transition-all duration-300 rounded-md`}
+                  className={`justify-start font-medium ${mobileTextColor} hover:text-white hover:bg-[#4551a9] hover:shadow-md transition-all duration-300 rounded-md`}
                   onClick={() => {
                     setIsMenuOpen(false);
                     handleClick(item);
@@ -139,14 +139,14 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-2 ${mobileTextColor} transition-colors duration-300`}
+                    className={`flex items-center gap-2 ${mobileTextColor} hover:text-white transition-colors duration-300`}
                   >
                     {item.label}
                     {loadingItem === item.label && <LoadingSpinner />}
                   </Link>
                 </Button>
               ))}
-              <Button className={`mt-4 font-semibold ${mobileCtaClass} transition-all duration-300`}>
+              <Button className={`mt-4 font-semibold ${mobileCtaClass} transition-all duration-300 leading-none flex items-center justify-center`}>
                 Try for free
               </Button>
             </div>

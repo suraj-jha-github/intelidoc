@@ -28,21 +28,18 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
           <div className="relative w-[35px] h-[45px] md:w-[45px] md:h-[58px] top-[3px] left-2.5">
             <img
               className="absolute w-[20px] h-2 md:w-[25px] md:h-2.5 top-[25px] md:top-[35px] left-4 md:left-5"
-              // style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
               style={{ fill: '#162694' }}
               alt="Group"
               src="/features/group.png"
             />
             <img
               className="absolute w-2 h-2 md:w-2.5 md:h-2.5 top-0 left-[25px] md:left-[35px]"
-              // style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
               style={{ fill: '#162694' }}
               alt="Group"
               src="/features/group-1.png"
             />
             <img
               className="absolute w-[35px] h-[45px] md:w-[45px] md:h-[58px] top-0 left-0"
-              // style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
               style={{ fill: '#162694' }}
               alt="Vector"
               src="/features/vector.svg"
@@ -52,14 +49,39 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
       );
     }
 
+    if (option.type === "Direct integration") {
+      return (
+        <div className="w-12 h-16 md:w-16 md:h-20 md:w-[70px] md:h-[80px] flex items-center justify-center">
+          {/* Replace this with your Direct integration SVG image */}
+          <img
+            className="w-full h-full object-contain"
+            // style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
+            style={{ fill: '#162694' }}
+            alt="Direct integration"
+            src="/features/direct-integration.svg"
+          />
+        </div>
+      );
+    }
+
+    if (option.type === "Custom") {
+      return (
+        <div className="w-12 h-16 md:w-16 md:h-20 md:w-[70px] md:h-[80px] flex items-center justify-center">
+          {/* Replace this with your Custom SVG image */}
+          <img
+            className="w-full h-full object-contain"
+            // style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
+            style={{ fill: '#162694' }}
+            alt="Custom"
+            src="/features/customization.svg"
+          />
+        </div>
+      );
+    }
+
     return (
       <img
-        className={`w-12 h-16 md:w-16 md:h-20 ${option.type === "Direct integration"
-          ? "md:w-[70px] md:h-[80px]"
-          : option.type === "Custom"
-            ? "md:w-[70px] md:h-[80px]"
-            : ""
-          }`}
+        className={`w-12 h-16 md:w-16 md:h-20`}
         style={{ filter: 'brightness(0) saturate(100%) invert(8%) sepia(100%) saturate(2000%) hue-rotate(220deg) brightness(25%) contrast(120%)' }}
         alt={option.type}
         src={option.icon}
@@ -68,9 +90,9 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
   };
 
   return (
-    <Card className="w-full max-w-[342px] min-h-[320px] bg-[#fff] rounded-[10px] border-[#c6c6c6] flex flex-col justify-between">
+    <Card className="w-full max-w-[320px] aspect-square bg-[#fff] rounded-[10px] border-[#c6c6c6] flex flex-col justify-between">
       <CardContent className="flex flex-col flex-1 p-0">
-        <div className="flex-1 p-4 md:p-7 flex flex-col">
+        <div className="flex-1 px-4 py-0 pb-4 md:p-7 flex flex-col">
           {renderIcon()}
           <h3 className="font-playfair font-medium text-black text-xl md:text-2xl mt-4 md:mt-6">
             {option.type}
@@ -79,7 +101,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
             {option.description}
           </p>
         </div>
-        <div className="mt-auto p-4 md:p-7 pt-0">
+        <div className="mt-auto px-4 py-0  pt-0">
           {option.isPrimary ? (
             <Button
               className="w-full h-[40px] rounded-[5px] border-2 border-blue-800 text-blue-800 text-lg md:text-xl font-normal transition-colors bg-[#fff]"

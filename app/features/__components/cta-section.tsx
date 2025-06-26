@@ -7,8 +7,18 @@ export const CTASection: React.FC = () => {
   const [isHovered2, setIsHovered2] = useState(false);
 
   return (
-    <section className="mt-[32px] w-full h-auto md:h-96 bg-[radial-gradient(50%_50%_at_4%_0%,rgba(1,18,39,1)_5%,rgba(14,25,99,1)_45%,rgba(15,38,127,1)_78%,rgba(1,18,39,1)_99%)] pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px]">
-      <div className="flex flex-col items-center justify-center h-full py-12 md:py-0">
+    <section className="w-full min-h-[300px] relative">
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: "url('/features/security-bg.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+
+      <div className="relative z-10 w-full h-full flex flex-col items-center justify-center py-12 md:py-0 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px]">
         <h2 className="font-semibold text-white text-2xl md:text-3xl lg:text-5xl mb-8 md:mb-12 text-center">
           Free yourself for better things
         </h2>

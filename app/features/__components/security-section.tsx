@@ -13,8 +13,18 @@ interface SecuritySectionProps {
 
 export const SecuritySection: React.FC<SecuritySectionProps> = ({ features }) => {
   return (
-    <section className="mt-[32px] w-full">
-      <div className="w-full mx-auto bg-[radial-gradient(50%_50%_at_4%_0%,#011227_5%,#c26573_18%,#472c5d_90%,#6d3a65_60%)] rounded-lg md:rounded-none relative overflow-hidden">
+    <section className="w-full min-h-[400px] relative">
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{
+          backgroundImage: "url('/features/security-bg.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+
+      <div className="relative z-10 w-full h-full">
         {/* Background decorative elements - hidden on mobile for performance */}
         <div className="hidden md:block">
           <img
@@ -39,7 +49,7 @@ export const SecuritySection: React.FC<SecuritySectionProps> = ({ features }) =>
           />
         </div>
 
-        <div className="relative pt-6 md:pt-12 lg:pt-24 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pb-6 md:pb-12">
+        <div className="pt-6 md:pt-12 lg:pt-24 pb-6 md:pb-12 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
             <div className="lg:w-1/2">
               <h2 className="font-playfair font-semibold text-white text-3xl md:text-4xl lg:text-5xl leading-tight lg:leading-[61.4px] mb-8 lg:mb-0">
