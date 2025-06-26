@@ -25,13 +25,25 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
     const checkBackgroundColor = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
       // Check current page and scroll position
       let isInDarkSection = false;
 
       if (pathname === '/') {
         // Homepage: check scroll position for proper adaptation
-        isInDarkSection = scrollY < windowHeight * 0.8;
+        // Check if we're in FAQ section (near bottom of page)
+        const faqSectionStart = documentHeight - windowHeight * 1.5; // Approximate FAQ section position
+        if (scrollY > faqSectionStart) {
+          // In FAQ section - dark background
+          isInDarkSection = true;
+        } else if (scrollY < windowHeight * 0.8) {
+          // In hero section - dark background
+          isInDarkSection = true;
+        } else {
+          // In middle sections - light background
+          isInDarkSection = false;
+        }
       } else if (pathname === '/features') {
         // Features page: dark background
         isInDarkSection = true;
@@ -72,14 +84,14 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   const navTextColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const navLogoColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const navBackground = isDarkBackground
-    ? "backdrop-blur-[6px] backdrop-brightness-[100%] bg-gradient-to-b from-gray-900/15 to-gray-900/5 border-b border-gray-700/10"
-    : "backdrop-blur-[6px] backdrop-brightness-[100%] bg-gradient-to-b from-white/15 to-white/5 border-b border-gray-200/10";
+    ? "backdrop-blur-[6px] backdrop-brightness-[100%] bg-gradient-to-b from-gray-900/20 to-gray-900/10 border-b border-gray-700/20"
+    : "backdrop-blur-[6px] backdrop-brightness-[100%] bg-gradient-to-b from-white/20 to-white/10 border-b border-gray-200/20";
   const ctaButtonClass = isDarkBackground
     ? "bg-white text-[#162694] hover:bg-gray-50 shadow-lg"
     : "bg-[#162694] text-white hover:bg-[#132180] shadow-lg";
   const mobileMenuClass = isDarkBackground
-    ? "bg-gray-900/30 backdrop-blur-md border-t border-gray-700/10"
-    : "bg-white/30 backdrop-blur-md border-t border-gray-200/10";
+    ? "bg-gray-900/40 backdrop-blur-md border-t border-gray-700/20"
+    : "bg-white/40 backdrop-blur-md border-t border-gray-200/20";
   const mobileTextColor = isDarkBackground ? "text-white" : "text-[#162694]";
   const mobileCtaClass = isDarkBackground
     ? "bg-white text-[#162694]"
