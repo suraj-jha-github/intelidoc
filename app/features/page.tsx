@@ -147,7 +147,7 @@ export default function Features() {
         </div>
 
         {/* Healthcare Professionals Section */}
-        <section className="mt-16 sm:mt-24 lg:mt-32">
+        <section className="mt-0 sm:mt-24 lg:mt-0 bg-[#f3f3f3] py-8 sm:py-20 lg:pt-20 lg:pb-8">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
             <h2 className="font-['Playfair_Display',Helvetica] font-semibold text-[#132180] text-3xl sm:text-4xl lg:text-[46px] leading-normal mb-8 sm:mb-12 lg:mb-16 text-left">
               Created by healthcare professionals, <br className="hidden sm:block" />
@@ -222,7 +222,7 @@ export default function Features() {
         </section>
 
         {/* CTA Section with full-width background image */}
-        <div className="w-full mt-16 sm:mt-24 lg:mt-32">
+        <div className="w-full mt-0 sm:mt-24 lg:mt-0">
           <CTASection />
         </div>
 
