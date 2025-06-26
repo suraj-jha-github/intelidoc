@@ -232,6 +232,9 @@ export default function Home() {
   return (
     <div className="bg-[#f3f3f3] flex flex-col w-full min-h-screen">
       <div className="bg-[#f3f3f3] overflow-hidden w-full max-w-none relative">
+        {/* Black background for navigation area */}
+        <div className="absolute top-0 left-0 right-0 h-14 md:h-[57px] bg-black z-40"></div>
+
         {/* Fixed Navigation */}
         <Navigation navItems={navItems} />
 
