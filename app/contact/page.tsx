@@ -3,22 +3,22 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Navigation } from "../features/__components/navigation";
 import { Footer } from "../components/footer";
+import Link from 'next/link';
+import { Star } from "lucide-react";
 
-import { Menu, X } from "lucide-react";
-export default function ContactUs() {
-  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
-
+export default function Contact() {
   // Navigation menu items data
   const navItems = [
-    { label: "Home", href: "/" },
     { label: "Features", href: "/features" },
     { label: "Specialties", href: "/specialities" },
     { label: "Blog", href: "/blogs" },
@@ -28,14 +28,6 @@ export default function ContactUs() {
   ];
 
   // Footer links data
-  const helpfulLinks = [
-    { label: "Help Center", href: "#" },
-    { label: "FAQ's", href: "#" },
-    { label: "Contact Us", href: "/contact" },
-    { label: "Contact Sales", href: "#" },
-    { label: "Security", href: "#" },
-  ];
-
   const footerLinks = {
     resources: ["Help Center", "Blog"],
     specialties: [
@@ -51,7 +43,7 @@ export default function ContactUs() {
 
   return (
     <div className="bg-[#f3f3f3] min-h-screen w-full">
-      <div className="bg-[#f3f3f3] overflow-hidden w-full  mx-auto relative">
+      <div className="bg-[#f3f3f3] overflow-hidden w-full mx-auto relative">
         {/* Background elements */}
         <div className="relative w-full">
           {/* Decorative vectors - hidden on mobile for cleaner look */}
@@ -81,191 +73,237 @@ export default function ContactUs() {
         {/* Navigation */}
         <Navigation navItems={navItems} colorClass="text-[#222]" logoColorClass="text-white" />
 
-        {/* Main content */}
-        <main className="pt-[80px] md:pt-[119px] px-4 md:px-8 lg:px-20 relative z-10">
-          {/* Hero section */}
-          <section className="flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-12 mt-8 md:mt-20">
-            <div className="w-full lg:max-w-[490px] order-2 lg:order-1">
-              <h1 className="font-playfair font-semibold text-[#162694] text-3xl md:text-4xl lg:text-5xl tracking-[0] leading-tight">
-                Free your practice.
-              </h1>
+        {/* Hero section with gradient background */}
+        <section className="relative w-full">
+          <div className="w-full" style={{ background: 'linear-gradient(58deg, #020617 0%, #0f1345 14%, #161857 28%, #3e3198 42%, #6e44b4 56%, #b26da9 70%, #c086ad 84%, #ccc9ce 100%)' }}>
+            {/* Contact section */}
+            <div className="px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-24 pt-8 sm:pt-12 md:pt-16 lg:pt-24 xl:pt-32 pb-16 sm:pb-24 md:pb-32 lg:pb-24 xl:pb-24">
+              <div className="text-center mb-8 md:mb-12 lg:mb-16 max-w-4xl ml-[85px]">
+                <h1 className="font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-[0] leading-tight mb-4 md:mb-6 text-center lg:text-left">
+                  Contact our sales team
+                </h1>
+                <p className="max-w-[524px] mx-auto lg:mx-0 font-gantari font-normal text-white text-base sm:text-lg md:text-xl lg:text-[23px] tracking-[0] leading-relaxed text-center lg:text-left">
+                  Please leave your details and reason for reaching out and we'll
+                  be in contact shortly.
+                </p>
+              </div>
 
-              <p className="font-gantari font-normal text-black text-base md:text-lg lg:text-xl tracking-[0] leading-relaxed mt-6 md:mt-8">
-                Join over 20,000 clinicians across 650+ health organizations
-                experiencing the joy of seamless, HIPAA-compliant clinical notes
-                with Freed, saving 2 hours a day to focus on patient care and
-                well-being.
-              </p>
-
-              <h2 className="font-playfair font-normal text-[#162694] text-2xl md:text-3xl lg:text-4xl tracking-[0] leading-tight mt-8 md:mt-12">
-                Talk to InteliDoc sales team
-              </h2>
-
-              <Card className="w-full max-w-[498px] h-auto md:h-[445px] mt-6 bg-white rounded-[10px] border border-solid border-[#a9a9a9]">
-                <CardContent className="p-4 md:p-6">
-                  <form className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          First Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent"
-                        />
+              <div className="flex flex-col xl:flex-row gap-6 md:gap-8 items-start justify-start max-w-7xl mx-auto ml-[85px]">
+                {/* Testimonial section */}
+                <div className="w-full xl:w-[531px] xl:max-w-[531px]">
+                  {/* Testimonial card */}
+                  <Card className="w-full h-auto rounded-[10px] bg-white/10 border border-white/20 shadow-sm">
+                    <CardContent className="p-4 sm:p-6 md:p-8 relative">
+                      <span className="absolute top-[-10px] sm:top-[-15px] md:top-[-20px] left-[5px] md:left-[10px] font-gantari font-normal text-[#61647f] text-4xl sm:text-6xl md:text-8xl lg:text-9xl text-center leading-none tracking-[0] whitespace-nowrap opacity-40">
+                        "
+                      </span>
+                      <div className="mt-6 sm:mt-8 md:mt-12 lg:mt-16">
+                        <p className="font-gantari font-normal text-white text-sm sm:text-[15px] md:text-[17px] tracking-[0] leading-relaxed mb-4 md:mb-6">
+                          Now I actually get to have dinner with my family again.
+                          Using InteliDoc-AI feels like someone handed me back
+                          hours of my day—like finding out your meeting's been
+                          canceled and you didn't even know it.
+                        </p>
+                        <div className="space-y-1 md:space-y-2">
+                          <p className="font-gantari font-semibold text-white text-base md:text-lg leading-tight">
+                            Dr. Rohan Mehta
+                          </p>
+                          <p className="font-gantari font-light italic text-white text-sm md:text-[15px] leading-relaxed">
+                            Family Medicine Specialist • Horizon Health Clinic, Pune
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
-                          Last Name *
-                        </label>
-                        <input
-                          type="text"
-                          required
-                          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent"
-                        />
+                    </CardContent>
+                  </Card>
+
+                  {/* Rating below the box */}
+                  <div className="flex items-center justify-center xl:justify-start mt-4 md:mt-6">
+                    <div className="flex items-center space-x-2">
+                      <div className="flex space-x-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 fill-current" />
+                        ))}
                       </div>
+                      <span className="font-gantari font-bold text-white text-base md:text-lg leading-normal tracking-[0] ml-2">
+                        4.5
+                      </span>
                     </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Organization
-                      </label>
-                      <input
-                        type="text"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Message
-                      </label>
-                      {/* <textarea
-                        rows={3}
-                        className="mt-3 w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#162694] focus:border-transparent resize-none"
-                        placeholder="Tell us about your needs..."
-                      /> */}
-                    </div>
-
-                    <Button
-                      type="submit"
-                      className="w-full mt-[50px] bg-[#162694] text-white font-semibold text-base h-12 rounded-[5px] hover:bg-[#1a2a9e] transition-colors"
-                    >
-                      Contact Sales
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="w-full lg:w-auto flex justify-center order-1 lg:order-2">
-              <div className="relative w-full max-w-[400px] md:max-w-[500px] lg:w-[613px] h-auto lg:h-[613px]">
-                <div className="relative w-full aspect-square lg:w-[531px] lg:h-[536px] lg:top-[46px] lg:left-[41px]">
-                  <img
-                    className="absolute w-full h-auto lg:w-[520px] lg:h-[423px] top-0 left-0"
-                    alt="Freepik background"
-                    src="/contact/freepik--background-complete--inject-61.png"
-                  />
-                  <img
-                    className="absolute w-full h-auto lg:w-[520px] lg:h-[55px] bottom-0 lg:top-[480px] left-0 lg:left-1.5"
-                    alt="Freepik shadow"
-                    src="/contact/freepik--shadow--inject-61.png"
-                  />
-                  <img
-                    className="absolute w-full lg:w-[531px] h-px top-[80%] lg:top-[422px] left-0"
-                    alt="Freepik floor inject"
-                    src="/contact/freepik--floor--inject-61.png"
-                  />
-                  <img
-                    className="absolute w-[15%] lg:w-[76px] h-auto lg:h-[68px] top-0 left-[50%] lg:left-[265px]"
-                    alt="Freepik heart inject"
-                    src="/contact/freepik--heart--inject-61.png"
-                  />
-                  <img
-                    className="absolute w-[22%] lg:w-[113px] h-auto lg:h-[170px] top-[45%] lg:top-[252px] right-0 lg:left-[419px]"
-                    alt="Freepik plant inject"
-                    src="/contact/freepik--plant--inject-61.png"
-                  />
-                  <img
-                    className="absolute w-[37%] lg:w-[198px] h-auto lg:h-[452px] top-[10%] lg:top-[49px] right-[5%] lg:left-[304px]"
-                    alt="Freepik character"
-                    src="/contact/freepik--character-3--inject-61.png"
-                  />
-                  <img
-                    className="absolute w-[30%] lg:w-[157px] h-auto lg:h-[459px] top-[8%] lg:top-[42px] left-[7%] lg:left-[38px]"
-                    alt="Freepik character"
-                    src="/contact/freepik--character-1--inject-61.png"
-                  />
-                  <img
-                    className="absolute w-[32%] lg:w-[172px] h-auto lg:h-[462px] top-[12%] lg:top-[62px] left-[34%] lg:left-[179px]"
-                    alt="Freepik character"
-                    src="/contact/freepik--character-2--inject-61.png"
-                  />
-                  <img
-                    className="absolute w-[11%] lg:w-[55px] h-auto lg:h-[50px] top-[4%] lg:top-[21px] left-[30%] lg:left-[158px]"
-                    alt="Freepik speech"
-                    src="/contact/freepik--speech-bubble--inject-61.png"
-                  />
+                  </div>
                 </div>
+
+                {/* Contact form */}
+                <Card className="w-full xl:w-[557px] xl:max-w-[557px] bg-white rounded-[20px] border border-solid border-[#a9a9a9] shadow-xl">
+                  <CardContent className="p-4 sm:p-6 md:p-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                      <div className="space-y-2">
+                        <label className="font-gantari text-sm font-medium text-gray-700 block">
+                          First name*
+                        </label>
+                        <Input
+                          placeholder="Your first name"
+                          className="border border-gray-300 rounded-md h-10 px-3 focus:ring-2 focus:ring-[#132180] focus:border-transparent transition-all duration-200 w-full"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <label className="font-gantari text-sm font-medium text-gray-700 block">
+                          Last name*
+                        </label>
+                        <Input
+                          placeholder="Your last name"
+                          className="border border-gray-300 rounded-md h-10 px-3 focus:ring-2 focus:ring-[#132180] focus:border-transparent transition-all duration-200 w-full"
+                        />
+                      </div>
+                      <div className="space-y-2 sm:col-span-2">
+                        <label className="font-gantari text-sm font-medium text-gray-700 block">
+                          Work email*
+                        </label>
+                        <Input
+                          placeholder="Your company email"
+                          type="email"
+                          className="border border-gray-300 rounded-md h-10 px-3 focus:ring-2 focus:ring-[#132180] focus:border-transparent transition-all duration-200 w-full"
+                        />
+                      </div>
+                      <div className="space-y-2 sm:col-span-2">
+                        <label className="font-gantari text-sm font-medium text-gray-700 block">
+                          Contact number*
+                        </label>
+                        <div className="flex gap-2">
+                          <Select>
+                            <SelectTrigger className="w-16 sm:w-20 h-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#132180] focus:border-transparent">
+                              <SelectValue placeholder="IN" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="in">IN</SelectItem>
+                              <SelectItem value="us">US</SelectItem>
+                              <SelectItem value="uk">UK</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <Input
+                            placeholder="+91"
+                            className="flex-1 border border-gray-300 rounded-md h-10 px-3 focus:ring-2 focus:ring-[#132180] focus:border-transparent transition-all duration-200"
+                          />
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="font-gantari text-sm font-medium text-gray-700 block">
+                          Country*
+                        </label>
+                        <Select>
+                          <SelectTrigger className="w-full h-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#132180] focus:border-transparent">
+                            <SelectValue placeholder="Select your country" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="india">India</SelectItem>
+                            <SelectItem value="usa">USA</SelectItem>
+                            <SelectItem value="uk">UK</SelectItem>
+                            <SelectItem value="canada">Canada</SelectItem>
+                            <SelectItem value="australia">Australia</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="font-gantari text-sm font-medium text-gray-700 block">
+                          Specialty*
+                        </label>
+                        <Select>
+                          <SelectTrigger className="w-full h-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#132180] focus:border-transparent">
+                            <SelectValue placeholder="Please select" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="family-medicine">
+                              Family Medicine
+                            </SelectItem>
+                            <SelectItem value="pediatrics">
+                              Pediatrics
+                            </SelectItem>
+                            <SelectItem value="mental-health">
+                              Mental Health
+                            </SelectItem>
+                            <SelectItem value="cardiology">
+                              Cardiology
+                            </SelectItem>
+                            <SelectItem value="dermatology">
+                              Dermatology
+                            </SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <p className="text-xs text-red-500 mt-1">
+                          Please complete this required field.
+                        </p>
+                      </div>
+                      <div className="space-y-2">
+                        <label className="font-gantari text-sm font-medium text-gray-700 block">
+                          Job role*
+                        </label>
+                        <Select>
+                          <SelectTrigger className="w-full h-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#132180] focus:border-transparent">
+                            <SelectValue placeholder="Please select" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="doctor">Doctor</SelectItem>
+                            <SelectItem value="nurse">Nurse</SelectItem>
+                            <SelectItem value="admin">Administrator</SelectItem>
+                            <SelectItem value="manager">Practice Manager</SelectItem>
+                            <SelectItem value="other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <p className="text-xs text-red-500 mt-1">
+                          Please complete this required field.
+                        </p>
+                      </div>
+                      <div className="space-y-2 sm:col-span-2">
+                        <label className="font-gantari text-sm font-medium text-gray-700 block">
+                          Size of your clinical team*
+                        </label>
+                        <Select>
+                          <SelectTrigger className="w-full h-10 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#132180] focus:border-transparent">
+                            <SelectValue placeholder="Please select" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="1-5">1-5 members</SelectItem>
+                            <SelectItem value="6-10">6-10 members</SelectItem>
+                            <SelectItem value="11-25">11-25 members</SelectItem>
+                            <SelectItem value="26-50">26-50 members</SelectItem>
+                            <SelectItem value="51+">51+ members</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+                    <div className="flex justify-center sm:justify-end mt-6 md:mt-8">
+                      <Button className="w-full sm:w-[120px] h-[40px] bg-[#132180] hover:bg-[#0f1a66] rounded-[5px] text-white transition-all duration-200 transform hover:scale-105">
+                        <span className="font-gantari font-medium text-white text-sm">
+                          Next
+                        </span>
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
-          </section>
 
-          {/* CTA section */}
-          <section className="mt-16 md:mt-24 lg:mt-32 relative">
-            <div className="w-full h-auto md:h-[391px] rounded-[20px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(83,93,173,1)_0%,rgba(21,37,145,1)_100%)] flex flex-col items-center justify-center py-12 md:py-16 px-4">
-              <h2 className="font-playfair font-medium text-white text-2xl md:text-3xl lg:text-[44px] text-center tracking-[0] leading-tight">
-                Free yourself <br />
-                for better things.
+            {/* AI medical scribe section */}
+            <div className="text-center pb-12 sm:pb-16 md:pb-24 lg:pb-32 relative px-4 sm:px-6 md:px-8">
+              <h2 className="font-playfair font-medium text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[50px] text-center tracking-[0] leading-tight mb-4 md:mb-6 max-w-4xl mx-auto">
+                Say hello to your AI medical scribe.
               </h2>
+              <p className="font-gantari font-normal text-white text-lg sm:text-xl md:text-2xl lg:text-3xl text-center tracking-[0] leading-relaxed mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
+                Smarter notes, better care.
+              </p>
 
-              <Button className="mt-8 md:mt-12 bg-white text-[#162694] font-semibold text-base md:text-lg h-12 md:h-[57px] w-full max-w-[220px] sm:max-w-[238px] rounded-[5px] hover:bg-gray-50 transition-colors px-4">
-                Try InteliDoc AI -{" "}
-                <span className="text-[#8c8c8c] text-sm md:text-base leading-[17.9px]">
-                  it&apos;s free
+              <Button className="w-full max-w-[280px] sm:max-w-[218px] h-[50px] sm:h-[57px] bg-white hover:bg-white/90 rounded-[5px] border-none relative transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto">
+                <div className="absolute inset-2 bg-[#ffffff99] blur-[22.45px] rounded-[3px]" />
+                <span className="relative font-gantari font-semibold text-[#162694] text-sm sm:text-base text-center tracking-[0] leading-tight">
+                  Try InteliDoc AI
+                  <span className="text-[#8c8c8c] text-xs sm:text-sm leading-tight ml-1">
+                    - it's free
+                  </span>
                 </span>
               </Button>
             </div>
+          </div>
+        </section>
 
-            {/* Decorative elements - hidden on mobile */}
-            <div className="hidden md:block absolute w-[50px] h-[50px] top-[-20px] right-[-50px] bg-[#f7d8e5] rounded-[25px]" />
-
-            <img
-              className="hidden lg:block absolute w-[200px] h-[230px] xl:w-[373px] xl:h-[423px] top-[-40px] right-[-100px] xl:right-[-180px] opacity-50"
-              alt="Vector"
-              src="/contact/vector-1.svg"
-            />
-
-            <img
-              className="hidden lg:block absolute w-[180px] h-[170px] xl:w-[341px] xl:h-[330px] top-[3px] right-[-80px] xl:right-[-142px] opacity-50"
-              alt="Vector"
-              src="/contact/vector-2.svg"
-            />
-          </section>
-        </main>
-
+        {/* Footer */}
         <Footer links={footerLinks} />
       </div>
     </div>

@@ -261,10 +261,12 @@ export default function Home() {
 
             {/* Button at the bottom */}
             <div className="absolute top-72 sm:top-80 md:top-96 lg:top-[454px] p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-white shadow-[0_0_8px_rgba(255,255,255,0.3)]">
-              <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
-                <span>Try InteliDoc AI-</span>
-                <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
-              </Button>
+              <Link href="/tryfree">
+                <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                  <span>Try InteliDoc AI-</span>
+                  <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                </Button>
+              </Link>
             </div>
 
             {/* Hero Video on right */}
@@ -550,10 +552,12 @@ export default function Home() {
 
                 {/* Button at the bottom */}
                 <div className="mt-[50px] lg:mt-[50px]">
-                  <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
-                    <span>Try InteliDoc AI-</span>
-                    <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
-                  </Button>
+                  <Link href="/tryfree">
+                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                      <span>Try InteliDoc AI-</span>
+                      <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
 
@@ -644,9 +648,11 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="mt-6 lg:mt-0 lg:ml-8 lg:flex-shrink-0">
-                    <Button className="w-full text-2xl sm:w-auto sm:min-w-[200px] h-12 sm:h-[57px] rounded-[5px] bg-white text-[#162694] font-semibold hover:bg-gray-100">
-                      Try for free
-                    </Button>
+                    <Link href="/tryfree">
+                      <Button className="w-full text-2xl sm:w-auto sm:min-w-[200px] h-12 sm:h-[57px] rounded-[5px] bg-white text-[#162694] font-semibold hover:bg-gray-100">
+                        Try for free
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </CardContent>
@@ -689,10 +695,12 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
-                <span>Try InteliDoc AI-</span>
-                <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
-              </Button>
+              <Link href="/tryfree">
+                <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                  <span>Try InteliDoc AI-</span>
+                  <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                </Button>
+              </Link>
             </div>
           </div>
         </section>

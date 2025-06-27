@@ -16,6 +16,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Navigation } from "../features/__components/navigation";
+import Link from 'next/link';
 
 // Feature data for the comparison table
 const features = [
@@ -173,9 +174,11 @@ export default function Pricing() {
 
                       {/* CTA Button */}
                       <div className="mt-4">
-                        <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium hover:opacity-90 transition-opacity">
-                          Start Free Trial
-                        </Button>
+                        <Link href="/tryfree">
+                          <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium hover:opacity-90 transition-opacity">
+                            Start Free Trial
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </CardContent>
@@ -230,9 +233,11 @@ export default function Pricing() {
 
                       {/* CTA Button */}
                       <div className="mt-4">
-                        <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(255,155,89,1)] to-[rgba(255,215,141,1)] text-black font-medium hover:opacity-90 transition-opacity">
-                          Start Free Trial
-                        </Button>
+                        <Link href="/tryfree">
+                          <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(255,155,89,1)] to-[rgba(255,215,141,1)] text-black font-medium hover:opacity-90 transition-opacity">
+                            Start Free Trial
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </CardContent>
@@ -362,12 +367,16 @@ export default function Pricing() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 lg:gap-16 mt-8">
-              <Button className="w-full sm:w-[281px] h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
-                Start Free Trial
-              </Button>
-              <Button className="w-full sm:w-[281px] h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(255,155,89,1)] to-[rgba(255,215,141,1)] text-black font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
-                Start Free Trial
-              </Button>
+              <Link href="/tryfree">
+                <Button className="w-full sm:w-[281px] h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
+                  Start Free Trial
+                </Button>
+              </Link>
+              <Link href="/tryfree">
+                <Button className="w-full sm:w-[281px] h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(255,155,89,1)] to-[rgba(255,215,141,1)] text-black font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
+                  Start Free Trial
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -476,12 +485,14 @@ export default function Pricing() {
             without it. So give it a go — no credit card needed.
           </p>
 
-          <Button className="mt-8 sm:mt-12 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity px-4">
-            <span className="font-gantari font-semibold text-white text-base sm:text-lg">
-              Try InteliDoc AI-
-              <span className="text-[#a9a7a7] text-sm sm:text-base">it&apos;s free</span>
-            </span>
-          </Button>
+          <Link href="/tryfree">
+            <Button className="mt-8 sm:mt-12 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity px-4">
+              <span className="font-gantari font-semibold text-white text-base sm:text-lg">
+                Try InteliDoc AI-
+                <span className="text-[#a9a7a7] text-sm sm:text-base">it&apos;s free</span>
+              </span>
+            </Button>
+          </Link>
         </section>
 
 

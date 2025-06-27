@@ -134,9 +134,11 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
         </div>
 
         {/* Desktop CTA Button */}
-        <Button className={`hidden md:block font-semibold text-[15px] h-8 px-4 py-1.5 rounded-[5px] flex items-center justify-center ${ctaButtonClass} transition-all duration-300 leading-none`}>
-          Try for free
-        </Button>
+        <Link href="/tryfree">
+          <Button className={`hidden md:block font-semibold text-[15px] h-8 px-4 py-1.5 rounded-[5px] flex items-center justify-center ${ctaButtonClass} transition-all duration-300 leading-none`}>
+            Try for free
+          </Button>
+        </Link>
 
         {/* Mobile Menu Button */}
         <Button
@@ -171,9 +173,11 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                   </Link>
                 </Button>
               ))}
-              <Button className={`mt-4 font-semibold ${mobileCtaClass} transition-all duration-300 leading-none flex items-center justify-center`}>
-                Try for free
-              </Button>
+              <Link href="/tryfree">
+                <Button className={`mt-4 font-semibold ${mobileCtaClass} transition-all duration-300 leading-none flex items-center justify-center`}>
+                  Try for free
+                </Button>
+              </Link>
             </div>
           </div>
         )}
