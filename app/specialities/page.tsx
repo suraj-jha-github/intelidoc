@@ -113,7 +113,6 @@ export default function Specialties() {
   };
 
   const navItems = [
-    { label: "Home", href: "/" },
     { label: "Features", href: "/features" },
     { label: "Specialties", href: "/specialities" },
     { label: "Blog", href: "/blogs" },
@@ -130,7 +129,7 @@ export default function Specialties() {
           <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
           {/* Navigation Bar */}
-          <Navigation navItems={navItems} logoColorClass="text-white" />
+          <Navigation navItems={navItems} />
 
           {/* Hero Content */}
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between px-4 md:px-[90px] pt-24 md:pt-32 pb-8">

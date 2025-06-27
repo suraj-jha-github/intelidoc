@@ -37,7 +37,7 @@ export default function Features() {
     {
       type: "Custom",
       description:
-        "A fully customized integration built specifically for your organization&apos;s needs and workflow.",
+        "A fully customized integration built specifically for your organizations needs and workflow.",
       icon: "/features/noun-customization-7874627-1.svg",
       color: "#7c48ff",
       gradient:
@@ -125,7 +125,7 @@ export default function Features() {
     <div className="bg-feature-background min-h-screen">
       <div className="bg-feature-background overflow-hidden w-full max-w-feature mx-auto relative">
         {/* Navigation */}
-        <Navigation navItems={navItems} colorClass="text-[#222]" logoColorClass="text-[#162694]" />
+        <Navigation navItems={navItems} />
 
         {/* Hero Section */}
         <HeroSection />
@@ -133,7 +133,7 @@ export default function Features() {
         {/* Integration Options */}
         <section className="mt-[32px]">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row justify-center items-stretch gap-8 md:gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 justify-items-center">
               {integrationOptions.map((option, index) => (
                 <IntegrationCard key={index} option={option} />
               ))}
@@ -149,15 +149,15 @@ export default function Features() {
         {/* Healthcare Professionals Section */}
         <section className="mt-0 sm:mt-24 lg:mt-0 bg-[#f3f3f3] py-8 sm:py-20 lg:pt-20 lg:pb-8">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
-            <h2 className="font-['Playfair_Display',Helvetica] font-semibold text-[#132180] text-3xl sm:text-4xl lg:text-[46px] leading-normal mb-8 sm:mb-12 lg:mb-16 text-left">
+            <h2 className="font-playfair font-semibold text-[#132180] text-3xl sm:text-4xl lg:text-[46px] leading-normal mb-8 sm:mb-12 lg:mb-16 text-left">
               Created by healthcare professionals, <br className="hidden sm:block" />
               for healthcare professionals.
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8 sm:mb-12 lg:mb-16 max-w-6xl mx-auto text-left">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-[48px] mb-8 sm:mb-12 lg:mb-16 max-w-6xl mx-auto text-left">
               {/* Accurate */}
-              <Card className="w-full max-w-[248px] h-[248px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
-                <CardContent className="p-6 text-left flex flex-col items-start h-full">
+              <Card className="w-full max-w-[230px] h-[224px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start py-0">
+                <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
                     {/* Target Icon - exact style */}
                     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -170,13 +170,13 @@ export default function Features() {
                       <path d="M40 21H36.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <h3 className="font-['Playfair_Display',Helvetica] font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Accurate</h3>
-                  <p className="font-['Gantari',Helvetica] font-medium text-white text-sm leading-relaxed text-left">The most accurate solution in the market, trusted by clinicians globally.</p>
+                  <h3 className="font-playfair font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Accurate</h3>
+                  <p className="font-gantari font-medium text-white text-sm leading-relaxed text-left">The most accurate solution in the market, trusted by clinicians globally.</p>
                 </CardContent>
               </Card>
               {/* Secure */}
-              <Card className="w-full max-w-[248px] h-[248px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
-                <CardContent className="p-6 text-left flex flex-col items-start h-full">
+              <Card className="w-full max-w-[230px] py-0 h-[224px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
+                <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
                     {/* Lock Icon - exact style */}
                     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -185,13 +185,13 @@ export default function Features() {
                       <circle cx="21" cy="26" r="2" stroke="#fff" strokeWidth="1.5" />
                     </svg>
                   </div>
-                  <h3 className="font-['Playfair_Display',Helvetica] font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Secure</h3>
-                  <p className="font-['Gantari',Helvetica] font-medium text-white text-sm leading-relaxed text-left">HIPAA and HITECH compliant. Recordings are never stored.</p>
+                  <h3 className="font-playfair font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Secure</h3>
+                  <p className="font-gantari font-medium text-white text-sm leading-relaxed text-left">HIPAA and HITECH compliant. Recordings are never stored.</p>
                 </CardContent>
               </Card>
               {/* Compatible */}
-              <Card className="w-full max-w-[248px] h-[248px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
-                <CardContent className="p-6 text-left flex flex-col items-start h-full">
+              <Card className="w-full max-w-[230px] h-[224px] py-0 mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
+                <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
                     {/* Document Icon - exact style */}
                     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -199,13 +199,13 @@ export default function Features() {
                       <path d="M14 7V13C14 14.1046 14.8954 15 16 15H26" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <h3 className="font-['Playfair_Display',Helvetica] font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Compatible</h3>
-                  <p className="font-['Gantari',Helvetica] font-medium text-white text-sm leading-relaxed text-left">Easily copy and paste your notes into your preferred EHR or EMR.</p>
+                  <h3 className="font-playfair font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Compatible</h3>
+                  <p className="font-gantari font-medium text-white text-sm leading-relaxed text-left">Easily copy and paste your notes into your preferred EHR or EMR.</p>
                 </CardContent>
               </Card>
               {/* Personalized */}
-              <Card className="w-full max-w-[248px] h-[248px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
-                <CardContent className="p-6 text-left flex flex-col items-start h-full">
+              <Card className="w-full max-w-[230px] h-[224px] py-0 mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
+                <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
                     {/* User Icon - exact style */}
                     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,8 +213,8 @@ export default function Features() {
                       <path d="M10 32C10 27.5817 14.0294 24 21 24C27.9706 24 32 27.5817 32 32" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </div>
-                  <h3 className="font-['Playfair_Display',Helvetica] font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Personalized</h3>
-                  <p className="font-['Gantari',Helvetica] font-medium text-white text-sm leading-relaxed text-left">Twofold learns your style of writing and improves over time.</p>
+                  <h3 className="font-playfair font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Personalized</h3>
+                  <p className="font-gantari font-medium text-white text-sm leading-relaxed text-left">Twofold learns your style of writing and improves over time.</p>
                 </CardContent>
               </Card>
             </div>

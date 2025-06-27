@@ -51,7 +51,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
 
     if (option.type === "Direct integration") {
       return (
-        <div className="w-12 h-16 md:w-16 md:h-20 md:w-[70px] md:h-[80px] flex items-center justify-center">
+        <div className="w-13 h-16 md:w-16 md:h-20 flex items-center justify-center">
           {/* Replace this with your Direct integration SVG image */}
           <img
             className="w-full h-full object-contain"
@@ -66,7 +66,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
 
     if (option.type === "Custom") {
       return (
-        <div className="w-12 h-16 md:w-16 md:h-20 md:w-[70px] md:h-[80px] flex items-center justify-center">
+        <div className="w-12 h-16 md:w-16 md:h-20 flex items-center justify-center">
           {/* Replace this with your Custom SVG image */}
           <img
             className="w-full h-full object-contain"
@@ -90,9 +90,9 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
   };
 
   return (
-    <Card className="w-full max-w-[320px] aspect-square bg-[#fff] rounded-[10px] border-[#c6c6c6] flex flex-col justify-between">
+    <Card className="w-full max-w-[330px] aspect-square bg-[#fff] rounded-[10px] border-[#c6c6c6] flex flex-col justify-between">
       <CardContent className="flex flex-col flex-1 p-0">
-        <div className="flex-1 px-4 py-0 pb-4 md:p-7 flex flex-col">
+        <div className="flex-1 px-[12px] py-0 pb-4 md:p-4 md:pt-0 flex flex-col">
           {renderIcon()}
           <h3 className="font-playfair font-medium text-black text-xl md:text-2xl mt-4 md:mt-6">
             {option.type}
