@@ -70,7 +70,7 @@ export default function Blogs() {
           <Navigation navItems={navItems} />
 
           {/* Header Content - Mobile First Layout */}
-          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto pt-8 lg:pt-16">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto pt-16 sm:pt-20 md:pt-24 lg:pt-32">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
               {/* Left Content */}
               <div className="flex-1 lg:max-w-md">

@@ -99,8 +99,8 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
     ? "bg-white text-[#162694] hover:bg-gray-50 shadow-lg"
     : "bg-[#162694] text-white hover:bg-[#132180] shadow-lg";
   const mobileMenuClass = isDarkBackground
-    ? "bg-gray-900/40 backdrop-blur-md border-t border-gray-700/20"
-    : "bg-white/40 backdrop-blur-md border-t border-gray-200/20";
+    ? "bg-gray-900/95 backdrop-blur-md border-t border-gray-700/20"
+    : "bg-white/95 backdrop-blur-md border-t border-gray-200/20";
   const mobileTextColor = pathname === '/features'
     ? "text-[#767676]"
     : isDarkBackground
@@ -147,21 +147,21 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
         <Button
           variant="ghost"
           size="sm"
-          className={`lg:hidden ${navTextColor} transition-colors duration-300`}
+          className={`lg:hidden ${navTextColor} transition-colors duration-300 p-2 hover:bg-white/10 rounded-md`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </Button>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className={`absolute top-full left-0 right-0 ${mobileMenuClass} lg:hidden transition-all duration-300 border-b border-white/30`}>
-            <div className="flex flex-col p-4 space-y-2">
+          <div className={`absolute top-full left-0 right-0 w-full ${mobileMenuClass} lg:hidden transition-all duration-300 border-b border-white/30 z-50 shadow-lg`}>
+            <div className="flex flex-col p-4 space-y-2 max-w-7xl mx-auto">
               {navItems.map((item, index) => (
                 <Button
                   key={index}
                   variant="ghost"
-                  className={`justify-start font-medium ${mobileTextColor} hover:text-white hover:bg-[#4551a9] hover:shadow-md transition-all duration-300 rounded-md`}
+                  className={`justify-start font-medium ${mobileTextColor} hover:text-white hover:bg-[#4551a9] hover:shadow-md transition-all duration-300 rounded-md py-3`}
                   onClick={() => {
                     setIsMenuOpen(false);
                     handleClick(item);
@@ -169,15 +169,15 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-2 ${mobileTextColor} hover:text-white transition-colors duration-300`}
+                    className={`flex items-center gap-2 w-full ${mobileTextColor} hover:text-white transition-colors duration-300`}
                   >
                     {item.label}
                     {loadingItem === item.label && <LoadingSpinner />}
                   </Link>
                 </Button>
               ))}
-              <Link href="/tryfree">
-                <Button className={`mt-4 font-semibold ${mobileCtaClass} transition-all duration-300 leading-none flex items-center justify-center`}>
+              <Link href="/tryfree" className="mt-4">
+                <Button className={`w-full font-semibold ${mobileCtaClass} transition-all duration-300 leading-none flex items-center justify-center py-3`}>
                   Try for free
                 </Button>
               </Link>

@@ -117,7 +117,7 @@ export default function Pricing() {
                   Simple, transparent pricing
                 </h1>
                 <p className="mt-6 sm:mt-8 font-gantari text-white text-base sm:text-lg max-w-[470px]">
-                  Start free, upgrade when you're ready. No hidden fees, no surprises.
+                  Fast reads for doctors who are pressed for timeOur strategies are designed with actual clinicians in mind. Reasonably priced, easy to set up, and help available when needed. 50% off is offered to trainees, residents, and students. Find out more
                 </p>
               </div>
 

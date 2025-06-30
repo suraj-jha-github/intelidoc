@@ -392,7 +392,7 @@ export default function Specialties() {
                 className="w-full max-w-[180px] h-[51px] bg-white border-[0.5px] border-solid border-[#162694] rounded-[5px] hover:bg-gradient-to-r hover:from-[#13217f] hover:via-[#0c1235] hover:to-[#4b527c] transition-all duration-300 group"
               >
                 <span className="font-gantari font-semibold text-[#162694] text-lg md:text-xl text-center tracking-[0] leading-[25.6px] group-hover:text-white transition-colors duration-300">
-                  Learn More
+                  Try for free
                 </span>
               </Button>
             </div>

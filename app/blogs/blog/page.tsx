@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Navigation } from "../../features/__components/navigation";
+import { Footer } from "../../components/footer";
 
 export default function Blog() {
   // Data for related content cards
@@ -21,16 +23,36 @@ export default function Blog() {
     }
   ];
 
-  // Footer links
-  const footerLinks = [
-    "Privacy Security", "Terms of Service", "Terms of Use", "Help Center",
-    "Blog", "Templates", "Alternatives & Comparisons Medical", "Coding Hub",
-    "Behavioral Health", "Internal Medicine", "Pediatrics", "Physical Therapy",
-    "Primary Care", "Psychiatry"
+  // Navigation menu items data
+  const navItems = [
+    { label: "Home", href: "/" },
+    { label: "Features", href: "/features" },
+    { label: "Specialties", href: "/specialities" },
+    { label: "Blog", href: "/blogs" },
+    { label: "Pricing", href: "/pricing" },
+    { label: "For Groups", href: "/forgroup" },
+    { label: "Contact Us", href: "/contact" },
   ];
+
+  // Footer links data - same as homepage
+  const footerLinks = {
+    resources: ["Help Center", "Blog"],
+    specialties: [
+      "Family Medicine",
+      "Internal Medicine",
+      "Pschiatry",
+      "Mental Health",
+      "Padiatrics",
+      "Other Specialties",
+    ],
+    legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
+  };
 
   return (
     <div className="min-h-screen bg-[#f3f3f3]">
+      {/* Navigation */}
+      <Navigation navItems={navItems} />
+
       <div className="max-w-7xl mx-auto">
         {/* Main Content Container */}
         <div className="max-w-4xl mx-auto bg-[#f1f3ff87]">
@@ -42,17 +64,17 @@ export default function Blog() {
 
             {/* Subscribe Button */}
             <Button className="bg-[#162694] hover:bg-[#162694]/90 rounded-[5px] h-[43px] w-full sm:w-[148px] mb-8 md:mb-12 transition-colors">
-              <span className="font-['Geist',Helvetica] font-semibold text-white text-base">
+              <span className="font-gantari font-semibold text-white text-base">
                 SUBSCRIBE
               </span>
             </Button>
 
             {/* Section: The Problem */}
             <section className="mb-8 md:mb-12">
-              <h2 className="font-['Gantari',Helvetica] font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+              <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
                 The Problem: Documentation Overload
               </h2>
-              <p className="font-['Gantari',Helvetica] font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+              <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
                 Clinicians today spend nearly two hours on EHRs for every hour of
                 patient care. Notes, codes, chart reviews—it&apos;s a never-ending list.
                 This burden isn&apos;t just annoying; it&apos;s dangerous. Burnout leads to
@@ -62,10 +84,10 @@ export default function Blog() {
 
             {/* Section: What Is an AI Medical Scribe */}
             <section className="mb-8 md:mb-12">
-              <h2 className="font-['Gantari',Helvetica] font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+              <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
                 What Is an AI Medical Scribe?
               </h2>
-              <p className="font-['Gantari',Helvetica] font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+              <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
                 An AI medical scribe listens in on doctor-patient
                 conversations—securely and in real-time—and generates clean,
                 structured clinical notes. It&apos;s like having a superhuman assistant
@@ -76,12 +98,12 @@ export default function Blog() {
 
             {/* Section: How It Works */}
             <section className="mb-8 md:mb-12">
-              <h3 className="font-['Gantari',Helvetica] font-semibold text-black text-lg sm:text-xl md:text-[25px] leading-tight md:leading-8 mb-4 md:mb-6">
+              <h3 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-[25px] leading-tight md:leading-8 mb-4 md:mb-6">
                 How It Works
               </h3>
               <div className="space-y-6 md:space-y-8">
                 <div className="space-y-4 md:space-y-6">
-                  <p className="font-['Gantari',Helvetica] font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[35.5px]">
+                  <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[35.5px]">
                     <strong>Speech Recognition:</strong> Converts spoken dialogue into text.
                     <br /><br />
                     <strong>Natural Language Processing (NLP):</strong> Understands context,
@@ -105,7 +127,7 @@ export default function Blog() {
                       width={94}
                       height={117}
                     />
-                    <p className="font-['Gantari',Helvetica] font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
+                    <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
                       &quot;By computerizing health records, we can avoid dangerous medical
                       mistakes, reduce costs, and improve care.&quot;
                       <br />— President George W. Bush, 2004 State of the Union Address
@@ -117,36 +139,36 @@ export default function Blog() {
 
             {/* Section: Built for Effortless Workflow */}
             <section className="mb-8 md:mb-12">
-              <h2 className="font-['Gantari',Helvetica] font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+              <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
                 Built for Effortless Workflow
               </h2>
               <div className="space-y-6 md:space-y-8">
                 <div className="space-y-4 md:space-y-6">
                   <div>
-                    <h4 className="font-['Gantari',Helvetica] font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                    <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
                       Record with Ease
                     </h4>
-                    <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                       The AI listens during appointments and captures key information
                       without interrupting your patient interaction.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-['Gantari',Helvetica] font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                    <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
                       Edit with Confidence
                     </h4>
-                    <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                       Quickly review and make edits in real time — or let the system
                       learn your preferences for smarter drafts next time.
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-['Gantari',Helvetica] font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                    <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
                       Finalize in Seconds
                     </h4>
-                    <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                       Approve and sign off with a single click, so your notes are done
                       before your day ends.
                     </p>
@@ -154,20 +176,20 @@ export default function Blog() {
                 </div>
 
                 <div>
-                  <h3 className="font-['Gantari',Helvetica] font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                  <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
                     Why It Matters
                   </h3>
                   <div className="space-y-3 md:space-y-4">
-                    <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                       <strong>Reduces Burnout:</strong> Frees clinicians from tedious data entry.
                     </p>
-                    <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                       <strong>Improves Accuracy:</strong> AI catches details humans might forget or misrecord.
                     </p>
-                    <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                       <strong>Speeds Up Care:</strong> Faster documentation means more time for patients.
                     </p>
-                    <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                    <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                       <strong>Enhances Compliance:</strong> Structured notes help with coding, billing, and legal protection.
                     </p>
                   </div>
@@ -183,7 +205,7 @@ export default function Blog() {
                       width={94}
                       height={117}
                     />
-                    <p className="font-['Gantari',Helvetica] font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
+                    <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
                       &quot;By computerizing health records, we can avoid dangerous medical
                       mistakes, reduce costs, and improve care.&quot;
                       <br />— President George W. Bush, 2004 State of the Union Address
@@ -195,10 +217,10 @@ export default function Blog() {
 
             {/* Section: The Human Touch */}
             <section className="mb-8 md:mb-12">
-              <h2 className="font-['Gantari',Helvetica] font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+              <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
                 The Human Touch Isn&apos;t Gone
               </h2>
-              <p className="font-['Gantari',Helvetica] font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px] mb-6 md:mb-8">
+              <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px] mb-6 md:mb-8">
                 Critics worry about tech replacing empathy. But good AI scribes
                 enhance the human connection—they listen so the doctor can too. When
                 tech fades into the background, compassion comes forward.
@@ -214,7 +236,7 @@ export default function Blog() {
                     width={94}
                     height={117}
                   />
-                  <p className="font-['Gantari',Helvetica] font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
+                  <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
                     &quot;By computerizing health records, we can avoid dangerous medical
                     mistakes, reduce costs, and improve care.&quot;
                     <br />— President George W. Bush, 2004 State of the Union Address
@@ -225,25 +247,25 @@ export default function Blog() {
 
             {/* Section: Challenges Ahead */}
             <section className="mb-8 md:mb-12">
-              <h2 className="font-['Gantari',Helvetica] font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+              <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
                 Challenges Ahead
               </h2>
               <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-                <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                   <strong>Privacy:</strong> Patient consent and HIPAA compliance are non-negotiable.
                 </p>
-                <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                   <strong>Bias and Accuracy:</strong> AI must be rigorously tested across diverse populations.
                 </p>
-                <p className="font-['Gantari',Helvetica] font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
                   <strong>Integration:</strong> Systems must work seamlessly with existing EHRs and workflows.
                 </p>
               </div>
 
-              <h2 className="font-['Gantari',Helvetica] font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+              <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
                 The Future is Here
               </h2>
-              <p className="font-['Gantari',Helvetica] font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+              <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
                 The AI scribe isn&apos;t just another gadget—it&apos;s a strategic shift in
                 how medicine is practiced. With tools like intelidoc AI leading the
                 way, we&apos;re not just making healthcare more efficient—we&apos;re
@@ -268,12 +290,12 @@ export default function Blog() {
                       <h3 className="font-playfair font-semibold text-[#162694] text-base sm:text-lg md:text-[17px] leading-tight md:leading-[21.8px] mb-3 md:mb-4">
                         {article.title}
                       </h3>
-                      <p className="font-['Gantari',Helvetica] font-normal text-black text-xs sm:text-sm md:text-[11px] leading-relaxed md:leading-[19.1px] flex-grow mb-3 md:mb-4">
+                      <p className="font-gantari font-normal text-black text-xs sm:text-sm md:text-[11px] leading-relaxed md:leading-[19.1px] flex-grow mb-3 md:mb-4">
                         {article.content}
                       </p>
                       <a
                         href="#"
-                        className="font-['Gantari',Helvetica] font-normal text-[#162694] text-xs leading-[15.4px] underline hover:text-[#162694]/80 transition-colors self-start"
+                        className="font-gantari font-normal text-[#162694] text-xs leading-[15.4px] underline hover:text-[#162694]/80 transition-colors self-start"
                       >
                         Read More
                       </a>
@@ -284,39 +306,10 @@ export default function Blog() {
             </section>
           </div>
         </div>
-
-        {/* Footer Section */}
-        <footer className="px-4 sm:px-6 md:px-8 lg:px-[158px] py-8 md:py-12">
-          <h2 className="font-playfair font-semibold text-[#162694] text-xl sm:text-2xl md:text-3xl mb-3 md:mb-4">
-            Security & Legal
-          </h2>
-          <p className="font-['Gantari',Helvetica] font-normal text-[#626262] text-base sm:text-lg md:text-xl mb-6 md:mb-8">
-            Our technology is HIPAA-compliant, uses industry best practices, and
-            doesn&apos;t store patient recordings.
-          </p>
-
-          {/* Footer Links */}
-          <div className="mb-6 md:mb-8">
-            <div className="flex flex-wrap gap-2 md:gap-4 text-sm sm:text-base md:text-lg leading-relaxed">
-              {footerLinks.map((link, index) => (
-                <React.Fragment key={index}>
-                  <a
-                    href="#"
-                    className="font-['Gantari',Helvetica] font-normal text-[#626262] hover:text-[#162694] hover:underline transition-colors"
-                  >
-                    {link}
-                  </a>
-                  {index < footerLinks.length - 1 && (
-                    <span className="text-[#626262] hidden sm:inline">|</span>
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-
-          <Separator className="w-full h-px bg-gray-300" />
-        </footer>
       </div>
+
+      {/* Footer */}
+      <Footer links={footerLinks} />
     </div>
   );
 };
