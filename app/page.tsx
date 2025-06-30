@@ -197,7 +197,7 @@ const navItems = [
   { label: "Specialties", href: "/specialities" },
   { label: "Blog", href: "/blogs" },
   { label: "Pricing", href: "/pricing" },
-  { label: "For Groups", href: "/groups" },
+  { label: "For Groups", href: "/forgroup" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -649,7 +649,7 @@ export default function Home() {
                   </div>
                   <div className="mt-6 lg:mt-0 lg:ml-8 lg:flex-shrink-0">
                     <Link href="/tryfree">
-                      <Button className="w-full text-2xl sm:w-auto sm:min-w-[200px] h-12 sm:h-[57px] rounded-[5px] bg-white text-[#162694] font-semibold hover:bg-gray-100">
+                      <Button className="font-gantari w-full text-2xl sm:w-auto sm:min-w-[200px] h-8 sm:h-[40px] rounded-[5px] bg-white text-[#162694] font-semibold hover:bg-gray-100">
                         Try for free
                       </Button>
                     </Link>

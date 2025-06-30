@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { Navigation } from "../features/__components/navigation";
+import { Footer } from "../components/footer";
 
 export default function TryFree() {
     // Testimonial data
@@ -13,12 +15,39 @@ export default function TryFree() {
         specialty: "Family Medicine",
     };
 
+    // Navigation menu items data
+    const navItems = [
+        { label: "Features", href: "/features" },
+        { label: "Specialties", href: "/specialities" },
+        { label: "Blog", href: "/blogs" },
+        { label: "Pricing", href: "/pricing" },
+        { label: "For Groups", href: "/forgroup" },
+        { label: "Contact Us", href: "/contact" },
+    ];
+
+    // Footer links data - same as homepage
+    const footerLinks = {
+        resources: ["Help Center", "Blog"],
+        specialties: [
+            "Family Medicine",
+            "Internal Medicine",
+            "Pschiatry",
+            "Mental Health",
+            "Padiatrics",
+            "Other Specialties",
+        ],
+        legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
+    };
+
     return (
         <div className="min-h-screen bg-[#f3f3f3]">
+            {/* Navigation */}
+            <Navigation navItems={navItems} />
+
             {/* Content container */}
-            <div className="min-h-screen flex flex-col lg:flex-row">
+            <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto min-h-screen flex flex-col lg:flex-row">
                 {/* Left side content */}
-                <div className="flex-1 px-6 md:px-12 lg:px-16 py-8 md:py-12 lg:py-16 flex flex-col justify-center">
+                <div className="flex-1 py-8 md:py-12 lg:py-16 flex flex-col justify-center">
                     {/* Header */}
                     <div className="text-center lg:text-left mb-8 md:mb-12">
                         <h1 className="font-bold text-[#162694] text-2xl md:text-3xl lg:text-[35px] mb-4 font-playfair">
@@ -79,7 +108,7 @@ export default function TryFree() {
                 </div>
 
                 {/* Right side - Sign up form */}
-                <div className="flex-1 px-6 md:px-12 lg:px-16 py-8 md:py-12 lg:py-16 flex items-center justify-center">
+                <div className="flex-1 py-8 md:py-12 lg:py-16 flex items-center justify-center">
                     <div className="w-full max-w-md lg:max-w-lg">
                         <Card className="bg-[#f4f0f0] shadow-lg border-none">
                             <CardContent className="p-6 md:p-8">
@@ -116,9 +145,9 @@ export default function TryFree() {
                                         htmlFor="terms"
                                         className="font-normal text-black text-sm md:text-[15px] font-gantari leading-relaxed"
                                     >
-                                        I agree to the terms of Freed's{" "}
+                                        I agree to the terms of intelidoc's{" "}
                                         <a
-                                            href="https://help.getfreed.ai/en/articles/9879953-privacy-policy"
+                                            href="https://help.getintelidoc.ai/en/articles/9879953-privacy-policy"
                                             rel="noopener noreferrer"
                                             target="_blank"
                                             className="underline hover:text-[#162694] transition-colors"
@@ -127,7 +156,7 @@ export default function TryFree() {
                                         </a>
                                         ,{" "}
                                         <a
-                                            href="https://help.getfreed.ai/en/articles/9879697-platform-terms-of-use"
+                                            href="https://help.getintelidoc.ai/en/articles/9879697-platform-terms-of-use"
                                             rel="noopener noreferrer"
                                             target="_blank"
                                             className="underline hover:text-[#162694] transition-colors"
@@ -149,6 +178,9 @@ export default function TryFree() {
                     </div>
                 </div>
             </div>
+
+            {/* Footer */}
+            <Footer links={footerLinks} />
         </div>
     );
 };

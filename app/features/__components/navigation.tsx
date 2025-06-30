@@ -56,9 +56,12 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
       } else if (pathname === '/specialities') {
         // Specialities page: dark in hero, light in other sections
         isInDarkSection = scrollY < windowHeight * 0.7;
+      } else if (pathname === '/forgroup') {
+        // Forgroup page: dark background (full page gradient)
+        isInDarkSection = true;
       } else if (pathname === '/blogs') {
-        // Blogs page: light background
-        isInDarkSection = false;
+        // Blogs page: dark in hero section (gradient background), light in other sections
+        isInDarkSection = scrollY < windowHeight * 0.7;
       } else if (pathname === '/tryfree') {
         // Try free page: light background
         isInDarkSection = false;

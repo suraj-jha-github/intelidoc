@@ -23,7 +23,7 @@ export default function Contact() {
     { label: "Specialties", href: "/specialities" },
     { label: "Blog", href: "/blogs" },
     { label: "Pricing", href: "/pricing" },
-    { label: "For Groups", href: "/groups" },
+    { label: "For Groups", href: "/forgroup" },
     { label: "Contact Us", href: "/contact" },
   ];
 

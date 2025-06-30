@@ -52,7 +52,7 @@ export default function Features() {
     {
       title: "HIPAA compliance",
       description:
-        "Your documentation stays protected with industry-leading safeguards and HIPAA-compliant practices. All Freed team members maintain current HIPAA certification.",
+        "Your documentation stays protected with industry-leading safeguards and HIPAA-compliant practices. All intelidoc team members maintain current HIPAA certification.",
     },
     {
       title: "Verified access",
@@ -103,7 +103,7 @@ export default function Features() {
     { label: "Specialties", href: "/specialities" },
     { label: "Blog", href: "/blogs" },
     { label: "Pricing", href: "/pricing" },
-    { label: "For Groups", href: "/groups" },
+    { label: "For Groups", href: "/forgroup" },
     { label: "Contact Us", href: "/contact" },
   ];
 

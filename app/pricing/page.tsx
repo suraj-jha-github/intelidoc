@@ -22,7 +22,7 @@ import Link from 'next/link';
 const features = [
   {
     title: "7-day free trial",
-    description: "Try Freed risk-free for 7 days. No credit card needed.",
+    description: "Try intelidoc risk-free for 7 days. No credit card needed.",
   },
   {
     title: "Specialty-specific templates",
@@ -32,7 +32,7 @@ const features = [
   {
     title: "Learn my format",
     description:
-      "Edit a note, and ask Freed to structure future notes in the same style.",
+      "Edit a note, and ask intelidoc to structure future notes in the same style.",
   },
   {
     title: "Smart visit prep",
@@ -40,11 +40,11 @@ const features = [
   },
   {
     title: "Magic edit",
-    description: "Ask Freed to revise a note for you.",
+    description: "Ask intelidoc to revise a note for you.",
   },
   {
     title: "Instant patient instructions",
-    description: "Freed writes instructions for you to send after each visit.",
+    description: "intelidoc writes instructions for you to send after each visit.",
   },
 ];
 
@@ -90,7 +90,7 @@ const navItems = [
   { label: "Specialties", href: "/specialities" },
   { label: "Blog", href: "/blogs" },
   { label: "Pricing", href: "/pricing" },
-  { label: "For Groups", href: "/groups" },
+  { label: "For Groups", href: "/forgroup" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -103,13 +103,13 @@ export default function Pricing() {
   return (
     <div className="bg-[#f3f3f3] flex flex-row justify-center w-full">
       <div className="bg-[#f3f3f3] overflow-hidden w-full relative">
-        <Navigation navItems={navItems} logoColorClass="text-white" />
+        <Navigation navItems={navItems} />
 
         {/* Hero Section */}
         <section className="relative w-full min-h-[500px] sm:min-h-[577px] bg-[#162694] bg-gradient-to-r from-[#162694] to-[#4a3a9a] pt-16 sm:pt-[60px]">
           {/* <div className="absolute w-[84px] h-[5px] top-[61px] left-1/2 transform -translate-x-1/2 sm:left-[626px] sm:transform-none bg-[#f72aa4]" /> */}
 
-          <div className="container px-4 sm:px-6 mx-auto">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-8">
               {/* Hero Text */}
               <div className="lg:w-1/2 pt-8 sm:pt-16">
@@ -131,11 +131,11 @@ export default function Pricing() {
 
                     {/* Billing toggle */}
                     <div className="flex items-center justify-end mt-4 mr-4 gap-2">
-                      <span className="text-xs font-['Gantari',Helvetica]">Billed:</span>
+                      <span className="text-xs font-gantari">Billed:</span>
                       <div className="flex items-center bg-[#ebe4ff] rounded-full px-1 py-0.5">
                         <button
                           type="button"
-                          className={`px-3 py-1 rounded-full text-xs font-['Gantari',Helvetica] transition-colors duration-150 ${billingPeriod === 'monthly'
+                          className={`px-3 py-1 rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'monthly'
                             ? 'bg-[#885aff] text-white'
                             : 'text-[#0b0b0b]'
                             }`}
@@ -145,7 +145,7 @@ export default function Pricing() {
                         </button>
                         <button
                           type="button"
-                          className={`px-3 py-1 rounded-full text-xs font-['Gantari',Helvetica] transition-colors duration-150 ${billingPeriod === 'annually'
+                          className={`px-3 py-1 rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'annually'
                             ? 'bg-[#885aff] text-white'
                             : 'text-[#0b0b0b]'
                             }`}
@@ -158,7 +158,7 @@ export default function Pricing() {
 
                     {/* Pricing details */}
                     <div className="px-4 sm:px-6 mt-2 pb-4">
-                      <div className="font-['Gantari',Helvetica]">
+                      <div className="font-gantari">
                         <span className="text-black">$ </span>
                         <span className="text-black text-xl sm:text-2xl">
                           {billingPeriod === 'monthly' ? monthlyPrice : annualPrice}/
@@ -168,7 +168,7 @@ export default function Pricing() {
                           Unlimited visits & note generation
                         </p>
                         <p className="text-black text-xs sm:text-[13px] mt-4 sm:mt-6">
-                          Get Freed as an individual clinician
+                          Get intelidoc as an individual clinician
                         </p>
                       </div>
 
@@ -192,11 +192,11 @@ export default function Pricing() {
 
                     {/* Billing toggle */}
                     <div className="flex items-center justify-end mt-4 mr-4 gap-2">
-                      <span className="text-xs font-['Gantari',Helvetica]">Billed:</span>
+                      <span className="text-xs font-gantari">Billed:</span>
                       <div className="flex items-center bg-[#ebe4ff] rounded-full px-1 py-0.5">
                         <button
                           type="button"
-                          className={`px-3 py-1 rounded-full text-xs font-['Gantari',Helvetica] transition-colors duration-150 ${billingPeriod === 'monthly'
+                          className={`px-3 py-1 rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'monthly'
                             ? 'bg-[#885aff] text-white'
                             : 'text-[#0b0b0b]'
                             }`}
@@ -206,7 +206,7 @@ export default function Pricing() {
                         </button>
                         <button
                           type="button"
-                          className={`px-3 py-1 rounded-full text-xs font-['Gantari',Helvetica] transition-colors duration-150 ${billingPeriod === 'annually'
+                          className={`px-3 py-1 rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'annually'
                             ? 'bg-[#885aff] text-white'
                             : 'text-[#0b0b0b]'
                             }`}
@@ -219,22 +219,24 @@ export default function Pricing() {
 
                     {/* Pricing details */}
                     <div className="px-4 sm:px-6 mt-2 pb-4">
-                      <div className="font-['Gantari',Helvetica]">
-                        <span className="text-black text-lg sm:text-xl">
-                          Group pricing
+                      <div className="font-gantari">
+                        <span className="text-black">$ </span>
+                        <span className="text-black text-xl sm:text-2xl">
+                          {billingPeriod === 'monthly' ? monthlyPrice : annualPrice}/
                         </span>
+                        <span className="text-black">{billingPeriod === 'monthly' ? 'mo' : 'yr'}</span>
                         <p className="text-[#868686] text-xs mt-1">
                           Unlimited visits & note generation
                         </p>
                         <p className="text-black text-xs sm:text-[13px] mt-4 sm:mt-6">
-                          Get Freed as an individual clinician
+                          Get intelidoc as an individual clinician
                         </p>
                       </div>
 
                       {/* CTA Button */}
                       <div className="mt-4">
                         <Link href="/tryfree">
-                          <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(255,155,89,1)] to-[rgba(255,215,141,1)] text-black font-medium hover:opacity-90 transition-opacity">
+                          <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(255,191,89,1)] to-[rgba(255,157,0,1)] text-white font-medium hover:opacity-90 transition-opacity">
                             Start Free Trial
                           </Button>
                         </Link>
@@ -248,8 +250,8 @@ export default function Pricing() {
         </section>
 
         {/* Features Comparison Section */}
-        <section className="relative w-full px-4 sm:px-6 py-12 sm:py-16">
-          <div className="max-w-[1127px] mx-auto">
+        <section className="relative w-full py-12 sm:py-16">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl lg:text-[34px] text-center lg:text-left">
               Choose the plan that works for you
             </h2>
@@ -260,10 +262,10 @@ export default function Pricing() {
                 <div key={index} className="border-b border-gray-200 py-6">
                   <div className="flex items-start justify-between">
                     <div className="flex-1 pr-4">
-                      <h3 className="font-['Gantari',Helvetica] text-black text-lg sm:text-xl">
+                      <h3 className="font-gantari text-black text-lg sm:text-xl">
                         {feature.title}
                       </h3>
-                      <p className="font-['Gantari',Helvetica] text-[#757171] text-sm sm:text-[15px] mt-2">
+                      <p className="font-gantari text-[#757171] text-sm sm:text-[15px] mt-2">
                         {feature.description}
                       </p>
                     </div>
@@ -295,7 +297,7 @@ export default function Pricing() {
                       />
                     </div>
                     <span
-                      className={`font-['Gantari',Helvetica] ${index === 0 ? "text-[#162694]" : "text-black"} text-lg sm:text-xl`}
+                      className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-lg sm:text-xl`}
                     >
                       {feature.title}
                     </span>
@@ -311,10 +313,10 @@ export default function Pricing() {
                   {features.map((feature, index) => (
                     <TableRow key={index} className="border-b border-gray-200">
                       <TableCell className="py-6 pl-4">
-                        <h3 className="font-['Gantari',Helvetica] text-black text-xl">
+                        <h3 className="font-gantari text-black text-xl">
                           {feature.title}
                         </h3>
-                        <p className="font-['Gantari',Helvetica] text-[#757171] text-[15px]">
+                        <p className="font-gantari text-[#757171] text-[15px]">
                           {feature.description}
                         </p>
                       </TableCell>
@@ -353,7 +355,7 @@ export default function Pricing() {
                             />
                           </div>
                           <span
-                            className={`font-['Gantari',Helvetica] ${index === 0 ? "text-[#162694]" : "text-black"} text-xl`}
+                            className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-xl`}
                           >
                             {feature.title}
                           </span>
@@ -386,7 +388,7 @@ export default function Pricing() {
           <div className="absolute w-[400px] sm:w-[792px] h-[400px] sm:h-[764px] top-[61px] right-[-100px] sm:right-[-200px] rounded-[50%] blur-[100px] bg-gradient-to-br from-[rgba(22,38,148,0.3)] to-[rgba(255,155,188,0.3)]" />
           <div className="absolute w-[300px] sm:w-[638px] h-[300px] sm:h-[609px] top-[86px] left-[-50px] sm:left-0 rounded-[50%] blur-[100px] bg-gradient-to-br from-[rgba(22,38,148,0.4)] to-[rgba(255,155,188,0.4)]" />
 
-          <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-8">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto flex flex-col lg:flex-row items-center gap-8">
             <div className="lg:w-1/3 flex justify-center">
               <img
                 src="/pricing/ellipse-53.png"
@@ -395,22 +397,24 @@ export default function Pricing() {
               />
             </div>
             <div className="lg:w-2/3 text-center lg:text-left">
-              <blockquote className="font-['Gantari',Helvetica] text-black text-xl sm:text-2xl lg:text-[32px] leading-relaxed lg:leading-[43.5px]">
-                &#34;InteliDoc AI has been life-changing! I was up till 10 pm
-                two weeks ago writing notes instead of spending time after work
-                with my 4 small kids. This week with Freed I&apos;m baking
-                cookies with them and even working out daily!&#34;
-                <br />
-                <br />
-                <cite className="text-lg sm:text-xl lg:text-2xl">— SF, MD, Primary Care Physician</cite>
+              <blockquote className="font-gantari text-black text-xl sm:text-2xl lg:text-[32px] leading-relaxed lg:leading-[43.5px]">
+                "InteliDoc has transformed how I practice medicine. I spend more time with patients and less time on paperwork. It's like having a personal assistant who never gets tired."
               </blockquote>
+              <div className="mt-6">
+                <p className="font-gantari font-semibold text-[#162694] text-lg sm:text-xl">
+                  Dr. Sarah Johnson
+                </p>
+                <p className="font-gantari text-[#757171] text-base sm:text-lg">
+                  Family Medicine Physician
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
         <section className="relative w-full py-12 sm:py-16">
-          <div className="max-w-[1208px] mx-auto px-4 sm:px-6">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             <div className="rounded-[20px] bg-[radial-gradient(50%_50%_at_4%_0%,rgba(1,18,39,1)_5%,rgba(14,25,99,1)_45%,rgba(15,38,127,1)_78%,rgba(1,18,39,1)_99%)] p-8 sm:p-12 lg:p-16">
               <h2 className="font-playfair font-medium text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
                 Frequently Asked Questions
@@ -434,7 +438,7 @@ export default function Pricing() {
                           alt="Question icon"
                           className="w-[24px] h-[30px] sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
                         />
-                        <span className="font-['Gantari',Helvetica] font-semibold text-white text-sm sm:text-base">
+                        <span className="font-gantari font-semibold text-white text-sm sm:text-base">
                           {item.question}
                         </span>
                       </div>
@@ -459,7 +463,7 @@ export default function Pricing() {
                           alt="Question icon"
                           className="w-[24px] h-[30px] sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
                         />
-                        <span className="font-['Gantari',Helvetica] font-semibold text-white text-sm sm:text-base">
+                        <span className="font-gantari font-semibold text-white text-sm sm:text-base">
                           {item.question}
                         </span>
                       </div>
@@ -475,33 +479,31 @@ export default function Pricing() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative w-full py-12 sm:py-16 text-center px-4 sm:px-6">
-          <h2 className="font-gantari font-normal text-[#162694] text-3xl sm:text-4xl lg:text-5xl leading-tight lg:leading-[53.8px]">
-            Try InteliDoc AI for 7 days for free.
-          </h2>
-          <p className="font-gantari font-normal text-black text-lg sm:text-xl mt-4 sm:mt-6 max-w-[760px] mx-auto">
-            We know once you try InteliDoc AI, you won&apos;t want to work{" "}
-            <br className="hidden sm:block" />
-            without it. So give it a go — no credit card needed.
-          </p>
+        <section className="relative w-full py-12 sm:py-16 text-center">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
+            <h2 className="font-gantari font-normal text-[#162694] text-3xl sm:text-4xl lg:text-5xl leading-tight lg:leading-[53.8px]">
+              Try InteliDoc AI for 7 days for free.
+            </h2>
+            <p className="font-gantari font-normal text-black text-lg sm:text-xl mt-4 sm:mt-6 max-w-[760px] mx-auto">
+              We know once you try InteliDoc AI, you won&apos;t want to work{" "}
+              <br className="hidden sm:block" />
+              without it. So give it a go — no credit card needed.
+            </p>
 
-          <Link href="/tryfree">
-            <Button className="mt-8 sm:mt-12 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity px-4">
-              <span className="font-gantari font-semibold text-white text-base sm:text-lg">
-                Try InteliDoc AI-
-                <span className="text-[#a9a7a7] text-sm sm:text-base">it&apos;s free</span>
-              </span>
-            </Button>
-          </Link>
+            <Link href="/tryfree">
+              <Button className="mt-8 sm:mt-12 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity px-4">
+                <span className="font-gantari font-semibold text-white text-base sm:text-lg">
+                  Try InteliDoc AI-
+                  <span className="text-[#a9a7a7] text-sm sm:text-base">it&apos;s free</span>
+                </span>
+              </Button>
+            </Link>
+          </div>
         </section>
-
-
-
-        {/* Additional features section  */}
 
         {/* Footer */}
         <footer className="w-full bg-white py-8 sm:py-12">
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center sm:text-left">
               <img
                 src="/pricing/image-6.png"
@@ -518,10 +520,10 @@ export default function Pricing() {
                 Resources
               </h4>
               <ul className="space-y-3 sm:space-y-4">
-                <li className="font-['Geist',Helvetica] font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors">
+                <li className="font-gantari font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors">
                   Help Center
                 </li>
-                <li className="font-['Geist',Helvetica] font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors">
+                <li className="font-gantari font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors">
                   Blog
                 </li>
               </ul>
@@ -535,7 +537,7 @@ export default function Pricing() {
                 {specialties.map((specialty, index) => (
                   <li
                     key={index}
-                    className="font-['Geist',Helvetica] font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors"
+                    className="font-gantari font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors"
                   >
                     {specialty}
                   </li>
@@ -544,14 +546,14 @@ export default function Pricing() {
             </div>
 
             <div className="text-center">
-              <h4 className="font-['Geist',Helvetica] font-semibold text-black text-lg sm:text-xl mb-4">
+              <h4 className="font-gantari font-semibold text-black text-lg sm:text-xl mb-4">
                 Legal
               </h4>
               <ul className="space-y-3 sm:space-y-4">
                 {legalLinks.map((link, index) => (
                   <li
                     key={index}
-                    className="font-['Geist',Helvetica] font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors"
+                    className="font-gantari font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors"
                   >
                     {link}
                   </li>

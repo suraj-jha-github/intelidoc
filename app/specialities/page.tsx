@@ -57,7 +57,7 @@ export default function Specialties() {
     {
       title: "Notes in your style, 10x faster",
       description:
-        "Freed Learns your style and format with every edit. Get customized notes in seconds.",
+        "intelidoc Learns your style and format with every edit. Get customized notes in seconds.",
       icon: "/speciality/noun-note-7815852-1.svg",
     },
     {
@@ -118,7 +118,7 @@ export default function Specialties() {
     { label: "Specialties", href: "/specialities" },
     { label: "Blog", href: "/blogs" },
     { label: "Pricing", href: "/pricing" },
-    { label: "For Groups", href: "/groups" },
+    { label: "For Groups", href: "/forgroup" },
     { label: "Contact Us", href: "/contact" },
   ];
 

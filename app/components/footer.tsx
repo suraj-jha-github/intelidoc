@@ -1,6 +1,7 @@
 'use client'
 import React from "react";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 interface FooterLinks {
   resources: string[];
@@ -13,9 +14,16 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ links }) => {
+  // Define the actual links for legal pages
+  const legalPageLinks = {
+    "Privacy Policy": "/privacy-policy",
+    "Terms of Services": "/terms-of-service",
+    "Terms of Use": "/terms-of-use"
+  };
+
   return (
     <section className="w-full mt-16">
-      
+
 
       {/* <Separator className="my-8" /> */}
 
@@ -41,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
                 {links.resources.map((link, index) => (
                   <li
                     key={index}
-                    className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px]"
+                    className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px] hover:text-[#162694] transition-colors cursor-pointer"
                   >
                     {link}
                   </li>
@@ -57,7 +65,7 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
                 {links.specialties.map((link, index) => (
                   <li
                     key={index}
-                    className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px]"
+                    className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px] hover:text-[#162694] transition-colors cursor-pointer"
                   >
                     {link}
                   </li>
@@ -71,11 +79,13 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
               </h3>
               <ul className="space-y-4">
                 {links.legal.map((link, index) => (
-                  <li
-                    key={index}
-                    className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px]"
-                  >
-                    {link}
+                  <li key={index}>
+                    <Link
+                      href={legalPageLinks[link as keyof typeof legalPageLinks] || "#"}
+                      className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px] hover:text-[#162694] transition-colors"
+                    >
+                      {link}
+                    </Link>
                   </li>
                 ))}
               </ul>

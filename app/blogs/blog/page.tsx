@@ -23,9 +23,9 @@ export default function Blog() {
 
   // Footer links
   const footerLinks = [
-    "Privacy Security", "Terms of Service", "Terms of Use", "Help Center", 
-    "Blog", "Templates", "Alternatives & Comparisons Medical", "Coding Hub", 
-    "Behavioral Health", "Internal Medicine", "Pediatrics", "Physical Therapy", 
+    "Privacy Security", "Terms of Service", "Terms of Use", "Help Center",
+    "Blog", "Templates", "Alternatives & Comparisons Medical", "Coding Hub",
+    "Behavioral Health", "Internal Medicine", "Pediatrics", "Physical Therapy",
     "Primary Care", "Psychiatry"
   ];
 
@@ -245,7 +245,7 @@ export default function Blog() {
               </h2>
               <p className="font-['Gantari',Helvetica] font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
                 The AI scribe isn&apos;t just another gadget—it&apos;s a strategic shift in
-                how medicine is practiced. With tools like Freed AI leading the
+                how medicine is practiced. With tools like intelidoc AI leading the
                 way, we&apos;re not just making healthcare more efficient—we&apos;re
                 making it human again.
               </p>
@@ -260,8 +260,8 @@ export default function Blog() {
               {/* Related Articles Cards */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 {relatedArticles.map((article, index) => (
-                  <Card 
-                    key={index} 
+                  <Card
+                    key={index}
                     className="bg-white rounded-[10px] border border-solid border-[#bcbaba] hover:shadow-lg transition-shadow duration-200 h-full"
                   >
                     <CardContent className="p-4 md:p-6 flex flex-col h-full min-h-[280px] md:min-h-[320px]">
@@ -271,8 +271,8 @@ export default function Blog() {
                       <p className="font-['Gantari',Helvetica] font-normal text-black text-xs sm:text-sm md:text-[11px] leading-relaxed md:leading-[19.1px] flex-grow mb-3 md:mb-4">
                         {article.content}
                       </p>
-                      <a 
-                        href="#" 
+                      <a
+                        href="#"
                         className="font-['Gantari',Helvetica] font-normal text-[#162694] text-xs leading-[15.4px] underline hover:text-[#162694]/80 transition-colors self-start"
                       >
                         Read More
@@ -294,14 +294,14 @@ export default function Blog() {
             Our technology is HIPAA-compliant, uses industry best practices, and
             doesn&apos;t store patient recordings.
           </p>
-          
+
           {/* Footer Links */}
           <div className="mb-6 md:mb-8">
             <div className="flex flex-wrap gap-2 md:gap-4 text-sm sm:text-base md:text-lg leading-relaxed">
               {footerLinks.map((link, index) => (
                 <React.Fragment key={index}>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="font-['Gantari',Helvetica] font-normal text-[#626262] hover:text-[#162694] hover:underline transition-colors"
                   >
                     {link}
@@ -313,7 +313,7 @@ export default function Blog() {
               ))}
             </div>
           </div>
-          
+
           <Separator className="w-full h-px bg-gray-300" />
         </footer>
       </div>
