@@ -64,7 +64,7 @@ export default function Specialties() {
       title: "Works in every setting",
       description:
         "Accurately capture AI medical notes for any specialty visit and in multiple languages.",
-      icon: "/speciality/group.png",
+      icon: "/speciality/target-iconn.svg",
     },
     {
       title: "Easy to use",
@@ -144,11 +144,11 @@ export default function Specialties() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <div className="p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-white shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300">
                   <Link href="/tryfree">
-                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-base sm:text-lg px-4 transition-all duration-300">
                       <span>Try InteliDoc AI-</span>
-                      <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                      <span className="text-[#162694] text-sm sm:text-base ml-1 opacity-80">it's free</span>
                     </Button>
                   </Link>
                 </div>
@@ -215,14 +215,11 @@ export default function Specialties() {
                 </h3>
               </div>
 
-              <div className="bg-contain bg-center rounded-lg flex items-center justify-center col-span-1 h-[333px] min-h-[150px] relative overflow-hidden">
+              <div className="bg-cover bg-center rounded-lg flex items-center justify-center col-span-1 h-[333px] min-h-[150px] relative overflow-hidden bg-gray-100">
                 <div
-                  className="absolute inset-0 bg-contain bg-center opacity-70"
+                  className="absolute inset-0 bg-cover bg-center opacity-80"
                   style={{
-                    backgroundImage: `url(${specialties[2].image})`,
-                    filter: 'none',
-                    imageRendering: 'auto',
-                    backfaceVisibility: 'hidden'
+                    backgroundImage: `url(${specialties[2].image})`
                   }}
                 />
                 <h3 className="font-playfair font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4 relative z-10">
@@ -246,14 +243,11 @@ export default function Specialties() {
               {/* Third column divided into two parts */}
               <div className="col-span-1 flex flex-col gap-4">
                 {/* Mental Health - Top */}
-                <div className="bg-contain bg-center rounded-lg flex items-center justify-center h-[147px] min-h-[150px] relative overflow-hidden">
+                <div className="bg-cover bg-center rounded-lg flex items-center justify-center h-[147px] min-h-[150px] relative overflow-hidden bg-gray-100">
                   <div
-                    className="absolute inset-0 bg-contain bg-center opacity-70"
+                    className="absolute inset-0 bg-cover bg-center opacity-80"
                     style={{
-                      backgroundImage: `url(${specialties[4].image})`,
-                      filter: 'none',
-                      imageRendering: 'auto',
-                      backfaceVisibility: 'hidden'
+                      backgroundImage: `url(${specialties[4].image})`
                     }}
                   />
                   <h3 className="font-playfair font-semibold text-black text-lg md:text-xl lg:text-[26px] tracking-[0] leading-tight text-center px-4 relative z-10">
@@ -321,7 +315,7 @@ export default function Specialties() {
                       >
                         <CardContent className="p-0">
                           <img
-                            className="w-16 h-16 mb-6"
+                            className="w-12 h-12 mb-6"
                             alt={feature.title}
                             src={feature.icon}
                           />

@@ -106,18 +106,22 @@ export default function Pricing() {
         <Navigation navItems={navItems} />
 
         {/* Hero Section */}
-        <section className="relative w-full min-h-[500px] sm:min-h-[577px] bg-[#162694] bg-gradient-to-r from-[#162694] to-[#4a3a9a] pt-16 sm:pt-[60px]">
-          {/* <div className="absolute w-[84px] h-[5px] top-[61px] left-1/2 transform -translate-x-1/2 sm:left-[626px] sm:transform-none bg-[#f72aa4]" /> */}
+        <section className="relative w-full min-h-[500px] md:min-h-[622px]">
+          <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
-          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
+          <div className="relative z-10 w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto pt-24 md:pt-32 pb-8">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-8">
               {/* Hero Text */}
-              <div className="lg:w-1/2 pt-8 sm:pt-16">
+              <div className="lg:w-1/2">
                 <h1 className="font-playfair font-semibold text-white text-3xl sm:text-4xl lg:text-[52px] leading-tight lg:leading-[57.7px]">
                   Simple, transparent pricing
                 </h1>
                 <p className="mt-6 sm:mt-8 font-gantari text-white text-base sm:text-lg max-w-[470px]">
-                  Fast reads for doctors who are pressed for timeOur strategies are designed with actual clinicians in mind. Reasonably priced, easy to set up, and help available when needed. 50% off is offered to trainees, residents, and students. Find out more
+                  Fast reads for doctors who are pressed for timeOur strategies are designed with actual clinicians in mind. Reasonably priced, easy to set up, and help available when needed.
+                </p>
+
+                <p className="mt-2 font-gantari text-white text-base sm:text-lg max-w-[470px]">
+                  50% off is offered to trainees, residents, and students. Find out more
                 </p>
               </div>
 
@@ -127,7 +131,7 @@ export default function Pricing() {
                 <Card className="w-full sm:w-[295px] rounded-[10px] relative">
                   <CardContent className="p-0">
                     {/* Purple gradient top border */}
-                    <div className="w-[90%] sm:w-[277px] h-[3px] mx-auto rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)]" />
+                    <div className="w-[90%] sm:w-[277px] h-[3px] mx-auto mt-[1px] rounded-t-[10px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)]" />
 
                     {/* Billing toggle */}
                     <div className="flex items-center justify-end mt-4 mr-4 gap-2">
@@ -135,7 +139,7 @@ export default function Pricing() {
                       <div className="flex items-center bg-[#ebe4ff] rounded-full px-1 py-0.5">
                         <button
                           type="button"
-                          className={`px-3 py-1 rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'monthly'
+                          className={`px-3 py-[2px] rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'monthly'
                             ? 'bg-[#885aff] text-white'
                             : 'text-[#0b0b0b]'
                             }`}
@@ -145,7 +149,7 @@ export default function Pricing() {
                         </button>
                         <button
                           type="button"
-                          className={`px-3 py-1 rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'annually'
+                          className={`px-3 py-[2px] rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'annually'
                             ? 'bg-[#885aff] text-white'
                             : 'text-[#0b0b0b]'
                             }`}
@@ -188,7 +192,7 @@ export default function Pricing() {
                 <Card className="w-full sm:w-[296px] rounded-[10px] relative">
                   <CardContent className="p-0">
                     {/* Orange gradient top border */}
-                    <div className="w-[90%] sm:w-[277px] h-[3px] mx-auto mt-1 rounded-[5px] bg-gradient-to-r from-[rgba(255,191,89,1)] to-[rgba(255,157,0,1)]" />
+                    <div className="w-[90%] sm:w-[277px] h-[3px] mx-auto mt-[1px] rounded-t-[10px] bg-gradient-to-r from-[rgba(255,191,89,1)] to-[rgba(255,157,0,1)]" />
 
                     {/* Billing toggle */}
                     <div className="flex items-center justify-end mt-4 mr-4 gap-2">
@@ -196,7 +200,7 @@ export default function Pricing() {
                       <div className="flex items-center bg-[#ebe4ff] rounded-full px-1 py-0.5">
                         <button
                           type="button"
-                          className={`px-3 py-1 rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'monthly'
+                          className={`px-3 py-[2px] rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'monthly'
                             ? 'bg-[#885aff] text-white'
                             : 'text-[#0b0b0b]'
                             }`}
@@ -206,7 +210,7 @@ export default function Pricing() {
                         </button>
                         <button
                           type="button"
-                          className={`px-3 py-1 rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'annually'
+                          className={`px-3 py-[2px] rounded-full text-xs font-gantari transition-colors duration-150 ${billingPeriod === 'annually'
                             ? 'bg-[#885aff] text-white'
                             : 'text-[#0b0b0b]'
                             }`}
@@ -269,7 +273,7 @@ export default function Pricing() {
                         {feature.description}
                       </p>
                     </div>
-                    <div className="flex space-x-4">
+                    <div className="flex space-x-12">
                       <img
                         src="/pricing/noun-tick-7438312-5.svg"
                         alt="Individual Plan"
@@ -278,7 +282,7 @@ export default function Pricing() {
                       <img
                         src="/pricing/noun-tick-7438312-5.svg"
                         alt="Group Plan"
-                        className="w-6 h-6 sm:w-[34px] sm:h-10"
+                        className="w-6 h-6 sm:w-[34px] sm:h-10 filter hue-rotate-[45deg] brightness-[1.1] saturate-[1.5]"
                       />
                     </div>
                   </div>
@@ -320,18 +324,18 @@ export default function Pricing() {
                           {feature.description}
                         </p>
                       </TableCell>
-                      <TableCell className="text-center">
+                      <TableCell className="text-center pr-12">
                         <img
                           src="/pricing/noun-tick-7438312-5.svg"
                           alt="Included"
                           className="w-[34px] h-10 mx-auto"
                         />
                       </TableCell>
-                      <TableCell className="text-center">
+                      <TableCell className="text-center pl-12">
                         <img
                           src="/pricing/noun-tick-7438312-5.svg"
                           alt="Included"
-                          className="w-[34px] h-10 mx-auto"
+                          className="w-[34px] h-10 mx-auto filter hue-rotate-[45deg] brightness-[1.1] saturate-[1.5]"
                         />
                       </TableCell>
                     </TableRow>
@@ -397,7 +401,7 @@ export default function Pricing() {
               />
             </div>
             <div className="lg:w-2/3 text-center lg:text-left">
-              <blockquote className="font-gantari text-black text-xl sm:text-2xl lg:text-[32px] leading-relaxed lg:leading-[43.5px]">
+              <blockquote className="font-gantari text-black text-xl sm:text-2xl lg:text-[27px] leading-relaxed lg:leading-[43.5px]">
                 "InteliDoc has transformed how I practice medicine. I spend more time with patients and less time on paperwork. It's like having a personal assistant who never gets tired."
               </blockquote>
               <div className="mt-6">
@@ -415,7 +419,7 @@ export default function Pricing() {
         {/* FAQ Section */}
         <section className="relative w-full py-12 sm:py-16">
           <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
-            <div className="rounded-[20px] bg-[radial-gradient(50%_50%_at_4%_0%,rgba(1,18,39,1)_5%,rgba(14,25,99,1)_45%,rgba(15,38,127,1)_78%,rgba(1,18,39,1)_99%)] p-8 sm:p-12 lg:p-16">
+            <div className="rounded-[20px] bg-[linear-gradient(90deg,rgba(1,18,39,1)_0%,rgba(14,25,99,1)_25%,rgba(15,38,127,1)_50%,rgba(14,25,99,1)_75%,rgba(1,18,39,1)_100%)] p-8 sm:p-12 lg:p-16">
               <h2 className="font-playfair font-medium text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
                 Frequently Asked Questions
               </h2>
@@ -431,7 +435,7 @@ export default function Pricing() {
                     value={`item-${index}`}
                     className="border-b border-white/20"
                   >
-                    <AccordionTrigger className="py-4 text-white hover:text-gray-200">
+                    <AccordionTrigger className="py-4 text-white hover:text-gray-200 no-underline hover:no-underline">
                       <div className="flex items-center text-left">
                         <img
                           src="/pricing/noun-question-7004840-2.svg"
@@ -456,7 +460,7 @@ export default function Pricing() {
                     value={`dup-item-${index}`}
                     className="border-b border-white/20"
                   >
-                    <AccordionTrigger className="py-4 text-white hover:text-gray-200">
+                    <AccordionTrigger className="py-4 text-white hover:text-gray-200 no-underline hover:no-underline">
                       <div className="flex items-center text-left">
                         <img
                           src="/pricing/noun-question-7004840-2.svg"

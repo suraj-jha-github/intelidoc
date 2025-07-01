@@ -239,38 +239,46 @@ export default function Home() {
         <Navigation navItems={navItems} />
 
         {/* Hero Section */}
-        <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[612px] mt-14 md:mt-[57px]">
-          <Image
-            className="absolute w-full h-full top-0 left-0 object-cover"
-            alt="Hero background"
-            src="/home-images/rectangle-1.png" width={50} height={50}
-          />
-          <div className="absolute w-full h-full top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.1)] to-[rgba(0,0,0,1)]" />
+        <section className="relative w-full min-h-[500px] md:min-h-[622px] mt-14 md:mt-[57px]">
+          <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
-          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto h-full">
-            <div className="absolute top-8 sm:top-16 md:top-24 lg:top-[159px] font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-[56px] leading-tight lg:leading-[57.7px]">
-              Auto-generated <br />
-              clinical notes, as if <br />
-              by magic.
-            </div>
+          {/* Hero Content */}
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-24 md:pt-32 pb-8 max-w-7xl mx-auto h-full">
+            <div className="flex-1 mb-8 lg:mb-0">
+              <h1 className="font-playfair font-semibold text-white text-3xl md:text-4xl lg:text-[52px] tracking-[0] leading-tight md:leading-[57.7px] mb-6">
+                Auto-generated <br />
+                clinical notes, as if <br />
+                by magic.
+              </h1>
 
-            <div className="absolute w-full max-w-[400px] sm:max-w-[500px] lg:max-w-[494px] top-48 sm:top-56 md:top-64 lg:top-[354px] font-light text-white text-base sm:text-lg md:text-xl lg:text-[25px] font-gantari leading-relaxed">
-              The most reliable and beloved tool for creating accurate, compliant
-              medical notes.
-            </div>
+              <p className="font-gantari font-normal text-white text-lg md:text-xl lg:text-2xl leading-normal mb-8 max-w-[459px]">
+                The most reliable and beloved tool for creating accurate, compliant
+                medical notes.
+              </p>
 
-            {/* Button at the bottom */}
-            <div className="absolute top-72 sm:top-80 md:top-96 lg:top-[454px] p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-white shadow-[0_0_8px_rgba(255,255,255,0.3)]">
-              <Link href="/tryfree">
-                <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
-                  <span>Try InteliDoc AI-</span>
-                  <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <div className="p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-white shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                  <Link href="/tryfree">
+                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                      <span>Try InteliDoc AI-</span>
+                      <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                    </Button>
+                  </Link>
+                </div>
+
+                <Button
+                  variant="outline"
+                  className="w-full sm:w-[191px] h-12 sm:h-[57px] rounded-[5px] border border-solid border-white bg-transparent hover:bg-white hover:text-[#162694] transition-all duration-300 group"
+                >
+                  <span className="text-base sm:text-lg leading-[30.7px] font-gantari font-medium text-white group-hover:text-[#162694] text-center whitespace-nowrap transition-colors duration-300">
+                    Contact Sales
+                  </span>
                 </Button>
-              </Link>
+              </div>
             </div>
 
             {/* Hero Video on right */}
-            <div className="hidden lg:block absolute top-32 lg:top-40 right-22 w-[500px] max-w-[500px]">
+            <div className="hidden lg:block flex-1 max-w-[500px] lg:ml-8">
               <video
                 className="w-full h-auto rounded-[20px] shadow-lg"
                 autoPlay

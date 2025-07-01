@@ -1,5 +1,5 @@
 import React, { JSX } from "react";
-import { Navigation } from "./__components/navigation";
+import { Navigation } from "../features/__components/navigation";
 import { HeroSection } from "./__components/hero-section";
 import { IntegrationCard } from "./__components/integration-card";
 import { SecuritySection } from "./__components/security-section";
@@ -122,13 +122,36 @@ export default function Features() {
   };
 
   return (
-    <div className="bg-feature-background min-h-screen">
-      <div className="bg-feature-background overflow-hidden w-full max-w-feature mx-auto relative">
-        {/* Navigation */}
-        <Navigation navItems={navItems} />
+    <div className="bg-[#f3f3f3] flex flex-row justify-center w-full">
+      <div className="bg-[#f3f3f3] overflow-hidden w-full max-w-none relative">
+        {/* Header Section */}
+        <header className="relative w-full min-h-[500px] md:min-h-[622px]">
+          <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
-        {/* Hero Section */}
-        <HeroSection />
+          {/* Navigation Bar */}
+          <Navigation navItems={navItems} />
+
+          {/* Hero Content */}
+          <div className="relative z-10 flex flex-col items-center justify-center pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-24 md:pt-32 pb-8 max-w-7xl mx-auto h-full">
+            <div className="relative text-center w-full">
+              <div className="w-full max-w-[850px] mx-auto">
+                <h2 className="font-playfair font-semibold text-white text-2xl md:text-4xl lg:text-[75px] leading-tight md:leading-[75px] mt-2 md:mt-4 text-center">
+                  Seamless Interoperability
+                </h2>
+              </div>
+            </div>
+
+            <div className="w-full max-w-[850px] h-auto bg-gradient-to-r from-[rgba(223,221,250,1)] to-[rgba(252,214,230,1)] p-2 md:p-4 rounded-lg md:rounded-none mt-[20px] mx-auto">
+              <h3 className="font-playfair bg-gradient-to-r from-[rgba(22,38,148,1)] to-[rgba(153,166,255,1)] bg-clip-text text-transparent font-semibold text-3xl md:text-5xl lg:text-[83px] leading-[1.1] md:leading-[1.1] pb-4 text-center">
+                with Clinical Systems
+              </h3>
+            </div>
+
+            <p className="font-gantari text-white text-lg md:text-xl lg:text-xl text-center max-w-[900px] mt-6 md:mt-12">
+              InteliDoc integrates seamlessly with your EHR to unify scheduling, e-prescribing, lab results, billing, and analytics—automating workflows, reducing errors, and boosting practice efficiency from day one.
+            </p>
+          </div>
+        </header>
 
         {/* Integration Options */}
         <section className="mt-[32px]">
@@ -200,21 +223,28 @@ export default function Features() {
                     </svg>
                   </div>
                   <h3 className="font-playfair font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Compatible</h3>
-                  <p className="font-gantari font-medium text-white text-sm leading-relaxed text-left">Easily copy and paste your notes into your preferred EHR or EMR.</p>
+                  <p className="font-gantari font-medium text-white text-sm leading-relaxed text-left">Works with all major EHR systems and integrates seamlessly.</p>
                 </CardContent>
               </Card>
               {/* Personalized */}
               <Card className="w-full max-w-[230px] h-[224px] py-0 mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
                 <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
-                    {/* User Icon - exact style */}
+                    {/* Settings Icon - exact style */}
                     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="21" cy="15" r="6" stroke="#fff" strokeWidth="1.5" />
-                      <path d="M10 32C10 27.5817 14.0294 24 21 24C27.9706 24 32 27.5817 32 32" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M21 15C17.6863 15 15 17.6863 15 21C15 24.3137 17.6863 27 21 27C24.3137 27 27 24.3137 27 21C27 17.6863 24.3137 15 21 15Z" stroke="#fff" strokeWidth="1.5" />
+                      <path d="M21 3V6" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M21 36V39" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M39 21H36" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M6 21H3" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M33.9 8.1L31.5 10.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M10.5 31.5L8.1 33.9" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M33.9 33.9L31.5 31.5" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M10.5 10.5L8.1 8.1" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   </div>
                   <h3 className="font-playfair font-bold text-white text-lg lg:text-[22px] mb-4 text-left">Personalized</h3>
-                  <p className="font-gantari font-medium text-white text-sm leading-relaxed text-left">Twofold learns your style of writing and improves over time.</p>
+                  <p className="font-gantari font-medium text-white text-sm leading-relaxed text-left">Learns your style and adapts to your preferences over time.</p>
                 </CardContent>
               </Card>
             </div>

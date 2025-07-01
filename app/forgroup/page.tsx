@@ -20,7 +20,6 @@ import {
 import { Copy, Menu, X, FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon, YoutubeIcon } from "lucide-react";
 import { Navigation } from "../features/__components/navigation";
 import { Footer } from "../components/footer";
-import Link from "next/link";
 
 export default function ForGroups() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -61,7 +60,39 @@ export default function ForGroups() {
         { width: "w-full" },
     ];
 
-    // Footer links data - same as homepage
+    // Define the footer data structure for better organization and mapping
+    const footerSections = [
+        {
+            title: "Resources",
+            links: ["Help Center", "Blog"],
+        },
+        {
+            title: "Specialties",
+            links: [
+                "Family Medicine",
+                "Internal Medicine",
+                "Psychiatry",
+                "Mental Health",
+                "Pediatrics",
+                "Other Specialties",
+            ],
+        },
+        {
+            title: "Legal",
+            links: ["Privacy Policy", "Terms of Services", "Terms of Use"],
+        },
+    ];
+
+    // Social media icons
+    const socialIcons = [
+        { Icon: FacebookIcon, ariaLabel: "Facebook" },
+        { Icon: InstagramIcon, ariaLabel: "Instagram" },
+        { Icon: TwitterIcon, ariaLabel: "Twitter" },
+        { Icon: LinkedinIcon, ariaLabel: "LinkedIn" },
+        { Icon: YoutubeIcon, ariaLabel: "YouTube" },
+    ];
+
+    // Footer links data
     const footerLinks = {
         resources: ["Help Center", "Blog"],
         specialties: [
@@ -79,7 +110,7 @@ export default function ForGroups() {
         <div className="bg-[#f3f3f3] flex flex-row justify-center w-full">
             <div className="bg-[#f3f3f3] overflow-hidden w-full max-w-none relative">
                 {/* Header Section */}
-                <header className="relative w-full min-h-screen">
+                <header className="relative w-full min-h-[500px] md:min-h-[622px]">
                     <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
                     {/* Navigation Bar */}
@@ -101,17 +132,15 @@ export default function ForGroups() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <div className="p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-white shadow-[0_0_8px_rgba(255,255,255,0.3)]">
-                                    <Link href="/contact">
-                                        <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
-                                            <span>Contact us</span>
-                                        </Button>
-                                    </Link>
-                                </div>
+                                <Button className="h-12 sm:h-[57px] w-full sm:w-auto px-8 lg:px-12 rounded-[5px] bg-white hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <span className="font-gantari font-semibold text-[#162694] text-base sm:text-lg">
+                                        Contact us
+                                    </span>
+                                </Button>
 
                                 <Button
                                     variant="outline"
-                                    className="w-full sm:w-[191px] h-12 sm:h-[57px] rounded-[5px] border border-solid border-white bg-transparent hover:bg-white hover:text-[#162694] transition-all duration-300 group"
+                                    className="h-12 sm:h-[57px] w-full sm:w-auto px-8 lg:px-12 rounded-[5px] border border-solid border-white bg-transparent hover:bg-white hover:text-[#162694] transition-all duration-300 group"
                                 >
                                     <span className="text-base sm:text-lg leading-[30.7px] font-gantari font-medium text-white group-hover:text-[#162694] text-center whitespace-nowrap transition-colors duration-300">
                                         Book a Demo
@@ -137,24 +166,30 @@ export default function ForGroups() {
                         </div>
                     </div>
 
-                    {/* Feature Badges Section */}
-                    <div className="relative z-10 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto pb-16 mt-14">
-                        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+                    {/* Feature Badges */}
+                    <div className="relative z-10 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mt-8 lg:mt-12 pb-8 lg:pb-12 max-w-7xl mx-auto">
+                        <div className="flex flex-wrap justify-center gap-4 lg:gap-6">
                             {featureBadges.map((badge, index) => (
                                 <Badge
                                     key={index}
-                                    className="font-gantari font-medium text-[#162694] bg-white border border-[#162694] px-4 py-2  text-sm md:text-base hover:bg-[#162694] hover:text-white transition-all duration-300"
+                                    variant="outline"
+                                    className="h-10 lg:h-[45px] w-[250px] lg:w-[259px] px-4 lg:px-6 bg-white/95 backdrop-blur-sm rounded-lg border-0 flex items-center justify-center shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
                                 >
-                                    {badge.text}
+                                    <span className="font-gantari font-medium text-[#162694] text-sm lg:text-[15px] text-center">
+                                        {badge.text}
+                                    </span>
                                 </Badge>
                             ))}
                         </div>
                     </div>
                 </header>
 
+                {/* Call To Action Section */}
+
+
                 {/* Footer */}
                 <Footer links={footerLinks} />
             </div>
         </div>
     );
-}
+};

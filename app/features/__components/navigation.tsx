@@ -45,8 +45,8 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
           isInDarkSection = false;
         }
       } else if (pathname === '/features') {
-        // Features page: dark background
-        isInDarkSection = true;
+        // Features page: dark in hero, light in other sections (like specialities page)
+        isInDarkSection = scrollY < windowHeight * 0.7;
       } else if (pathname === '/pricing') {
         // Pricing page: dark in hero, light in other sections
         isInDarkSection = scrollY < windowHeight * 0.6;
@@ -84,14 +84,10 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   };
 
   // Dynamic classes based on background and page
-  const navTextColor = pathname === '/features'
-    ? "text-[#767676]"
-    : isDarkBackground
-      ? "text-white"
-      : "text-[#162694]";
-  const navLogoColor = pathname === '/features'
-    ? "text-[#132180]"
-    : logoColorClass || (isDarkBackground ? "text-white" : "text-[#162694]");
+  const navTextColor = isDarkBackground
+    ? "text-white"
+    : "text-[#162694]";
+  const navLogoColor = logoColorClass || (isDarkBackground ? "text-white" : "text-[#162694]");
   const navBackground = isDarkBackground
     ? "backdrop-blur-[6px] backdrop-brightness-[100%] bg-gradient-to-b from-gray-900/20 to-gray-900/10 border-b border-gray-700/20"
     : "backdrop-blur-[6px] backdrop-brightness-[100%] bg-gradient-to-b from-white/20 to-white/10 border-b border-gray-200/20";
@@ -101,11 +97,9 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   const mobileMenuClass = isDarkBackground
     ? "bg-gray-900/95 backdrop-blur-md border-t border-gray-700/20"
     : "bg-white/95 backdrop-blur-md border-t border-gray-200/20";
-  const mobileTextColor = pathname === '/features'
-    ? "text-[#767676]"
-    : isDarkBackground
-      ? "text-white"
-      : "text-[#162694]";
+  const mobileTextColor = isDarkBackground
+    ? "text-white"
+    : "text-[#162694]";
   const mobileCtaClass = isDarkBackground
     ? "bg-white text-[#162694]"
     : "bg-[#162694] text-white";
