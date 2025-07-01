@@ -27,7 +27,7 @@ export const CTASection: React.FC = () => {
           onMouseLeave={() => setIsHovered2(false)}
           style={isHovered2 ? { background: 'linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)', color: '#fff' } : {}}
         >
-          Book a Demo
+          Try for free
         </Button>
       </div>
     </section>

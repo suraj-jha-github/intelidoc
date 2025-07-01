@@ -254,23 +254,17 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <div className="p-[1px] rounded-[6px] bg-gradient-to-r from-white via-white to-white shadow-[0_0_8px_rgba(255,255,255,0.3)]">
-                  <Link href="/tryfree">
-                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300">
+                  <Link href="/tryfree" target="_blank">
+                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-base sm:text-lg px-4 transition-all duration-300">
                       <span>Try InteliDoc AI-</span>
-                      <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                      <span className="text-[#162694] text-sm sm:text-base ml-1 opacity-80">it's free</span>
                     </Button>
                   </Link>
                 </div>
 
-                <Button
-                  variant="outline"
-                  className="w-full sm:w-[191px] h-12 sm:h-[57px] rounded-[5px] border border-solid border-white bg-transparent hover:bg-white hover:text-[#162694] transition-all duration-300 group"
-                >
-                  <span className="text-base sm:text-lg leading-[30.7px] font-gantari font-medium text-white group-hover:text-[#162694] text-center whitespace-nowrap transition-colors duration-300">
-                    Contact Sales
-                  </span>
-                </Button>
+
+
               </div>
             </div>
 
@@ -557,7 +551,7 @@ export default function Home() {
 
                 {/* Button at the bottom */}
                 <div className="mt-[50px] lg:mt-[50px]">
-                  <Link href="/tryfree">
+                  <Link href="/tryfree" target="_blank">
                     <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
                       <span>Try InteliDoc AI-</span>
                       <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
@@ -653,7 +647,7 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="mt-6 lg:mt-0 lg:ml-8 lg:flex-shrink-0">
-                    <Link href="/tryfree">
+                    <Link href="/tryfree" target="_blank">
                       <Button className="font-gantari w-full text-2xl sm:w-auto sm:min-w-[200px] h-8 sm:h-[40px] rounded-[5px] bg-white text-[#162694] font-semibold hover:bg-gray-100">
                         Try for free
                       </Button>
@@ -678,7 +672,7 @@ export default function Home() {
               We don't train our models on your data. We don't store any audio.
             </p>
 
-            <div className="mt-8 sm:mt-12 lg:mt-16">
+            <div className="mt-8 sm:mt-12 lg:mt-16 ml-6 ">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-8 max-w-5xl mx-auto">
                 {securityFeatures.map((feature, index) => (
                   <Card
@@ -700,7 +694,7 @@ export default function Home() {
             </div>
 
             <div className="text-center">
-              <Link href="/tryfree">
+              <Link href="/tryfree" target="_blank">
                 <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
                   <span>Try InteliDoc AI-</span>
                   <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
@@ -719,35 +713,37 @@ export default function Home() {
                   Frequently Asked Questions
                 </h2>
 
-                <Accordion
-                  type="single"
-                  collapsible
-                  className="w-full max-w-[977px] mx-auto"
-                >
-                  {faqItems.map((item, index) => (
-                    <AccordionItem
-                      key={index}
-                      value={`item-${index}`}
-                      className="border-b border-white hover:border-transparent transition-all duration-200"
-                    >
-                      <AccordionTrigger className="py-4 sm:py-6 text-white hover:no-underline hover:bg-white/10 hover:py-3 sm:hover:py-5 rounded-lg transition-all duration-200 hover:pl-4 mt-2 [&>svg]:ml-4 pr-4">
-                        <div className="flex items-center text-left">
-                          <Image
-                            className="w-6 h-7 sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
-                            alt="Noun question"
-                            src="/home-images/noun-question-7004840-5.svg" width={50} height={50}
-                          />
-                          <span className="font-gantari font-semibold text-white text-sm sm:text-base">
-                            {item.question}
-                          </span>
-                        </div>
-                      </AccordionTrigger>
-                      <AccordionContent className="text-white text-sm sm:text-base">
-                        {item.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
+                <div className="w-full max-w-[977px] mx-auto">
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="w-full [&>*:hover]:border-b-transparent [&>*:hover+*]:border-t-transparent [&>*:hover]:border-t-transparent"
+                  >
+                    {faqItems.map((item, index) => (
+                      <AccordionItem
+                        key={index}
+                        value={`item-${index}`}
+                        className="border-b border-white transition-all duration-200"
+                      >
+                        <AccordionTrigger className="py-4 sm:py-6 text-white hover:no-underline hover:bg-white/10 hover:py-3 sm:hover:py-5 rounded-lg transition-all duration-200 hover:pl-4 mt-2 [&>svg]:ml-4 pr-4">
+                          <div className="flex items-center text-left">
+                            <Image
+                              className="w-6 h-7 sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
+                              alt="Noun question"
+                              src="/home-images/noun-question-7004840-5.svg" width={50} height={50}
+                            />
+                            <span className="font-gantari font-semibold text-white text-sm sm:text-base">
+                              {item.question}
+                            </span>
+                          </div>
+                        </AccordionTrigger>
+                        <AccordionContent className="text-white text-sm sm:text-base">
+                          {item.answer}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
               </CardContent>
             </Card>
           </div>

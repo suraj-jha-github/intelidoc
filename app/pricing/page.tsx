@@ -58,17 +58,46 @@ const additionalFeatures = [
 
 // FAQ data
 const faqItems = [
-  { question: "What is InteliDoc-AI?" },
-  { question: "How does InteliDoc-AI work?" },
-  { question: "What are the benefits of using InteliDoc-AI?" },
   {
-    question:
-      "Is InteliDoc-AI secure and compliant with healthcare regulations?",
+    question: "What is InteliDoc-AI?",
+    answer: "InteliDoc-AI is an intelligent documentation tool that leverages AI to automate clinical note-taking, streamline workflows, and reduce administrative load for healthcare providers."
   },
   {
-    question:
-      "Can InteliDoc-AI be customized to suit specific healthcare practices?",
+    question: "How does InteliDoc-AI work?",
+    answer: "It uses natural language processing and automation to capture, structure, and sync clinical data with EHR systems, minimizing manual entry and errors."
   },
+  {
+    question: "What are the benefits of using InteliDoc-AI?",
+    answer: "Key benefits include time savings, improved documentation accuracy, reduced provider burnout, and enhanced overall efficiency in healthcare delivery."
+  },
+  {
+    question: "Is InteliDoc-AI secure and compliant with healthcare regulations?",
+    answer: "Yes, InteliDoc-AI is fully HIPAA-compliant and uses advanced security protocols to ensure the confidentiality and integrity of patient data."
+  },
+  {
+    question: "Can InteliDoc-AI be customized to suit specific healthcare practices?",
+    answer: "Absolutely. InteliDoc-AI is designed to adapt to various medical specialties, workflows, and documentation preferences."
+  },
+  {
+    question: "Does InteliDoc-AI integrate with existing EHR systems?",
+    answer: "Yes, it supports seamless integration with leading EHR platforms, ensuring smooth data exchange and operational continuity."
+  },
+  {
+    question: "Is training required to use InteliDoc-AI?",
+    answer: "Minimal training is needed. The system is user-friendly, with onboarding support provided to ensure a smooth learning curve for providers and staff."
+  },
+  {
+    question: "Can InteliDoc-AI be used in telehealth settings?",
+    answer: "Yes, InteliDoc-AI works effectively in virtual care environments, capturing and organizing data from telehealth consultations."
+  },
+  {
+    question: "What types of practices can benefit from InteliDoc-AI?",
+    answer: "It's ideal for primary care, specialty clinics, multi-provider groups, and any healthcare setting seeking to improve documentation efficiency."
+  },
+  {
+    question: "How quickly can InteliDoc-AI be implemented?",
+    answer: "Deployment is fast and flexible—most practices can get up and running within a few days, depending on the level of customization required."
+  }
 ];
 
 // Specialties data
@@ -178,7 +207,7 @@ export default function Pricing() {
 
                       {/* CTA Button */}
                       <div className="mt-4">
-                        <Link href="/tryfree">
+                        <Link href="/tryfree" target="_blank">
                           <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium hover:opacity-90 transition-opacity">
                             Start Free Trial
                           </Button>
@@ -239,7 +268,7 @@ export default function Pricing() {
 
                       {/* CTA Button */}
                       <div className="mt-4">
-                        <Link href="/tryfree">
+                        <Link href="/tryfree" target="_blank">
                           <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(255,191,89,1)] to-[rgba(255,157,0,1)] text-white font-medium hover:opacity-90 transition-opacity">
                             Start Free Trial
                           </Button>
@@ -373,12 +402,12 @@ export default function Pricing() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 lg:gap-16 mt-8">
-              <Link href="/tryfree">
+              <Link href="/tryfree" target="_blank">
                 <Button className="w-full sm:w-[281px] h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
                   Start Free Trial
                 </Button>
               </Link>
-              <Link href="/tryfree">
+              <Link href="/tryfree" target="_blank">
                 <Button className="w-full sm:w-[281px] h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(255,155,89,1)] to-[rgba(255,215,141,1)] text-black font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
                   Start Free Trial
                 </Button>
@@ -448,32 +477,7 @@ export default function Pricing() {
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="text-white/80 pl-8 sm:pl-12 text-sm sm:text-base">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-
-                {/* Duplicated items to match the design */}
-                {faqItems.map((item, index) => (
-                  <AccordionItem
-                    key={`dup-${index}`}
-                    value={`dup-item-${index}`}
-                    className="border-b border-white/20"
-                  >
-                    <AccordionTrigger className="py-4 text-white hover:text-gray-200 no-underline hover:no-underline">
-                      <div className="flex items-center text-left">
-                        <img
-                          src="/pricing/noun-question-7004840-2.svg"
-                          alt="Question icon"
-                          className="w-[24px] h-[30px] sm:w-[30px] sm:h-[37px] mr-3 sm:mr-4 flex-shrink-0"
-                        />
-                        <span className="font-gantari font-semibold text-white text-sm sm:text-base">
-                          {item.question}
-                        </span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="text-white/80 pl-8 sm:pl-12 text-sm sm:text-base">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
+                      {item.answer}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -494,7 +498,7 @@ export default function Pricing() {
               without it. So give it a go — no credit card needed.
             </p>
 
-            <Link href="/tryfree">
+            <Link href="/tryfree" target="_blank">
               <Button className="mt-8 sm:mt-12 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity px-4">
                 <span className="font-gantari font-semibold text-white text-base sm:text-lg">
                   Try InteliDoc AI-

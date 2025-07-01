@@ -145,7 +145,7 @@ export default function Specialties() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300">
-                  <Link href="/tryfree">
+                  <Link href="/tryfree" target="_blank">
                     <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-base sm:text-lg px-4 transition-all duration-300">
                       <span>Try InteliDoc AI-</span>
                       <span className="text-[#162694] text-sm sm:text-base ml-1 opacity-80">it's free</span>
@@ -381,14 +381,16 @@ export default function Specialties() {
             </p>
 
             <div className="flex justify-center">
-              <Button
-                variant="outline"
-                className="w-full max-w-[180px] h-[51px] bg-white border-[0.5px] border-solid border-[#162694] rounded-[5px] hover:bg-gradient-to-r hover:from-[#13217f] hover:via-[#0c1235] hover:to-[#4b527c] transition-all duration-300 group"
-              >
-                <span className="font-gantari font-semibold text-[#162694] text-lg md:text-xl text-center tracking-[0] leading-[25.6px] group-hover:text-white transition-colors duration-300">
-                  Try for free
-                </span>
-              </Button>
+              <Link href="/tryfree" target="_blank">
+                <Button
+                  variant="outline"
+                  className="w-full max-w-[180px] h-[51px] bg-white border-[0.5px] border-solid border-[#162694] rounded-[5px] hover:bg-gradient-to-r hover:from-[#13217f] hover:via-[#0c1235] hover:to-[#4b527c] transition-all duration-300 group"
+                >
+                  <span className="font-gantari font-semibold text-[#162694] text-lg md:text-xl text-center tracking-[0] leading-[25.6px] group-hover:text-white transition-colors duration-300">
+                    Try for free
+                  </span>
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -449,7 +451,7 @@ export default function Specialties() {
             </h2>
 
             <div className="flex justify-center">
-              <Link href="/tryfree">
+              <Link href="/tryfree" target="_blank">
                 <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
                   <span>Try InteliDoc AI-</span>
                   <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>

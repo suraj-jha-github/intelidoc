@@ -143,7 +143,7 @@ export default function ForGroups() {
                                     className="h-12 sm:h-[57px] w-full sm:w-auto px-8 lg:px-12 rounded-[5px] border border-solid border-white bg-transparent hover:bg-white hover:text-[#162694] transition-all duration-300 group"
                                 >
                                     <span className="text-base sm:text-lg leading-[30.7px] font-gantari font-medium text-white group-hover:text-[#162694] text-center whitespace-nowrap transition-colors duration-300">
-                                        Book a Demo
+                                        Try for free
                                     </span>
                                 </Button>
                             </div>

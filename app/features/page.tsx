@@ -132,7 +132,7 @@ export default function Features() {
           <Navigation navItems={navItems} />
 
           {/* Hero Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-24 md:pt-32 pb-8 max-w-7xl mx-auto h-full">
+          <div className="relative z-10 flex flex-col items-center justify-center pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-48 md:pt-64 pb-16 max-w-7xl mx-auto h-full">
             <div className="relative text-center w-full">
               <div className="w-full max-w-[850px] mx-auto">
                 <h2 className="font-playfair font-semibold text-white text-2xl md:text-4xl lg:text-[75px] leading-tight md:leading-[75px] mt-2 md:mt-4 text-center">
@@ -141,22 +141,22 @@ export default function Features() {
               </div>
             </div>
 
-            <div className="w-full max-w-[850px] h-auto bg-gradient-to-r from-[rgba(223,221,250,1)] to-[rgba(252,214,230,1)] p-2 md:p-4 rounded-lg md:rounded-none mt-[20px] mx-auto">
+            <div className="w-full max-w-[850px] h-auto bg-gradient-to-r from-[rgba(223,221,250,1)] to-[rgba(252,214,230,1)] p-2 md:p-4 rounded-lg md:rounded-none mt-[40px] mx-auto">
               <h3 className="font-playfair bg-gradient-to-r from-[rgba(22,38,148,1)] to-[rgba(153,166,255,1)] bg-clip-text text-transparent font-semibold text-3xl md:text-5xl lg:text-[83px] leading-[1.1] md:leading-[1.1] pb-4 text-center">
                 with Clinical Systems
               </h3>
             </div>
 
-            <p className="font-gantari text-white text-lg md:text-xl lg:text-xl text-center max-w-[900px] mt-6 md:mt-12">
+            <p className="font-gantari text-white text-lg md:text-xl lg:text-xl text-center max-w-[900px] mt-12 md:mt-12">
               InteliDoc integrates seamlessly with your EHR to unify scheduling, e-prescribing, lab results, billing, and analytics—automating workflows, reducing errors, and boosting practice efficiency from day one.
             </p>
           </div>
         </header>
 
         {/* Integration Options */}
-        <section className="mt-[32px]">
+        <section className="mt-[64px]">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 justify-items-center">
               {integrationOptions.map((option, index) => (
                 <IntegrationCard key={index} option={option} />
               ))}
@@ -165,7 +165,7 @@ export default function Features() {
         </section>
 
         {/* Security Section with full-width background image */}
-        <div className="w-full mt-[32px]">
+        <div className="w-full mt-[64px]">
           <SecuritySection features={securityFeatures} />
         </div>
 
