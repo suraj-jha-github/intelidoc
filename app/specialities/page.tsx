@@ -153,14 +153,18 @@ export default function Specialties() {
                   </Link>
                 </div>
 
-                <Button
-                  variant="outline"
-                  className="w-full sm:w-[191px] h-12 sm:h-[57px] rounded-[5px] border border-solid border-white bg-transparent hover:bg-white hover:text-[#162694] transition-all duration-300 group"
-                >
-                  <span className="text-base sm:text-lg leading-[30.7px] font-gantari font-medium text-white group-hover:text-[#162694] text-center whitespace-nowrap transition-colors duration-300">
-                    Contact Sales
-                  </span>
-                </Button>
+                <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300">
+                  <Link href="/contact">
+                    <Button
+                      variant="outline"
+                      className="w-full sm:w-[191px] h-12 sm:h-[57px] rounded-[5px] border border-solid border-white bg-transparent hover:bg-white hover:text-[#162694] transition-all duration-300 group"
+                    >
+                      <span className="text-base sm:text-lg leading-[30.7px] font-gantari font-semibold text-[#162694] text-center whitespace-nowrap transition-colors duration-300">
+                        Contact Sales
+                      </span>
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -349,10 +353,10 @@ export default function Specialties() {
                         />
                       </div>
                       <div>
-                        <h3 className="font-gantari font-medium text-black text-2xl md:text-3xl lg:text-4xl tracking-[0] leading-tight">
+                        <h3 className="font-gantari font-normal text-black text-lg md:text-2xl lg:text-2xl tracking-[0] leading-tight">
                           {stat.value}
                         </h3>
-                        <p className="font-gantari font-normal text-black text-lg md:text-xl tracking-[0] leading-tight">
+                        <p className="font-gantari font-small text-black text-lg md:text-xl tracking-[0] leading-tight">
                           {stat.description}
                         </p>
                       </div>

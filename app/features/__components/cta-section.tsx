@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import { Button } from "../../../components/ui/button";
+import Link from 'next/link';
 
 export const CTASection: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -12,23 +13,27 @@ export const CTASection: React.FC = () => {
         Free yourself for better things
       </h2>
       <div className="flex flex-col sm:flex-row gap-4 md:gap-8 w-full max-w-md pb-12">
-        <Button
-          className="w-full sm:w-[204px] h-[40px] rounded-[5px] border-2 border-blue-800 text-blue-800 text-lg md:text-xl font-gantari font-medium transition-colors bg-[#fff]"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          style={isHovered ? { background: 'linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)', color: '#fff' } : {}}
-        >
-          Contact Us
-        </Button>
-        <Button
-          variant="outline"
-          className="w-full sm:w-[204px] border-2 border-blue-800 h-[40px] text-[#162694] font-gantari font-medium text-base md:text-lg hover:bg-gray-100 transition-colors"
-          onMouseEnter={() => setIsHovered2(true)}
-          onMouseLeave={() => setIsHovered2(false)}
-          style={isHovered2 ? { background: 'linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)', color: '#fff' } : {}}
-        >
-          Try for free
-        </Button>
+        <Link href="/contact">
+          <Button
+            className="w-full sm:w-[204px] h-[40px] rounded-[5px] border-2 border-blue-800 text-blue-800 text-lg md:text-xl font-gantari font-medium transition-colors bg-[#fff]"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            style={isHovered ? { background: 'linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)', color: '#fff' } : {}}
+          >
+            Contact Us
+          </Button>
+        </Link>
+        <Link href="/tryfree" target="_blank">
+          <Button
+            variant="outline"
+            className="w-full sm:w-[204px] border-2 border-blue-800 h-[40px] text-[#162694] font-gantari font-medium text-base md:text-lg hover:bg-gray-100 transition-colors"
+            onMouseEnter={() => setIsHovered2(true)}
+            onMouseLeave={() => setIsHovered2(false)}
+            style={isHovered2 ? { background: 'linear-gradient(131deg,rgba(46,52,90,1) 0%,rgba(12,17,46,1) 28%,rgba(13,23,90,1) 56%,rgba(16,29,113,1) 81%,rgba(19,33,128,1) 100%)', color: '#fff' } : {}}
+          >
+            Try for free
+          </Button>
+        </Link>
       </div>
     </section>
   );

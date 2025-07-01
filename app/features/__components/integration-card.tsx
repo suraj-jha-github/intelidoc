@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "../../../components/ui/button";
 import { Card, CardContent } from "../../../components/ui/card";
+import Link from 'next/link';
 
 interface IntegrationOption {
   type: string;
@@ -103,24 +104,28 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
         </div>
         <div className="mt-auto px-4 py-0  pt-0">
           {option.isPrimary ? (
-            <Button
-              className="w-full h-[40px] rounded-[5px] border-2 border-blue-800 text-blue-800 text-lg md:text-xl font-normal transition-colors bg-[#fff]"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              style={isHovered ? { background: option.gradient, color: '#fff' } : {}}
-            >
-              {option.action}
-            </Button>
+            <Link href="/tryfree" target="_blank">
+              <Button
+                className="w-full h-[40px] rounded-[5px] border-2 border-blue-800 text-blue-800 text-lg md:text-xl font-normal transition-colors bg-[#fff]"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                style={isHovered ? { background: option.gradient, color: '#fff' } : {}}
+              >
+                {option.action}
+              </Button>
+            </Link>
           ) : (
-            <Button
-              variant="outline"
-              className="w-full border-2 border-blue-800 h-[40px] text-[#162694] font-normal text-base md:text-lg  hover:bg-gray-100 transition-colors"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              style={isHovered ? { background: option.gradient, color: '#fff' } : {}}
-            >
-              {option.action}
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="outline"
+                className="w-full border-2 border-blue-800 h-[40px] text-[#162694] font-normal text-base md:text-lg  hover:bg-gray-100 transition-colors"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                style={isHovered ? { background: option.gradient, color: '#fff' } : {}}
+              >
+                {option.action}
+              </Button>
+            </Link>
           )}
         </div>
       </CardContent>

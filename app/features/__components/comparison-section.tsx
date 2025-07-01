@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import Link from 'next/link';
 
 interface ComparisonSectionProps {
   features: string[];
@@ -48,7 +49,7 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({ features }
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    <h3 className="text-white text-xl font-medium">Chrome<br/>extension</h3>
+                    <h3 className="text-white text-xl font-medium">Chrome<br />extension</h3>
                   </div>
                 </div>
                 <div className="p-6">
@@ -74,9 +75,11 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({ features }
                   </div>
                 </div>
                 <div className="p-6 border-t">
-                  <button className="w-full py-3 bg-[#7C3AED] text-white rounded-md font-medium hover:bg-[#6D28D9] transition-colors">
-                    Download Now
-                  </button>
+                  <Link href="/tryfree" target="_blank">
+                    <button className="w-full py-3 bg-[#7C3AED] text-white rounded-md font-medium hover:bg-[#6D28D9] transition-colors">
+                      Download Now
+                    </button>
+                  </Link>
                 </div>
               </div>
 
@@ -87,7 +90,7 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({ features }
                     <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                     </svg>
-                    <h3 className="text-white text-xl font-medium">Direct<br/>integration</h3>
+                    <h3 className="text-white text-xl font-medium">Direct<br />integration</h3>
                   </div>
                 </div>
                 <div className="p-6">
@@ -113,9 +116,11 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({ features }
                   </div>
                 </div>
                 <div className="p-6 border-t">
-                  <button className="w-full py-3 bg-[#F97316] text-white rounded-md font-medium hover:bg-[#EA580C] transition-colors">
-                    Contact Sales
-                  </button>
+                  <Link href="/contact">
+                    <button className="w-full py-3 bg-[#F97316] text-white rounded-md font-medium hover:bg-[#EA580C] transition-colors">
+                      Contact Sales
+                    </button>
+                  </Link>
                 </div>
               </div>
 
@@ -140,9 +145,11 @@ export const ComparisonSection: React.FC<ComparisonSectionProps> = ({ features }
                   </div>
                 </div>
                 <div className="p-6 border-t">
-                  <button className="w-full py-3 bg-black text-white rounded-md font-medium hover:bg-gray-800 transition-colors">
-                    Contact Sales
-                  </button>
+                  <Link href="/contact">
+                    <button className="w-full py-3 bg-black text-white rounded-md font-medium hover:bg-gray-800 transition-colors">
+                      Contact Sales
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
