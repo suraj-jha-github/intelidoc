@@ -153,7 +153,7 @@ export default function Specialties() {
                   </Link>
                 </div>
 
-                <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300">
+                <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-white to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300">
                   <Link href="/contact">
                     <Button
                       variant="outline"
