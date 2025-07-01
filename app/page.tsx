@@ -230,17 +230,14 @@ export default function Home() {
   })
 
   return (
-    <div className="bg-[#f3f3f3] flex flex-col w-full min-h-screen">
-      <div className="bg-[#f3f3f3] overflow-hidden w-full max-w-none relative">
-        {/* Black background for navigation area */}
-        <div className="absolute top-0 left-0 right-0 h-14 md:h-[57px] bg-black z-40"></div>
-
-        {/* Fixed Navigation */}
-        <Navigation navItems={navItems} />
-
-        {/* Hero Section */}
-        <section className="relative w-full min-h-[500px] md:min-h-[622px] mt-14 md:mt-[57px]">
+    <div className="flex flex-row justify-center w-full">
+      <div className="overflow-hidden w-full max-w-none relative">
+        {/* Header Section */}
+        <header className="relative w-full min-h-[500px] md:min-h-[622px]">
           <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
+
+          {/* Navigation Bar */}
+          <Navigation navItems={navItems} />
 
           {/* Hero Content */}
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-24 md:pt-32 pb-8 max-w-7xl mx-auto h-full">
@@ -293,7 +290,7 @@ export default function Home() {
               </video>
             </div>
           </div>
-        </section>
+        </header>
 
         {/* Testimonials Section */}
         <section className="mt-[32px] pt-2 sm:pt-12 lg:pt-10 pb-6 sm:pb-6 lg:pb-6">
