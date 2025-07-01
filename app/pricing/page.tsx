@@ -48,12 +48,54 @@ const features = [
   },
 ];
 
-// Additional features
+// Additional features with expandable content
 const additionalFeatures = [
-  { title: "More features", icon: "/pricing/group.png" },
-  { title: "Security", icon: "/pricing/group-1.png" },
-  { title: "Support", icon: "/pricing/group-2.png" },
-  { title: "Admin", icon: "/pricing/group-3.png" },
+  {
+    title: "More features",
+    icon: "/pricing/group.png",
+    expandedContent: [
+      "Custom template builder",
+      "Template sharing with your team",
+      "Upload visit recordings",
+      "Full written transcript of visit",
+      "iOS and Android app",
+      "Zoom app (Beta)",
+      "Chrome extension for web-based EHRs",
+      "Custom EHR integrations"
+    ]
+  },
+  {
+    title: "Security",
+    icon: "/pricing/group-1.png",
+    expandedContent: [
+      "HIPAA–certified and compliant",
+      "HITECH–certified and compliant",
+      "SOC2 Type 2–certified and compliant",
+      "End-to-end encryption of Patient Health Information (PHI) at rest and in transit",
+      "Cryptographic modules follow FIPS PUB 140-2 standards",
+      "Regular third party security audits",
+      "Rigorous background checks and HIPAA training for every InteliDoc employee",
+      "Optional single sign-on (SSO)"
+    ]
+  },
+  {
+    title: "Support",
+    icon: "/pricing/group-2.png",
+    expandedContent: [
+      "World-class support from our Clinician Success team",
+      "Dedicated Account Manager"
+    ]
+  },
+  {
+    title: "Admin",
+    icon: "/pricing/group-3.png",
+    expandedContent: [
+      "License management",
+      "Organization-wide BAA",
+      "Centralized billing",
+      "Group volume discount"
+    ]
+  },
 ];
 
 // FAQ data
@@ -125,9 +167,17 @@ const navItems = [
 
 export default function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annually'>('monthly');
+  const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
 
   const monthlyPrice = 90;
   const annualPrice = 75; // 25% discount for annual billing
+
+  const toggleSection = (sectionTitle: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionTitle]: !prev[sectionTitle]
+    }));
+  };
 
   return (
     <div className="bg-[#f3f3f3] flex flex-row justify-center w-full">
@@ -303,16 +353,12 @@ export default function Pricing() {
                       </p>
                     </div>
                     <div className="flex space-x-12">
-                      <img
-                        src="/pricing/noun-tick-7438312-5.svg"
-                        alt="Individual Plan"
-                        className="w-6 h-6 sm:w-[34px] sm:h-10"
-                      />
-                      <img
-                        src="/pricing/noun-tick-7438312-5.svg"
-                        alt="Group Plan"
-                        className="w-6 h-6 sm:w-[34px] sm:h-10 filter hue-rotate-[45deg] brightness-[1.1] saturate-[1.5]"
-                      />
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-[34px] sm:h-10">
+                        <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-[34px] sm:h-10">
+                        <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
                     </div>
                   </div>
                 </div>
@@ -321,20 +367,56 @@ export default function Pricing() {
               {/* Additional Features for Mobile */}
               {additionalFeatures.map((feature, index) => (
                 <div key={`additional-${index}`} className="border-b border-gray-200 py-4">
-                  <div className="flex items-center">
-                    <div className="w-[30px] h-9 mr-4">
-                      <img
-                        src={feature.icon}
-                        alt={feature.title}
-                        className="w-[22px] h-[21px] mt-1.5 ml-2"
-                      />
+                  <div
+                    className="flex items-center justify-between cursor-pointer"
+                    onClick={() => toggleSection(feature.title)}
+                  >
+                    <div className="flex items-center">
+                      <div className="w-[30px] h-9 mr-4 flex items-center justify-center">
+                        {expandedSections[feature.title] ? (
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        ) : (
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        )}
+                      </div>
+                      <span
+                        className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-lg sm:text-xl`}
+                      >
+                        {feature.title}
+                      </span>
                     </div>
-                    <span
-                      className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-lg sm:text-xl`}
-                    >
-                      {feature.title}
-                    </span>
+                    <div className="flex items-center space-x-12">
+                      <div className="w-6 h-6 sm:w-[34px] sm:h-10"></div>
+                      <div className="w-6 h-6 sm:w-[34px] sm:h-10"></div>
+                    </div>
                   </div>
+
+                  {/* Expanded content for mobile */}
+                  {expandedSections[feature.title] && (
+                    <div className="mt-4 pl-10 pr-4">
+                      <div className="space-y-3">
+                        {feature.expandedContent.map((item, itemIndex) => (
+                          <div key={itemIndex} className="flex items-start justify-between">
+                            <span className="font-gantari text-[#757171] text-sm sm:text-[15px] flex-1 pr-4">
+                              {item}
+                            </span>
+                            <div className="flex space-x-32 mr-4">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-[34px] sm:h-10">
+                                <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-[34px] sm:h-10">
+                                <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -354,18 +436,14 @@ export default function Pricing() {
                         </p>
                       </TableCell>
                       <TableCell className="text-center pr-12">
-                        <img
-                          src="/pricing/noun-tick-7438312-5.svg"
-                          alt="Included"
-                          className="w-[34px] h-10 mx-auto"
-                        />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10 mx-auto">
+                          <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                       </TableCell>
                       <TableCell className="text-center pl-12">
-                        <img
-                          src="/pricing/noun-tick-7438312-5.svg"
-                          alt="Included"
-                          className="w-[34px] h-10 mx-auto filter hue-rotate-[45deg] brightness-[1.1] saturate-[1.5]"
-                        />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10 mx-auto">
+                          <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -374,27 +452,64 @@ export default function Pricing() {
 
                   {/* Additional Features Section */}
                   {additionalFeatures.map((feature, index) => (
-                    <TableRow
-                      key={`additional-${index}`}
-                      className="border-b border-gray-200"
-                    >
-                      <TableCell colSpan={3} className="py-4">
-                        <div className="flex items-center">
-                          <div className="w-[30px] h-9 mr-4">
-                            <img
-                              src={feature.icon}
-                              alt={feature.title}
-                              className="w-[22px] h-[21px] mt-1.5 ml-2"
-                            />
+                    <React.Fragment key={`additional-${index}`}>
+                      <TableRow
+                        className="border-b border-gray-200 cursor-pointer hover:bg-gray-50"
+                        onClick={() => toggleSection(feature.title)}
+                      >
+                        <TableCell colSpan={3} className="py-4">
+                          <div className="flex items-center justify-between">
+                            <div className="flex items-center">
+                              <div className="w-[30px] h-9 mr-4 flex items-center justify-center">
+                                {expandedSections[feature.title] ? (
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                  </svg>
+                                ) : (
+                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                  </svg>
+                                )}
+                              </div>
+                              <span
+                                className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-xl`}
+                              >
+                                {feature.title}
+                              </span>
+                            </div>
+                            <div className="flex items-center space-x-12">
+                              <div className="w-[34px] h-10"></div>
+                              <div className="w-[34px] h-10"></div>
+                            </div>
                           </div>
-                          <span
-                            className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-xl`}
-                          >
-                            {feature.title}
-                          </span>
-                        </div>
-                      </TableCell>
-                    </TableRow>
+                        </TableCell>
+                      </TableRow>
+
+                      {/* Expanded content for desktop */}
+                      {expandedSections[feature.title] && (
+                        <TableRow className="border-b border-gray-200 bg-gray-50">
+                          <TableCell colSpan={3} className="py-6">
+                            <div className="grid grid-cols-1 gap-4">
+                              {feature.expandedContent.map((item, itemIndex) => (
+                                <div key={itemIndex} className="flex items-center justify-between">
+                                  <span className="font-gantari text-[#757171] text-[15px]">
+                                    {item}
+                                  </span>
+                                  <div className="flex space-x-32 mr-10">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10">
+                                      <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10">
+                                      <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      )}
+                    </React.Fragment>
                   ))}
                 </TableBody>
               </Table>
