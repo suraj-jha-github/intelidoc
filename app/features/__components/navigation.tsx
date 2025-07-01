@@ -131,7 +131,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
         </div>
 
         {/* Desktop CTA Button */}
-        <Link href="/tryfree">
+        <Link href="/tryfree" target="_blank">
           <Button className={`hidden lg:block font-semibold text-[15px] h-8 px-4 py-1.5 rounded-[5px] flex items-center justify-center ${ctaButtonClass} transition-all duration-300 leading-none`}>
             Try for free
           </Button>
@@ -170,6 +170,13 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                   </Link>
                 </Button>
               ))}
+
+              {/* Mobile CTA Button */}
+              <Link href="/tryfree" target="_blank">
+                <Button className={`w-full font-semibold text-[15px] h-10 px-4 py-2 rounded-[5px] flex items-center justify-center ${mobileCtaClass} transition-all duration-300 leading-none mt-4`}>
+                  Try for free
+                </Button>
+              </Link>
 
             </div>
           </div>
