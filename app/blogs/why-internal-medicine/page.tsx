@@ -25,7 +25,6 @@ export default function WhyInternalMedicine() {
 
     // Navigation menu items data
     const navItems = [
-        { label: "Home", href: "/" },
         { label: "Features", href: "/features" },
         { label: "Specialties", href: "/specialities" },
         { label: "Blog", href: "/blogs" },
