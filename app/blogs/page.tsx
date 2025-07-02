@@ -104,16 +104,13 @@ export default function Blogs() {
                     <p className="font-gantari font-normal text-black text-base sm:text-lg lg:text-[23px] leading-relaxed lg:leading-[37.0px] mb-8">
                       {featuredPost.content}
                     </p>
-                    <Button className="w-full sm:w-auto bg-[#162694] hover:bg-[#1a2ba8] rounded-[5px] px-6 py-3 transition-colors">
-                      <span className="font-gantari font-medium text-white text-lg sm:text-xl lg:text-2xl">
-                        <a
-                          href="/blogs/blog"
-                          className="font-gantari font-medium text-white text-[15px] hover:text-gray-200 transition-colors"
-                        >
+                    <Link href="/blogs/blog">
+                      <Button className="w-full sm:w-auto bg-[#162694] hover:bg-[#1a2ba8] rounded-[5px] px-6 py-3 transition-colors flex items-center justify-center">
+                        <span className="font-gantari font-medium text-white text-[15px] sm:text-base lg:text-lg">
                           Read More
-                        </a>
-                      </span>
-                    </Button>
+                        </span>
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
