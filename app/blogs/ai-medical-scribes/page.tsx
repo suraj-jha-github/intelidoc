@@ -206,9 +206,8 @@ export default function AiMedicalScribes() {
                                             height={117}
                                         />
                                         <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
-                                            "By computerizing health records, we can avoid dangerous medical
-                                            mistakes, reduce costs, and improve care."
-                                            <br />— President George W. Bush, 2004 State of the Union Address
+                                            “When we put data to work for patients, we put people first.”
+                                            <br />— Seema Verma, Former CMS Administrator
                                         </p>
                                     </CardContent>
                                 </Card>
@@ -237,9 +236,8 @@ export default function AiMedicalScribes() {
                                         height={117}
                                     />
                                     <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
-                                        "By computerizing health records, we can avoid dangerous medical
-                                        mistakes, reduce costs, and improve care."
-                                        <br />— President George W. Bush, 2004 State of the Union Address
+                                        “When we put data to work for patients, we put people first.” — Seema Verma, Former CMS Administrator
+                                        <br />— Seema Verma, Former CMS Administrator
                                     </p>
                                 </CardContent>
                             </Card>
