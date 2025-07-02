@@ -647,7 +647,7 @@ export default function Home() {
             <Card className="w-full max-w-[1115px] h-auto lg:h-[325px] mt-16 sm:mt-20 lg:mt-24 rounded-[20px] radial-gradient-card relative">
               <CardContent className="p-6 sm:p-8 lg:p-12">
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start">
-                  <div className="flex-1">
+                  <div data-nav-dark="true" className="flex-1  ">
                     <h2 className="font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-tight text-center lg:text-left">
                       Support your team. <br className="hidden sm:block" />
                       Strengthen patient outcomes.
@@ -716,9 +716,9 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section ref={faqRef} data-nav-dark="true" className="mt-[32px] pt-6 sm:pt-20 lg:pt-6 pb-6 sm:pb-20 lg:pb-6">
+        <section ref={faqRef} className="mt-[32px] pt-6 sm:pt-20 lg:pt-6 pb-6 sm:pb-20 lg:pb-6">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
-            <Card className="w-full max-w-[1208px] h-auto lg:h-[750px] mx-auto rounded-[20px] bg-[linear-gradient(to_right,#011227_0%,#0e1963_25%,#0f267f_50%,#0e1963_75%,#011227_100%)]">
+            <Card data-nav-dark="true" className="w-full max-w-[1208px] h-auto lg:h-[750px] mx-auto rounded-[20px] bg-[linear-gradient(to_right,#011227_0%,#0e1963_25%,#0f267f_50%,#0e1963_75%,#011227_100%)]">
               <CardContent className="p-6 sm:p-8 lg:p-12">
                 <h2 className="font-playfair font-semibold text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
                   Frequently Asked Questions
