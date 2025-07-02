@@ -5,6 +5,7 @@ import Image from "next/image";
 // import { Separator } from "@/components/ui/separator";
 import { Navigation } from "../features/__components/navigation";
 import { Footer } from "../components/footer";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function AiMedicalScribes() {
     // Data for related content cards
