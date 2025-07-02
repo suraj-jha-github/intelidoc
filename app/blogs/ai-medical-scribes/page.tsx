@@ -206,8 +206,8 @@ export default function AiMedicalScribes() {
                                             height={117}
                                         />
                                         <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
-                                            “When we put data to work for patients, we put people first.”
-                                            <br />— Seema Verma, Former CMS Administrator
+                                            “The digitization of healthcare isn't just innovation — it's a necessity for better outcomes.”
+                                            <br />— Dr. Atul Gawande
                                         </p>
                                     </CardContent>
                                 </Card>
@@ -236,7 +236,7 @@ export default function AiMedicalScribes() {
                                         height={117}
                                     />
                                     <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
-                                        “When we put data to work for patients, we put people first.” — Seema Verma, Former CMS Administrator
+                                        “When we put data to work for patients, we put people first.”
                                         <br />— Seema Verma, Former CMS Administrator
                                     </p>
                                 </CardContent>
