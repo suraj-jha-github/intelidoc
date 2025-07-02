@@ -233,12 +233,7 @@ export default function Home() {
   const faqRef = useRef<HTMLDivElement>(null);
 
   // Optionally, you can expose these refs via context or window for the navigation to use
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.__intelidoc_support_section = supportRef.current;
-      window.__intelidoc_faq_section = faqRef.current;
-    }
-  }, []);
+
 
   return (
     <div className="flex flex-row justify-center w-full">
