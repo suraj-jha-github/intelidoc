@@ -221,18 +221,23 @@ export default function DocumentingPediatric() {
                         </section>
 
                         {/* Related Content Section */}
-                        <section className="mt-12 md:mt-16">
-                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-6 md:mb-8">
+                        <section>
+                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight lg:leading-[51.2px] mb-6 md:mb-12">
                                 Related content
                             </h2>
-                            <div className="space-y-6 md:space-y-8">
+
+                            {/* Related Articles Cards */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                                 {relatedArticles.map((article, index) => (
-                                    <Card key={index} className="w-full bg-white rounded-[20px] border-none shadow-sm hover:shadow-md transition-shadow">
-                                        <CardContent className="p-4 sm:p-6">
-                                            <h3 className="font-playfair font-semibold text-[#162694] text-lg sm:text-xl md:text-2xl leading-tight md:leading-[35.8px] mb-3 md:mb-4">
+                                    <Card
+                                        key={index}
+                                        className="bg-white rounded-[10px] border border-solid border-[#bcbaba] hover:shadow-lg transition-shadow duration-200 h-full"
+                                    >
+                                        <CardContent className="p-4 md:p-6 flex flex-col h-full min-h-[200px] md:min-h-[220px]">
+                                            <h3 className="font-playfair font-semibold text-[#162694] text-base sm:text-lg md:text-[17px] leading-tight md:leading-[21.8px] mb-3 md:mb-4">
                                                 {article.title}
                                             </h3>
-                                            <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed md:leading-[35.5px] mb-4 md:mb-6">
+                                            <p className="font-gantari font-normal text-black text-xs sm:text-sm md:text-[11px] leading-relaxed md:leading-[19.1px] flex-grow mb-3 md:mb-4">
                                                 {article.content}
                                             </p>
                                             <a
