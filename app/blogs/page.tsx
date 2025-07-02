@@ -19,7 +19,8 @@ const navItems = [
 const featuredPost = {
   title: "From Burnout to Balance: How AI Scribes Are Empowering Primary Care Physicians",
   content:
-    "In today’s fast-paced healthcare system, primary care physicians are facing a silent epidemic: burnout. Endless administrative tasks,",
+    "In today's fast-paced healthcare system, primary care physicians are facing a silent epidemic: burnout. Endless administrative tasks,",
+  url: "/blogs/burnout-to-balance"
 };
 
 const blogPosts = [
@@ -28,24 +29,28 @@ const blogPosts = [
       "AI Medical Scribes: The Cure for Healthcare's Documentation Headache",
     content:
       "The exam room used to be sacred space—where undivided attention met patient stories. Now, it's often a battleground between eye contact and endless clicks. Doctors are burning out, not from care, but from clerical chaos. Enter the AI medical scribe: not science fiction, but a practical solution reshaping modern healthcare.",
+    url: "/blogs/ai-medical-scribes"
   },
   {
     title:
       "Why Internal Medicine Physicians Are Turning to AI Scribes for Relief",
     content:
       "Internists are detectives, educators, care coordinators, and chronic disease managers—all in a single day. But too often, their work is buried under the weight of documentation. Every encounter demands detailed notes, thoughtful plans, and bulletproof coding. It's no wonder that internal medicine sees some of the highest burnout rates in healthcare.",
+    url: "/blogs/why-internal-medicine"
   },
   {
     title:
       "Documenting Pediatric Care Shouldn't Be a Puzzle—Let AI Scribes Help",
     content:
       "Pediatric care is full of nuance. The patient doesn't always speak, parents do. Visits are short, but dense with critical information—growth charts, vaccines, milestones, anticipatory guidance, and more. Every note needs to be complete, clear, and compliant. But pediatricians are drowning in charting.",
+    url: "/blogs/documenting-pediatric"
   },
   {
     title:
       "From Burnout to Balance: How AI Scribes Are Empowering Primary Care Physicians",
     content:
-      "In today’s fast-paced healthcare system, primary care physicians are facing a silent epidemic: burnout. Endless administrative tasks, especially clinical documentation, are pulling doctors away from what truly matters patient care. A growing body of research shows that the burden of Electronic Health Record (EHR) data entry is one of the top contributors to physician dissatisfaction.",
+      "In today's fast-paced healthcare system, primary care physicians are facing a silent epidemic: burnout. Endless administrative tasks, especially clinical documentation, are pulling doctors away from what truly matters patient care. A growing body of research shows that the burden of Electronic Health Record (EHR) data entry is one of the top contributors to physician dissatisfaction.",
+    url: "/blogs/burnout-to-balance"
   },
 ];
 
@@ -109,7 +114,7 @@ export default function Blogs() {
                     <p className="font-gantari font-normal text-black text-base sm:text-lg lg:text-[20px] leading-relaxed lg:leading-[32px] mb-6">
                       {featuredPost.content}
                     </p>
-                    <Link href="/blogs/blog">
+                    <Link href={featuredPost.url}>
                       <Button className="w-full sm:w-auto bg-[#162694] hover:bg-[#1a2ba8] rounded-[5px] px-6 py-3 transition-colors flex items-center justify-center">
                         <span className="font-gantari font-medium text-white text-[15px] sm:text-base lg:text-lg">
                           Read More
@@ -139,12 +144,12 @@ export default function Blogs() {
                     {post.content}
                   </p>
                   <div className="flex justify-end">
-                    <a
-                      href="/blogs/blog"
+                    <Link
+                      href={post.url}
                       className="font-gantari font-normal text-[#162694] text-base sm:text-lg underline hover:text-[#1a2ba8] transition-colors group-hover:no-underline"
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>

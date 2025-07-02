@@ -3,8 +3,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Navigation } from "../features/__components/navigation";
-import { Footer } from "../components/footer";
+import { Navigation } from "../../features/__components/navigation";
+import { Footer } from "../../components/footer";
 
 export default function AiMedicalScribes() {
     // Data for related content cards
