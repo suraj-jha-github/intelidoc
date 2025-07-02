@@ -7,7 +7,6 @@ import { Navigation } from "../features/__components/navigation";
 
 // Navigation menu items data
 const navItems = [
-  { label: "Home", href: "/" },
   { label: "Features", href: "/features" },
   { label: "Specialties", href: "/specialities" },
   { label: "Blog", href: "/blogs" },
@@ -18,9 +17,9 @@ const navItems = [
 
 // Blog post data
 const featuredPost = {
-  title: "InteliDoc AI Raises $30 Million to Free Clinicians",
+  title: "From Burnout to Balance: How AI Scribes Are Empowering Primary Care Physicians",
   content:
-    "IntelDoc AI raised $30 million in Series A funding led by Sequoia Capital. But what does this mean for you—the clinicians?",
+    "In today’s fast-paced healthcare system, primary care physicians are facing a silent epidemic: burnout. Endless administrative tasks,",
 };
 
 const blogPosts = [
@@ -41,6 +40,12 @@ const blogPosts = [
       "Documenting Pediatric Care Shouldn't Be a Puzzle—Let AI Scribes Help",
     content:
       "Pediatric care is full of nuance. The patient doesn't always speak, parents do. Visits are short, but dense with critical information—growth charts, vaccines, milestones, anticipatory guidance, and more. Every note needs to be complete, clear, and compliant. But pediatricians are drowning in charting.",
+  },
+  {
+    title:
+      "From Burnout to Balance: How AI Scribes Are Empowering Primary Care Physicians",
+    content:
+      "In today’s fast-paced healthcare system, primary care physicians are facing a silent epidemic: burnout. Endless administrative tasks, especially clinical documentation, are pulling doctors away from what truly matters patient care. A growing body of research shows that the burden of Electronic Health Record (EHR) data entry is one of the top contributors to physician dissatisfaction.",
   },
 ];
 

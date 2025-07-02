@@ -258,3 +258,49 @@
 .radial-gradient-card {
   background: radial-gradient(ellipse at center, #535dad 0%, #152591 100%);
 }
+
+/* Cursor pointer for all interactive elements */
+a,
+button,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"],
+.cursor-pointer,
+[class*="btn"],
+[class*="button"] {
+  cursor: pointer;
+}
+
+/* Ensure all links and buttons show pointer cursor on hover */
+a:hover,
+button:hover,
+[role="button"]:hover,
+[type="button"]:hover,
+[type="submit"]:hover,
+[type="reset"]:hover,
+.cursor-pointer:hover,
+[class*="btn"]:hover,
+[class*="button"]:hover {
+  cursor: pointer;
+}
+
+/* Specific styles for Next.js Link components */
+[data-nextjs-link] {
+  cursor: pointer;
+}
+
+[data-nextjs-link]:hover {
+  cursor: pointer;
+}
+
+/* Ensure all clickable elements show pointer cursor */
+*[onClick],
+*[onclick] {
+  cursor: pointer;
+}
+
+*[onClick]:hover,
+*[onclick]:hover {
+  cursor: pointer;
+}
