@@ -1,344 +1,297 @@
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
-import { Footer } from "../../components/footer";
+import { Separator } from "@/components/ui/separator";
 import { Navigation } from "../../features/__components/navigation";
-
-// Navigation menu items data
-const navItems = [
-    { label: "Features", href: "/features" },
-    { label: "Specialties", href: "/specialities" },
-    { label: "Blog", href: "/blogs" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "For Groups", href: "/forgroup" },
-    { label: "Contact Us", href: "/contact" },
-];
-
-// Footer links data - same as homepage
-const footerLinks = {
-    resources: ["Help Center", "Blog"],
-    specialties: [
-        "Family Medicine",
-        "Internal Medicine",
-        "Pschiatry",
-        "Mental Health",
-        "Padiatrics",
-        "Other Specialties",
-    ],
-    legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
-};
+import { Footer } from "../../components/footer";
 
 export default function WhyInternalMedicine() {
+    // Data for related content cards
+    const relatedArticles = [
+        {
+            title: "AI Medical Scribes: The Cure for Healthcare's Documentation Headache",
+            content: "The exam room used to be sacred space—where undivided attention met patient stories. Now, it's often a battleground between eye contact and endless clicks. Doctors are burning out, not from care, but from clerical chaos. Enter the AI medical scribe: not science fiction, but a practical solution reshaping modern healthcare.",
+        },
+        {
+            title: "Why Internal Medicine Physicians Are Turning to AI Scribes for Relief",
+            content: "Internists are detectives, educators, care coordinators, and chronic disease managers—all in a single day. But too often, their work is buried under the weight of documentation. Every encounter demands detailed notes, thoughtful plans, and bulletproof coding. It's no wonder that internal medicine sees some of the highest burnout rates in healthcare.",
+        },
+        {
+            title: "Documenting Pediatric Care Shouldn't Be a Puzzle—Let AI Scribes Help",
+            content: "Pediatric care is full of nuance. The patient doesn't always speak, parents do. Visits are short, but dense with critical information—growth charts, vaccines, milestones, anticipatory guidance, and more. Every note needs to be complete, clear, and compliant. But pediatricians are drowning in charting.",
+        }
+    ];
+
+    // Navigation menu items data
+    const navItems = [
+        { label: "Home", href: "/" },
+        { label: "Features", href: "/features" },
+        { label: "Specialties", href: "/specialities" },
+        { label: "Blog", href: "/blogs" },
+        { label: "Pricing", href: "/pricing" },
+        { label: "For Groups", href: "/forgroup" },
+        { label: "Contact Us", href: "/contact" },
+    ];
+
+    // Footer links data - same as homepage
+    const footerLinks = {
+        resources: ["Help Center", "Blog"],
+        specialties: [
+            "Family Medicine",
+            "Internal Medicine",
+            "Pschiatry",
+            "Mental Health",
+            "Padiatrics",
+            "Other Specialties",
+        ],
+        legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
+    };
+
     return (
-        <div className="min-h-screen bg-white">
-            <div className="w-full mx-auto">
-                {/* Header Section with Gradient Background */}
-                <header className="relative w-full min-h-[500px] lg:min-h-[577px] [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]">
-                    {/* Navigation Background Overlay */}
-                    <div className="absolute top-0 left-0 right-0 h-14 md:h-[57px] bg-black/20 backdrop-blur-sm z-10"></div>
+        <div className="min-h-screen bg-[#f3f3f3]">
+            {/* Navigation */}
+            <Navigation navItems={navItems} />
 
-                    {/* Navigation Bar */}
-                    <Navigation navItems={navItems} />
+            <div className="max-w-7xl mx-auto">
+                {/* Main Content Container */}
+                <div className="max-w-4xl mx-auto bg-[#f1f3ff87]">
+                    <div className="px-4 sm:px-6 md:px-8 lg:px-14 py-8 sm:py-12 md:py-16 lg:py-24">
+                        {/* Main Headline */}
+                        <h1 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight lg:leading-[51.2px] mb-6 md:mb-8">
+                            Why Internal Medicine Physicians Are Turning to AI Scribes for Relief
+                        </h1>
 
-                    {/* Header Content */}
-                    <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto pt-16 sm:pt-20 md:pt-24 lg:pt-32">
-                        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
-                            {/* Left Content */}
-                            <div className="flex-1 lg:max-w-md">
-                                <h1 className="font-playfair font-medium text-white text-3xl sm:text-4xl lg:text-[52px] leading-tight lg:leading-[57.7px]">
-                                    Why Internal Medicine Physicians Are Turning to AI Scribes for Relief
-                                </h1>
-                                <p className="mt-4 font-gantari font-normal text-white text-lg sm:text-xl lg:text-2xl leading-relaxed">
-                                    How AI scribes are addressing the unique documentation challenges of internal medicine
+                        {/* Section: The Internal Medicine Documentation Crisis */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                The Internal Medicine Documentation Crisis
+                            </h2>
+                            <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                Internal medicine is intellectually demanding. You're managing multi-system conditions, adjusting long-term care plans, and coordinating with specialists. But it's not just the medicine that's complex—the notes are too:
+                            </p>
+                            <div className="mt-6 space-y-3">
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Long histories and med lists that require precise updates
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Chronic care plans that span years and multiple conditions
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Frequent lab reviews, imaging follow-ups, and referral notes
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Heavy documentation for compliance and reimbursement
                                 </p>
                             </div>
+                            <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px] mt-6">
+                                It's estimated that internists spend more than 50% of their workday documenting in the EHR. That's not just inefficient—it's unsustainable.
+                            </p>
+                        </section>
 
-                            {/* Right Content - Blog Meta */}
-                            <div className="flex-1 lg:max-w-md">
-                                <Card className="w-full bg-white/10 backdrop-blur-sm rounded-[20px] border border-white/20">
-                                    <CardContent className="p-6">
-                                        <div className="text-white">
-                                            <p className="font-gantari font-medium text-lg mb-2">Published: December 2024</p>
-                                            <p className="font-gantari font-normal text-base opacity-90">Reading time: 9 minutes</p>
-                                            <p className="font-gantari font-normal text-base opacity-90 mt-2">Category: Internal Medicine</p>
-                                        </div>
+                        {/* Section: What Is an AI Medical Scribe */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                What Is an AI Medical Scribe?
+                            </h2>
+                            <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                An AI medical scribe listens in on doctor-patient conversations—securely and in real-time—and generates clean, structured clinical notes. It's like having a superhuman assistant who never misses a detail, doesn't need coffee breaks, and integrates directly into EHR systems.
+                            </p>
+                        </section>
+
+                        {/* Section: How It Works */}
+                        <section className="mb-8 md:mb-12">
+                            <h3 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-[25px] leading-tight md:leading-8 mb-4 md:mb-6">
+                                How It Works
+                            </h3>
+                            <div className="space-y-6 md:space-y-8">
+                                <div className="space-y-4 md:space-y-6">
+                                    <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[35.5px]">
+                                        <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Speech Recognition:</strong> Converts spoken dialogue into text.
+                                        <br /><br />
+                                        <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Natural Language Processing (NLP):</strong> Understands context, filters small talk, and identifies relevant medical content.
+                                        <br /><br />
+                                        <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Clinical Intelligence:</strong> Structures notes into SOAP format, links to diagnoses and billing codes.
+                                        <br /><br />
+                                        <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Customization:</strong> Tailors language and format to provider preferences.
+                                    </p>
+                                </div>
+
+                                {/* Quote Card */}
+                                <Card className="w-full max-w-lg mx-auto bg-[#fffde3] rounded-[20px] border-none shadow-sm hover:shadow-md transition-shadow">
+                                    <CardContent className="p-4 sm:p-6 flex flex-col items-center justify-center text-center">
+                                        <Image
+                                            className="w-16 h-20 sm:w-[94px] sm:h-[117px] mb-3 sm:mb-4"
+                                            alt="Doctor illustration"
+                                            src="/blog/noun-doctor-7832406-1.svg"
+                                            width={94}
+                                            height={117}
+                                        />
+                                        <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
+                                            "Innovation in health IT can save lives, reduce costs, and bring care closer to the people who need it most."
+                                            <br />— Aneesh Chopra, Former U.S. CTO
+                                        </p>
                                     </CardContent>
                                 </Card>
                             </div>
-                        </div>
-                    </div>
-                </header>
+                        </section>
 
-                {/* Blog Content */}
-                <div className="relative w-full max-w-4xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto py-12 lg:py-16">
-                    <article className="prose prose-lg max-w-none">
-                        <div className="font-gantari text-black leading-relaxed">
-                            <p className="text-xl mb-8 leading-relaxed">
-                                Internists are detectives, educators, care coordinators, and chronic disease managers—all in a single day. But too often, their work is buried under the weight of documentation. Every encounter demands detailed notes, thoughtful plans, and bulletproof coding. It's no wonder that internal medicine sees some of the highest burnout rates in healthcare.
-                            </p>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                The Internal Medicine Documentation Dilemma
+                        {/* Section: Built for Effortless Workflow */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                Built for Effortless Workflow
                             </h2>
-
-                            <p className="mb-6">
-                                Internal medicine physicians face unique documentation challenges that set them apart from other specialties:
-                            </p>
-
-                            <ul className="list-disc pl-6 mb-8 space-y-2">
-                                <li>Complex patient presentations with multiple comorbidities</li>
-                                <li>Detailed differential diagnoses requiring extensive documentation</li>
-                                <li>Chronic disease management across multiple conditions</li>
-                                <li>Coordination with multiple specialists and care teams</li>
-                                <li>Comprehensive medication reconciliation</li>
-                                <li>Extensive social and family history documentation</li>
-                            </ul>
-
-                            <p className="mb-8">
-                                Each patient encounter in internal medicine requires a level of documentation detail that can be overwhelming, especially when managing 15-20 patients per day.
-                            </p>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Why Internal Medicine Physicians Are Particularly Vulnerable to Burnout
-                            </h2>
-
-                            <p className="mb-6">
-                                Internal medicine physicians face several factors that make them especially susceptible to documentation-related burnout:
-                            </p>
-
-                            <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                                <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4">Unique Challenges for Internists:</h3>
-                                <ul className="space-y-3">
-                                    <li><strong>Complex Patient Populations:</strong> Managing patients with multiple chronic conditions requires extensive documentation</li>
-                                    <li><strong>Comprehensive Assessments:</strong> Every encounter requires detailed history, physical, and assessment documentation</li>
-                                    <li><strong>Care Coordination:</strong> Managing referrals, consultations, and follow-ups across multiple specialists</li>
-                                    <li><strong>Medication Management:</strong> Complex medication regimens requiring detailed reconciliation and monitoring</li>
-                                    <li><strong>Quality Measures:</strong> Extensive documentation requirements for value-based care programs</li>
-                                    <li><strong>Hospital Follow-ups:</strong> Detailed documentation for post-hospitalization care</li>
-                                </ul>
-                            </div>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                How AI Scribes Are Revolutionizing Internal Medicine Documentation
-                            </h2>
-
-                            <p className="mb-6">
-                                AI medical scribes are providing internal medicine physicians with much-needed relief through intelligent documentation solutions:
-                            </p>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                1. Intelligent History Taking and Documentation
-                            </h3>
-                            <p className="mb-6">
-                                AI scribes can capture and organize complex patient histories:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Automated capture of chief complaints and presenting symptoms</li>
-                                <li>Structured documentation of complex medical histories</li>
-                                <li>Intelligent organization of multiple comorbidities</li>
-                                <li>Automated medication reconciliation and allergy documentation</li>
-                                <li>Social and family history capture and organization</li>
-                            </ul>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                2. Comprehensive Physical Examination Documentation
-                            </h3>
-                            <p className="mb-6">
-                                AI scribes can document detailed physical examinations:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Systematic documentation of all body systems</li>
-                                <li>Automated capture of vital signs and measurements</li>
-                                <li>Intelligent organization of physical findings</li>
-                                <li>Integration with previous examination data for trend analysis</li>
-                                <li>Automated flagging of abnormal findings</li>
-                            </ul>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                3. Advanced Assessment and Plan Generation
-                            </h3>
-                            <p className="mb-6">
-                                AI scribes can assist with complex clinical reasoning:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Generation of comprehensive differential diagnoses</li>
-                                <li>Evidence-based treatment plan suggestions</li>
-                                <li>Automated care coordination documentation</li>
-                                <li>Quality measure tracking and documentation</li>
-                                <li>Follow-up planning and scheduling</li>
-                            </ul>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Real-World Impact: Internal Medicine Practices Using AI Scribes
-                            </h2>
-
-                            <p className="mb-6">
-                                Internal medicine practices implementing AI scribes report significant improvements:
-                            </p>
-
-                            <div className="grid md:grid-cols-2 gap-6 mb-8">
-                                <Card className="p-6 border-l-4 border-[#162694]">
-                                    <h4 className="font-gantari font-semibold text-[#162694] mb-2">Dr. Robert Chen, Internal Medicine</h4>
-                                    <p className="text-sm">"I can now focus on the complex clinical reasoning that drew me to internal medicine, rather than spending hours on documentation. My patient care has improved dramatically."</p>
-                                </Card>
-                                <Card className="p-6 border-l-4 border-[#162694]">
-                                    <h4 className="font-gantari font-semibold text-[#162694] mb-2">Dr. Maria Rodriguez, Hospitalist</h4>
-                                    <p className="text-sm">"The AI scribe handles the routine documentation while I focus on the critical thinking and patient care that makes internal medicine so rewarding."</p>
-                                </Card>
-                                <Card className="p-6 border-l-4 border-[#162694]">
-                                    <h4 className="font-gantari font-semibold text-[#162694] mb-2">Dr. James Wilson, Primary Care Internist</h4>
-                                    <p className="text-sm">"My documentation is now more comprehensive and accurate, and I'm able to see more patients while providing better care. It's a game-changer."</p>
-                                </Card>
-                                <Card className="p-6 border-l-4 border-[#162694]">
-                                    <h4 className="font-gantari font-semibold text-[#162694] mb-2">Dr. Sarah Thompson, Geriatric Medicine</h4>
-                                    <p className="text-sm">"Managing complex elderly patients with multiple comorbidities is challenging enough. The AI scribe takes the documentation burden off my shoulders."</p>
-                                </Card>
-                            </div>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Specialized Features for Internal Medicine
-                            </h2>
-
-                            <p className="mb-6">
-                                AI scribes designed for internal medicine offer specialized capabilities:
-                            </p>
-
-                            <div className="bg-[#162694] text-white p-6 rounded-lg mb-8">
-                                <h3 className="font-gantari font-semibold text-xl mb-4">Internal Medicine-Specific Features:</h3>
-                                <div className="grid md:grid-cols-2 gap-4">
+                            <div className="space-y-6 md:space-y-8">
+                                <div className="space-y-4 md:space-y-6">
                                     <div>
-                                        <p className="font-semibold">Complex Comorbidity Management</p>
-                                        <p className="text-sm">Automated documentation of multiple chronic conditions and their interactions</p>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Record with Ease
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            The AI listens during appointments and captures key information without interrupting your patient interaction.
+                                        </p>
                                     </div>
+
                                     <div>
-                                        <p className="font-semibold">Medication Reconciliation</p>
-                                        <p className="text-sm">Intelligent tracking and documentation of complex medication regimens</p>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Edit with Confidence
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            Quickly review and make edits in real time — or let the system learn your preferences for smarter drafts next time.
+                                        </p>
                                     </div>
+
                                     <div>
-                                        <p className="font-semibold">Care Coordination</p>
-                                        <p className="text-sm">Automated documentation of specialist referrals and follow-ups</p>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold">Quality Measures</p>
-                                        <p className="text-sm">Tracking and documentation for value-based care requirements</p>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Finalize in Seconds
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            Approve and sign off with a single click, so your notes are done before your day ends.
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
 
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Implementation Strategies for Internal Medicine Practices
-                            </h2>
-
-                            <p className="mb-6">
-                                Successfully implementing AI scribes in internal medicine requires specific considerations:
-                            </p>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                Choosing the Right AI Scribe for Internal Medicine
-                            </h3>
-                            <p className="mb-6">
-                                Look for AI scribes that offer:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Internal medicine-specific templates and workflows</li>
-                                <li>Advanced clinical decision support capabilities</li>
-                                <li>Integration with hospital and specialist systems</li>
-                                <li>Comprehensive medication management features</li>
-                                <li>Quality measure tracking and reporting</li>
-                            </ul>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                Workflow Integration
-                            </h3>
-                            <p className="mb-6">
-                                Successful implementation requires:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Integration with existing EHR systems</li>
-                                <li>Training on internal medicine-specific features</li>
-                                <li>Customization for practice-specific workflows</li>
-                                <li>Ongoing optimization based on feedback</li>
-                                <li>Support for complex patient scenarios</li>
-                            </ul>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                The Future of Internal Medicine: Enhanced by AI
-                            </h2>
-
-                            <p className="mb-6">
-                                AI scribes are just the beginning of technological advancement in internal medicine:
-                            </p>
-
-                            <ul className="list-disc pl-6 mb-8 space-y-2">
-                                <li><strong>Predictive Analytics:</strong> Identifying patients at risk for complications or hospital readmission</li>
-                                <li><strong>Population Health Management:</strong> Automated outreach for preventive care and chronic disease management</li>
-                                <li><strong>Clinical Decision Support:</strong> Real-time suggestions based on patient data and evidence-based guidelines</li>
-                                <li><strong>Care Coordination:</strong> Automated communication with specialists and care teams</li>
-                                <li><strong>Research Integration:</strong> De-identified data contributing to medical research and quality improvement</li>
-                            </ul>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Addressing Common Concerns
-                            </h2>
-
-                            <p className="mb-6">
-                                Internal medicine physicians often have specific concerns about AI scribes:
-                            </p>
-
-                            <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                                <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4">Frequently Asked Questions:</h3>
-                                <div className="space-y-4">
-                                    <div>
-                                        <p className="font-semibold">Can AI handle complex internal medicine cases?</p>
-                                        <p className="text-sm">Yes. Modern AI scribes are specifically trained on internal medicine workflows and can handle complex patient presentations with multiple comorbidities.</p>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold">What about medication reconciliation?</p>
-                                        <p className="text-sm">AI scribes can automatically reconcile medications from multiple sources and flag potential interactions or duplications.</p>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold">How does it handle specialist coordination?</p>
-                                        <p className="text-sm">AI scribes can generate referral letters, track specialist recommendations, and document care coordination activities.</p>
-                                    </div>
-                                    <div>
-                                        <p className="font-semibold">Can it integrate with hospital systems?</p>
-                                        <p className="text-sm">Yes. Most AI scribes integrate with major EHR systems and can access hospital records for comprehensive documentation.</p>
+                                <div>
+                                    <h3 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                        Why It Matters
+                                    </h3>
+                                    <div className="space-y-3 md:space-y-4">
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Reduces Burnout:</strong> Frees clinicians from tedious data entry.
+                                        </p>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Improves Accuracy:</strong> AI catches details humans might forget or misrecord.
+                                        </p>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Speeds Up Care:</strong> Faster documentation means more time for patients.
+                                        </p>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Enhances Compliance:</strong> Structured notes help with coding, billing, and legal protection.
+                                        </p>
                                     </div>
                                 </div>
+
+                                {/* Quote Card */}
+                                <Card className="w-full max-w-lg mx-auto bg-[#fffde3] rounded-[20px] border-none shadow-sm hover:shadow-md transition-shadow">
+                                    <CardContent className="p-4 sm:p-6 flex flex-col items-center justify-center text-center">
+                                        <Image
+                                            className="w-16 h-20 sm:w-[94px] sm:h-[117px] mb-3 sm:mb-4"
+                                            alt="Doctor illustration"
+                                            src="/blog/noun-doctor-7832406-1.svg"
+                                            width={94}
+                                            height={117}
+                                        />
+                                        <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
+                                            "Data is the lifeblood of modern medicine. Without it, we are flying blind."
+                                            <br />— Dr. Eric Topol, Cardiologist & Digital Health Advocate
+                                        </p>
+                                    </CardContent>
+                                </Card>
                             </div>
+                        </section>
 
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Conclusion: A New Era for Internal Medicine
+                        {/* Section: The Human Touch Isn't Gone */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                The Human Touch Isn't Gone
                             </h2>
-
-                            <p className="mb-8">
-                                Internal medicine physicians are the backbone of healthcare, managing complex patients with multiple conditions. AI scribes are not replacing their clinical expertise but enhancing it by removing the documentation burden that has been driving burnout.
+                            <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                Critics worry about tech replacing empathy. But good AI scribes enhance the human connection—they listen so the doctor can too. When tech fades into the background, compassion comes forward.
                             </p>
+                        </section>
 
-                            <p className="mb-8">
-                                By automating routine documentation tasks, AI scribes allow internists to focus on what they do best: complex clinical reasoning, patient care, and medical education. The result is better patient outcomes, reduced physician burnout, and a more sustainable healthcare system.
-                            </p>
-
-                            <p className="mb-8">
-                                For internal medicine physicians struggling with documentation overload, AI scribes offer a path forward—one that preserves the intellectual challenge and patient relationships that make internal medicine so rewarding while eliminating the administrative burden that has been driving many to consider leaving the field.
-                            </p>
-
-                            <div className="bg-[#162694] text-white p-6 rounded-lg mt-12">
-                                <h3 className="font-gantari font-semibold text-xl mb-4">Ready to Transform Your Internal Medicine Practice?</h3>
-                                <p className="mb-4">
-                                    Join internal medicine physicians who are rediscovering their passion for patient care with AI scribes.
+                        {/* Quote Card */}
+                        <Card className="w-full max-w-lg mx-auto bg-[#fffde3] rounded-[20px] border-none shadow-sm hover:shadow-md transition-shadow mb-8 md:mb-12">
+                            <CardContent className="p-4 sm:p-6 flex flex-col items-center justify-center text-center">
+                                <Image
+                                    className="w-16 h-20 sm:w-[94px] sm:h-[117px] mb-3 sm:mb-4"
+                                    alt="Doctor illustration"
+                                    src="/blog/noun-doctor-7832406-1.svg"
+                                    width={94}
+                                    height={117}
+                                />
+                                <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
+                                    "Digital health empowers people to better manage their health and improves access to care globally."
+                                    <br />— World Health Organization (WHO)
                                 </p>
-                                <Link href="/tryfree" target="_blank">
-                                    <Button className="bg-white text-[#162694] hover:bg-gray-100 rounded-[5px] px-6 py-3 transition-colors">
-                                        <span className="font-gantari font-medium text-base">
-                                            Try InteliDoc AI - It's Free
-                                        </span>
-                                    </Button>
-                                </Link>
+                            </CardContent>
+                        </Card>
+
+                        {/* Section: Challenges Ahead */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                Challenges Ahead
+                            </h2>
+                            <div className="space-y-4 md:space-y-6">
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Privacy:</strong> Patient consent and HIPAA compliance are non-negotiable.
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Bias and Accuracy:</strong> AI must be rigorously tested across diverse populations.
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Integration:</strong> Systems must work seamlessly with existing EHRs and workflows.
+                                </p>
                             </div>
-                        </div>
-                    </article>
+                        </section>
+
+                        {/* Section: The Road Forward */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                The Road Forward
+                            </h2>
+                            <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                The AI scribe isn't just another gadget—it's a strategic shift in how medicine is practiced. With tools like Freed AI leading the way, we're not just making healthcare more efficient—we're making it human again.
+                            </p>
+                        </section>
+
+                        {/* Related Content Section */}
+                        <section className="mt-12 md:mt-16">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-6 md:mb-8">
+                                Related content
+                            </h2>
+                            <div className="space-y-6 md:space-y-8">
+                                {relatedArticles.map((article, index) => (
+                                    <Card key={index} className="w-full bg-white rounded-[20px] border-none shadow-sm hover:shadow-md transition-shadow">
+                                        <CardContent className="p-4 sm:p-6">
+                                            <h3 className="font-playfair font-semibold text-[#162694] text-lg sm:text-xl md:text-2xl leading-tight md:leading-[35.8px] mb-3 md:mb-4">
+                                                {article.title}
+                                            </h3>
+                                            <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed md:leading-[35.5px] mb-4 md:mb-6">
+                                                {article.content}
+                                            </p>
+                                            <a
+                                                href="#"
+                                                className="font-gantari font-normal text-[#162694] text-xs leading-[15.4px] underline hover:text-[#162694]/80 transition-colors self-start"
+                                            >
+                                                Read More
+                                            </a>
+                                        </CardContent>
+                                    </Card>
+                                ))}
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
 
@@ -346,4 +299,4 @@ export default function WhyInternalMedicine() {
             <Footer links={footerLinks} />
         </div>
     );
-}
+} 

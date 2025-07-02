@@ -87,10 +87,8 @@ export default function Blogs() {
                 <h1 className="font-playfair font-medium text-white text-3xl sm:text-4xl lg:text-[52px] leading-tight lg:leading-[57.7px]">
                   Blogs
                 </h1>
-                <p className="mt-4 font-gantari font-normal text-white text-lg sm:text-xl lg:text-2xl leading-relaxed">
-                  Fast reads for doctors who are
-                  <br />
-                  pressed for time
+                <p className="mt-4 font-gantari font-normal text-white text-lg sm:text-xl lg:text-xl leading-relaxed">
+                  Fast reads for doctors who are pressed for time
                 </p>
 
                 {/* <Button

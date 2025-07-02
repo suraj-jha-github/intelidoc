@@ -1,275 +1,253 @@
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import Link from "next/link";
-import { Footer } from "../../components/footer";
+import { Separator } from "@/components/ui/separator";
 import { Navigation } from "../../features/__components/navigation";
-
-// Navigation menu items data
-const navItems = [
-    { label: "Features", href: "/features" },
-    { label: "Specialties", href: "/specialities" },
-    { label: "Blog", href: "/blogs" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "For Groups", href: "/forgroup" },
-    { label: "Contact Us", href: "/contact" },
-];
-
-// Footer links data - same as homepage
-const footerLinks = {
-    resources: ["Help Center", "Blog"],
-    specialties: [
-        "Family Medicine",
-        "Internal Medicine",
-        "Pschiatry",
-        "Mental Health",
-        "Padiatrics",
-        "Other Specialties",
-    ],
-    legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
-};
+import { Footer } from "../../components/footer";
 
 export default function DocumentingPediatric() {
+    // Data for related content cards
+    const relatedArticles = [
+        {
+            title: "AI Medical Scribes: The Cure for Healthcare's Documentation Headache",
+            content: "The exam room used to be sacred space—where undivided attention met patient stories. Now, it's often a battleground between eye contact and endless clicks. Doctors are burning out, not from care, but from clerical chaos. Enter the AI medical scribe: not science fiction, but a practical solution reshaping modern healthcare.",
+        },
+        {
+            title: "Why Internal Medicine Physicians Are Turning to AI Scribes for Relief",
+            content: "Internists are detectives, educators, care coordinators, and chronic disease managers—all in a single day. But too often, their work is buried under the weight of documentation. Every encounter demands detailed notes, thoughtful plans, and bulletproof coding. It's no wonder that internal medicine sees some of the highest burnout rates in healthcare.",
+        },
+        {
+            title: "Documenting Pediatric Care Shouldn't Be a Puzzle—Let AI Scribes Help",
+            content: "Pediatric care is full of nuance. The patient doesn't always speak, parents do. Visits are short, but dense with critical information—growth charts, vaccines, milestones, anticipatory guidance, and more. Every note needs to be complete, clear, and compliant. But pediatricians are drowning in charting.",
+        }
+    ];
+
+    // Navigation menu items data
+    const navItems = [
+        { label: "Home", href: "/" },
+        { label: "Features", href: "/features" },
+        { label: "Specialties", href: "/specialities" },
+        { label: "Blog", href: "/blogs" },
+        { label: "Pricing", href: "/pricing" },
+        { label: "For Groups", href: "/forgroup" },
+        { label: "Contact Us", href: "/contact" },
+    ];
+
+    // Footer links data - same as homepage
+    const footerLinks = {
+        resources: ["Help Center", "Blog"],
+        specialties: [
+            "Family Medicine",
+            "Internal Medicine",
+            "Pschiatry",
+            "Mental Health",
+            "Padiatrics",
+            "Other Specialties",
+        ],
+        legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
+    };
+
     return (
-        <div className="min-h-screen bg-white">
-            <div className="w-full mx-auto">
-                {/* Header Section with Gradient Background */}
-                <header className="relative w-full min-h-[500px] lg:min-h-[577px] [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]">
-                    {/* Navigation Background Overlay */}
-                    <div className="absolute top-0 left-0 right-0 h-14 md:h-[57px] bg-black/20 backdrop-blur-sm z-10"></div>
+        <div className="min-h-screen bg-[#f3f3f3]">
+            {/* Navigation */}
+            <Navigation navItems={navItems} />
 
-                    {/* Navigation Bar */}
-                    <Navigation navItems={navItems} />
+            <div className="max-w-7xl mx-auto">
+                {/* Main Content Container */}
+                <div className="max-w-4xl mx-auto bg-[#f1f3ff87]">
+                    <div className="px-4 sm:px-6 md:px-8 lg:px-14 py-8 sm:py-12 md:py-16 lg:py-24">
+                        {/* Main Headline */}
+                        <h1 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight lg:leading-[51.2px] mb-6 md:mb-8">
+                            Documenting Pediatric Care Shouldn't Be a Puzzle—Let AI Scribes Help
+                        </h1>
 
-                    {/* Header Content */}
-                    <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto pt-16 sm:pt-20 md:pt-24 lg:pt-32">
-                        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
-                            {/* Left Content */}
-                            <div className="flex-1 lg:max-w-md">
-                                <h1 className="font-playfair font-medium text-white text-3xl sm:text-4xl lg:text-[52px] leading-tight lg:leading-[57.7px]">
-                                    Documenting Pediatric Care Shouldn't Be a Puzzle—Let AI Scribes Help
-                                </h1>
-                                <p className="mt-4 font-gantari font-normal text-white text-lg sm:text-xl lg:text-2xl leading-relaxed">
-                                    How AI scribes are transforming pediatric documentation and improving care quality
+                        {/* Section: Pediatric Documentation Is a Whole Different Animal */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                Pediatric Documentation Is a Whole Different Animal
+                            </h2>
+                            <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                Unlike adult medicine, pediatric care requires:
+                            </p>
+                            <div className="mt-6 space-y-3">
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Parent-provider dialogue capture: the patient's story comes secondhand
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Well-child visit templates: different checklists at each age
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Developmental milestone tracking
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Vaccine logs and anticipatory guidance
+                                </p>
+                                <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                    • Frequent visits, short time slots, no room for documentation delays
                                 </p>
                             </div>
+                            <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px] mt-6">
+                                Even seasoned pediatricians spend more time documenting than seeing kids. Add after-hours note finishing to that, and burnout becomes inevitable.
+                            </p>
+                        </section>
 
-                            {/* Right Content - Blog Meta */}
-                            <div className="flex-1 lg:max-w-md">
-                                <Card className="w-full bg-white/10 backdrop-blur-sm rounded-[20px] border border-white/20">
-                                    <CardContent className="p-6">
-                                        <div className="text-white">
-                                            <p className="font-gantari font-medium text-lg mb-2">Published: December 2024</p>
-                                            <p className="font-gantari font-normal text-base opacity-90">Reading time: 8 minutes</p>
-                                            <p className="font-gantari font-normal text-base opacity-90 mt-2">Category: Pediatric Care</p>
-                                        </div>
+                        {/* Section: How an AI Medical Scribe Supports Pediatricians */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                How an AI Medical Scribe Supports Pediatricians
+                            </h2>
+                            <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                Your AI scribe listens in real-time, filters out non-clinical chatter, understands parent-child dynamics, and builds a structured, EHR-ready note with all the essentials.
+                            </p>
+                            <div className="mt-6">
+                                <h3 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-[25px] leading-tight md:leading-8 mb-4 md:mb-6">
+                                    Pediatric-Specific Capabilities:
+                                </h3>
+                                <div className="space-y-3">
+                                    <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                        • Recognizes and logs milestones (motor, speech, social)
+                                    </p>
+                                    <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                        • Tracks vaccine schedules with automatic prompts
+                                    </p>
+                                    <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                        • Captures anticipatory guidance topics specific to the child's age
+                                    </p>
+                                    <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
+                                        • Notes both patient and parent perspectives
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Section: Built for Effortless Workflow */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                Built for Effortless Workflow
+                            </h2>
+                            <div className="space-y-6 md:space-y-8">
+                                <div className="space-y-4 md:space-y-6">
+                                    <div>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Age-Specific Intelligence
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            Automatically adjusts notes and guidance based on the child's age—newborn to adolescent—no manual templates required.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Dual-Voice Recognition
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            Captures both the parent's concerns and the child's symptoms with contextual clarity, reducing errors and missed details.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Automated Milestone & Vaccine Tracking
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            Inserts developmental milestones, anticipatory guidance, and immunization updates directly into the note—no extra clicks.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* Quote Card */}
+                                <Card className="w-full max-w-lg mx-auto bg-[#fffde3] rounded-[20px] border-none shadow-sm hover:shadow-md transition-shadow">
+                                    <CardContent className="p-4 sm:p-6 flex flex-col items-center justify-center text-center">
+                                        <Image
+                                            className="w-16 h-20 sm:w-[94px] sm:h-[117px] mb-3 sm:mb-4"
+                                            alt="Doctor illustration"
+                                            src="/blog/noun-doctor-7832406-1.svg"
+                                            width={94}
+                                            height={117}
+                                        />
+                                        <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
+                                            "Technology will not replace physicians, but physicians who use technology will replace those who don't."
+                                            <br />— Dr. Robert Wachter, Chair of UCSF Medicine
+                                        </p>
                                     </CardContent>
                                 </Card>
                             </div>
-                        </div>
+                        </section>
+
+                        {/* Section: Why It Matters */}
+                        <section className="mb-8 md:mb-12">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
+                                Why It Matters
+                            </h2>
+                            <div className="space-y-6 md:space-y-8">
+                                <div className="space-y-4 md:space-y-6">
+                                    <div>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Captures Dual Perspectives
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            Pediatric encounters involve two narrators: the child (if verbal) and the parent. AI scribes are trained to accurately capture and separate both voices—something standard dictation tools miss.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Handles High Volume with Precision
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            Pediatricians see more patients per day than most specialties. AI scribes keep up with rapid-fire visits by documenting in real time—without slowing you down.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Supports Developmental and Preventive Care
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            From growth tracking to vaccine compliance and milestone documentation, AI scribes ensure nothing critical gets left out of the chart.
+                                        </p>
+                                    </div>
+
+                                    <div>
+                                        <h4 className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl mb-2">
+                                            Frees You to Focus on Kids, Not Clicks
+                                        </h4>
+                                        <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
+                                            The most valuable pediatric tool is presence. AI scribes take the charting off your plate so you can do what you do best: connect, comfort, and care.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Related Content Section */}
+                        <section className="mt-12 md:mt-16">
+                            <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-6 md:mb-8">
+                                Related content
+                            </h2>
+                            <div className="space-y-6 md:space-y-8">
+                                {relatedArticles.map((article, index) => (
+                                    <Card key={index} className="w-full bg-white rounded-[20px] border-none shadow-sm hover:shadow-md transition-shadow">
+                                        <CardContent className="p-4 sm:p-6">
+                                            <h3 className="font-playfair font-semibold text-[#162694] text-lg sm:text-xl md:text-2xl leading-tight md:leading-[35.8px] mb-3 md:mb-4">
+                                                {article.title}
+                                            </h3>
+                                            <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed md:leading-[35.5px] mb-4 md:mb-6">
+                                                {article.content}
+                                            </p>
+                                            <a
+                                                href="#"
+                                                className="font-gantari font-normal text-[#162694] text-xs leading-[15.4px] underline hover:text-[#162694]/80 transition-colors self-start"
+                                            >
+                                                Read More
+                                            </a>
+                                        </CardContent>
+                                    </Card>
+                                ))}
+                            </div>
+                        </section>
                     </div>
-                </header>
-
-                {/* Blog Content */}
-                <div className="relative w-full max-w-4xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto py-12 lg:py-16">
-                    <article className="prose prose-lg max-w-none">
-                        <div className="font-gantari text-black leading-relaxed">
-                            <p className="text-xl mb-8 leading-relaxed">
-                                Pediatric care is full of nuance. The patient doesn't always speak, parents do. Visits are short, but dense with critical information—growth charts, vaccines, milestones, anticipatory guidance, and more. Every note needs to be complete, clear, and compliant. But pediatricians are drowning in charting.
-                            </p>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                The Pediatric Documentation Challenge
-                            </h2>
-
-                            <p className="mb-6">
-                                Pediatric documentation is uniquely complex. Unlike adult medicine, where patients can often describe their symptoms directly, pediatricians must interpret and document information from multiple sources:
-                            </p>
-
-                            <ul className="list-disc pl-6 mb-8 space-y-2">
-                                <li>Parent observations and concerns</li>
-                                <li>Child's developmental milestones</li>
-                                <li>Growth and nutrition data</li>
-                                <li>Vaccination schedules</li>
-                                <li>Behavioral assessments</li>
-                                <li>School performance reports</li>
-                            </ul>
-
-                            <p className="mb-8">
-                                Each well-child visit requires documenting multiple domains: physical examination, developmental screening, anticipatory guidance, and care coordination. The documentation burden is immense, often taking longer than the actual patient interaction.
-                            </p>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Why Traditional Documentation Fails Pediatricians
-                            </h2>
-
-                            <p className="mb-6">
-                                Traditional EHR systems were designed for adult medicine, not the unique needs of pediatric care. This creates several challenges:
-                            </p>
-
-                            <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                                <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4">Common Pediatric Documentation Pain Points:</h3>
-                                <ul className="space-y-3">
-                                    <li><strong>Template Mismatch:</strong> Generic templates don't capture pediatric-specific elements like developmental milestones or growth patterns</li>
-                                    <li><strong>Time Pressure:</strong> Short appointment times don't allow for comprehensive documentation</li>
-                                    <li><strong>Complex Family Dynamics:</strong> Documenting interactions with parents, caregivers, and sometimes multiple family members</li>
-                                    <li><strong>Regulatory Requirements:</strong> Specific documentation requirements for pediatric care and immunizations</li>
-                                    <li><strong>Continuity of Care:</strong> Tracking growth and development over time across multiple visits</li>
-                                </ul>
-                            </div>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                How AI Scribes Transform Pediatric Documentation
-                            </h2>
-
-                            <p className="mb-6">
-                                AI medical scribes specifically designed for pediatric care can address these unique challenges:
-                            </p>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                1. Pediatric-Specific Templates
-                            </h3>
-                            <p className="mb-6">
-                                AI scribes can use templates specifically designed for pediatric care, including:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Age-appropriate developmental screening tools</li>
-                                <li>Growth chart integration and trend analysis</li>
-                                <li>Vaccination schedule tracking</li>
-                                <li>Behavioral assessment frameworks</li>
-                                <li>Family-centered care documentation</li>
-                            </ul>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                2. Natural Language Processing for Pediatric Context
-                            </h3>
-                            <p className="mb-6">
-                                Advanced AI can understand and document the nuances of pediatric encounters:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Interpreting parent descriptions of child behavior</li>
-                                <li>Capturing developmental observations</li>
-                                <li>Documenting family dynamics and social determinants</li>
-                                <li>Translating child-friendly language into medical terminology</li>
-                            </ul>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                3. Automated Growth and Development Tracking
-                            </h3>
-                            <p className="mb-6">
-                                AI scribes can automatically:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Calculate and plot growth percentiles</li>
-                                <li>Track developmental milestones across visits</li>
-                                <li>Identify trends and potential concerns</li>
-                                <li>Generate age-appropriate anticipatory guidance</li>
-                            </ul>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Real-World Impact: Pediatric Practices Using AI Scribes
-                            </h2>
-
-                            <p className="mb-6">
-                                Pediatric practices implementing AI scribes report significant improvements:
-                            </p>
-
-                            <div className="grid md:grid-cols-2 gap-6 mb-8">
-                                <Card className="p-6 border-l-4 border-[#162694]">
-                                    <h4 className="font-gantari font-semibold text-[#162694] mb-2">Time Savings</h4>
-                                    <p className="text-sm">Pediatricians save 2-3 hours per day on documentation, allowing more time for patient care and family education.</p>
-                                </Card>
-                                <Card className="p-6 border-l-4 border-[#162694]">
-                                    <h4 className="font-gantari font-semibold text-[#162694] mb-2">Documentation Quality</h4>
-                                    <p className="text-sm">More comprehensive and accurate documentation of developmental milestones and family dynamics.</p>
-                                </Card>
-                                <Card className="p-6 border-l-4 border-[#162694]">
-                                    <h4 className="font-gantari font-semibold text-[#162694] mb-2">Care Continuity</h4>
-                                    <p className="text-sm">Better tracking of growth patterns and developmental progress across multiple visits.</p>
-                                </Card>
-                                <Card className="p-6 border-l-4 border-[#162694]">
-                                    <h4 className="font-gantari font-semibold text-[#162694] mb-2">Family Satisfaction</h4>
-                                    <p className="text-sm">More focused attention on family concerns and less time spent on documentation during visits.</p>
-                                </Card>
-                            </div>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Implementation Considerations for Pediatric Practices
-                            </h2>
-
-                            <p className="mb-6">
-                                When implementing AI scribes in pediatric practices, consider these factors:
-                            </p>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                Privacy and Security
-                            </h3>
-                            <p className="mb-6">
-                                Pediatric records require extra protection. Ensure your AI scribe solution:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Complies with HIPAA and state-specific pediatric privacy laws</li>
-                                <li>Provides secure data transmission and storage</li>
-                                <li>Offers granular access controls for sensitive information</li>
-                                <li>Supports parental consent management</li>
-                            </ul>
-
-                            <h3 className="font-gantari font-semibold text-[#162694] text-xl mb-4 mt-8">
-                                Integration with Pediatric-Specific Systems
-                            </h3>
-                            <p className="mb-6">
-                                Look for AI scribes that integrate with:
-                            </p>
-                            <ul className="list-disc pl-6 mb-6 space-y-2">
-                                <li>Immunization information systems</li>
-                                <li>Developmental screening tools</li>
-                                <li>Growth chart software</li>
-                                <li>School health information systems</li>
-                                <li>Specialist referral networks</li>
-                            </ul>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                The Future of Pediatric Documentation
-                            </h2>
-
-                            <p className="mb-6">
-                                As AI technology advances, pediatric documentation will become even more sophisticated:
-                            </p>
-
-                            <ul className="list-disc pl-6 mb-8 space-y-2">
-                                <li><strong>Predictive Analytics:</strong> AI will identify potential developmental delays or health risks based on patterns</li>
-                                <li><strong>Personalized Care Plans:</strong> Automated generation of family-specific anticipatory guidance</li>
-                                <li><strong>Population Health:</strong> Better tracking of community health trends and vaccination rates</li>
-                                <li><strong>Research Integration:</strong> De-identified data contributing to pediatric health research</li>
-                            </ul>
-
-                            <h2 className="font-playfair font-semibold text-[#162694] text-2xl lg:text-3xl mb-6 mt-12">
-                                Conclusion
-                            </h2>
-
-                            <p className="mb-8">
-                                Pediatric documentation doesn't have to be a puzzle. AI medical scribes designed specifically for pediatric care can transform how pediatricians document patient encounters, allowing them to focus on what matters most: providing excellent care to children and supporting their families.
-                            </p>
-
-                            <p className="mb-8">
-                                By automating the documentation process while maintaining the human touch that's essential in pediatric care, AI scribes are helping pediatricians spend more time with patients and less time on paperwork. The result is better care, happier families, and more satisfied pediatricians.
-                            </p>
-
-                            <div className="bg-[#162694] text-white p-6 rounded-lg mt-12">
-                                <h3 className="font-gantari font-semibold text-xl mb-4">Ready to Transform Your Pediatric Practice?</h3>
-                                <p className="mb-4">
-                                    Join the growing number of pediatric practices using AI scribes to improve documentation quality and patient care.
-                                </p>
-                                <Link href="/tryfree" target="_blank">
-                                    <Button className="bg-white text-[#162694] hover:bg-gray-100 rounded-[5px] px-6 py-3 transition-colors">
-                                        <span className="font-gantari font-medium text-base">
-                                            Try InteliDoc AI - It's Free
-                                        </span>
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
-                    </article>
                 </div>
             </div>
 
