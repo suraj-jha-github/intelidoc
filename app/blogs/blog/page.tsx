@@ -104,15 +104,15 @@ export default function Blog() {
               <div className="space-y-6 md:space-y-8">
                 <div className="space-y-4 md:space-y-6">
                   <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[35.5px]">
-                    <strong>Speech Recognition:</strong> Converts spoken dialogue into text.
+                    <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Speech Recognition:</strong> Converts spoken dialogue into text.
                     <br /><br />
-                    <strong>Natural Language Processing (NLP):</strong> Understands context,
+                    <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Natural Language Processing (NLP):</strong> Understands context,
                     filters small talk, and identifies relevant medical content.
                     <br /><br />
-                    <strong>Clinical Intelligence:</strong> Structures notes into
+                    <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Clinical Intelligence:</strong> Structures notes into
                     SOAP format, links to diagnoses and billing codes.
                     <br /><br />
-                    <strong>Customization:</strong> Tailors language and format
+                    <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Customization:</strong> Tailors language and format
                     to provider preferences.
                   </p>
                 </div>
@@ -181,16 +181,16 @@ export default function Blog() {
                   </h3>
                   <div className="space-y-3 md:space-y-4">
                     <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
-                      <strong>Reduces Burnout:</strong> Frees clinicians from tedious data entry.
+                      <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Reduces Burnout:</strong> Frees clinicians from tedious data entry.
                     </p>
                     <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
-                      <strong>Improves Accuracy:</strong> AI catches details humans might forget or misrecord.
+                      <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Improves Accuracy:</strong> AI catches details humans might forget or misrecord.
                     </p>
                     <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
-                      <strong>Speeds Up Care:</strong> Faster documentation means more time for patients.
+                      <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Speeds Up Care:</strong> Faster documentation means more time for patients.
                     </p>
                     <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
-                      <strong>Enhances Compliance:</strong> Structured notes help with coding, billing, and legal protection.
+                      <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Enhances Compliance:</strong> Structured notes help with coding, billing, and legal protection.
                     </p>
                   </div>
                 </div>
@@ -252,13 +252,13 @@ export default function Blog() {
               </h2>
               <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
                 <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
-                  <strong>Privacy:</strong> Patient consent and HIPAA compliance are non-negotiable.
+                  <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Privacy:</strong> Patient consent and HIPAA compliance are non-negotiable.
                 </p>
                 <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
-                  <strong>Bias and Accuracy:</strong> AI must be rigorously tested across diverse populations.
+                  <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Bias and Accuracy:</strong> AI must be rigorously tested across diverse populations.
                 </p>
                 <p className="font-gantari font-normal text-black text-base sm:text-lg md:text-xl leading-relaxed">
-                  <strong>Integration:</strong> Systems must work seamlessly with existing EHRs and workflows.
+                  <strong className="font-playfair font-semibold text-black text-lg sm:text-xl md:text-2xl">Integration:</strong> Systems must work seamlessly with existing EHRs and workflows.
                 </p>
               </div>
 
@@ -286,7 +286,7 @@ export default function Blog() {
                     key={index}
                     className="bg-white rounded-[10px] border border-solid border-[#bcbaba] hover:shadow-lg transition-shadow duration-200 h-full"
                   >
-                    <CardContent className="p-4 md:p-6 flex flex-col h-full min-h-[280px] md:min-h-[320px]">
+                    <CardContent className="p-4 md:p-6 flex flex-col h-full min-h-[200px] md:min-h-[220px]">
                       <h3 className="font-playfair font-semibold text-[#162694] text-base sm:text-lg md:text-[17px] leading-tight md:leading-[21.8px] mb-3 md:mb-4">
                         {article.title}
                       </h3>

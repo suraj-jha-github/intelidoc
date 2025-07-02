@@ -28,7 +28,7 @@ export default function ForGroups() {
     // Feature badges data
     const featureBadges = [
         {
-            text: "6K+ clinicians use Twofold",
+            text: "6K+ clinicians use Intelidoc",
         },
         {
             text: "For teams of any size",

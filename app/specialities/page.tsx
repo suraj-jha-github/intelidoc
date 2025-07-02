@@ -447,7 +447,7 @@ export default function Specialties() {
         </section>
 
         {/* Call to Action Section */}
-        <section className="w-full mt-16 flex flex-col items-center justify-center py-12 md:py-16">
+        <section className="w-full mt-16 flex flex-col items-center justify-center py-4 md:py-4">
           <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             <h2 className="font-playfair font-semibold text-[#162694] text-3xl md:text-4xl lg:text-5xl text-center tracking-[0] leading-tight mb-12">
               Set yourself free for

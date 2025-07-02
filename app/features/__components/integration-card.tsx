@@ -98,7 +98,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
           <h3 className="font-playfair font-medium text-black text-xl md:text-2xl mt-4 md:mt-6">
             {option.type}
           </h3>
-          <p className="font-gantari font-normal text-[#7b7979] text-base md:text-lg mt-3 md:mt-4 leading-relaxed">
+          <p className="font-gantari font-normal text-[#7b7979] text-[13px] md:text-[16px] mt-3 md:mt-4 leading-relaxed">
             {option.description}
           </p>
         </div>

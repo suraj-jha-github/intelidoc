@@ -578,11 +578,11 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
-            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-tight text-center lg:text-left mb-4 sm:mb-6 lg:mb-8">
+            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[46px] leading-tight text-center lg:text-left mb-2 sm:mb-3 lg:mb-2">
               Don't want to capture the conversation?
             </h2>
 
-            <h3 className="font-playfair font-semibold text-[#162694] text-3xl sm:text-4xl md:text-5xl lg:text-[64px] mt-2 sm:mt-4 text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
+            <h3 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-4xl md:text-3xl lg:text-[44px] mt-1 sm:mt-3 text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
               No Problem.
             </h3>
 
@@ -648,7 +648,7 @@ export default function Home() {
                   </div>
                   <div className="mt-6 lg:mt-0 lg:ml-8 lg:flex-shrink-0">
                     <Link href="/tryfree" target="_blank">
-                      <Button className="font-gantari w-full text-2xl sm:w-auto sm:min-w-[200px] h-8 sm:h-[40px] rounded-[5px] bg-white text-[#162694] font-semibold hover:bg-gray-100">
+                      <Button className="font-gantari w-full text-2xl sm:w-auto sm:min-w-[200px] h-8 sm:h-[40px] rounded-[5px] bg-white text-[#162694] font-normal hover:bg-gray-100">
                         Try for free
                       </Button>
                     </Link>

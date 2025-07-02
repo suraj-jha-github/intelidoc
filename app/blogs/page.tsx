@@ -133,7 +133,7 @@ export default function Blogs() {
                   <h2 className="font-playfair font-semibold text-[#162694] text-xl sm:text-2xl lg:text-[28px] leading-tight lg:leading-[35.8px] mb-6">
                     {post.title}
                   </h2>
-                  <p className="font-gantari font-semibold text-black text-sm sm:text-base leading-relaxed lg:leading-[27.8px] flex-1 mb-6">
+                  <p className="font-gantari  text-black text-sm sm:text-base leading-relaxed lg:leading-[27.8px] flex-1 mb-6">
                     {post.content}
                   </p>
                   <div className="flex justify-end">
