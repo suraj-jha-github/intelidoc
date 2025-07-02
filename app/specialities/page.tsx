@@ -126,14 +126,14 @@ export default function Specialties() {
     <div className="bg-[#f3f3f3] flex flex-row justify-center w-full">
       <div className="bg-[#f3f3f3] overflow-hidden w-full max-w-none relative">
         {/* Header Section */}
-        <header className="relative w-full min-h-[500px] md:min-h-[622px]">
+        <header className="relative w-full min-h-[400px] md:min-h-[500px]">
           <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
           {/* Navigation Bar */}
           <Navigation navItems={navItems} />
 
           {/* Hero Content */}
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-24 md:pt-32 pb-8 max-w-7xl mx-auto h-full">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-24 md:pt-32 pb-8 max-w-7xl mx-auto">
             <div className="flex-1 mb-8 lg:mb-0">
               <h1 className="font-playfair font-semibold text-white text-3xl md:text-4xl lg:text-[52px] tracking-[0] leading-tight md:leading-[57.7px] mb-6">
                 Your trusted AI scribe
@@ -187,7 +187,7 @@ export default function Specialties() {
         </header>
 
         {/* Specialties Section */}
-        <section className="mt-16 md:mt-[100px]">
+        <section className="mt-8 md:mt-16">
           <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               <h2 className="font-playfair font-semibold text-[#132180] text-3xl md:text-4xl lg:text-[50px] tracking-[0] leading-tight md:leading-[64px] mb-8 text-center md:text-left">

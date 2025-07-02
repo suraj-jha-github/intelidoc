@@ -95,7 +95,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
       <CardContent className="flex flex-col flex-1 p-0">
         <div className="flex-1 px-[12px] py-0 pb-4 md:p-4 md:pt-0 flex flex-col">
           {renderIcon()}
-          <h3 className="font-playfair font-medium text-black text-xl md:text-2xl mt-4 md:mt-6">
+          <h3 className="font-playfair font-medium text-black text-xl md:text-2xl mt-0 md:mt-0">
             {option.type}
           </h3>
           <p className="font-gantari font-normal text-[#7b7979] text-[13px] md:text-[16px] mt-3 md:mt-4 leading-relaxed">

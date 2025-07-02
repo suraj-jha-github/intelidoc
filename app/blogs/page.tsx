@@ -95,13 +95,13 @@ export default function Blogs() {
               </div>
 
               {/* Featured Blog Post Card */}
-              <div className="flex-1 lg:max-w-lg">
+              <div className="flex-1 lg:max-w-xl">
                 <Card className="w-full bg-white rounded-[20px] border-none shadow-lg hover:shadow-xl transition-shadow">
-                  <CardContent className="p-6 sm:p-8 lg:p-10">
-                    <h2 className="font-playfair font-normal text-black text-xl sm:text-2xl lg:text-[32px] leading-tight lg:leading-[34.6px] mb-6">
+                  <CardContent className="p-4 sm:p-6 lg:p-8">
+                    <h2 className="font-playfair font-normal text-black text-xl sm:text-2xl lg:text-[28px] leading-tight lg:leading-[32px] mb-4">
                       {featuredPost.title}
                     </h2>
-                    <p className="font-gantari font-normal text-black text-base sm:text-lg lg:text-[23px] leading-relaxed lg:leading-[37.0px] mb-8">
+                    <p className="font-gantari font-normal text-black text-base sm:text-lg lg:text-[20px] leading-relaxed lg:leading-[32px] mb-6">
                       {featuredPost.content}
                     </p>
                     <Link href="/blogs/blog">

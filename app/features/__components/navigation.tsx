@@ -22,58 +22,85 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   const pathname = usePathname();
 
   useEffect(() => {
+    let observer: IntersectionObserver | null = null;
+    let darkSections: HTMLElement[] = [];
+
     const checkBackgroundColor = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      // Check current page and scroll position
       let isInDarkSection = false;
 
       if (pathname === '/') {
-        // Homepage: check scroll position for proper adaptation
-        // Check if we're in FAQ section (near bottom of page)
-        const faqSectionStart = documentHeight - windowHeight * 1.5; // Approximate FAQ section position
-        if (scrollY > faqSectionStart) {
-          // In FAQ section - dark background
-          isInDarkSection = true;
-        } else if (scrollY < windowHeight * 0.8) {
-          // In hero section - dark background
-          isInDarkSection = true;
-        } else {
-          // In middle sections - light background
-          isInDarkSection = false;
+        // Use Intersection Observer for all [data-nav-dark="true"] sections
+        if (typeof window !== 'undefined') {
+          darkSections = Array.from(document.querySelectorAll('[data-nav-dark="true"]')) as HTMLElement[];
         }
-      } else if (pathname === '/features') {
-        // Features page: dark in hero, light in other sections (like specialities page)
+        // Fallback: if no dark sections, use hero section logic
+        if (!darkSections.length) {
+          if (scrollY < windowHeight * 0.8) {
+            isInDarkSection = true;
+          } else {
+            isInDarkSection = false;
+          }
+          setIsDarkBackground(isInDarkSection);
+          return;
+        }
+        // If sections available, use Intersection Observer
+        if (observer) observer.disconnect();
+        observer = new window.IntersectionObserver(
+          (entries) => {
+            let dark = false;
+            entries.forEach(entry => {
+              if (entry.isIntersecting) dark = true;
+            });
+            // Also keep hero section logic
+            if (scrollY < windowHeight * 0.8) dark = true;
+            setIsDarkBackground(dark);
+          },
+          {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0
+          }
+        );
+        darkSections.forEach(section => observer!.observe(section));
+        // Initial check
+        setTimeout(() => {
+          for (const section of darkSections) {
+            if (section.getBoundingClientRect().top < 60 && section.getBoundingClientRect().bottom > 0) {
+              setIsDarkBackground(true);
+              return;
+            }
+          }
+        }, 100);
+        return;
+      }
+      // ... existing logic for other pages ...
+      if (pathname === '/features') {
         isInDarkSection = scrollY < windowHeight * 0.7;
       } else if (pathname === '/pricing') {
-        // Pricing page: dark in hero, light in other sections
         isInDarkSection = scrollY < windowHeight * 0.6;
       } else if (pathname === '/contact') {
-        // Contact page: dark background
         isInDarkSection = true;
       } else if (pathname === '/specialities') {
-        // Specialities page: dark in hero, light in other sections
         isInDarkSection = scrollY < windowHeight * 0.7;
       } else if (pathname === '/forgroup') {
-        // Forgroup page: dark background (full page gradient)
         isInDarkSection = true;
       } else if (pathname === '/blogs') {
-        // Blogs page: dark in hero section (gradient background), light in other sections
         isInDarkSection = scrollY < windowHeight * 0.7;
       } else if (pathname === '/tryfree') {
-        // Try free page: light background
         isInDarkSection = false;
       }
-
       setIsDarkBackground(isInDarkSection);
     };
 
     checkBackgroundColor();
     window.addEventListener('scroll', checkBackgroundColor);
 
-    return () => window.removeEventListener('scroll', checkBackgroundColor);
+    return () => {
+      window.removeEventListener('scroll', checkBackgroundColor);
+      if (observer) observer.disconnect();
+    };
   }, [pathname]);
 
   const handleClick = (item: { label: string; href: string }) => {

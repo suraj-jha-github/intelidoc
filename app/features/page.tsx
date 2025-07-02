@@ -132,7 +132,7 @@ export default function Features() {
           <Navigation navItems={navItems} />
 
           {/* Hero Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-48 md:pt-64 pb-16 max-w-7xl mx-auto h-full">
+          <div className="relative z-10 flex flex-col items-center justify-center pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-32 md:pt-32 pb-16 max-w-7xl mx-auto h-full">
             <div className="relative text-center w-full">
               <div className="w-full max-w-[850px] mx-auto">
                 <h2 className="font-playfair font-semibold text-white text-2xl md:text-4xl lg:text-[75px] leading-tight md:leading-[75px] mt-2 md:mt-4 text-center">
@@ -156,7 +156,7 @@ export default function Features() {
         {/* Integration Options */}
         <section className="mt-[64px]">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 justify-items-center">
               {integrationOptions.map((option, index) => (
                 <IntegrationCard key={index} option={option} />
               ))}
@@ -179,7 +179,7 @@ export default function Features() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-[48px] mb-8 sm:mb-12 lg:mb-16 max-w-6xl mx-auto text-left">
               {/* Accurate */}
-              <Card className="w-full max-w-[230px] h-[224px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start py-0">
+              <Card className="w-full max-w-[240px] h-[224px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start py-0">
                 <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
                     {/* Target Icon - exact style */}
@@ -198,7 +198,7 @@ export default function Features() {
                 </CardContent>
               </Card>
               {/* Secure */}
-              <Card className="w-full max-w-[230px] py-0 h-[224px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
+              <Card className="w-full max-w-[240px] py-0 h-[224px] mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
                 <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
                     {/* Lock Icon - exact style */}
@@ -213,7 +213,7 @@ export default function Features() {
                 </CardContent>
               </Card>
               {/* Compatible */}
-              <Card className="w-full max-w-[230px] h-[224px] py-0 mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
+              <Card className="w-full max-w-[240px] h-[224px] py-0 mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
                 <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
                     {/* Document Icon - exact style */}
@@ -227,7 +227,7 @@ export default function Features() {
                 </CardContent>
               </Card>
               {/* Personalized */}
-              <Card className="w-full max-w-[230px] h-[224px] py-0 mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
+              <Card className="w-full max-w-[240px] h-[224px] py-0 mx-auto bg-[#081d56] rounded-[10px] hover:bg-[#0a2063] transition-colors flex flex-col items-start">
                 <CardContent className="p-4 text-left flex flex-col items-start h-full">
                   <div className="flex justify-start items-center mb-4 h-14">
                     {/* Settings Icon - exact style */}

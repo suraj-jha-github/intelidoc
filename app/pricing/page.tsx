@@ -189,7 +189,7 @@ export default function Pricing() {
           <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
           <div className="relative z-10 w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto pt-24 md:pt-32 pb-8">
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-8">
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-8 items-center">
               {/* Hero Text */}
               <div className="lg:w-1/2">
                 <h1 className="font-playfair font-semibold text-white text-3xl sm:text-4xl lg:text-[52px] leading-tight lg:leading-[57.7px]">
@@ -205,7 +205,7 @@ export default function Pricing() {
               </div>
 
               {/* Pricing Cards */}
-              <div className="lg:w-1/2 flex flex-col sm:flex-row gap-4 mt-8 lg:mt-32 justify-center lg:justify-start">
+              <div className="lg:w-1/2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 {/* Individual Plan Card */}
                 <Card className="w-full sm:w-[295px] rounded-[10px] relative">
                   <CardContent className="p-0">
@@ -335,7 +335,7 @@ export default function Pricing() {
         {/* Features Comparison Section */}
         <section className="relative w-full py-12 sm:py-16">
           <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
-            <h2 className="font-playfair font-medium text-[#162694] text-2xl sm:text-3xl lg:text-[34px] text-center lg:text-left">
+            <h2 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl lg:text-[34px] text-center lg:text-left">
               Choose the plan that works for you
             </h2>
 

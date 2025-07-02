@@ -1,6 +1,6 @@
 'use client'
 
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -228,6 +228,17 @@ export default function Home() {
       setInterval(() => s.next(), 2500)
     },
   })
+
+  const supportRef = useRef<HTMLDivElement>(null);
+  const faqRef = useRef<HTMLDivElement>(null);
+
+  // Optionally, you can expose these refs via context or window for the navigation to use
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.__intelidoc_support_section = supportRef.current;
+      window.__intelidoc_faq_section = faqRef.current;
+    }
+  }, []);
 
   return (
     <div className="flex flex-row justify-center w-full">
@@ -646,7 +657,7 @@ export default function Home() {
                       using AI to work smarter.
                     </p>
                   </div>
-                  <div className="mt-6 lg:mt-0 lg:ml-8 lg:flex-shrink-0">
+                  <div className="mt-8 lg:mt-3 lg:ml-8 lg:flex-shrink-0">
                     <Link href="/tryfree" target="_blank">
                       <Button className="font-gantari w-full text-2xl sm:w-auto sm:min-w-[200px] h-8 sm:h-[40px] rounded-[5px] bg-white text-[#162694] font-normal hover:bg-gray-100">
                         Try for free
@@ -705,7 +716,7 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="mt-[32px] pt-6 sm:pt-20 lg:pt-6 pb-6 sm:pb-20 lg:pb-6">
+        <section ref={faqRef} data-nav-dark="true" className="mt-[32px] pt-6 sm:pt-20 lg:pt-6 pb-6 sm:pb-20 lg:pb-6">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
             <Card className="w-full max-w-[1208px] h-auto lg:h-[750px] mx-auto rounded-[20px] bg-[linear-gradient(to_right,#011227_0%,#0e1963_25%,#0f267f_50%,#0e1963_75%,#011227_100%)]">
               <CardContent className="p-6 sm:p-8 lg:p-12">
