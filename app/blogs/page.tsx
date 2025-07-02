@@ -20,7 +20,7 @@ const navItems = [
 const featuredPost = {
   title: "InteliDoc AI Raises $30 Million to Free Clinicians",
   content:
-    "IntelDoc AI raised $30 million in Series A funding led by Sequoia Capital. But what does this mean for you-the clinicians?",
+    "IntelDoc AI raised $30 million in Series A funding led by Sequoia Capital. But what does this mean for you—the clinicians?",
 };
 
 const blogPosts = [
@@ -83,7 +83,7 @@ export default function Blogs() {
                   pressed for time
                 </p>
 
-                <Button
+                {/* <Button
                   variant="default"
                   className="mt-8 lg:mt-12 w-full sm:w-auto px-8 py-3 bg-white rounded-[5px] hover:bg-gray-100 transition-colors relative overflow-hidden"
                 >
@@ -91,7 +91,7 @@ export default function Blogs() {
                   <span className="relative font-gantari font-semibold text-[#162694] text-base">
                     SUBSCRIBE
                   </span>
-                </Button>
+                </Button> */}
               </div>
 
               {/* Featured Blog Post Card */}

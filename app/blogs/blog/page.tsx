@@ -10,16 +10,16 @@ export default function Blog() {
   // Data for related content cards
   const relatedArticles = [
     {
-      title: "AI Medical Scribes: The Cure for Healthcare&apos;s Documentation Headache",
-      content: "The exam room used to be sacred space—where undivided attention met patient stories. Now, it&apos;s often a battleground between eye contact and endless clicks. Doctors are burning out, not from care, but from clerical chaos. Enter the AI medical scribe: not science fiction, but a practical solution reshaping modern healthcare.",
+      title: "AI Medical Scribes: The Cure for Healthcare's Documentation Headache",
+      content: "The exam room used to be sacred space—where undivided attention met patient stories. Now, it's often a battleground between eye contact and endless clicks. Doctors are burning out, not from care, but from clerical chaos. Enter the AI medical scribe: not science fiction, but a practical solution reshaping modern healthcare.",
     },
     {
       title: "Why Internal Medicine Physicians Are Turning to AI Scribes for Relief",
-      content: "Internists are detectives, educators, care coordinators, and chronic disease managers—all in a single day. But too often, their work is buried under the weight of documentation. Every encounter demands detailed notes, thoughtful plans, and bulletproof coding. It&apos;s no wonder that internal medicine sees some of the highest burnout rates in healthcare.",
+      content: "Internists are detectives, educators, care coordinators, and chronic disease managers—all in a single day. But too often, their work is buried under the weight of documentation. Every encounter demands detailed notes, thoughtful plans, and bulletproof coding. It's no wonder that internal medicine sees some of the highest burnout rates in healthcare.",
     },
     {
-      title: "Documenting Pediatric Care Shouldn&apos;t Be a Puzzle—Let AI Scribes Help",
-      content: "Pediatric care is full of nuance. The patient doesn&apos;t always speak, parents do. Visits are short, but dense with critical information—growth charts, vaccines, milestones, anticipatory guidance, and more. Every note needs to be complete, clear, and compliant. But pediatricians are drowning in charting.",
+      title: "Documenting Pediatric Care Shouldn't Be a Puzzle—Let AI Scribes Help",
+      content: "Pediatric care is full of nuance. The patient doesn't always speak, parents do. Visits are short, but dense with critical information—growth charts, vaccines, milestones, anticipatory guidance, and more. Every note needs to be complete, clear, and compliant. But pediatricians are drowning in charting.",
     }
   ];
 
@@ -59,15 +59,15 @@ export default function Blog() {
           <div className="px-4 sm:px-6 md:px-8 lg:px-14 py-8 sm:py-12 md:py-16 lg:py-24">
             {/* Main Headline */}
             <h1 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight lg:leading-[51.2px] mb-6 md:mb-8">
-              AI Medical Scribes: The Cure for Healthcare&apos;s Documentation Headache
+              AI Medical Scribes: The Cure for Healthcare's Documentation Headache
             </h1>
 
             {/* Subscribe Button */}
-            <Button className="bg-[#162694] hover:bg-[#162694]/90 rounded-[5px] h-[43px] w-full sm:w-[148px] mb-8 md:mb-12 transition-colors">
+            {/* <Button className="bg-[#162694] hover:bg-[#162694]/90 rounded-[5px] h-[43px] w-full sm:w-[148px] mb-8 md:mb-12 transition-colors">
               <span className="font-gantari font-semibold text-white text-base">
                 SUBSCRIBE
               </span>
-            </Button>
+            </Button> */}
 
             {/* Section: The Problem */}
             <section className="mb-8 md:mb-12">
@@ -76,8 +76,8 @@ export default function Blog() {
               </h2>
               <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
                 Clinicians today spend nearly two hours on EHRs for every hour of
-                patient care. Notes, codes, chart reviews—it&apos;s a never-ending list.
-                This burden isn&apos;t just annoying; it&apos;s dangerous. Burnout leads to
+                patient care. Notes, codes, chart reviews—it's a never-ending list.
+                This burden isn't just annoying; it's dangerous. Burnout leads to
                 errors, disengagement, and worse outcomes.
               </p>
             </section>
@@ -90,8 +90,8 @@ export default function Blog() {
               <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
                 An AI medical scribe listens in on doctor-patient
                 conversations—securely and in real-time—and generates clean,
-                structured clinical notes. It&apos;s like having a superhuman assistant
-                who never misses a detail, doesn&apos;t need coffee breaks, and
+                structured clinical notes. It's like having a superhuman assistant
+                who never misses a detail, doesn't need coffee breaks, and
                 integrates directly into EHR systems.
               </p>
             </section>
@@ -128,8 +128,8 @@ export default function Blog() {
                       height={117}
                     />
                     <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
-                      &quot;By computerizing health records, we can avoid dangerous medical
-                      mistakes, reduce costs, and improve care.&quot;
+                      "By computerizing health records, we can avoid dangerous medical
+                      mistakes, reduce costs, and improve care."
                       <br />— President George W. Bush, 2004 State of the Union Address
                     </p>
                   </CardContent>
@@ -206,8 +206,8 @@ export default function Blog() {
                       height={117}
                     />
                     <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
-                      &quot;By computerizing health records, we can avoid dangerous medical
-                      mistakes, reduce costs, and improve care.&quot;
+                      "By computerizing health records, we can avoid dangerous medical
+                      mistakes, reduce costs, and improve care."
                       <br />— President George W. Bush, 2004 State of the Union Address
                     </p>
                   </CardContent>
@@ -218,7 +218,7 @@ export default function Blog() {
             {/* Section: The Human Touch */}
             <section className="mb-8 md:mb-12">
               <h2 className="font-playfair font-semibold text-black text-xl sm:text-2xl md:text-[28px] leading-tight md:leading-[35.8px] mb-4 md:mb-6">
-                The Human Touch Isn&apos;t Gone
+                The Human Touch Isn't Gone
               </h2>
               <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px] mb-6 md:mb-8">
                 Critics worry about tech replacing empathy. But good AI scribes
@@ -237,8 +237,8 @@ export default function Blog() {
                     height={117}
                   />
                   <p className="font-gantari font-normal text-[#212121] text-sm sm:text-base leading-relaxed sm:leading-[27.8px]">
-                    &quot;By computerizing health records, we can avoid dangerous medical
-                    mistakes, reduce costs, and improve care.&quot;
+                    "By computerizing health records, we can avoid dangerous medical
+                    mistakes, reduce costs, and improve care."
                     <br />— President George W. Bush, 2004 State of the Union Address
                   </p>
                 </CardContent>
@@ -266,9 +266,9 @@ export default function Blog() {
                 The Future is Here
               </h2>
               <p className="font-gantari font-normal text-black text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px]">
-                The AI scribe isn&apos;t just another gadget—it&apos;s a strategic shift in
+                The AI scribe isn't just another gadget—it's a strategic shift in
                 how medicine is practiced. With tools like intelidoc AI leading the
-                way, we&apos;re not just making healthcare more efficient—we&apos;re
+                way, we're not just making healthcare more efficient—we're
                 making it human again.
               </p>
             </section>
