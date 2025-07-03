@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/table";
 import { Navigation } from "../features/__components/navigation";
 import Link from 'next/link';
+import { Footer } from "../components/footer";
 
 // Feature data for the comparison table
 const features = [
@@ -164,6 +165,19 @@ const navItems = [
   { label: "For Groups", href: "/forgroup" },
   { label: "Contact Us", href: "/contact" },
 ];
+
+const footerLinks = {
+  resources: ["Help Center", "Blog"],
+  specialties: [
+    "Family Medicine",
+    "Internal Medicine",
+    "Pschiatry",
+    "Mental Health",
+    "Padiatrics",
+    "Other Specialties",
+  ],
+  legal: ["Privacy Policy", "Terms of Services", "Terms of Use"],
+};
 
 export default function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annually'>('monthly');
@@ -339,40 +353,45 @@ export default function Pricing() {
               Choose the plan that works for you
             </h2>
 
-            {/* Mobile-friendly feature list */}
+            {/* Mobile-friendly feature list - unified summary grid for all features with tick rows */}
             <div className="mt-8 block lg:hidden">
-              {features.map((feature, index) => (
-                <div key={index} className="border-b border-gray-200 py-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1 pr-4">
-                      <h3 className="font-gantari text-black text-lg sm:text-xl">
-                        {feature.title}
-                      </h3>
-                      <p className="font-gantari text-[#757171] text-sm sm:text-[15px] mt-2">
-                        {feature.description}
-                      </p>
-                    </div>
-                    <div className="flex space-x-12">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-[34px] sm:h-10">
-                        <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-[34px] sm:h-10">
-                        <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                  </div>
+              <div className="grid grid-cols-2 gap-0 border border-gray-200 rounded-[10px] overflow-hidden bg-white">
+                {/* Top plan cards */}
+                <div className="col-span-1 border-b border-r border-gray-200 p-4">
+                  <div className="text-[18px] font-semibold text-black">$ 90/mo</div>
+                  <div className="text-xs text-[#868686] mt-1">Unlimited visits & note generation</div>
                 </div>
-              ))}
-
-              {/* Additional Features for Mobile */}
-              {additionalFeatures.map((feature, index) => (
-                <div key={`additional-${index}`} className="border-b border-gray-200 py-4">
-                  <div
-                    className="flex items-center justify-between cursor-pointer"
-                    onClick={() => toggleSection(feature.title)}
-                  >
-                    <div className="flex items-center">
-                      <div className="w-[30px] h-9 mr-4 flex items-center justify-center">
+                <div className="col-span-1 border-b p-4">
+                  <div className="text-[18px] font-semibold text-black">Group pricing</div>
+                  <div className="text-xs text-[#868686] mt-1">Unlimited visits & note generation</div>
+                </div>
+                {/* All features as full-width rows with tick row below */}
+                {features.map((feature, index) => (
+                  <React.Fragment key={index}>
+                    <div className="col-span-2 border-b border-gray-200 bg-white p-4 text-center">
+                      <div className="font-semibold text-[15px] text-black mb-1">{feature.title}</div>
+                      <div className="text-xs text-[#868686]">{feature.description}</div>
+                    </div>
+                    {/* Tick row */}
+                    <div className="col-span-1 flex items-center justify-center border-b border-r border-gray-200 h-12">
+                      <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#8759ff' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
+                    </div>
+                    <div className="col-span-1 flex items-center justify-center border-b h-12">
+                      <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#F97316' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
+                    </div>
+                  </React.Fragment>
+                ))}
+                {/* Expandable sections */}
+                {additionalFeatures.map((feature, index) => (
+                  <React.Fragment key={`additional-${index}`}>
+                    <div
+                      className="col-span-2 border-b border-gray-200 bg-white p-4 text-center cursor-pointer hover:bg-gray-50"
+                      onClick={() => toggleSection(feature.title)}
+                    >
+                      <div className="font-semibold text-[15px] text-black mb-1 flex items-center justify-center">
+                        <span className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-lg sm:text-xl mr-2`}>
+                          {feature.title}
+                        </span>
                         {expandedSections[feature.title] ? (
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -383,42 +402,24 @@ export default function Pricing() {
                           </svg>
                         )}
                       </div>
-                      <span
-                        className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-lg sm:text-xl`}
-                      >
-                        {feature.title}
-                      </span>
                     </div>
-                    <div className="flex items-center space-x-12">
-                      <div className="w-6 h-6 sm:w-[34px] sm:h-10"></div>
-                      <div className="w-6 h-6 sm:w-[34px] sm:h-10"></div>
-                    </div>
-                  </div>
-
-                  {/* Expanded content for mobile */}
-                  {expandedSections[feature.title] && (
-                    <div className="mt-4 pl-10 pr-4">
-                      <div className="space-y-3">
-                        {feature.expandedContent.map((item, itemIndex) => (
-                          <div key={itemIndex} className="flex items-start justify-between">
-                            <span className="font-gantari text-[#757171] text-sm sm:text-[15px] flex-1 pr-4">
-                              {item}
-                            </span>
-                            <div className="flex space-x-32 mr-4">
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-[34px] sm:h-10">
-                                <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 sm:w-[34px] sm:h-10">
-                                <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                              </svg>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
+                    {expandedSections[feature.title] && feature.expandedContent.map((item, itemIndex) => (
+                      <React.Fragment key={itemIndex}>
+                        <div className="col-span-2 border-b border-gray-200 bg-white p-4 text-center">
+                          <div className="font-semibold text-[15px] text-black mb-1">{item}</div>
+                        </div>
+                        {/* Tick row for expanded features */}
+                        <div className="col-span-1 flex items-center justify-center border-b border-r border-gray-200 h-12">
+                          <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#8759ff' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
+                        </div>
+                        <div className="col-span-1 flex items-center justify-center border-b h-12">
+                          <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#F97316' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
+                        </div>
+                      </React.Fragment>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </div>
             </div>
 
             {/* Desktop table */}
@@ -625,66 +626,7 @@ export default function Pricing() {
         </section>
 
         {/* Footer */}
-        <footer className="w-full bg-white py-8 sm:py-12">
-          <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center sm:text-left">
-              <img
-                src="/pricing/image-6.png"
-                alt="InteliDoc Logo"
-                className="w-[180px] sm:w-[217px] h-[55px] sm:h-[67px] object-cover mx-auto sm:mx-0"
-              />
-              <h3 className="font-gantari font-medium text-black text-2xl sm:text-3xl mt-4">
-                InteliDoc
-              </h3>
-            </div>
-
-            <div className="text-center">
-              <h4 className="font-gantari font-medium text-black text-lg sm:text-xl mb-4">
-                Resources
-              </h4>
-              <ul className="space-y-3 sm:space-y-4">
-                <li className="font-gantari font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors">
-                  Help Center
-                </li>
-                <li className="font-gantari font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors">
-                  Blog
-                </li>
-              </ul>
-            </div>
-
-            <div className="text-center">
-              <h4 className="font-gantari font-medium text-black text-lg sm:text-xl mb-4">
-                Specialties
-              </h4>
-              <ul className="space-y-3 sm:space-y-4">
-                {specialties.map((specialty, index) => (
-                  <li
-                    key={index}
-                    className="font-gantari font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors"
-                  >
-                    {specialty}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="text-center">
-              <h4 className="font-gantari font-semibold text-black text-lg sm:text-xl mb-4">
-                Legal
-              </h4>
-              <ul className="space-y-3 sm:space-y-4">
-                {legalLinks.map((link, index) => (
-                  <li
-                    key={index}
-                    className="font-gantari font-normal text-black text-base sm:text-[17px] hover:text-[#162694] cursor-pointer transition-colors"
-                  >
-                    {link}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </footer>
+        <Footer links={footerLinks} />
       </div>
     </div>
   );

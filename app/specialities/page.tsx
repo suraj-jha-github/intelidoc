@@ -18,6 +18,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { Navigation } from "../features/__components/navigation";
 import Link from "next/link";
+import { Footer } from "../components/footer";
 
 export default function Specialties() {
   const specialties = [
@@ -219,9 +220,9 @@ export default function Specialties() {
                 </h3>
               </div>
 
-              <div className="bg-cover bg-center rounded-lg flex items-center justify-center col-span-1 h-[333px] min-h-[150px] relative overflow-hidden bg-gray-100">
+              <div className="bg-cover bg-center rounded-lg flex items-center justify-center col-span-1 h-[333px] min-h-[150px] relative overflow-hidden">
                 <div
-                  className="absolute inset-0 bg-cover bg-center opacity-80"
+                  className="absolute inset-0 bg-cover bg-center opacity-100"
                   style={{
                     backgroundImage: `url(${specialties[2].image})`
                   }}
@@ -247,9 +248,9 @@ export default function Specialties() {
               {/* Third column divided into two parts */}
               <div className="col-span-1 flex flex-col gap-4">
                 {/* Mental Health - Top */}
-                <div className="bg-cover bg-center rounded-lg flex items-center justify-center h-[147px] min-h-[150px] relative overflow-hidden bg-gray-100">
+                <div className="bg-cover bg-center rounded-lg flex items-center justify-center h-[147px] min-h-[150px] relative overflow-hidden">
                   <div
-                    className="absolute inset-0 bg-cover bg-center opacity-80"
+                    className="absolute inset-0 bg-cover bg-center opacity-100"
                     style={{
                       backgroundImage: `url(${specialties[4].image})`
                     }}
@@ -465,75 +466,8 @@ export default function Specialties() {
           </div>
         </section>
 
-        {/* Security & Legal Section */}
-        <section className="w-full mt-16">
-
-          {/* Footer */}
-          <footer className="w-full bg-white py-12">
-            <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div className="text-center md:text-left">
-                  <h3 className="font-gantari font-medium text-black text-2xl md:text-3xl tracking-[0] leading-[38.4px] mb-8">
-                    InteliDoc
-                  </h3>
-                  <img
-                    className="w-[217px] h-[67px] object-cover mx-auto md:mx-0"
-                    alt="InteliDoc Logo"
-                    src="/speciality/image-6.png"
-                  />
-                </div>
-
-                <div className="text-center md:text-left">
-                  <h3 className="font-gantari font-medium text-black text-xl tracking-[0] leading-[25.6px] mb-6">
-                    Resources
-                  </h3>
-                  <ul className="space-y-4">
-                    {footerLinks.resources.map((link, index) => (
-                      <li
-                        key={index}
-                        className="font-gantari font-normal text-black text-[17px] tracking-[0] leading-[21.8px]"
-                      >
-                        {link}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="text-center md:text-left">
-                  <h3 className="font-gantari font-medium text-black text-xl tracking-[0] leading-[25.6px] mb-6">
-                    Specialties
-                  </h3>
-                  <ul className="space-y-4">
-                    {footerLinks.specialties.map((link, index) => (
-                      <li
-                        key={index}
-                        className="font-gantari font-normal text-black text-[17px] tracking-[0] leading-[21.8px]"
-                      >
-                        {link}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="text-center md:text-left">
-                  <h3 className="font-gantari font-medium text-black text-xl tracking-[0] leading-[25.6px] mb-6">
-                    Legal
-                  </h3>
-                  <ul className="space-y-4">
-                    {footerLinks.legal.map((link, index) => (
-                      <li
-                        key={index}
-                        className="font-gantari font-normal text-black text-[17px] tracking-[0] leading-[21.8px]"
-                      >
-                        {link}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </footer>
-        </section>
+        {/* Footer */}
+        <Footer links={footerLinks} />
       </div>
     </div>
   );
