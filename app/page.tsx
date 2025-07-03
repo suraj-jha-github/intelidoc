@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -17,6 +17,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Footer } from "./components/footer";
 import { Navigation } from "./features/__components/navigation";
+import { SectionLoader } from "@/components/ui/loader";
 
 // Define testimonial data for reuse
 const testimonials = [
@@ -194,6 +195,7 @@ const footerLinks = {
 
 const navItems = [
   { label: "Features", href: "/features" },
+  { label: "How it Works", href: "/#how-it-works" },
   { label: "Specialties", href: "/specialities" },
   { label: "Blog", href: "/blogs" },
   { label: "Pricing", href: "/pricing" },
@@ -202,6 +204,7 @@ const navItems = [
 ];
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [sliderRef] = useKeenSlider({
     loop: true,
     slides: {
@@ -228,6 +231,14 @@ export default function Home() {
       setInterval(() => s.next(), 2500)
     },
   })
+
+  // Simulate loading for dynamic content
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const supportRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
@@ -262,9 +273,9 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start">
                 <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300 w-full sm:w-auto">
                   <Link href="/tryfree" target="_blank" className="block w-full sm:w-auto">
-                    <Button className="w-full sm:w-auto min-w-[220px] sm:min-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-sm sm:text-base lg:text-lg px-4 sm:px-6 transition-all duration-300 flex items-center justify-center">
+                    <Button className="w-full sm:w-auto min-w-[220px] sm:min-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-lg sm:text-xl lg:text-2xl px-4 sm:px-6 transition-all duration-300 flex items-center justify-center">
                       <span className="whitespace-nowrap">Try InteliDoc AI-</span>
-                      <span className="text-[#162694] text-xs sm:text-sm lg:text-base ml-1 opacity-80">it's free</span>
+                      <span className="text-[#162694] text-base sm:text-lg lg:text-xl ml-1 opacity-80">it's free</span>
                     </Button>
                   </Link>
                 </div>
@@ -317,27 +328,31 @@ export default function Home() {
 
             {/* Carousel */}
             <div className="relative z-10">
-              <div ref={sliderRef} className="keen-slider mt-8">
-                {testimonials.map((testimonial, index) => (
-                  <div key={index} className="keen-slider__slide flex justify-center">
-                    <Card className="w-[340px] h-[330px] border border-solid border-[#a9a9a9] rounded-[10px] bg-white">
-                      <CardContent className="pt-6 px-6 pb-6">
-                        <div className="font-gantari text-black text-lg sm:text-xl lg:text-2xl">
-                          <span className="font-medium">
-                            {testimonial.specialty}
-                            <br />
-                          </span>
-                          <span>
-                            {testimonial.name}
-                            <br />
-                          </span>
-                          <span className="text-base sm:text-lg lg:text-xl">{testimonial.content}</span>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
+              {isLoading ? (
+                <SectionLoader message="Loading testimonials..." />
+              ) : (
+                <div ref={sliderRef} className="keen-slider mt-8">
+                  {testimonials.map((testimonial, index) => (
+                    <div key={index} className="keen-slider__slide flex justify-center">
+                      <Card className="w-[340px] h-[330px] border border-solid border-[#a9a9a9] rounded-[10px] bg-white">
+                        <CardContent className="pt-6 px-6 pb-6">
+                          <div className="font-gantari text-black text-lg sm:text-xl lg:text-2xl">
+                            <span className="font-medium">
+                              {testimonial.specialty}
+                              <br />
+                            </span>
+                            <span>
+                              {testimonial.name}
+                              <br />
+                            </span>
+                            <span className="text-base sm:text-lg lg:text-xl">{testimonial.content}</span>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -346,7 +361,7 @@ export default function Home() {
 
 
         {/* How It Works Section */}
-        <section className="mt-[32px] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-4">
+        <section id="how-it-works" className="mt-[32px] pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-4">
           <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             <div className="flex flex-col lg:flex-row">
 
@@ -445,9 +460,9 @@ export default function Home() {
                 {/* Button at the bottom */}
                 <div className="mt-[50px] lg:mt-[50px]">
                   <Link href="/tryfree" target="_blank">
-                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-xl sm:text-2xl px-4">
                       <span>Try InteliDoc AI-</span>
-                      <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                      <span className="text-[#a9a7a7] text-lg sm:text-xl ml-1">it's free</span>
                     </Button>
                   </Link>
                 </div>
@@ -588,9 +603,9 @@ export default function Home() {
 
             <div className="text-center">
               <Link href="/tryfree" target="_blank">
-                <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg px-4">
+                <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-xl sm:text-2xl px-4">
                   <span>Try InteliDoc AI-</span>
-                  <span className="text-[#a9a7a7] text-sm sm:text-base ml-1">it's free</span>
+                  <span className="text-[#a9a7a7] text-lg sm:text-xl ml-1">it's free</span>
                 </Button>
               </Link>
             </div>

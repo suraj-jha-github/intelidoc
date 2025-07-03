@@ -20,6 +20,7 @@ export default function Contact() {
   // Navigation menu items data
   const navItems = [
     { label: "Features", href: "/features" },
+    { label: "How it Works", href: "/#how-it-works" },
     { label: "Specialties", href: "/specialities" },
     { label: "Blog", href: "/blogs" },
     { label: "Pricing", href: "/pricing" },
@@ -330,7 +331,7 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="flex justify-center sm:justify-end mt-6 md:mt-8">
-                        <Button className="w-full sm:w-[120px] h-[40px] bg-[#132180] hover:bg-[#0f1a66] rounded-[5px] text-white transition-all duration-200 transform hover:scale-105"
+                        <Button className="w-full sm:w-auto bg-[#132180] hover:bg-[#0f1a66] rounded-[5px] text-white transition-all duration-200 transform hover:scale-105"
                           onClick={() => {
                             // Validate all required fields
                             if (!firstName || !lastName || !contactCode || !contactNumber || !workEmail || !jobRole || !teamSize || !country || !specialty) {
@@ -432,10 +433,10 @@ export default function Contact() {
                         <p className="text-sm text-red-500 mt-2">Please complete all required fields.</p>
                       )}
                       <div className="flex justify-between items-center mt-6 md:mt-8 gap-4">
-                        <Button type="button" variant="outline" className="w-[120px] h-[40px] rounded-[5px] text-[#132180] border-[#132180]" onClick={() => setStep(1)}>
+                        <Button type="button" variant="outline" className="w-full sm:w-auto rounded-[5px] text-[#132180] border-[#132180]" onClick={() => setStep(1)}>
                           Previous
                         </Button>
-                        <Button type="submit" className="w-[180px] h-[40px] bg-[#132180] hover:bg-[#0f1a66] rounded-[5px] text-white font-semibold">
+                        <Button type="submit" className="w-full sm:w-auto bg-[#132180] hover:bg-[#0f1a66] rounded-[5px] text-white font-semibold">
                           Request a sales demo
                         </Button>
                       </div>
@@ -457,9 +458,9 @@ export default function Contact() {
               <Link href="/tryfree" target="_blank">
                 <Button className="w-full max-w-[280px] sm:max-w-[218px] h-[50px] sm:h-[57px] bg-white hover:bg-white/90 rounded-[5px] border-none relative transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto">
                   <div className="absolute inset-2 bg-[#ffffff99] blur-[22.45px] rounded-[3px]" />
-                  <span className="relative font-gantari font-semibold text-[#162694] text-sm sm:text-base text-center tracking-[0] leading-tight">
+                  <span className="relative font-gantari font-semibold text-[#162694] text-lg sm:text-xl text-center tracking-[0] leading-tight">
                     Try InteliDoc AI
-                    <span className="text-[#8c8c8c] text-xs sm:text-sm leading-tight ml-1">
+                    <span className="text-[#8c8c8c] text-base sm:text-lg leading-tight ml-1">
                       - it's free
                     </span>
                   </span>

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../../../components/ui/button";
+import { Loader } from "../../../components/ui/loader";
 import { Menu, X } from "lucide-react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -12,7 +13,7 @@ interface NavigationProps {
 }
 
 const LoadingSpinner = () => (
-  <div className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-[#162694] border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]" />
+  <Loader size="sm" />
 );
 
 export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, logoColorClass }) => {
@@ -144,10 +145,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   }, [pathname]);
 
   const handleClick = (item: { label: string; href: string }) => {
-    if (item.label.toLowerCase() === 'features') {
-      setLoadingItem(item.label);
-      setTimeout(() => setLoadingItem(null), 2000);
-    }
+    // Removed individual loader for features
   };
 
   // Dynamic classes based on background and page
@@ -190,7 +188,6 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                   className={`font-medium ${navTextColor} text-[15px] px-3 py-2 rounded-md flex items-center gap-2 hover:text-white hover:bg-[#4551a9] hover:shadow-md transition-all duration-300`}
                 >
                   {item.label}
-                  {loadingItem === item.label && <LoadingSpinner />}
                 </Link>
               </li>
             ))}
@@ -228,7 +225,6 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                     className={`flex items-center gap-2 w-full ${mobileTextColor} hover:text-white transition-colors duration-300`}
                   >
                     {item.label}
-                    {loadingItem === item.label && <LoadingSpinner />}
                   </Link>
                 </Button>
               ))}

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -18,6 +18,7 @@ import {
 import { Navigation } from "../features/__components/navigation";
 import Link from 'next/link';
 import { Footer } from "../components/footer";
+import { SectionLoader } from "@/components/ui/loader";
 
 // Feature data for the comparison table
 const features = [
@@ -159,6 +160,7 @@ const legalLinks = ["Privacy Policy", "Terms of Services", "Terms of Use"];
 const navItems = [
   { label: "Home", href: "/" },
   { label: "Features", href: "/features" },
+  { label: "How it Works", href: "/#how-it-works" },
   { label: "Specialties", href: "/specialities" },
   { label: "Blog", href: "/blogs" },
   { label: "Pricing", href: "/pricing" },
@@ -182,6 +184,15 @@ const footerLinks = {
 export default function Pricing() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annually'>('monthly');
   const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading for pricing table
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, []);
 
   const monthlyPrice = 90;
   const annualPrice = 75; // 25% discount for annual billing
@@ -272,7 +283,7 @@ export default function Pricing() {
                       {/* CTA Button */}
                       <div className="mt-4">
                         <Link href="/tryfree" target="_blank">
-                          <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium hover:opacity-90 transition-opacity">
+                          <Button className="w-full sm:w-auto h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium hover:opacity-90 transition-opacity">
                             Start Free Trial
                           </Button>
                         </Link>
@@ -333,7 +344,7 @@ export default function Pricing() {
                       {/* CTA Button */}
                       <div className="mt-4">
                         <Link href="/tryfree" target="_blank">
-                          <Button className="w-full h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(255,191,89,1)] to-[rgba(255,157,0,1)] text-white font-medium hover:opacity-90 transition-opacity">
+                          <Button className="w-full sm:w-auto h-[34px] rounded-[5px] bg-gradient-to-r from-[rgba(255,191,89,1)] to-[rgba(255,157,0,1)] text-white font-medium hover:opacity-90 transition-opacity">
                             Start Free Trial
                           </Button>
                         </Link>
@@ -354,177 +365,189 @@ export default function Pricing() {
             </h2>
 
             {/* Mobile-friendly feature list - unified summary grid for all features with tick rows */}
-            <div className="mt-8 block lg:hidden">
-              <div className="grid grid-cols-2 gap-0 border border-gray-200 rounded-[10px] overflow-hidden bg-white">
-                {/* Top plan cards */}
-                <div className="col-span-1 border-b border-r border-gray-200 p-4">
-                  <div className="text-[18px] font-semibold text-black">$ 90/mo</div>
-                  <div className="text-xs text-[#868686] mt-1">Unlimited visits & note generation</div>
-                </div>
-                <div className="col-span-1 border-b p-4">
-                  <div className="text-[18px] font-semibold text-black">Group pricing</div>
-                  <div className="text-xs text-[#868686] mt-1">Unlimited visits & note generation</div>
-                </div>
-                {/* All features as full-width rows with tick row below */}
-                {features.map((feature, index) => (
-                  <React.Fragment key={index}>
-                    <div className="col-span-2 border-b border-gray-200 bg-white p-4 text-center">
-                      <div className="font-semibold text-[15px] text-black mb-1">{feature.title}</div>
-                      <div className="text-xs text-[#868686]">{feature.description}</div>
-                    </div>
-                    {/* Tick row */}
-                    <div className="col-span-1 flex items-center justify-center border-b border-r border-gray-200 h-12">
-                      <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#8759ff' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
-                    </div>
-                    <div className="col-span-1 flex items-center justify-center border-b h-12">
-                      <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#F97316' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
-                    </div>
-                  </React.Fragment>
-                ))}
-                {/* Expandable sections */}
-                {additionalFeatures.map((feature, index) => (
-                  <React.Fragment key={`additional-${index}`}>
-                    <div
-                      className="col-span-2 border-b border-gray-200 bg-white p-4 text-center cursor-pointer hover:bg-gray-50"
-                      onClick={() => toggleSection(feature.title)}
-                    >
-                      <div className="font-semibold text-[15px] text-black mb-1 flex items-center justify-center">
-                        <span className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-lg sm:text-xl mr-2`}>
-                          {feature.title}
-                        </span>
-                        {expandedSections[feature.title] ? (
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        ) : (
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        )}
-                      </div>
-                    </div>
-                    {expandedSections[feature.title] && feature.expandedContent.map((item, itemIndex) => (
-                      <React.Fragment key={itemIndex}>
-                        <div className="col-span-2 border-b border-gray-200 bg-white p-4 text-center">
-                          <div className="font-semibold text-[15px] text-black mb-1">{item}</div>
-                        </div>
-                        {/* Tick row for expanded features */}
-                        <div className="col-span-1 flex items-center justify-center border-b border-r border-gray-200 h-12">
-                          <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#8759ff' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
-                        </div>
-                        <div className="col-span-1 flex items-center justify-center border-b h-12">
-                          <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#F97316' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
-                        </div>
-                      </React.Fragment>
-                    ))}
-                  </React.Fragment>
-                ))}
+            {isLoading ? (
+              <div className="mt-8">
+                <SectionLoader message="Loading pricing comparison..." />
               </div>
-            </div>
-
-            {/* Desktop table */}
-            <div className="hidden lg:block">
-              <Table className="mt-8">
-                <TableBody>
+            ) : (
+              <div className="mt-8 block lg:hidden">
+                <div className="grid grid-cols-2 gap-0 border border-gray-200 rounded-[10px] overflow-hidden bg-white">
+                  {/* Top plan cards */}
+                  <div className="col-span-1 border-b border-r border-gray-200 p-4">
+                    <div className="text-[18px] font-semibold text-black">$ 90/mo</div>
+                    <div className="text-xs text-[#868686] mt-1">Unlimited visits & note generation</div>
+                  </div>
+                  <div className="col-span-1 border-b p-4">
+                    <div className="text-[18px] font-semibold text-black">Group pricing</div>
+                    <div className="text-xs text-[#868686] mt-1">Unlimited visits & note generation</div>
+                  </div>
+                  {/* All features as full-width rows with tick row below */}
                   {features.map((feature, index) => (
-                    <TableRow key={index} className="border-b border-gray-200">
-                      <TableCell className="py-6 pl-4">
-                        <h3 className="font-gantari text-black text-xl">
-                          {feature.title}
-                        </h3>
-                        <p className="font-gantari text-[#757171] text-[15px]">
-                          {feature.description}
-                        </p>
-                      </TableCell>
-                      <TableCell className="text-center pr-12">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10 mx-auto">
-                          <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </TableCell>
-                      <TableCell className="text-center pl-12">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10 mx-auto">
-                          <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </TableCell>
-                    </TableRow>
+                    <React.Fragment key={index}>
+                      <div className="col-span-2 border-b border-gray-200 bg-white p-4 text-center">
+                        <div className="font-semibold text-[15px] text-black mb-1">{feature.title}</div>
+                        <div className="text-xs text-[#868686]">{feature.description}</div>
+                      </div>
+                      {/* Tick row */}
+                      <div className="col-span-1 flex items-center justify-center border-b border-r border-gray-200 h-12">
+                        <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#8759ff' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
+                      </div>
+                      <div className="col-span-1 flex items-center justify-center border-b h-12">
+                        <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#F97316' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
+                      </div>
+                    </React.Fragment>
                   ))}
-
-                  {/* Addition features section  */}
-
-                  {/* Additional Features Section */}
+                  {/* Expandable sections */}
                   {additionalFeatures.map((feature, index) => (
                     <React.Fragment key={`additional-${index}`}>
-                      <TableRow
-                        className="border-b border-gray-200 cursor-pointer hover:bg-gray-50"
+                      <div
+                        className="col-span-2 border-b border-gray-200 bg-white p-4 text-center cursor-pointer hover:bg-gray-50"
                         onClick={() => toggleSection(feature.title)}
                       >
-                        <TableCell colSpan={3} className="py-4">
-                          <div className="flex items-center justify-between">
-                            <div className="flex items-center">
-                              <div className="w-[30px] h-9 mr-4 flex items-center justify-center">
-                                {expandedSections[feature.title] ? (
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                  </svg>
-                                ) : (
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                  </svg>
-                                )}
-                              </div>
-                              <span
-                                className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-xl`}
-                              >
-                                {feature.title}
-                              </span>
-                            </div>
-                            <div className="flex items-center space-x-12">
-                              <div className="w-[34px] h-10"></div>
-                              <div className="w-[34px] h-10"></div>
-                            </div>
+                        <div className="font-semibold text-[15px] text-black mb-1 flex items-center justify-center">
+                          <span className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-lg sm:text-xl mr-2`}>
+                            {feature.title}
+                          </span>
+                          {expandedSections[feature.title] ? (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          ) : (
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+                      {expandedSections[feature.title] && feature.expandedContent.map((item, itemIndex) => (
+                        <React.Fragment key={itemIndex}>
+                          <div className="col-span-2 border-b border-gray-200 bg-white p-4 text-center">
+                            <div className="font-semibold text-[15px] text-black mb-1">{item}</div>
                           </div>
+                          {/* Tick row for expanded features */}
+                          <div className="col-span-1 flex items-center justify-center border-b border-r border-gray-200 h-12">
+                            <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#8759ff' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
+                          </div>
+                          <div className="col-span-1 flex items-center justify-center border-b h-12">
+                            <svg width='24' height='24' fill='none' viewBox='0 0 24 24'><path d='M20 6L9 17L4 12' stroke='#F97316' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' /></svg>
+                          </div>
+                        </React.Fragment>
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+
+            )}
+            {/* Desktop table */}
+            {isLoading ? (
+              <div className="mt-8">
+                <SectionLoader message="Loading pricing comparison..." />
+              </div>
+            ) : (
+              <div className="hidden lg:block">
+                <Table className="mt-8">
+                  <TableBody>
+                    {features.map((feature, index) => (
+                      <TableRow key={index} className="border-b border-gray-200">
+                        <TableCell className="py-6 pl-4">
+                          <h3 className="font-gantari text-black text-xl">
+                            {feature.title}
+                          </h3>
+                          <p className="font-gantari text-[#757171] text-[15px]">
+                            {feature.description}
+                          </p>
+                        </TableCell>
+                        <TableCell className="text-center pr-12">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10 mx-auto">
+                            <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </TableCell>
+                        <TableCell className="text-center pl-12">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10 mx-auto">
+                            <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
                         </TableCell>
                       </TableRow>
+                    ))}
 
-                      {/* Expanded content for desktop */}
-                      {expandedSections[feature.title] && (
-                        <TableRow className="border-b border-gray-200 bg-gray-50">
-                          <TableCell colSpan={3} className="py-6">
-                            <div className="grid grid-cols-1 gap-4">
-                              {feature.expandedContent.map((item, itemIndex) => (
-                                <div key={itemIndex} className="flex items-center justify-between">
-                                  <span className="font-gantari text-[#757171] text-[15px]">
-                                    {item}
-                                  </span>
-                                  <div className="flex space-x-32 mr-10">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10">
-                                      <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    {/* Addition features section  */}
+
+                    {/* Additional Features Section */}
+                    {additionalFeatures.map((feature, index) => (
+                      <React.Fragment key={`additional-${index}`}>
+                        <TableRow
+                          className="border-b border-gray-200 cursor-pointer hover:bg-gray-50"
+                          onClick={() => toggleSection(feature.title)}
+                        >
+                          <TableCell colSpan={3} className="py-4">
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center">
+                                <div className="w-[30px] h-9 mr-4 flex items-center justify-center">
+                                  {expandedSections[feature.title] ? (
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10">
-                                      <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                  ) : (
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
-                                  </div>
+                                  )}
                                 </div>
-                              ))}
+                                <span
+                                  className={`font-gantari ${index === 0 ? "text-[#162694]" : "text-black"} text-xl`}
+                                >
+                                  {feature.title}
+                                </span>
+                              </div>
+                              <div className="flex items-center space-x-12">
+                                <div className="w-[34px] h-10"></div>
+                                <div className="w-[34px] h-10"></div>
+                              </div>
                             </div>
                           </TableCell>
                         </TableRow>
-                      )}
-                    </React.Fragment>
-                  ))}
-                </TableBody>
-              </Table>
-            </div>
+
+                        {/* Expanded content for desktop */}
+                        {expandedSections[feature.title] && (
+                          <TableRow className="border-b border-gray-200 bg-gray-50">
+                            <TableCell colSpan={3} className="py-6">
+                              <div className="grid grid-cols-1 gap-4">
+                                {feature.expandedContent.map((item, itemIndex) => (
+                                  <div key={itemIndex} className="flex items-center justify-between">
+                                    <span className="font-gantari text-[#757171] text-[15px]">
+                                      {item}
+                                    </span>
+                                    <div className="flex space-x-32 mr-10">
+                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10">
+                                        <path d="M20 6L9 17L4 12" stroke="#8759ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                      </svg>
+                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[34px] h-10">
+                                        <path d="M20 6L9 17L4 12" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </TableCell>
+                          </TableRow>
+                        )}
+                      </React.Fragment>
+                    ))}
+                  </TableBody>
+                </Table>
+              </div>
+            )}
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 lg:gap-16 mt-8">
               <Link href="/tryfree" target="_blank">
-                <Button className="w-full sm:w-[281px] h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
+                <Button className="w-full sm:w-auto h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(135,89,255,1)] to-[rgba(174,141,255,1)] text-white font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
                   Start Free Trial
                 </Button>
               </Link>
               <Link href="/tryfree" target="_blank">
-                <Button className="w-full sm:w-[281px] h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(255,155,89,1)] to-[rgba(255,215,141,1)] text-black font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
+                <Button className="w-full sm:w-auto h-[46px] rounded-[5px] bg-gradient-to-r from-[rgba(255,155,89,1)] to-[rgba(255,215,141,1)] text-black font-medium text-base sm:text-lg hover:opacity-90 transition-opacity">
                   Start Free Trial
                 </Button>
               </Link>
@@ -615,10 +638,10 @@ export default function Pricing() {
             </p>
 
             <Link href="/tryfree" target="_blank">
-              <Button className="mt-8 sm:mt-12 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity px-4">
-                <span className="font-gantari font-semibold text-white text-base sm:text-lg">
+              <Button className="mt-8 sm:mt-12 w-full sm:w-auto h-12 sm:h-[57px] rounded-[5px] bg-[linear-gradient(131deg,rgba(46,52,90,1)_0%,rgba(12,17,46,1)_28%,rgba(13,23,90,1)_56%,rgba(16,29,113,1)_81%,rgba(19,33,128,1)_100%)] text-white hover:opacity-90 transition-opacity px-4">
+                <span className="font-gantari font-semibold text-white text-xl sm:text-2xl">
                   Try InteliDoc AI-
-                  <span className="text-[#a9a7a7] text-sm sm:text-base">it&apos;s free</span>
+                  <span className="text-[#a9a7a7] text-lg sm:text-xl">it&apos;s free</span>
                 </span>
               </Button>
             </Link>

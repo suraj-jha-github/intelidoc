@@ -18,6 +18,7 @@ export default function TryFree() {
     // Navigation menu items data
     const navItems = [
         { label: "Features", href: "/features" },
+        { label: "How it Works", href: "/#how-it-works" },
         { label: "Specialties", href: "/specialities" },
         { label: "Blog", href: "/blogs" },
         { label: "Pricing", href: "/pricing" },
@@ -168,7 +169,7 @@ export default function TryFree() {
                                 </div>
 
                                 {/* Submit button */}
-                                <Button className="w-full h-12 bg-[#162694] hover:bg-[#111d70] rounded-md transition-colors duration-200">
+                                <Button className="w-full sm:w-auto h-12 bg-[#162694] hover:bg-[#111d70] rounded-md transition-colors duration-200">
                                     <span className="font-medium text-white text-lg font-gantari tracking-wide">
                                         CREATE ACCOUNT
                                     </span>

@@ -28,22 +28,23 @@ export default function ForGroups() {
     // Feature badges data
     const featureBadges = [
         {
-            text: "6K+ clinicians use Intelidoc",
+            text: "Clinicians trust intelidoc",
         },
         {
-            text: "For teams of any size",
+            text: "Perfect for all team sizes",
         },
         {
-            text: "Reduces burnout, better retention",
+            text: "Lower stress, higher retention",
         },
         {
-            text: "Easy onboarding, no IT needed",
+            text: "Simple start, zero It help",
         },
     ];
 
     // Navigation menu items data
     const navItems = [
         { label: "Features", href: "/features" },
+        { label: "How it Works", href: "/#how-it-works" },
         { label: "Specialties", href: "/specialities" },
         { label: "Blog", href: "/blogs" },
         { label: "Pricing", href: "/pricing" },
