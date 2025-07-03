@@ -1,14 +1,14 @@
 'use client'
 import React from "react";
 
-
-interface FooterLink {
-  title: string;
-  section: string;
+interface FooterLinks {
+  resources: string[];
+  specialties: string[];
+  legal: string[];
 }
 
 interface FooterProps {
-  links: FooterLink[];
+  links: FooterLinks;
 }
 
 export const Footer: React.FC<FooterProps> = ({ links }) => {
@@ -47,18 +47,16 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
               Helpful Links
             </h3>
             <ul className="flex flex-col gap-3 md:gap-4">
-              {links
-                .filter((link) => link.section === "Helpful Links")
-                .map((link, index) => (
-                  <li key={index}>
-                    <a
-                      href="#"
-                      className="text-[#969696] text-[13px] leading-[16.6px] underline hover:text-[#162694] transition-colors"
-                    >
-                      {link.title}
-                    </a>
-                  </li>
-                ))}
+              {links.resources.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href="#"
+                    className="text-[#969696] text-[13px] leading-[16.6px] underline hover:text-[#162694] transition-colors"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
