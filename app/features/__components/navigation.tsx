@@ -151,6 +151,7 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
 
       // If we're not on the home page, navigate to home first
       if (pathname !== '/') {
+        // Navigate to home page with hash
         window.location.href = item.href;
       } else {
         // If we're already on home page, just scroll to the section

@@ -240,6 +240,23 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Handle hash navigation when page loads
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const hash = window.location.hash;
+      if (hash) {
+        // Wait for the page to fully load, then scroll to the section
+        const timer = setTimeout(() => {
+          const element = document.getElementById(hash.substring(1));
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 500);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, []);
+
   const supportRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
 
@@ -273,9 +290,9 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start">
                 <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300 w-full sm:w-auto">
                   <Link href="/tryfree" target="_blank" className="block w-full sm:w-auto">
-                    <Button className="w-full sm:w-auto min-w-[220px] sm:min-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-lg sm:text-xl lg:text-2xl px-4 sm:px-6 transition-all duration-300 flex items-center justify-center">
-                      <span className="whitespace-nowrap">Try InteliDoc AI-</span>
-                      <span className="text-[#162694] text-base sm:text-lg lg:text-xl ml-1 opacity-80">it's free</span>
+                    <Button className="w-full sm:w-auto min-w-[280px] sm:min-w-[300px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-base sm:text-lg lg:text-xl px-4 sm:px-6 transition-all duration-300 flex items-center justify-center gap-1">
+                      <span>Try InteliDoc AI</span>
+                      <span className="text-[#162694] text-sm sm:text-base lg:text-lg opacity-80">- it's free</span>
                     </Button>
                   </Link>
                 </div>
@@ -460,9 +477,9 @@ export default function Home() {
                 {/* Button at the bottom */}
                 <div className="mt-[50px] lg:mt-[50px]">
                   <Link href="/tryfree" target="_blank">
-                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-xl sm:text-2xl px-4">
-                      <span>Try InteliDoc AI-</span>
-                      <span className="text-[#a9a7a7] text-lg sm:text-xl ml-1">it's free</span>
+                    <Button className="w-full max-w-[280px] sm:max-w-[300px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg lg:text-xl px-4 flex items-center justify-center gap-1">
+                      <span>Try InteliDoc AI</span>
+                      <span className="text-[#a9a7a7] text-sm sm:text-base lg:text-lg">- it's free</span>
                     </Button>
                   </Link>
                 </div>
@@ -603,9 +620,9 @@ export default function Home() {
 
             <div className="text-center">
               <Link href="/tryfree" target="_blank">
-                <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-xl sm:text-2xl px-4">
-                  <span>Try InteliDoc AI-</span>
-                  <span className="text-[#a9a7a7] text-lg sm:text-xl ml-1">it's free</span>
+                <Button className="mt-8 sm:mt-12 lg:mt-16 w-full max-w-[280px] sm:max-w-[300px] h-12 sm:h-[57px] rounded-[5px] bg-gradient-to-br from-[rgba(46,52,90,1)] via-[rgba(13,23,90,1)] to-[rgba(19,33,128,1)] text-white font-semibold text-base sm:text-lg lg:text-xl px-4 flex items-center justify-center gap-1">
+                  <span>Try InteliDoc AI</span>
+                  <span className="text-[#a9a7a7] text-sm sm:text-base lg:text-lg">- it's free</span>
                 </Button>
               </Link>
             </div>

@@ -456,11 +456,11 @@ export default function Contact() {
               </p>
 
               <Link href="/tryfree" target="_blank">
-                <Button className="w-full max-w-[280px] sm:max-w-[218px] h-[50px] sm:h-[57px] bg-white hover:bg-white/90 rounded-[5px] border-none relative transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto">
+                <Button className="w-full max-w-[320px] sm:max-w-[280px] h-[50px] sm:h-[57px] bg-white hover:bg-white/90 rounded-[5px] border-none relative transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto">
                   <div className="absolute inset-2 bg-[#ffffff99] blur-[22.45px] rounded-[3px]" />
-                  <span className="relative font-gantari font-semibold text-[#162694] text-lg sm:text-xl text-center tracking-[0] leading-tight">
-                    Try InteliDoc AI
-                    <span className="text-[#8c8c8c] text-base sm:text-lg leading-tight ml-1">
+                  <span className="relative font-gantari font-semibold text-[#162694] text-base sm:text-lg text-center tracking-[0] leading-tight flex flex-col sm:flex-row items-center justify-center gap-1">
+                    <span>Try InteliDoc AI</span>
+                    <span className="text-[#8c8c8c] text-sm sm:text-base leading-tight">
                       - it's free
                     </span>
                   </span>
