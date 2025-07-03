@@ -51,20 +51,22 @@ export const SecuritySection: React.FC<SecuritySectionProps> = ({ features }) =>
 
         <div className="pt-6 md:pt-12 lg:pt-24 pb-6 md:pb-12 pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
-            <div className="lg:w-1/2">
-              <h2 className="font-playfair font-semibold text-white text-3xl md:text-4xl lg:text-5xl leading-tight lg:leading-[61.4px] mb-8 lg:mb-0">
-                Enterprise-grade
-                <br />
-                security
-              </h2>
+            <div className="lg:w-1/2 lg:flex lg:justify-end">
+              <div className="lg:text-right">
+                <h2 className="font-playfair font-semibold text-white text-3xl md:text-4xl lg:text-5xl leading-tight lg:leading-[61.4px] mb-8 lg:mb-0">
+                  Enterprise-grade
+                  <br />
+                  security
+                </h2>
 
-              {/* Decorative elements - adjusted for mobile */}
-              <div className="hidden lg:block absolute w-[50px] h-[50px] top-[470px] left-[172px] bg-[#f7d8e5] rounded-[25px]" />
-              <div className="hidden lg:block absolute w-5 h-5 top-[318px] left-[248px] bg-[#f7d8e5] rounded-[10px]" />
+                {/* Decorative elements - adjusted for mobile */}
+                <div className="hidden lg:block absolute w-[50px] h-[50px] top-[470px] left-[172px] bg-[#f7d8e5] rounded-[25px]" />
+                <div className="hidden lg:block absolute w-5 h-5 top-[318px] left-[248px] bg-[#f7d8e5] rounded-[10px]" />
+              </div>
             </div>
 
             {/* Security cards grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 lg:w-1/2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 lg:w-1/2 lg:justify-items-end">
               {features.map((feature, index) => (
                 <Card
                   key={index}

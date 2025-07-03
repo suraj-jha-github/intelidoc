@@ -111,7 +111,7 @@ export default function Contact() {
           <Navigation navItems={navItems} colorClass="text-[#222]" logoColorClass="text-white" />
 
           {/* Hero section with gradient background */}
-          <section className="relative w-full min-h-[500px] md:min-h-[622px]">
+          <section data-nav-dark="true" className="relative w-full min-h-[500px] md:min-h-[622px]">
             <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
             {/* Contact section */}
@@ -454,15 +454,17 @@ export default function Contact() {
                 Smarter notes, better care.
               </p>
 
-              <Button className="w-full max-w-[280px] sm:max-w-[218px] h-[50px] sm:h-[57px] bg-white hover:bg-white/90 rounded-[5px] border-none relative transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto">
-                <div className="absolute inset-2 bg-[#ffffff99] blur-[22.45px] rounded-[3px]" />
-                <span className="relative font-gantari font-semibold text-[#162694] text-sm sm:text-base text-center tracking-[0] leading-tight">
-                  Try InteliDoc AI
-                  <span className="text-[#8c8c8c] text-xs sm:text-sm leading-tight ml-1">
-                    - it's free
+              <Link href="/tryfree" target="_blank">
+                <Button className="w-full max-w-[280px] sm:max-w-[218px] h-[50px] sm:h-[57px] bg-white hover:bg-white/90 rounded-[5px] border-none relative transition-all duration-300 transform hover:scale-105 shadow-lg mx-auto">
+                  <div className="absolute inset-2 bg-[#ffffff99] blur-[22.45px] rounded-[3px]" />
+                  <span className="relative font-gantari font-semibold text-[#162694] text-sm sm:text-base text-center tracking-[0] leading-tight">
+                    Try InteliDoc AI
+                    <span className="text-[#8c8c8c] text-xs sm:text-sm leading-tight ml-1">
+                      - it's free
+                    </span>
                   </span>
-                </span>
-              </Button>
+                </Button>
+              </Link>
             </div>
           </section>
 

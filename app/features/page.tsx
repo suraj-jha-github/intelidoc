@@ -125,36 +125,36 @@ export default function Features() {
     <div className="bg-[#f3f3f3] flex flex-row justify-center w-full">
       <div className="bg-[#f3f3f3] overflow-hidden w-full max-w-none relative">
         {/* Header Section */}
-        <header className="relative w-full min-h-[500px] md:min-h-[622px]">
+        <header className="relative w-full min-h-[400px] md:min-h-[622px]">
           <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
           {/* Navigation Bar */}
           <Navigation navItems={navItems} />
 
           {/* Hero Content */}
-          <div className="relative z-10 flex flex-col items-center justify-center pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-32 md:pt-32 pb-16 max-w-7xl mx-auto h-full">
+          <div data-nav-dark="true" className="relative z-10 flex flex-col items-center justify-center pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-20 md:pt-32 pb-8 md:pb-16 max-w-7xl mx-auto h-full">
             <div className="relative text-center w-full">
               <div className="w-full max-w-[850px] mx-auto">
-                <h2 className="font-playfair font-semibold text-white text-2xl md:text-4xl lg:text-[75px] leading-tight md:leading-[75px] mt-2 md:mt-4 text-center">
+                <h2 className="font-playfair font-semibold text-white text-2xl md:text-4xl lg:text-[75px] leading-tight md:leading-[75px] mt-0 md:mt-4 text-center">
                   Seamless Interoperability
                 </h2>
               </div>
             </div>
 
-            <div className="w-full max-w-[850px] h-auto bg-gradient-to-r from-[rgba(223,221,250,1)] to-[rgba(252,214,230,1)] p-2 md:p-4 rounded-lg md:rounded-none mt-[40px] mx-auto">
-              <h3 className="font-playfair bg-gradient-to-r from-[rgba(22,38,148,1)] to-[rgba(153,166,255,1)] bg-clip-text text-transparent font-semibold text-3xl md:text-5xl lg:text-[83px] leading-[1.1] md:leading-[1.1] pb-4 text-center">
+            <div className="w-full max-w-[850px] h-auto bg-gradient-to-r from-[rgba(223,221,250,1)] to-[rgba(252,214,230,1)] p-2 md:p-4 rounded-lg md:rounded-none mt-6 md:mt-[40px] mx-auto flex justify-center items-center">
+              <h3 className="font-playfair bg-gradient-to-r from-[rgba(22,38,148,1)] to-[rgba(153,166,255,1)] bg-clip-text text-transparent font-semibold text-3xl md:text-5xl lg:text-[83px] leading-[1.1] md:leading-[1.1] text-center w-full flex items-center justify-center">
                 with Clinical Systems
               </h3>
             </div>
 
-            <p className="font-gantari text-white text-lg md:text-xl lg:text-xl text-center max-w-[900px] mt-12 md:mt-12">
+            <p className="font-gantari text-white text-lg md:text-xl lg:text-xl text-center max-w-[900px] mt-6 md:mt-12">
               InteliDoc integrates seamlessly with your EHR to unify scheduling, e-prescribing, lab results, billing, and analytics—automating workflows, reducing errors, and boosting practice efficiency from day one.
             </p>
           </div>
         </header>
 
         {/* Integration Options */}
-        <section className="mt-[64px]">
+        <section className="mt-8 md:mt-[64px]">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 justify-items-center">
               {integrationOptions.map((option, index) => (
@@ -165,14 +165,14 @@ export default function Features() {
         </section>
 
         {/* Security Section with full-width background image */}
-        <div className="w-full mt-[64px]">
+        <div data-nav-dark="true" className="w-full mt-[64px]">
           <SecuritySection features={securityFeatures} />
         </div>
 
         {/* Healthcare Professionals Section */}
-        <section className="mt-0 sm:mt-24 lg:mt-0 bg-[#f3f3f3] py-8 sm:py-20 lg:pt-20 lg:pb-8">
+        <section data-nav-dark="true" className="mt-0 sm:mt-24 lg:mt-0 bg-[#f3f3f3] py-8 sm:py-20 lg:pt-20 lg:pb-8">
           <div className="pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] max-w-7xl mx-auto">
-            <h2 className="font-playfair font-semibold text-[#132180] text-3xl sm:text-4xl lg:text-[46px] leading-normal mb-8 sm:mb-12 lg:mb-16 text-left">
+            <h2 className="font-playfair font-semibold text-[#132180] text-xl sm:text-3xl lg:text-[46px] leading-normal mb-8 sm:mb-12 lg:mb-16 text-left">
               Created by healthcare professionals, <br className="hidden sm:block" />
               for healthcare professionals.
             </h2>

@@ -54,7 +54,7 @@ export default function BurnoutToBalance() {
 
             <div className="max-w-7xl mx-auto">
                 {/* Main Content Container */}
-                <div className="max-w-4xl mx-auto bg-[#f1f3ff87]">
+                <div data-nav-dark="false" className="max-w-4xl mx-auto bg-[#f1f3ff87]">
                     <div className="px-4 sm:px-6 md:px-8 lg:px-14 py-8 sm:py-12 md:py-16 lg:py-24">
                         {/* Main Headline */}
                         <h1 className="font-playfair font-semibold text-[#162694] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight lg:leading-[51.2px] mb-6 md:mb-8">
@@ -326,6 +326,25 @@ export default function BurnoutToBalance() {
                                 ))}
                             </div>
                         </section>
+                    </div>
+                </div>
+
+                {/* Dark Section Example - Navigation will be white here */}
+                <div data-nav-dark="true" className="w-full bg-gradient-to-r from-[#162694] to-[#0e1963] py-16 mt-16">
+                    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-14">
+                        <h2 className="font-playfair font-semibold text-white text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-tight lg:leading-[51.2px] mb-6 md:mb-8 text-center">
+                            Ready to Transform Your Practice?
+                        </h2>
+                        <p className="font-gantari font-normal text-white text-lg sm:text-xl md:text-2xl leading-relaxed md:leading-[41.8px] text-center mb-8">
+                            Join thousands of healthcare professionals who have already reduced their documentation burden with AI-powered medical scribes.
+                        </p>
+                        <div className="text-center">
+                            <Button className="bg-white text-[#162694] hover:bg-gray-100 rounded-[5px] h-[43px] px-8 transition-colors">
+                                <span className="font-gantari font-semibold text-base">
+                                    Get Started Today
+                                </span>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>

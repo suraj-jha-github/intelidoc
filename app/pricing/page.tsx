@@ -185,7 +185,7 @@ export default function Pricing() {
         <Navigation navItems={navItems} />
 
         {/* Hero Section */}
-        <section className="relative w-full min-h-[500px] md:min-h-[622px]">
+        <section data-nav-dark="true" className="relative w-full min-h-[500px] md:min-h-[622px]">
           <div className="absolute w-full h-full [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%,rgba(140,76,193,1)_71%,rgba(200,110,186,1)_82%,rgba(228,174,211,1)_94%,rgba(231,227,237,1)_100%)]" />
 
           <div className="relative z-10 w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto pt-24 md:pt-32 pb-8">
@@ -561,7 +561,7 @@ export default function Pricing() {
         </section>
 
         {/* FAQ Section */}
-        <section className="relative w-full py-12 sm:py-16">
+        <section data-nav-dark="true" className="relative w-full py-12 sm:py-16">
           <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             <div className="rounded-[20px] bg-[linear-gradient(90deg,rgba(1,18,39,1)_0%,rgba(14,25,99,1)_25%,rgba(15,38,127,1)_50%,rgba(14,25,99,1)_75%,rgba(1,18,39,1)_100%)] p-8 sm:p-12 lg:p-16">
               <h2 className="font-playfair font-medium text-white text-2xl sm:text-3xl lg:text-[40px] text-center mb-8 sm:mb-12 lg:mb-16">
@@ -602,7 +602,7 @@ export default function Pricing() {
         </section>
 
         {/* CTA Section */}
-        <section className="relative w-full py-12 sm:py-16 text-center">
+        <section data-nav-dark="false" className="relative w-full py-12 sm:py-16 text-center">
           <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
             <h2 className="font-gantari font-normal text-[#162694] text-3xl sm:text-4xl lg:text-5xl leading-tight lg:leading-[53.8px]">
               Try InteliDoc AI for 7 days for free.

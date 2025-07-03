@@ -91,7 +91,7 @@ export const IntegrationCard: React.FC<IntegrationCardProps> = ({ option }) => {
   };
 
   return (
-    <Card className="w-full max-w-[330px] aspect-square bg-[#fff] rounded-[10px] border-[#c6c6c6] flex flex-col justify-between">
+    <Card className="w-full max-w-[330px] h-[280px] md:aspect-square bg-[#fff] rounded-[10px] border-[#c6c6c6] flex flex-col justify-between">
       <CardContent className="flex flex-col flex-1 p-0">
         <div className="flex-1 px-[12px] py-0 pb-4 md:p-4 md:pt-0 flex flex-col">
           {renderIcon()}

@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "../../../components/ui/button";
 import { Menu, X } from "lucide-react";
 import Link from 'next/link';
@@ -20,86 +20,126 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   const [loadingItem, setLoadingItem] = useState<string | null>(null);
   const [isDarkBackground, setIsDarkBackground] = useState(false);
   const pathname = usePathname();
+  const debounceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastStateRef = useRef<boolean>(false);
 
   useEffect(() => {
     let observer: IntersectionObserver | null = null;
     let darkSections: HTMLElement[] = [];
+    let lightSections: HTMLElement[] = [];
+
+    const updateNavState = (newState: boolean) => {
+      // Prevent unnecessary state updates that cause flickering
+      if (lastStateRef.current !== newState) {
+        lastStateRef.current = newState;
+        setIsDarkBackground(newState);
+      }
+    };
+
+    const debouncedUpdateNavState = (newState: boolean) => {
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+      debounceTimeoutRef.current = setTimeout(() => {
+        updateNavState(newState);
+      }, 50); // Small delay to prevent rapid changes
+    };
 
     const checkBackgroundColor = () => {
-      const scrollY = window.scrollY;
-      const windowHeight = window.innerHeight;
-      let isInDarkSection = false;
+      if (typeof window !== 'undefined') {
+        // Get all sections with data-nav-dark attributes
+        darkSections = Array.from(document.querySelectorAll('[data-nav-dark="true"]')) as HTMLElement[];
+        lightSections = Array.from(document.querySelectorAll('[data-nav-dark="false"]')) as HTMLElement[];
+      }
 
-      if (pathname === '/') {
-        // Use Intersection Observer for all [data-nav-dark="true"] sections
-        if (typeof window !== 'undefined') {
-          darkSections = Array.from(document.querySelectorAll('[data-nav-dark="true"]')) as HTMLElement[];
-        }
-        // Fallback: if no dark sections, use hero section logic
-        if (!darkSections.length) {
-          if (scrollY < windowHeight * 0.8) {
-            isInDarkSection = true;
-          } else {
-            isInDarkSection = false;
-          }
-          setIsDarkBackground(isInDarkSection);
-          return;
-        }
-        // If sections available, use Intersection Observer
+      // Only use data-nav-dark attributes, no fallback logic
+      if (darkSections.length > 0 || lightSections.length > 0) {
         if (observer) observer.disconnect();
+
         observer = new window.IntersectionObserver(
           (entries) => {
             let dark = false;
+            let light = false;
+
             entries.forEach(entry => {
-              if (entry.isIntersecting) dark = true;
+              const target = entry.target as HTMLElement;
+              if (entry.isIntersecting) {
+                if (target.getAttribute('data-nav-dark') === 'true') {
+                  dark = true;
+                } else if (target.getAttribute('data-nav-dark') === 'false') {
+                  light = true;
+                }
+              }
             });
-            // Also keep hero section logic
-            if (scrollY < windowHeight * 0.8) dark = true;
-            setIsDarkBackground(dark);
+
+            // Priority: if we're in a light section, use light nav, otherwise use dark if in dark section
+            if (light) {
+              debouncedUpdateNavState(false);
+            } else if (dark) {
+              debouncedUpdateNavState(true);
+            } else {
+              // If not in any section with data-nav-dark, default to light (blue nav)
+              debouncedUpdateNavState(false);
+            }
           },
           {
             root: null,
-            rootMargin: '0px',
-            threshold: 0
+            rootMargin: '-60px 0px 0px 0px', // Account for nav height
+            threshold: [0, 0.1, 0.5, 1.0] // Multiple thresholds for smoother detection
           }
         );
-        darkSections.forEach(section => observer!.observe(section));
-        // Initial check
+
+        // Observe all sections
+        [...darkSections, ...lightSections].forEach(section => observer!.observe(section));
+
+        // Initial check with delay to ensure DOM is ready
         setTimeout(() => {
-          for (const section of darkSections) {
-            if (section.getBoundingClientRect().top < 60 && section.getBoundingClientRect().bottom > 0) {
-              setIsDarkBackground(true);
-              return;
+          let foundSection = false;
+          for (const section of [...darkSections, ...lightSections]) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < 60 && rect.bottom > 0) {
+              const isDark = section.getAttribute('data-nav-dark') === 'true';
+              updateNavState(isDark);
+              foundSection = true;
+              break;
             }
           }
-        }, 100);
-        return;
+          if (!foundSection) {
+            // Default to light navigation if no sections are found
+            updateNavState(false);
+          }
+        }, 200);
+      } else {
+        // If no data-nav-dark sections found, default to light navigation
+        updateNavState(false);
       }
-      // ... existing logic for other pages ...
-      if (pathname === '/features') {
-        isInDarkSection = scrollY < windowHeight * 0.7;
-      } else if (pathname === '/pricing') {
-        isInDarkSection = scrollY < windowHeight * 0.6;
-      } else if (pathname === '/contact') {
-        isInDarkSection = true;
-      } else if (pathname === '/specialities') {
-        isInDarkSection = scrollY < windowHeight * 0.7;
-      } else if (pathname === '/forgroup') {
-        isInDarkSection = true;
-      } else if (pathname === '/blogs') {
-        isInDarkSection = scrollY < windowHeight * 0.7;
-      } else if (pathname === '/tryfree') {
-        isInDarkSection = false;
-      }
-      setIsDarkBackground(isInDarkSection);
     };
 
+    // Initial check
     checkBackgroundColor();
-    window.addEventListener('scroll', checkBackgroundColor);
+
+    // Debounced scroll handler to prevent excessive updates
+    let scrollTimeout: NodeJS.Timeout;
+    const handleScroll = () => {
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
+      scrollTimeout = setTimeout(() => {
+        checkBackgroundColor();
+      }, 10); // Small delay for scroll events
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', checkBackgroundColor);
+      window.removeEventListener('scroll', handleScroll);
       if (observer) observer.disconnect();
+      if (debounceTimeoutRef.current) {
+        clearTimeout(debounceTimeoutRef.current);
+      }
+      if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+      }
     };
   }, [pathname]);
 
@@ -132,11 +172,11 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
     : "bg-[#162694] text-white";
 
   return (
-    <header className={`fixed w-full h-14 md:h-[57px] top-0 left-0 right-0 mx-auto z-50 ${navBackground} transition-all duration-300 ease-in-out shadow-lg border-b border-white/30`}>
+    <header className={`fixed w-full h-14 md:h-[57px] top-0 left-0 right-0 mx-auto z-50 ${navBackground} transition-all duration-500 ease-in-out shadow-lg border-b border-white/30`}>
       <nav className="flex items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] h-full max-w-7xl mx-auto">
         <div className="flex items-center gap-4 md:gap-12">
           <Link href="/" className="flex items-center">
-            <div className={`font-gantari font-bold text-lg sm:text-xl ${navLogoColor} transition-colors duration-300`}>
+            <div className={`font-gantari font-bold text-lg sm:text-xl ${navLogoColor} transition-colors duration-500`}>
               InteliDoc AI
             </div>
           </Link>
@@ -157,18 +197,13 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
           </ul>
         </div>
 
-        {/* Desktop CTA Button */}
-        <Link href="/tryfree" target="_blank">
-          <Button className={`hidden lg:block font-semibold text-[15px] h-8 px-4 py-1.5 rounded-[5px] flex items-center justify-center ${ctaButtonClass} transition-all duration-300 leading-none`}>
-            Try for free
-          </Button>
-        </Link>
+
 
         {/* Mobile Menu Button */}
         <Button
           variant="ghost"
           size="sm"
-          className={`lg:hidden ${navTextColor} transition-colors duration-300 p-2 hover:bg-white/10 rounded-md`}
+          className={`lg:hidden ${navTextColor} transition-colors duration-500 p-2 hover:bg-white/10 rounded-md`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

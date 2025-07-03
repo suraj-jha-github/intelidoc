@@ -133,7 +133,7 @@ export default function Specialties() {
           <Navigation navItems={navItems} />
 
           {/* Hero Content */}
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-24 md:pt-32 pb-8 max-w-7xl mx-auto">
+          <div data-nav-dark="true" className="relative z-10 flex flex-col lg:flex-row items-center justify-between pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] pt-24 md:pt-32 pb-8 max-w-7xl mx-auto">
             <div className="flex-1 mb-8 lg:mb-0">
               <h1 className="font-playfair font-semibold text-white text-3xl md:text-4xl lg:text-[52px] tracking-[0] leading-tight md:leading-[57.7px] mb-6">
                 Your trusted AI scribe
@@ -143,12 +143,12 @@ export default function Specialties() {
                 Clinical precision without the documentation stress
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300">
-                  <Link href="/tryfree" target="_blank">
-                    <Button className="w-full max-w-[220px] sm:max-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-base sm:text-lg px-4 transition-all duration-300">
-                      <span>Try InteliDoc AI-</span>
-                      <span className="text-[#162694] text-sm sm:text-base ml-1 opacity-80">it's free</span>
+              <div className="flex flex-col sm:flex-row gap-4 items-center lg:items-start">
+                <div className="p-[2px] rounded-[6px] bg-gradient-to-r from-white via-blue-200 to-white shadow-[0_0_12px_rgba(255,255,255,0.6)] hover:shadow-[0_0_16px_rgba(255,255,255,0.8)] transition-all duration-300 w-full sm:w-auto">
+                  <Link href="/tryfree" target="_blank" className="block w-full sm:w-auto">
+                    <Button className="w-full sm:w-auto min-w-[220px] sm:min-w-[238px] h-12 sm:h-[57px] rounded-[5px] bg-white hover:bg-gray-50 text-[#162694] font-semibold text-sm sm:text-base lg:text-lg px-4 sm:px-6 transition-all duration-300 flex items-center justify-center">
+                      <span className="whitespace-nowrap">Try InteliDoc AI-</span>
+                      <span className="text-[#162694] text-xs sm:text-sm lg:text-base ml-1 opacity-80">it's free</span>
                     </Button>
                   </Link>
                 </div>
@@ -277,7 +277,7 @@ export default function Specialties() {
         </section>
 
         {/* AI Scribe Section */}
-        <section className="relative w-full mt-16 min-h-[600px] md:min-h-[754px]">
+        <section data-nav-dark="true" className="relative w-full mt-16 min-h-[600px] md:min-h-[754px]">
           <div className="w-full min-h-[400px] md:min-h-[505px] [background:radial-gradient(50%_50%_at_4%_0%,rgba(1,18,39,1)_5%,rgba(14,25,99,1)_45%,rgba(15,38,127,1)_78%,rgba(1,18,39,1)_99%)] py-12 md:py-16">
             <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
               <div className="text-left mb-8">
@@ -341,10 +341,10 @@ export default function Specialties() {
           {/* Stats Section */}
           <div className="w-full py-8 md:py-16">
             <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+              <div className="grid grid-cols-1 md:flex md:flex-row items-center justify-center gap-8 md:gap-16">
                 {stats.map((stat, index) => (
                   <React.Fragment key={index}>
-                    <div className="flex items-center gap-6 text-center md:text-left">
+                    <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center">
                       <div className="w-[70px] h-[70px] rounded-[35px] flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-[#13217f] via-[#0c1235] to-[#4b527c]">
                         <img
                           className="w-10 h-10 object-cover"
@@ -362,7 +362,7 @@ export default function Specialties() {
                       </div>
                     </div>
                     {index < stats.length - 1 && (
-                      <div className="w-[2px] h-[163px] bg-gray-400 mx-4"></div>
+                      <div className="hidden md:block w-[2px] h-[163px] bg-gray-400 mx-4"></div>
                     )}
                   </React.Fragment>
                 ))}
@@ -400,7 +400,7 @@ export default function Specialties() {
         </section>
 
         {/* FAQ Section */}
-        <section className="w-full mt-16">
+        <section data-nav-dark="true" className="w-full mt-16">
           <div className="relative w-full max-w-7xl pl-4 sm:pl-8 md:pl-16 lg:pl-[85px] pr-4 sm:pr-8 md:pr-16 lg:pr-[85px] mx-auto py-12 md:py-16 rounded-[20px] [background:linear-gradient(137deg,rgba(14,25,99,1)_0%,rgba(46,24,173,1)_47%,rgba(79,52,187,1)_60%)]">
             <div className="flex flex-col lg:flex-row gap-8">
               <div className="lg:w-1/3">

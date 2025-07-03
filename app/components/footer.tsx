@@ -47,27 +47,13 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
               </h3>
               <ul className="space-y-4">
                 {links.resources.map((link, index) => (
-                  <li
-                    key={index}
-                    className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px] hover:text-[#162694] transition-colors cursor-pointer"
-                  >
-                    {link}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="text-center md:text-left">
-              <h3 className="font-geist font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-12">
-                Specialties
-              </h3>
-              <ul className="space-y-4">
-                {links.specialties.map((link, index) => (
-                  <li
-                    key={index}
-                    className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px] hover:text-[#162694] transition-colors cursor-pointer"
-                  >
-                    {link}
+                  <li key={index}>
+                    <Link
+                      href={link === "Blog" ? "/blogs" : "#"}
+                      className="font-geist font-normal text-black text-[17px] tracking-[0] leading-[21.8px] hover:text-[#162694] transition-colors"
+                    >
+                      {link === "Blog" ? "Blogs" : link}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -90,6 +76,26 @@ export const Footer: React.FC<FooterProps> = ({ links }) => {
                 ))}
               </ul>
             </div>
+
+            <div className="text-center md:text-left">
+              <h3 className="font-geist font-semibold text-black text-xl tracking-[0] leading-[25.6px] mb-6">
+                Specialties
+              </h3>
+              <Link href="/specialities">
+                <p className="font-geist font-normal text-black text-[15px] tracking-[0] leading-[20px] mb-6 hover:text-[#162694] transition-colors cursor-pointer">
+                  Comprehensive care across<br />
+                  Family Medicine, Mental Health,<br />
+                  Pediatrics, and more.
+                </p>
+              </Link>
+              <Link href="/specialities">
+                <button className="font-geist font-medium text-white text-[15px] tracking-[0] leading-[20px] bg-[#162694] hover:bg-[#132180] transition-colors px-4 py-2 rounded-[5px]">
+                  View all specialties
+                </button>
+              </Link>
+            </div>
+
+
           </div>
         </div>
       </footer>
