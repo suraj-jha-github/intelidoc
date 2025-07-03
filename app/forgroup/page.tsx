@@ -44,7 +44,7 @@ export default function ForGroups() {
     // Navigation menu items data
     const navItems = [
         { label: "Features", href: "/features" },
-        { label: "How it Works", href: "/how-it-works" },
+        { label: "How it Works", href: "/#how-it-works" },
         { label: "Specialties", href: "/specialities" },
         { label: "Blog", href: "/blogs" },
         { label: "Pricing", href: "/pricing" },

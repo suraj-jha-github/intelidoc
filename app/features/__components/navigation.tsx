@@ -145,7 +145,21 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
   }, [pathname]);
 
   const handleClick = (item: { label: string; href: string }) => {
-    // Removed individual loader for features
+    // Handle hash links properly
+    if (item.href.startsWith('/#')) {
+      const hash = item.href.substring(1); // Remove the leading '/'
+
+      // If we're not on the home page, navigate to home first
+      if (pathname !== '/') {
+        window.location.href = item.href;
+      } else {
+        // If we're already on home page, just scroll to the section
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
   };
 
   // Dynamic classes based on background and page
@@ -182,13 +196,22 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex items-center gap-6">
             {navItems.map((item, index) => (
-              <li key={index} onClick={() => handleClick(item)} className="relative">
-                <Link
-                  href={item.href || "#"}
-                  className={`font-medium ${navTextColor} text-[15px] px-3 py-2 rounded-md flex items-center gap-2 hover:text-white hover:bg-[#4551a9] hover:shadow-md transition-all duration-300`}
-                >
-                  {item.label}
-                </Link>
+              <li key={index} className="relative">
+                {item.href.startsWith('/#') ? (
+                  <button
+                    onClick={() => handleClick(item)}
+                    className={`font-medium ${navTextColor} text-[15px] px-3 py-2 rounded-md flex items-center gap-2 hover:text-white hover:bg-[#4551a9] hover:shadow-md transition-all duration-300 cursor-pointer`}
+                  >
+                    {item.label}
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href || "#"}
+                    className={`font-medium ${navTextColor} text-[15px] px-3 py-2 rounded-md flex items-center gap-2 hover:text-white hover:bg-[#4551a9] hover:shadow-md transition-all duration-300`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -220,12 +243,18 @@ export const Navigation: React.FC<NavigationProps> = ({ navItems, colorClass, lo
                     handleClick(item);
                   }}
                 >
-                  <Link
-                    href={item.href}
-                    className={`flex items-center gap-2 w-full ${mobileTextColor} hover:text-white transition-colors duration-300`}
-                  >
-                    {item.label}
-                  </Link>
+                  {item.href.startsWith('/#') ? (
+                    <span className={`flex items-center gap-2 w-full ${mobileTextColor} hover:text-white transition-colors duration-300`}>
+                      {item.label}
+                    </span>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={`flex items-center gap-2 w-full ${mobileTextColor} hover:text-white transition-colors duration-300`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
                 </Button>
               ))}
 
